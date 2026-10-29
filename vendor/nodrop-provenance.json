@@ -1,0 +1,393 @@
+{
+  "wsl_distribution": "Ubuntu-22.04",
+  "source": "/root/nodrop-latest-20261009/NoDrop",
+  "commit": "7ce202412c16b341fc39f88a39dd375b3ed7b511",
+  "status": " M include/ioctl.h\n M kmodule/elf.c\n M kmodule/events.c\n M kmodule/loader.c\n M kmodule/nodrop.h\n M kmodule/privil.c\n M kmodule/proc.c\n M kmodule/procinfo.c\n M kmodule/procinfo.h\n M kmodule/trace.c\n M monitor/src/main.c\n M monitor/src/startup.c\n M scripts/ctrl/nodrop-ctl.c\n",
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "1c70fdb8d052e8cf899bac0583079d82f5dd4948cc006c77b6a4a8a3a14eb305",
+      "mtime_ns": 1791507526663916243
+    },
+    {
+      "path": "CMakeLists.txt",
+      "sha256": "97fd665ba900b4bfb42968cb7cfd51b3748530876773823a5d339a2df6e21fdc",
+      "mtime_ns": 1791507526663916243
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "8f895fd7f1474257516ac53e1a5fabdae8fef0f00e9fb878597eb853a170b69c",
+      "mtime_ns": 1791507526663916243
+    },
+    {
+      "path": "README.md",
+      "sha256": "fcc78ecfc7d9f7e7adeeb6292c663cc6560665c8a2565626009632004f7989c0",
+      "mtime_ns": 1791507526663916243
+    },
+    {
+      "path": "include/common.h",
+      "sha256": "6cc8400c8dfb25d5f8a67b9e6ce17bc358f9afde094dfb0c91d70a1d03c69768",
+      "mtime_ns": 1791507526820536643
+    },
+    {
+      "path": "include/config.h.in",
+      "sha256": "1b4fbf15b1c2065726cdb5b54fb57d80fcb70db065a3245d3ebf243c03aaecf9",
+      "mtime_ns": 1791507526823947043
+    },
+    {
+      "path": "include/events.h",
+      "sha256": "32fc5d3b38c3b962b58248c51a65294a2257508a36f1d4d1877fd0476f50cb1d",
+      "mtime_ns": 1791507526823947043
+    },
+    {
+      "path": "include/ioctl.h",
+      "sha256": "ebb48524902d5a3b2c0362d5c12042963fee691dcfe670c4f93076e6fbf80573",
+      "mtime_ns": 1792677683328792903
+    },
+    {
+      "path": "include/tsc.h",
+      "sha256": "a43c94c6e7bc20c52bb168a2daa4ed27481a06088f9d95b45fdb2b6310b1faf9",
+      "mtime_ns": 1791507526823947043
+    },
+    {
+      "path": "kmodule/CMakeLists.txt",
+      "sha256": "ce174f5f50d9291827a1277b5acc899a7729a20b6e0a5a179404b0d5b0ed8fce",
+      "mtime_ns": 1791507526823947043
+    },
+    {
+      "path": "kmodule/Makefile.in",
+      "sha256": "9551b81f636ce780b76effa016d57cce9a75e6075f4a54648b87df35bcbd655d",
+      "mtime_ns": 1791507526826501743
+    },
+    {
+      "path": "kmodule/config.h.in",
+      "sha256": "68e3add71058b22a8232fdbe8ff917ab830983a8d3c5591e081cba89d4748d1d",
+      "mtime_ns": 1791507526826501743
+    },
+    {
+      "path": "kmodule/elf.c",
+      "sha256": "a9240eb9c281c86972502c753f1958f80430c8c31e8d6dcd978b164bce54c2bb",
+      "mtime_ns": 1793084120755390394
+    },
+    {
+      "path": "kmodule/events.c",
+      "sha256": "2ff3c2e390300068418db5456ad1962cf64d9f77ac212e89ce3f5e2da93774e3",
+      "mtime_ns": 1792995265239155443
+    },
+    {
+      "path": "kmodule/fillers.c",
+      "sha256": "0967172cab5430d2c57e4d9a064df778ae013a666fd0d029660c59347cd26a34",
+      "mtime_ns": 1791507526826501743
+    },
+    {
+      "path": "kmodule/fillers.h",
+      "sha256": "2b70e090d9e85ebcc0eca3ec92eef4028f8a29e90e0ac40b487839e04cd6e3d6",
+      "mtime_ns": 1791507526826501743
+    },
+    {
+      "path": "kmodule/fillers_table.c",
+      "sha256": "d6c47b8a2f5fd404e61a371f44380d6dc7b5d584bea2ee3e1ce7647ca6dfcc1f",
+      "mtime_ns": 1791507526826501743
+    },
+    {
+      "path": "kmodule/flags.h",
+      "sha256": "850ce25ae057e1b7b82522e822e398710c4cb989c782e35578a18b6743ea5810",
+      "mtime_ns": 1791507526826501743
+    },
+    {
+      "path": "kmodule/loader.c",
+      "sha256": "d9d74835d9fd48ecd8b0d03e0d03e9f03e359453d95a86c7a484d735fe957123",
+      "mtime_ns": 1793153038514628211
+    },
+    {
+      "path": "kmodule/nod_main.c",
+      "sha256": "666fe6c3aec2bc37d46d0b449785714207829b6b61e1b664ca761af1f016c7e2",
+      "mtime_ns": 1791507526827916243
+    },
+    {
+      "path": "kmodule/nodrop.h",
+      "sha256": "34735333aa8e50e9da8fab89dc52c7dc2926775a1ee84cc9e9e055b63b67d2b6",
+      "mtime_ns": 1793084120775307922
+    },
+    {
+      "path": "kmodule/privil.c",
+      "sha256": "3ab302a413cd3ebff18391002d0da3463c4fa18b055186e896080af5d4534be2",
+      "mtime_ns": 1792677683329503935
+    },
+    {
+      "path": "kmodule/proc.c",
+      "sha256": "ef349e5fe79a126951d668261ca01e513bb1929321204d91b4681652712a4744",
+      "mtime_ns": 1792982026789929234
+    },
+    {
+      "path": "kmodule/procinfo.c",
+      "sha256": "787bca5cbe9eac55be02dc95dfbd141ef6cd708a10ec0811bc09af7a6dd66831",
+      "mtime_ns": 1793084120768736134
+    },
+    {
+      "path": "kmodule/procinfo.h",
+      "sha256": "e68d7339fe080789b51d0d658fd7091cde47acafaed75357e15eca8e642edd81",
+      "mtime_ns": 1792677683329842281
+    },
+    {
+      "path": "kmodule/syscall.h",
+      "sha256": "663f5664fd4fceebe4d6de92a848c98f5adee16eaca994c8420687bf58d78870",
+      "mtime_ns": 1791507526827916243
+    },
+    {
+      "path": "kmodule/syscall_table.c",
+      "sha256": "66795dbaea7a11b3779f1a812d6ce70aaf969e443fd2852f2a96406473e819b4",
+      "mtime_ns": 1791507526827916243
+    },
+    {
+      "path": "kmodule/tables/dynamic_params_table.c",
+      "sha256": "762d4be73a939ec7e5b1842a53c16cdcdfb7791bde1f1bac4e2a3bbc70208709",
+      "mtime_ns": 1791507526827916243
+    },
+    {
+      "path": "kmodule/tables/events_table.c",
+      "sha256": "eceb065a7015fd859b78f56c9c26de9746f613d25f6455a800b47534d225b13b",
+      "mtime_ns": 1791507526831136343
+    },
+    {
+      "path": "kmodule/tables/flags_table.c",
+      "sha256": "0c848286bd7395814bc89c9fd0116e78e0376575bdf245729fdcb1ff677d4c87",
+      "mtime_ns": 1791507526831136343
+    },
+    {
+      "path": "kmodule/trace.c",
+      "sha256": "437bcadf257b5cacc339861abdfaa101227463df3de87f33d10b019110aa5a0a",
+      "mtime_ns": 1793085378902790166
+    },
+    {
+      "path": "monitor/CMakeLists.txt",
+      "sha256": "38ca0e5c0536835f198f45ca17c5ad6014e12d380f3d1f03e4aeb0667bb5f139",
+      "mtime_ns": 1791507526831916243
+    },
+    {
+      "path": "monitor/mmheap/mmheap.c",
+      "sha256": "fbc9206dc5263134a5eba465f2d491e5a063d930cee27376b637ea9d54d1e848",
+      "mtime_ns": 1791507526835078543
+    },
+    {
+      "path": "monitor/mmheap/mmheap.h",
+      "sha256": "cdd7d13afd8c0ce520fed59774217b3801a2e685e5cdc2e8ff6e28d838263ec0",
+      "mtime_ns": 1791507526835555043
+    },
+    {
+      "path": "monitor/script_x86-64.ld",
+      "sha256": "bed4d8593e3126a24c480d84a59eed1ace43d0efe881c2afd99a83e75164d185",
+      "mtime_ns": 1791507526835555043
+    },
+    {
+      "path": "monitor/src/dynlink.h",
+      "sha256": "d37ca33fdca3a553d22a7ee7d1751ba5201953fe935a39dbb0308f4492fe39c9",
+      "mtime_ns": 1791507526835916243
+    },
+    {
+      "path": "monitor/src/lua_field.c",
+      "sha256": "1680174bec12da2d894287e0a8655dbb0732c7a6df3bf33cfc624d2bcd207b60",
+      "mtime_ns": 1791507526837193543
+    },
+    {
+      "path": "monitor/src/lua_field.h",
+      "sha256": "cca97730ec4f57110ac9038bb78eca5459cf13c74e2fe04f33d6b983fa2baab2",
+      "mtime_ns": 1791507526837193543
+    },
+    {
+      "path": "monitor/src/lua_runtime.c",
+      "sha256": "cf0fbcfc547df04297fb663a384c76eb79986803e36cef16c8e6bc1e51aaa94d",
+      "mtime_ns": 1791507526837193543
+    },
+    {
+      "path": "monitor/src/lua_runtime.h",
+      "sha256": "f9e932f79d67051f7f25620e8dea63bce5ddc5568ab87a756e4b70a6ce2766a8",
+      "mtime_ns": 1791507526837193543
+    },
+    {
+      "path": "monitor/src/main.c",
+      "sha256": "a935c5a4069b6b7e5443744e7ed1248fffbc6747235904431f536af40ebf489a",
+      "mtime_ns": 1792677683330899935
+    },
+    {
+      "path": "monitor/src/parser.c",
+      "sha256": "d0bf7cdca473e00e6f5677364e81c36672b918644ea1f6ce064a648bdf64281d",
+      "mtime_ns": 1791507526837193543
+    },
+    {
+      "path": "monitor/src/parser.h",
+      "sha256": "4a94d77ce1cde2fca240e24136ad1a2d6435adb64e83585104dcf99679bcf372",
+      "mtime_ns": 1791507526837193543
+    },
+    {
+      "path": "monitor/src/pkeys.h",
+      "sha256": "4d0345446f693f5218955cb72e6c13cbab8ab0b3c6e488c4add8841bb614b4f2",
+      "mtime_ns": 1791507526837193543
+    },
+    {
+      "path": "monitor/src/record_writer.c",
+      "sha256": "9eb1ef4b608e2ab844be763c711c69e4773728792dd9dbca8086634cdb29056d",
+      "mtime_ns": 1791507526837193543
+    },
+    {
+      "path": "monitor/src/record_writer.h",
+      "sha256": "a087777d29e1cabc7e604f594263eadcac28e4f05f9b3710aba2c9784d8e3866",
+      "mtime_ns": 1791507526837193543
+    },
+    {
+      "path": "monitor/src/startup.c",
+      "sha256": "de8830fbcd6ed23452a856e222c25f74eebadc96beb1bfb9c76eba615fd6854e",
+      "mtime_ns": 1792677683331009229
+    },
+    {
+      "path": "scripts/CMakeLists.txt",
+      "sha256": "baedd8cc708719b2929b68d7c7d315974b02bd4e13da0f363f61fe9531cbfc0d",
+      "mtime_ns": 1791507526837193543
+    },
+    {
+      "path": "scripts/StressTesting/.gitignore",
+      "sha256": "f43dc8790ed6215684924d362753e3864cb66c0f06084e89ad36b57e15986c6e",
+      "mtime_ns": 1791507526840501943
+    },
+    {
+      "path": "scripts/StressTesting/1.txt",
+      "sha256": "d379392cf5f8226c9668797b8c3c581227dd1fd8981a9366332900bb7eafe489",
+      "mtime_ns": 1791507526847916243
+    },
+    {
+      "path": "scripts/StressTesting/CMakeLists.txt",
+      "sha256": "ed07bc5a7461e031272f21c7f79b6ebde1036b5462b4b8eff00b31106fea405b",
+      "mtime_ns": 1791507526847916243
+    },
+    {
+      "path": "scripts/StressTesting/attack.c",
+      "sha256": "e60f94e2d2c44a8cb06fde49b238a288680c71af34ca75fc0fde81063f6ead6a",
+      "mtime_ns": 1791507526847916243
+    },
+    {
+      "path": "scripts/StressTesting/attack.sh",
+      "sha256": "612dee22a9a2f87dfc383d4b9401d4a6c44995127eaa66ba76d7c39efcecc26a",
+      "mtime_ns": 1791507526847916243
+    },
+    {
+      "path": "scripts/StressTesting/create_cg.sh",
+      "sha256": "8a3aa2db561f2ff981fd1bede6596aebb72da4018d2f7465729772393f96aeba",
+      "mtime_ns": 1791507526847916243
+    },
+    {
+      "path": "scripts/StressTesting/run_rq1.sh",
+      "sha256": "c0b04fbccb34f6865e674e0c1d278e14cb6ad2d5366389fdc1f230d15fbd7d32",
+      "mtime_ns": 1791507526847916243
+    },
+    {
+      "path": "scripts/StressTesting/run_rq12.sh",
+      "sha256": "c4daa9394bc6d6e0ce67f2bcf78ac9d31d293cb87e686d1546fe191b968340dd",
+      "mtime_ns": 1791507526847916243
+    },
+    {
+      "path": "scripts/StressTesting/run_rq3.py",
+      "sha256": "5c98ff440568fc192c02c03da1c50de1f235d0591bbed65185449ea45e4ea82d",
+      "mtime_ns": 1791507526847916243
+    },
+    {
+      "path": "scripts/StressTesting/run_stress.sh",
+      "sha256": "78a9723bebc5ee16bf4e15e9f52061c41763d6423b947003e20b5225b9365069",
+      "mtime_ns": 1791507526847916243
+    },
+    {
+      "path": "scripts/StressTesting/stress.c",
+      "sha256": "9e6537ee565001252cc993d75a497ee9a31c5355df0631abf38899558489995e",
+      "mtime_ns": 1791507526847916243
+    },
+    {
+      "path": "scripts/StressTesting/test_drop.py",
+      "sha256": "2eae820421cd05cd71f176d4ed94d13038a4026a37d9f4637cbeb056985429aa",
+      "mtime_ns": 1791507526847916243
+    },
+    {
+      "path": "scripts/StressTesting/test_perf.py",
+      "sha256": "f7baaed3c232e95cf04d8d1589956619bdebe4e5f051288e11086870c5367b6f",
+      "mtime_ns": 1791507526847916243
+    },
+    {
+      "path": "scripts/ctrl/CMakeLists.txt",
+      "sha256": "bef38d80d2dcc951873d1d8a8a493565eb7c848e6db476d197fff2bac03fdf87",
+      "mtime_ns": 1791507526847916243
+    },
+    {
+      "path": "scripts/ctrl/nodrop-ctl.c",
+      "sha256": "ae1f9d1e62868c91bc8365abe5bf40d4d1fc8765556776fd9398fdb2ac1280bc",
+      "mtime_ns": 1792476966312421153
+    },
+    {
+      "path": "scripts/getlua.sh",
+      "sha256": "03c8e2d2804f0d1de8000c55fa329673b1978d0c04990581332d7cc2ac2985f8",
+      "mtime_ns": 1791507526851992243
+    },
+    {
+      "path": "scripts/getmusl.sh",
+      "sha256": "95d0e9e58be1299a24b0df4ac5decc83f8b827917f702bd5118e43397d7ae089",
+      "mtime_ns": 1791507526851992243
+    },
+    {
+      "path": "scripts/getzlib.sh",
+      "sha256": "430c4b29780488cb9d9d3ee3fbb1ef529004b57bb85c4761d2d784a16de7463d",
+      "mtime_ns": 1791507526851992243
+    },
+    {
+      "path": "scripts/lua/calc.lua",
+      "sha256": "e85a9d97ad2164025773c759a9d28ed3035deff87c7d5cc83be2dcd16dd8f363",
+      "mtime_ns": 1791507526851992243
+    },
+    {
+      "path": "scripts/lua/example.lua",
+      "sha256": "200db8cdfeeef2c336cae2cf89e245e8146059be429288584e9dcc04def9ad72",
+      "mtime_ns": 1791507526853439243
+    },
+    {
+      "path": "scripts/lua/save.lua",
+      "sha256": "213323fb631a28717221828700926a0f08f4936d3b0d8594e8e1cdecc84a2be4",
+      "mtime_ns": 1791507526853439243
+    },
+    {
+      "path": "scripts/mkfig/CMakeLists.txt",
+      "sha256": "86e60097e59f2faca9b62f39ebd3be71acb318a164baa277546c1449847256e6",
+      "mtime_ns": 1791507526853439243
+    },
+    {
+      "path": "scripts/mkfig/draw.cpp",
+      "sha256": "413a04ba5c54af27b3ce36531609bb5a25880478fce8c3590d7eee403d911852",
+      "mtime_ns": 1791507526854439443
+    },
+    {
+      "path": "scripts/mkfig/matplotlibcpp.h",
+      "sha256": "ca3a99906ccf0d0975b66f42013d3080294e8006e1ee1fe3083791fe5f6b8b1e",
+      "mtime_ns": 1791507526854439443
+    },
+    {
+      "path": "scripts/mkfig/pyconfig.cmake",
+      "sha256": "4ab82b3b47b3e15e4d1befca43b3933c7b69151f825d0c9b46869e5ee6a6e791",
+      "mtime_ns": 1791507526854439443
+    },
+    {
+      "path": "scripts/tests/CMakeLists.txt",
+      "sha256": "ee6bf26e9c025739e7f20275a133a7b0149edeca6d1320ad7eff37b16700c5c4",
+      "mtime_ns": 1791507526855916243
+    },
+    {
+      "path": "scripts/tests/getpid.c",
+      "sha256": "d77ab23bb4888dae416da5e045667a3aad65dce0f0725cfcb251253a2a6d3927",
+      "mtime_ns": 1791507526855916243
+    },
+    {
+      "path": "scripts/tests/helloworld.c",
+      "sha256": "208bc36334ce16b432eac27fc1efe65915e45ab634bf68d00485f6b454ffdbb7",
+      "mtime_ns": 1791507526855916243
+    },
+    {
+      "path": "scripts/tests/multithread.c",
+      "sha256": "70203e44dd5853079d8d9c3fa33cbff7212067988559c1fccfee59b6b50e7303",
+      "mtime_ns": 1791507526855916243
+    }
+  ]
+}

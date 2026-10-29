@@ -1,0 +1,157 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "check": "A.txt",
+      "events": 3,
+      "expected": [
+        "pi-read-A",
+        "pi-write-A"
+      ],
+      "observed": [
+        "pi-read-A",
+        "pi-write-A"
+      ],
+      "pass": true
+    },
+    {
+      "check": "B.txt",
+      "events": 3,
+      "expected": [
+        "pi-edit-B",
+        "pi-write-B"
+      ],
+      "observed": [
+        "pi-edit-B",
+        "pi-write-B"
+      ],
+      "pass": true
+    },
+    {
+      "check": "shell-child.txt",
+      "events": 1,
+      "expected": [
+        "pi-shell-child"
+      ],
+      "observed": [
+        "pi-shell-child"
+      ],
+      "pass": true
+    },
+    {
+      "check": "after-error.txt",
+      "events": 1,
+      "expected": [
+        "pi-after-error"
+      ],
+      "observed": [
+        "pi-after-error"
+      ],
+      "pass": true
+    },
+    {
+      "check": "scope-A.txt",
+      "events": 1,
+      "expected": [
+        "scope-A"
+      ],
+      "observed": [
+        "scope-A"
+      ],
+      "pass": true
+    },
+    {
+      "check": "scope-B.txt",
+      "events": 1,
+      "expected": [
+        "scope-B"
+      ],
+      "observed": [
+        "scope-B"
+      ],
+      "pass": true
+    },
+    {
+      "check": "scope-background.txt",
+      "events": 1,
+      "expected": [
+        "scope-parent"
+      ],
+      "observed": [
+        "scope-parent"
+      ],
+      "pass": true
+    },
+    {
+      "check": "scope-overlap.txt",
+      "events": 1,
+      "expected": [
+        "scope-overlap"
+      ],
+      "observed": [
+        "scope-overlap"
+      ],
+      "pass": true
+    },
+    {
+      "check": "not captured: outside-tool.txt",
+      "events": 0,
+      "pass": true
+    },
+    {
+      "check": "not captured: unbound-scope-A.txt",
+      "events": 0,
+      "pass": true
+    },
+    {
+      "check": "not captured: unbound-scope-B.txt",
+      "events": 0,
+      "pass": true
+    },
+    {
+      "check": "counts policy produces histogram records",
+      "rows": 14,
+      "pass": true
+    },
+    {
+      "check": "counts call emits no raw events",
+      "pass": true
+    },
+    {
+      "check": "all raw records have declared identity",
+      "pass": true
+    },
+    {
+      "check": "parallel Pi write calls use separate execution subjects",
+      "pass": true
+    },
+    {
+      "check": "no kernel crash or context inheritance error",
+      "pass": true
+    },
+    {
+      "check": "module unloaded",
+      "pass": true
+    },
+    {
+      "check": "NoDrop drop_unsolved is zero",
+      "pass": true
+    },
+    {
+      "check": "captured event accounting matches raw plus histograms",
+      "pass": true
+    }
+  ],
+  "statistics": {
+    "n_evts": 2847,
+    "drop_evts": 0,
+    "drop_unsolved": 0,
+    "drop_overflow": 0,
+    "monitor_entries": 30
+  },
+  "raw_events": 2757,
+  "histogram_rows": 14,
+  "histogram_events": 90,
+  "raw_bytes": 177502,
+  "counts_bytes": 2319
+}

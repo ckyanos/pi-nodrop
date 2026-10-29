@@ -1,0 +1,12 @@
+node_modules/
+build/
+results/*
+!results/README.md
+__pycache__/
+vendor/nodrop/lua/
+vendor/nodrop/zlib/
+vendor/nodrop/musl/
+vendor/nodrop/musl-src/
+vendor/nodrop/monitor/musl.specs
+vendor/nodrop/kmodule/config.h
+vendor/nodrop/monitor/src/config.h

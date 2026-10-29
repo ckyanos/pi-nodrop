@@ -1,0 +1,72 @@
+#ifndef NOD_IOCTL_H_
+#define NOD_IOCTL_H_
+
+
+#define NOD_IOCTL_NAME "nodrop"
+#define NOD_IOCTL_PATH "/proc/"NOD_IOCTL_NAME
+
+#ifdef __KERNEL__
+#include <linux/ioctl.h>
+#else
+#include <sys/ioctl.h>
+#endif //__KERNEL__
+
+#define NOD_IOCTL_MAGIC 'n'
+#define NOD_IOCTL_CLEAR_BUFFER                  _IO(NOD_IOCTL_MAGIC, 0)
+#define NOD_IOCTL_FETCH_BUFFER                  _IO(NOD_IOCTL_MAGIC, 1)
+#define NOD_IOCTL_READ_BUFFER_COUNT_INFO        _IO(NOD_IOCTL_MAGIC, 2)
+#define NOD_IOCTL_READ_STATISTICS               _IO(NOD_IOCTL_MAGIC, 3)
+#define NOD_IOCTL_CLEAR_STATISTICS              _IO(NOD_IOCTL_MAGIC, 4)
+#define NOD_IOCTL_STOP_RECORDING                _IO(NOD_IOCTL_MAGIC, 5)
+#define NOD_IOCTL_START_RECORDING               _IO(NOD_IOCTL_MAGIC, 6)
+#define NOD_IOCTL_RESTORE_SECURITY              _IO(NOD_IOCTL_MAGIC, 7)
+#define NOD_IOCTL_RESTORE_CONTEXT               _IO(NOD_IOCTL_MAGIC, 8)
+#define NOD_IOCTL_GET_BUFFER_SIZE               _IO(NOD_IOCTL_MAGIC, 11)
+#define NOD_IOCTL_SET_BUFFER_SIZE               _IO(NOD_IOCTL_MAGIC, 12)
+#define NOD_IOCTL_GET_LUA_STATE 				_IOR(NOD_IOCTL_MAGIC, 13, struct nod_lua_state)
+#define NOD_IOCTL_SET_LUA_STATE 				_IOW(NOD_IOCTL_MAGIC, 14, struct nod_lua_state)
+#define NOD_IOCTL_SET_RECORD_FLAG 				_IO(NOD_IOCTL_MAGIC, 15)
+#define NOD_IOCTL_GET_RECORD_FLAG 				_IO(NOD_IOCTL_MAGIC, 16)
+
+/* pi-nodrop prototype ABI: process-scoped execution identity, no tool text. */
+struct nod_audit_context {
+    uint64_t call_ref;
+    uint32_t policy_id;
+    uint32_t reserved;
+};
+#define NOD_AUDIT_RAW 1
+#define NOD_AUDIT_COUNTS 2
+#define NOD_IOCTL_SET_AUDIT_CONTEXT _IOW(NOD_IOCTL_MAGIC, 32, struct nod_audit_context)
+#define NOD_IOCTL_GET_AUDIT_CONTEXT _IOR(NOD_IOCTL_MAGIC, 33, struct nod_audit_context)
+#define NOD_IOCTL_FLUSH_AUDIT _IO(NOD_IOCTL_MAGIC, 34)
+
+#define NOD_RECORD_MODE_STOP 0
+#define NOD_RECORD_MODE_START 1
+#define NOD_RECORD_MODE_COMPRESS 2
+
+struct buffer_count_info {
+	uint64_t event_count;
+	uint64_t unflushed_count;
+	uint64_t unflushed_len;
+};
+
+struct fetch_buffer_struct {
+	uint64_t len;
+	char *buf;
+};
+
+struct nod_event_statistic {
+  uint64_t n_evts;
+  uint64_t n_drop_evts;
+  uint64_t n_drop_evts_unsolved;
+  uint64_t n_drop_evts_overflow;
+  uint64_t n_monitor_entries;
+};
+
+struct nod_lua_state
+{
+	char lua_path[256];
+	uint64_t lua_mtime;
+};
+
+#endif //NOD_IOCTL_H_

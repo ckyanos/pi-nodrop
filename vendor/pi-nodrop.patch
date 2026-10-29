@@ -1,0 +1,492 @@
+--- a/include/events.h
++++ b/include/events.h
+@@ -902,7 +902,7 @@
+ };
+ #endif //__KERNEL__
+ 
+-#define NOD_EVENT_HDR_MAGIC 0xCAFEBABE
++#define NOD_EVENT_HDR_MAGIC 0x50494E44 /* PIND: extended prototype ABI */
+ struct nod_event_hdr {
+     nanoseconds ts;
+     uint32_t tid;
+@@ -911,6 +911,9 @@
+     uint32_t len;
+     uint32_t nargs;
+     uint32_t magic;
++    uint64_t call_ref;
++    uint32_t policy_id;
++    uint32_t tgid;
+ }_packed;
+ 
+ struct nod_name_value {
+--- a/include/ioctl.h
++++ b/include/ioctl.h
+@@ -27,6 +27,18 @@
+ #define NOD_IOCTL_SET_LUA_STATE 				_IOW(NOD_IOCTL_MAGIC, 14, struct nod_lua_state)
+ #define NOD_IOCTL_SET_RECORD_FLAG 				_IO(NOD_IOCTL_MAGIC, 15)
+ #define NOD_IOCTL_GET_RECORD_FLAG 				_IO(NOD_IOCTL_MAGIC, 16)
++
++/* pi-nodrop prototype ABI: process-scoped execution identity, no tool text. */
++struct nod_audit_context {
++    uint64_t call_ref;
++    uint32_t policy_id;
++    uint32_t reserved;
++};
++#define NOD_AUDIT_RAW 1
++#define NOD_AUDIT_COUNTS 2
++#define NOD_IOCTL_SET_AUDIT_CONTEXT _IOW(NOD_IOCTL_MAGIC, 32, struct nod_audit_context)
++#define NOD_IOCTL_GET_AUDIT_CONTEXT _IOR(NOD_IOCTL_MAGIC, 33, struct nod_audit_context)
++#define NOD_IOCTL_FLUSH_AUDIT _IO(NOD_IOCTL_MAGIC, 34)
+ 
+ #define NOD_RECORD_MODE_STOP 0
+ #define NOD_RECORD_MODE_START 1
+--- a/kmodule/CMakeLists.txt
++++ b/kmodule/CMakeLists.txt
+@@ -44,6 +44,7 @@
+         loader.c
+         trace.c
+         proc.c
++        audit_context.c
+         procinfo.c
+         procinfo.h
+         fillers.c
+--- a/kmodule/Makefile.in
++++ b/kmodule/Makefile.in
+@@ -4,6 +4,7 @@
+ 	loader.o \
+ 	trace.o \
+ 	proc.o \
++	audit_context.o \
+ 	procinfo.o \
+ 	fillers.o \
+ 	events.o \
+--- a/kmodule/events.c
++++ b/kmodule/events.c
+@@ -50,6 +50,15 @@
+     struct nod_event_hdr *hdr;
+     struct nod_buffer *buffer;
+     struct nod_event_statistic *stat;
++    struct nod_audit_context audit_context;
++
++    /* Admission is selected before allocating an event record. Existing
++     * buffers still drain on force (exit), even after a tool scope clears. */
++    if (!nod_audit_get(current, &audit_context)) {
++        if (event_datap->force && p->buffer.info->nevents)
++            return nod_load_monitor(p);
++        return NOD_SUCCESS;
++    }
+ 
+     buffer = &p->buffer;
+     info = buffer->info;
+@@ -134,6 +143,9 @@
+     hdr->cpuid = smp_processor_id();
+     hdr->nargs = args.nargs;
+     hdr->magic = NOD_EVENT_HDR_MAGIC & 0xFFFFFFFF;
++    hdr->call_ref = audit_context.call_ref;
++    hdr->policy_id = audit_context.policy_id;
++    hdr->tgid = current->tgid;
+ 
+     cbret = nod_filler_callback(&args);
+ 
+--- a/kmodule/nod_main.c
++++ b/kmodule/nod_main.c
+@@ -48,10 +48,11 @@
+ {
+     proc_destroy();
+     tracepoint_destory();
++    nod_audit_destroy();
+     procinfo_destroy();
+     loader_destory();
+     pr_info("NoDrop: Uninstalled\n");
+ }
+ 
+ module_init(nodrop_init);
+-module_exit(nodrop_exit);
+\ No newline at end of file
++module_exit(nodrop_exit);
+--- a/kmodule/nodrop.h
++++ b/kmodule/nodrop.h
+@@ -8,6 +8,12 @@
+ #include "events.h"
+ #include "procinfo.h"
+ #include "ioctl.h"
++
++int nod_audit_set(struct task_struct *task, const struct nod_audit_context *context);
++bool nod_audit_get(struct task_struct *task, struct nod_audit_context *context);
++void nod_audit_fork(struct task_struct *parent, struct task_struct *child);
++void nod_audit_exit(struct task_struct *task);
++void nod_audit_destroy(void);
+ 
+ #define vpr_log(xxx, fmt, ...) pr_##xxx("(%d)%s[%d][%s:%d]: " fmt, smp_processor_id(), current->comm, current->pid, __func__, __LINE__, ##__VA_ARGS__)
+ #define vpr_err(fmt, ...) vpr_log(err, fmt, ##__VA_ARGS__)
+--- a/kmodule/proc.c
++++ b/kmodule/proc.c
+@@ -107,6 +107,23 @@
+     struct nod_proc_info *p = filp->private_data;
+ 
+     switch(cmd) {
++    case NOD_IOCTL_SET_AUDIT_CONTEXT:
++    {
++        struct nod_audit_context context;
++        if (copy_from_user(&context, (void __user *)arg, sizeof(context)))
++            return -EFAULT;
++        return nod_audit_set(current, &context);
++    }
++    case NOD_IOCTL_GET_AUDIT_CONTEXT:
++    {
++        struct nod_audit_context context;
++        nod_audit_get(current, &context);
++        return copy_to_user((void __user *)arg, &context, sizeof(context)) ? -EFAULT : 0;
++    }
++    case NOD_IOCTL_FLUSH_AUDIT:
++        nod_event_from(&p);
++        if (p) p->audit_flush = 1;
++        return 0;
+     case NOD_IOCTL_CLEAR_BUFFER:
+         nod_proc_traverse(__proc_buf_reset);
+ 
+--- a/kmodule/procinfo.h
++++ b/kmodule/procinfo.h
+@@ -39,6 +39,7 @@
+ };
+ 
+ struct nod_proc_info {
++    int audit_flush;
+ 	struct hlist_node rcu;
+ #if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 0, 0)
+ 	struct rcu_head rcu_head;
+--- a/kmodule/trace.c
++++ b/kmodule/trace.c
+@@ -107,6 +107,7 @@
+ static struct tracepoint *tp_sys_exit;
+ #endif
+ static struct tracepoint *tp_sched_process_exit;
++static struct tracepoint *tp_sched_process_fork;
+ 
+ bool nod_recording;
+ 
+@@ -143,6 +144,10 @@
+     long table_index;
+     enum nod_event_type type;
+     struct nod_event_data event_data;
++    if (p->audit_flush) {
++        force = 1;
++        p->audit_flush = 0;
++    }
+     // nanoseconds start, end;
+     // struct nod_count *cnt;
+     // start = nod_nsecs();
+@@ -182,6 +187,7 @@
+     int evt_from, id, retval;
+     struct nod_proc_info *p;
+     // nanoseconds start, end;
++    struct nod_audit_context audit_context;
+ 
+ #if LINUX_VERSION_CODE > KERNEL_VERSION(2, 6, 20)
+     if (unlikely(current->flags & PF_KTHREAD))
+@@ -211,6 +217,10 @@
+         p->event_recorded = 0;
+         return;
+     }
++
++    if ((evt_from == NOD_OUT || evt_from == NOD_CLONE || evt_from == NOD_SHARE) &&
++        !nod_audit_get(current, &audit_context) && !(p && p->audit_flush))
++        return;
+ 
+     switch(evt_from) {
+     case NOD_RESTORE_CONTEXT:
+@@ -309,8 +319,14 @@
+     }
+ }
+ 
++TRACEPOINT_PROBE(syscall_procfork_probe, struct task_struct *parent, struct task_struct *child)
++{
++    nod_audit_fork(parent, child);
++}
++
+ TRACEPOINT_PROBE(syscall_procexit_probe, struct task_struct *tsk)
+ {
++    nod_audit_exit(tsk);
+ 
+ #if LINUX_VERSION_CODE > KERNEL_VERSION(2, 6, 20)
+ #if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 0, 0)
+@@ -643,6 +659,8 @@
+ static bool notrace
+ nod_skip_current_task(void)
+ {
++    struct nod_audit_context audit_context;
++    struct nod_proc_info *p;
+ #if LINUX_VERSION_CODE > KERNEL_VERSION(2, 6, 20)
+     if (unlikely(current->flags & PF_KTHREAD))
+ #else
+@@ -659,6 +677,12 @@
+     }
+ #endif
+ 
++    if (!nod_audit_get(current, &audit_context)) {
++        nod_event_from(&p);
++        if (!p || (p->status == NOD_OUT && !p->buffer.info->nevents &&
++                   !p->buffer.overflow.filled))
++            return true;
++    }
+     return false;
+ }
+ 
+@@ -908,6 +932,8 @@
+         tp_sys_exit = tp;
+     else if (!strcmp(tp->name, "sched_process_exit"))
+         tp_sched_process_exit = tp;
++    else if (!strcmp(tp->name, "sched_process_fork"))
++        tp_sched_process_fork = tp;
+ }
+ 
+ static int get_tracepoint_handles(void)
+@@ -963,8 +989,13 @@
+     if (ret)
+         goto out;
+ 
++    if (!tp_sched_process_fork) return -ENOENT;
++    ret = compat_register_trace(syscall_procfork_probe, "sched_process_fork", tp_sched_process_fork);
++    if (ret) goto out;
++
+     ret = trace_syscall();
+     if (ret) {
++        compat_unregister_trace(syscall_procfork_probe, "sched_process_fork", tp_sched_process_fork);
+         goto out;
+     }
+ 
+@@ -976,4 +1007,6 @@
+ 
+ void tracepoint_destory(void) {
+     untrace_syscall();
+-}
++    compat_unregister_trace(syscall_procfork_probe, "sched_process_fork", tp_sched_process_fork);
++    tracepoint_synchronize_unregister();
++}
+--- a/monitor/CMakeLists.txt
++++ b/monitor/CMakeLists.txt
+@@ -60,6 +60,8 @@
+ 
+ set(MONITOR_SOURCES
+         src/main.c
++        src/audit_writer.c
++        src/audit_writer.h
+         src/startup.c
+         src/lua_runtime.c
+         src/lua_runtime.h
+--- a/monitor/src/main.c
++++ b/monitor/src/main.c
+@@ -10,6 +10,7 @@
+ #include "common.h"
+ #include "lua_runtime.h"
+ #include "record_writer.h"
++#include "audit_writer.h"
+ 
+ 
+ static struct timeval tv;
+@@ -165,13 +166,15 @@
+         buffer_info->n_solved_evts++;
+         evt.raw = hdr;
+         lua_on_event(&evt);
+-        write_record_writer(&rw, ptr);
++        if (nod_audit_output(hdr))
++            write_record_writer(&rw, ptr);
+         ptr += hdr->len;
+     }
+ 
+     if (is_last)
+         lua_on_capture_end();
+ 
++    nod_audit_output_flush();
+     close_record_writer(&rw);
+     buffer_info->nevents = buffer_info->tail = 0;
+ 
+--- /dev/null
++++ b/kmodule/audit_context.c
+@@ -0,0 +1,107 @@
++/* pi-nodrop prototype: explicit executor context, snapshotted at fork.
++ * Original NoDrop licensing applies to this derivative kernel component. */
++#include <linux/hashtable.h>
++#include <linux/slab.h>
++#include <linux/pid.h>
++#include <linux/sched/signal.h>
++#include <linux/rwlock.h>
++#include "nodrop.h"
++
++struct audit_entry {
++    struct hlist_node node;
++    struct pid *group; /* reference prevents numeric PID reuse aliasing */
++    struct nod_audit_context context;
++};
++static DEFINE_HASHTABLE(audit_contexts, 10);
++static DEFINE_RWLOCK(audit_lock);
++static unsigned int entry_count;
++#define AUDIT_MAX_GROUPS 4096
++
++bool nod_audit_get(struct task_struct *task, struct nod_audit_context *context)
++{
++    struct audit_entry *entry;
++    struct pid *group = task_tgid(task);
++    unsigned long flags;
++    bool found = false;
++    memset(context, 0, sizeof(*context));
++    read_lock_irqsave(&audit_lock, flags);
++    hash_for_each_possible(audit_contexts, entry, node, (unsigned long)group) {
++        if (entry->group == group) {
++            *context = entry->context;
++            found = context->call_ref != 0;
++            break;
++        }
++    }
++    read_unlock_irqrestore(&audit_lock, flags);
++    return found;
++}
++
++int nod_audit_set(struct task_struct *task, const struct nod_audit_context *context)
++{
++    struct pid *group = task_tgid(task);
++    struct audit_entry *entry, *fresh = NULL, *removed = NULL;
++    unsigned long flags;
++    int ret = 0;
++    if (context->reserved || (context->call_ref && context->policy_id != NOD_AUDIT_RAW &&
++                             context->policy_id != NOD_AUDIT_COUNTS))
++        return -EINVAL;
++    if (context->call_ref) {
++        fresh = kzalloc(sizeof(*fresh), GFP_ATOMIC);
++        if (!fresh) return -ENOMEM;
++        fresh->group = get_pid(group);
++        fresh->context = *context;
++    }
++    write_lock_irqsave(&audit_lock, flags);
++    hash_for_each_possible(audit_contexts, entry, node, (unsigned long)group) {
++        if (entry->group != group) continue;
++        if (context->call_ref) entry->context = *context;
++        else {
++            hash_del(&entry->node);
++            entry_count--;
++            removed = entry;
++        }
++        goto done;
++    }
++    if (fresh) {
++        if (entry_count >= AUDIT_MAX_GROUPS) ret = -ENOSPC;
++        else {
++            hash_add(audit_contexts, &fresh->node, (unsigned long)group);
++            entry_count++;
++            fresh = NULL;
++        }
++    }
++done:
++    write_unlock_irqrestore(&audit_lock, flags);
++    if (fresh) { put_pid(fresh->group); kfree(fresh); }
++    if (removed) { put_pid(removed->group); kfree(removed); }
++    return ret;
++}
++
++void nod_audit_fork(struct task_struct *parent, struct task_struct *child)
++{
++    struct nod_audit_context context;
++    if (task_tgid(parent) == task_tgid(child)) return; /* same process */
++    if (nod_audit_get(parent, &context) && nod_audit_set(child, &context))
++        pr_err("pi-nodrop: context inheritance failed child=%d\n", child->pid);
++}
++
++void nod_audit_exit(struct task_struct *task)
++{
++    struct nod_audit_context empty = {};
++    if (atomic_read(&task->signal->live) == 0)
++        nod_audit_set(task, &empty);
++}
++
++void nod_audit_destroy(void)
++{
++    struct audit_entry *entry;
++    struct hlist_node *tmp;
++    unsigned int bucket;
++    /* Called only after tracepoint unregistration and synchronization. */
++    hash_for_each_safe(audit_contexts, bucket, tmp, entry, node) {
++        hash_del(&entry->node);
++        put_pid(entry->group);
++        kfree(entry);
++    }
++    entry_count = 0;
++}
+--- /dev/null
++++ b/monitor/src/audit_writer.c
+@@ -0,0 +1,67 @@
++/* Producer-local audit output policy. Counts deliberately retain only the
++ * event-type histogram; raw mode retains the original syscall arguments. */
++#include <stdio.h>
++#include <inttypes.h>
++#include <string.h>
++#include <unistd.h>
++#include <sys/syscall.h>
++#include "audit_writer.h"
++#include "config.h"
++#include "ioctl.h"
++
++struct count_slot {
++    uint64_t call_ref, count, first_ns, last_ns;
++    uint32_t type, tid, tgid;
++};
++static struct count_slot slots[256];
++static unsigned int used;
++
++void nod_audit_output_flush(void)
++{
++    char path[180];
++    FILE *out;
++    unsigned int i;
++    if (!used) return;
++    snprintf(path, sizeof(path), CONFIG_STORE_PATH "/%ld.counts.jsonl", syscall(SYS_gettid));
++    out = fopen(path, "a");
++    if (!out) { perror("pi-nodrop count output"); return; }
++    for (i = 0; i < used; i++) {
++        struct count_slot *s = &slots[i];
++        fprintf(out, "{\"call_ref\":\"%016" PRIx64 "\",\"policy_id\":2,"
++                "\"type\":%u,\"name\":\"%s\",\"count\":%" PRIu64 ","
++                "\"tid\":%u,\"tgid\":%u,\"first_ns\":%" PRIu64 ",\"last_ns\":%" PRIu64 "}\n",
++                s->call_ref, s->type, g_event_info[s->type].name, s->count,
++                s->tid, s->tgid, s->first_ns, s->last_ns);
++    }
++    if (fclose(out)) { perror("pi-nodrop count close"); return; }
++    used = 0;
++}
++
++int nod_audit_output(const struct nod_event_hdr *hdr)
++{
++    unsigned int i;
++    struct count_slot *s;
++    if (hdr->policy_id != NOD_AUDIT_COUNTS) return 1;
++    if (hdr->type >= NODE_EVENT_MAX) return 1;
++    for (i = 0; i < used; i++)
++        if (slots[i].call_ref == hdr->call_ref && slots[i].type == hdr->type) break;
++    if (i == used) {
++        if (used == 256) {
++            nod_audit_output_flush();
++            if (used == 256) return 1; /* output failed: preserve raw event */
++            i = 0;
++        }
++        s = &slots[i];
++        memset(s, 0, sizeof(*s));
++        s->call_ref = hdr->call_ref;
++        s->type = hdr->type;
++        s->tid = hdr->tid;
++        s->tgid = hdr->tgid;
++        s->first_ns = hdr->ts;
++        used++;
++    }
++    s = &slots[i];
++    s->count++;
++    s->last_ns = hdr->ts;
++    return 0;
++}
+--- /dev/null
++++ b/monitor/src/audit_writer.h
+@@ -0,0 +1,6 @@
++#ifndef PI_NODROP_AUDIT_WRITER_H
++#define PI_NODROP_AUDIT_WRITER_H
++#include "events.h"
++int nod_audit_output(const struct nod_event_hdr *hdr);
++void nod_audit_output_flush(void);
++#endif

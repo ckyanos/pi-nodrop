@@ -1,0 +1,16 @@
+{
+  "name": "pi-nodrop",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Explicit Pi tool-call identity propagated into NoDrop audit records",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "test:integration": "node tests/integration.mjs"
+  },
+  "dependencies": {
+    "@earendil-works/pi-coding-agent": "1.4.0"
+  },
+  "pi": { "extensions": ["./src/extension.mjs"] },
+  "engines": { "node": ">=22.19.0" }
+}
