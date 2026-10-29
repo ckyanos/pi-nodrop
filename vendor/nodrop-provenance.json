@@ -1,6 +1,6 @@
 {
   "wsl_distribution": "Ubuntu-22.04",
-  "source": "/root/nodrop-latest-20261009/NoDrop",
+  "source_kind": "working-tree",
   "commit": "7ce202412c16b341fc39f88a39dd375b3ed7b511",
   "status": " M include/ioctl.h\n M kmodule/elf.c\n M kmodule/events.c\n M kmodule/loader.c\n M kmodule/nodrop.h\n M kmodule/privil.c\n M kmodule/proc.c\n M kmodule/procinfo.c\n M kmodule/procinfo.h\n M kmodule/trace.c\n M monitor/src/main.c\n M monitor/src/startup.c\n M scripts/ctrl/nodrop-ctl.c\n",
   "files": [

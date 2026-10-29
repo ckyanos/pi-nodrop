@@ -1,4 +1,5 @@
 """Check original source stayed unchanged and export the prototype delta."""
+import argparse
 import difflib
 import hashlib
 import json
@@ -6,7 +7,9 @@ import pathlib
 
 repo = pathlib.Path(__file__).resolve().parents[1]
 provenance = json.loads((repo / 'vendor/nodrop-provenance.json').read_text())
-source = pathlib.Path(provenance['source'])
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('source', type=pathlib.Path, help='NoDrop baseline working tree matching the provenance hashes')
+source = parser.parse_args().source.expanduser().resolve()
 target = repo / 'vendor/nodrop'
 baseline = {entry['path']: entry for entry in provenance['files']}
 diff = []

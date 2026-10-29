@@ -2,12 +2,12 @@
 import hashlib
 import json
 import os
-import pathlib
 import subprocess
 import tarfile
+from lab_config import HOST_STAGE, ROOT, RUNTIME_ARCHIVE, guest_dir, node_binary, node_include
 
-root = pathlib.Path('/root/pi-nodrop-host')
-guest = '/home/kmoddebug/pi-nodrop'
+root = HOST_STAGE
+guest = guest_dir()
 prefix = guest + '/build/musl'
 archive = root / 'deps/musl-1.2.3.tar.gz'
 with tarfile.open(archive) as tar:
@@ -19,13 +19,13 @@ subprocess.run(['./configure', '--prefix=' + prefix, '--disable-shared', '--enab
 subprocess.run(['make', '-j4'], cwd=source, check=True, stdout=subprocess.DEVNULL)
 subprocess.run(['make', 'install', 'DESTDIR=' + str(root / 'sysroot')], cwd=source, check=True,
                stdout=subprocess.DEVNULL)
-with tarfile.open('/tmp/pi-nodrop-runtime.tar.gz', 'w:gz') as tar:
-    tar.add(pathlib.Path('/usr/local/bin/node').resolve(), arcname='node')
-    tar.add('/usr/local/include/node', arcname='build/node-include')
+with tarfile.open(RUNTIME_ARCHIVE, 'w:gz') as tar:
+    tar.add(node_binary(), arcname='node')
+    tar.add(node_include(), arcname='build/node-include')
     tar.add(root / 'node_modules', arcname='node_modules')
     tar.add(root / 'deps', arcname='deps')
     tar.add(str(root / 'sysroot') + prefix, arcname='build/musl')
 manifest = {p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in (root / 'deps').iterdir()}
-out = pathlib.Path(__file__).resolve().parents[1] / 'vendor/dependencies.json'
+out = ROOT / 'vendor/dependencies.json'
 out.write_text(json.dumps(manifest, indent=2) + '\n')
-print('Prepared runtime and musl: /tmp/pi-nodrop-runtime.tar.gz', flush=True)
+print('Prepared runtime and musl:', RUNTIME_ARCHIVE, flush=True)

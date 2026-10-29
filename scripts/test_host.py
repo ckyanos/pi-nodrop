@@ -1,10 +1,10 @@
-import pathlib
 import shutil
 import subprocess
 import os
+from lab_config import HOST_STAGE, ROOT
 
-repo = pathlib.Path(__file__).resolve().parents[1]
-stage = pathlib.Path('/root/pi-nodrop-host')
+repo = ROOT
+stage = HOST_STAGE
 for name in ('src', 'tests'):
     shutil.copytree(repo / name, stage / name, dirs_exist_ok=True)
 subprocess.run(['node', '--test', 'tests/protocol.test.mjs'], cwd=stage, check=True)

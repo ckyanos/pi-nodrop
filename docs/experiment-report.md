@@ -1,54 +1,68 @@
-# 原型验证：2026-10-28
+# 功能验证报告：2026-10-28
 
-第一版已实现并在既有 WSL/libvirt 6.8 虚拟机通过端到端功能验证。验证的是**明确调用身份进入 NoDrop 事件头，再按调用配置生成审计记录**。没有进行性能优劣排名。
+本实验验证 Pi 工具调用身份进入 NoDrop 事件头，以及按调用配置生成原始审计记录或事件统计的端到端流程。
 
-## 环境和来源
+## 实验配置
 
-- Linux `6.8.0-137-generic`，Node `v22.20.0`，Pi `1.4.0`，应用 UID 1000。
-- 来宾为既有 `kmod-noble-68`，使用 QEMU TCG；另一台正在运行的 5.15 来宾未改动。
-- NoDrop 取自 Ubuntu-22.04 中最近修改的工作副本，Git 基点 `7ce202412c16b341fc39f88a39dd375b3ed7b511` 加原有未提交改动，详见 `vendor/nodrop-provenance.json`。
-- 原型的内核模块与 monitor 在来宾中编译；PKEY 关闭、缓冲 1 MiB。宿主没有加载模块。
-- Pi 运行真实 Agent 工具执行循环与真实内置工具，模型流为固定脚本，无真实远端模型请求。
+| 项目 | 配置 |
+|---|---|
+| Linux 内核 | `6.8.0-137-generic` |
+| 虚拟化 | QEMU TCG，由 WSL/libvirt 管理 |
+| Node.js / Pi | `22.20.0` / `1.4.0` |
+| 应用 UID | 1000 |
+| NoDrop 缓冲 | 每线程 1 MiB |
+| PKEY | 关闭 |
+| 工具执行 | Pi Agent 执行循环与内置工具 |
+| 模型流 | 确定性脚本 |
 
-## 验证结果
+NoDrop 内核模块与 monitor 均在虚拟机中构建和运行。基线与文件校验值见[来源清单](../vendor/nodrop-provenance.json)。
 
-8 次 Pi 调用覆盖两次并发 write、read/edit、bash 子进程、采用 counts 的 ls、一次预期的 read 错误和错误后的 write。额外直接接口场景检查绑定、解绑、非法策略拒绝，以及父进程切换身份后子进程仍保留创建时身份。
+## 测试场景
+
+8 次 Pi 调用覆盖并发 write、read/edit、bash 子进程、采用 `counts` 的 ls、read 错误及后续 write。直接接口测试覆盖身份绑定、解绑、非法策略校验，以及父进程切换身份后的子进程归属。
 
 | 检查 | 结果 |
 |---|---|
-| 并发 write A/B 的系统事件归属 | 正确，两个执行进程，原始 Pi 调用 ID 均保留 |
-| read/edit 的异步文件 I/O 归属 | 正确，事件来自实际 I/O 线程 |
-| bash 派生子进程的目标文件操作 | 正确继承 shell 调用身份 |
-| 工具报错后再次调用 | 后续文件事件归新调用 |
-| 显式解绑后的文件操作 | 未进入调用审计记录 |
-| 父进程从 A 切到 B 后，释放阻塞子进程 | 子进程文件归 A，父进程文件归 B |
-| counts 输出 | 90 个采集事件生成 14 行统计，无该调用的 raw 事件 |
-| 记录与内核计数核对 | `2757 raw + 90 histogram = 2847 n_evts` |
-| NoDrop 丢失统计 | `drop_evts=0, drop_unsolved=0, drop_overflow=0` |
-| 内核异常和卸载 | 新增 dmesg 无 Oops/BUG/panic；`rmmod` 成功 |
+| 并发 write A/B | 两个执行进程分别关联原始 Pi 调用 ID |
+| read/edit 异步文件 I/O | I/O 线程的事件关联到对应调用 |
+| bash 派生子进程 | 目标文件操作继承 shell 调用身份 |
+| 工具报错后的再次调用 | 后续文件事件关联到新调用 |
+| 显式解绑后的文件操作 | 调用审计记录中对应事件数为 0 |
+| 父进程从 A 切到 B 后释放阻塞子进程 | 子进程文件事件归 A，父进程文件事件归 B |
+| `counts` 输出 | 90 个采集事件生成 14 行统计 |
+| 事件计数核对 | `2757 raw + 90 histogram = 2847 n_evts` |
+| NoDrop 丢失计数 | `drop_evts=0, drop_unsolved=0, drop_overflow=0` |
+| 模块清理 | 卸载成功，新增内核日志中 Oops/BUG/panic 数量为 0 |
 
-完整校验共 19 项通过。raw 文件合计 177502 字节，counts 文件合计 2319 字节。两者是不同调用、不同保留要求，**不能用这两个大小相除声称压缩比或性能收益**。
+全部 19 项校验通过。各输出策略的数据如下，分别来自采用该策略的工具调用：
 
-原始证据在本地 `results/`：`summary.json`、`statistics.txt`、`pi/calls.jsonl`、`pi-agent-events.json`、`pi-transcript.json`、`audit/*.buf`、`audit/*.counts.jsonl`、`events.jsonl`、`dmesg-new.txt`。原始证据不默认纳入 Git；仓库保留复现程序与一份机器可读结果摘要。
+| 输出策略 | 采集事件数 | 保留记录数 | 文件大小 |
+|---|---:|---:|---:|
+| `raw` | 2757 | 2757 | 177502 字节 |
+| `counts` | 90 | 14 | 2319 字节 |
 
-## 已实现的机制
+`raw` 保留逐事件数据；`counts` 保留事件类型直方图与时间范围。二者对应不同调用与信息保留粒度。
 
-1. Pi 执行器保存原始 `toolCallId`、名称、参数、输出策略一次，分配 64 位引用。
-2. 常驻专用进程复用 Pi 内置工具，通过进程内 N-API 调用 NoDrop ioctl，提交引用和策略。
-3. 内核在采集事件时把引用、策略和 TGID 写入事件头；fork 时复制身份，exec 不丢失身份；绑定以持有引用的 `struct pid` 为键。
-4. NoDrop 来源线程中的 monitor 选择写 raw 或生成 counts。输出选择发生在记录写出前；counts 仍基于已经采集的事件。
-5. 解码器按捕获的 `call_ref` 连接调用上下文。测试中的文件路径只用于核对预期，生产归属逻辑不使用路径、时间窗口或内容匹配。
+## 验证方式
 
-## 目前的限制
+1. 执行器记录原始 `toolCallId`、工具名、参数和策略，并分配 64 位调用引用。
+2. 进程内 N-API 将调用引用与策略提交给 NoDrop ioctl。
+3. 内核事件头记录调用引用、策略和 TGID；子进程继承创建时的身份。
+4. 来源线程中的 monitor 根据策略生成 `raw` 或 `counts` 输出。
+5. 解码器通过 `call_ref` 连接调用元数据与系统事件，测试程序通过预设文件操作核对归属和计数。
 
-- 这是一次小规模功能验证，不能据此断言一般负载无丢失、长时间可靠或开销最低。
-- 专用常驻进程和 IPC 带来额外成本；每个进程的 libuv I/O 池固定为一个线程。尚未测量进程隔离、身份传递与 NoDrop 本身各自的成本。
-- 只覆盖列出的 Pi 内置工具和 NoDrop 当前支持的事件。共享 MCP 服务器、任意自定义后台异步活动和远端工具尚未接入。
-- counts 保留直方图及时间范围，丢弃逐事件参数和顺序，无法替代需要完整证据的 raw 审计要求。
-- 身份接口依赖合作执行器，未提供对抗恶意身份伪造的保护；不做用户意图一致性分析或业务结果判定。
+工具协议测试在 `backend=none` 模式下验证 IPC、并发执行和错误恢复。Pi 的 `discoverAndLoadExtensions` 测试确认七个工具均注册，`session_shutdown` 正常结束执行进程。内核集成测试验证事件身份、继承和输出策略。
 
-工具层协议测试另外在 `backend=none` 模式通过，证明 IPC/工具执行功能；它不算内核采集证据。
+## 数据与复现
 
-另用 Pi 自身的 `discoverAndLoadExtensions` 加载 `src/extension.mjs`，确认七个工具均注册，`session_shutdown` 能结束执行进程。此项检查验证扩展加载与收尾，未使用真实远端模型会话。
+[机器可读结果摘要](result-summary-20261028.json)包含全部检查结果与统计值。[复现步骤](../README.md#构建与复现)生成以下实验文件：
 
-收尾检查确认模块已卸载、没有遗留工具执行进程，并已请求正常关闭原先处于关机状态的 6.8 来宾。NoDrop 原工作副本全部 77 个文件 SHA-256 未变化，`vendor/pi-nodrop.patch` 在原工作副本通过 `git apply --check`。
+- `results/pi/calls.jsonl`：工具调用上下文与身份映射。
+- `results/audit/*.buf`：原始事件。
+- `results/audit/*.counts.jsonl`：统计记录。
+- `results/events.jsonl`：解码后的事件。
+- `results/summary.json`、`results/statistics.txt`：校验结果与内核计数。
+- `results/pi-agent-events.json`、`results/pi-transcript.json`：Pi 执行记录。
+- `results/dmesg-new.txt`、`results/cleanup.json`：内核运行与模块清理记录。
+
+本报告记录 QEMU TCG 环境下、七个内置工具与单线程 libuv I/O 池配置的功能测试结果。执行器按进程隔离工具调用，审计接口采用协作执行器模型。

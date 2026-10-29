@@ -1,12 +1,18 @@
-"""Snapshot the explicitly selected working tree, including uncommitted source."""
+"""Snapshot a NoDrop working tree with file hashes and its baseline patch."""
+import argparse
 import hashlib
 import json
 import pathlib
 import shutil
 import subprocess
 
-source = pathlib.Path('/root/nodrop-latest-20261009/NoDrop')
-dest = pathlib.Path('/mnt/d/桌面/pi-nodrop/vendor/nodrop')
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('source', type=pathlib.Path, help='NoDrop source working tree')
+parser.add_argument('--destination', type=pathlib.Path,
+                    default=pathlib.Path(__file__).resolve().parents[1] / 'vendor/nodrop')
+args = parser.parse_args()
+source = args.source.expanduser().resolve()
+dest = args.destination.expanduser().resolve()
 assert not dest.exists(), f'Refusing to overwrite {dest}'
 dest.mkdir(parents=True)
 paths = [pathlib.Path(s) for s in subprocess.check_output(
@@ -24,7 +30,7 @@ for relative in selected:
     manifest.append({'path': relative.as_posix(), 'sha256': hashlib.sha256(src.read_bytes()).hexdigest(),
                      'mtime_ns': src.stat().st_mtime_ns})
 provenance = {
-    'wsl_distribution': 'Ubuntu-22.04', 'source': str(source),
+    'source_kind': 'working-tree',
     'commit': subprocess.check_output(['git', '-C', str(source), 'rev-parse', 'HEAD'], text=True).strip(),
     'status': subprocess.check_output(['git', '-C', str(source), 'status', '--short'], text=True),
     'files': manifest,

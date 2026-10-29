@@ -1,11 +1,14 @@
-"""Read-only inventory of candidate NoDrop source trees in a WSL distribution."""
+"""Read-only inventory of NoDrop source trees under a selected directory."""
+import argparse
 import datetime
 import json
 import pathlib
 import subprocess
 
-roots = [p for p in pathlib.Path('/root').iterdir()
-         if p.is_dir() and ('nodrop' in p.name.lower() or p.name in ('ndu', 'nd515', 'nd515-legacy'))]
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('directory', nargs='?', type=pathlib.Path, default=pathlib.Path.cwd())
+directory = parser.parse_args().directory.expanduser().resolve()
+roots = [directory] + [p for p in directory.iterdir() if p.is_dir()]
 for root in roots:
     for source in (root, root / 'NoDrop'):
         if not (source / 'kmodule').is_dir():
