@@ -13,7 +13,9 @@
 
 static int device = -1;
 static int dev(void) {
-    if (device < 0) device = open(NOD_IOCTL_PATH, O_RDWR | O_CLOEXEC);
+    const char *path = getenv("PI_NODROP_IOCTL_PATH");
+    if (!path || !*path) path = NOD_IOCTL_PATH;
+    if (device < 0) device = open(path, O_RDWR | O_CLOEXEC);
     return device;
 }
 static napi_value fail(napi_env env, const char *operation) {

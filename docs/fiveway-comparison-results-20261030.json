@@ -1,0 +1,2676 @@
+{
+  "runs": [
+    {
+      "mode": "baseline",
+      "task": "openssl-selfsigned-cert",
+      "case": "baseline--openssl-selfsigned-cert",
+      "request_label": "baseline--openssl-selfsigned-cert",
+      "task_checksum": "59d39baeb1d2c13995195cd5c9acf2118b527c96025af86bcd219543599e9a00",
+      "task_passed": true,
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception": null,
+      "pi_session_completed": true,
+      "native_final_stop_reason": "stop",
+      "native_usage": {
+        "input": 4309,
+        "output": 1703,
+        "cacheRead": 8832,
+        "cacheWrite": 0,
+        "totalTokens": 14844,
+        "reasoning": 456
+      },
+      "business_tokens": 14844,
+      "observer_tokens": 0,
+      "reported_total_tokens": 14844,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 5,
+        "requests_with_usage": 5,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 5
+        },
+        "usage": {
+          "prompt_tokens": 13141,
+          "completion_tokens": 1703,
+          "total_tokens": 14844,
+          "reasoning_tokens": 456,
+          "cached_tokens": 8832
+        },
+        "finish_reasons": {
+          "tool_calls": 4,
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 14.870760202407837
+      },
+      "observer_api": {
+        "requests": 0,
+        "requests_with_usage": 0,
+        "requests_without_usage": 0,
+        "statuses": {},
+        "usage": {},
+        "finish_reasons": {},
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 0
+      },
+      "observer_roles": {},
+      "first_input_tokens": 1898,
+      "model_responses": 5,
+      "model_tool_calls": 4,
+      "business_tool_output_characters": 1710,
+      "model_tool_names": {
+        "bash": 4
+      },
+      "business_span_seconds": 28.56025195121765,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T09:19:00.203923Z",
+          "finished_at": "2026-10-30T09:25:02.908494Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T09:25:02.911743Z",
+          "finished_at": "2026-10-30T09:25:56.221189Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T09:26:02.317472Z",
+          "finished_at": "2026-10-30T09:27:15.518951Z"
+        }
+      },
+      "monitor_cache_hits": 0,
+      "monitor_event_records": {},
+      "monitor_diagnostic_bytes": 0,
+      "monitor_error_message_counts": {},
+      "monitor_errors": []
+    },
+    {
+      "mode": "agentsight",
+      "task": "openssl-selfsigned-cert",
+      "case": "agentsight--openssl-selfsigned-cert",
+      "request_label": "agentsight--openssl-selfsigned-cert",
+      "task_checksum": "59d39baeb1d2c13995195cd5c9acf2118b527c96025af86bcd219543599e9a00",
+      "task_passed": true,
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception": null,
+      "pi_session_completed": true,
+      "native_final_stop_reason": "stop",
+      "native_usage": {
+        "input": 8187,
+        "output": 4670,
+        "cacheRead": 48512,
+        "cacheWrite": 0,
+        "totalTokens": 61369,
+        "reasoning": 2548
+      },
+      "business_tokens": 61369,
+      "observer_tokens": 4946,
+      "reported_total_tokens": 66315,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 12,
+        "requests_with_usage": 12,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 12
+        },
+        "usage": {
+          "prompt_tokens": 56699,
+          "completion_tokens": 4670,
+          "total_tokens": 61369,
+          "reasoning_tokens": 2548,
+          "cached_tokens": 48512
+        },
+        "finish_reasons": {
+          "tool_calls": 11,
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 41.93558406829834
+      },
+      "observer_api": {
+        "requests": 1,
+        "requests_with_usage": 1,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 1
+        },
+        "usage": {
+          "prompt_tokens": 3337,
+          "completion_tokens": 1609,
+          "total_tokens": 4946,
+          "reasoning_tokens": 790,
+          "cached_tokens": 0
+        },
+        "finish_reasons": {
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 11.562993049621582
+      },
+      "observer_roles": {
+        "observer": {
+          "requests": 1,
+          "requests_with_usage": 1,
+          "requests_without_usage": 0,
+          "statuses": {
+            "200": 1
+          },
+          "usage": {
+            "prompt_tokens": 3337,
+            "completion_tokens": 1609,
+            "total_tokens": 4946,
+            "reasoning_tokens": 790,
+            "cached_tokens": 0
+          },
+          "finish_reasons": {
+            "stop": 1
+          },
+          "request_error_messages": {},
+          "reasoning_only_empty_choices_requests": 0,
+          "request_seconds": 11.562993049621582
+        }
+      },
+      "first_input_tokens": 1898,
+      "model_responses": 12,
+      "model_tool_calls": 11,
+      "business_tool_output_characters": 2834,
+      "model_tool_names": {
+        "bash": 9,
+        "write": 1,
+        "edit": 1
+      },
+      "business_span_seconds": 65.79696202278137,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T09:58:32.491176Z",
+          "finished_at": "2026-10-30T10:00:03.830500Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T10:00:03.835313Z",
+          "finished_at": "2026-10-30T10:01:45.476450Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T10:01:53.851558Z",
+          "finished_at": "2026-10-30T10:02:59.626671Z"
+        }
+      },
+      "monitor_cache_hits": 0,
+      "monitor_event_records": {},
+      "monitor_diagnostic_bytes": 0,
+      "monitor_error_message_counts": {},
+      "monitor_errors": [],
+      "capture": {
+        "system_events": 590,
+        "native_ssl_records": 5118,
+        "truncated_ssl_records": 0,
+        "http_records": 24,
+        "http_pairs": 12,
+        "pending_requests": 0,
+        "unparsed_tail_bytes": {
+          "WRITE/SEND": 0,
+          "READ/RECV": 1
+        },
+        "parse_errors": {},
+        "raw_ssl_bytes": 2050036,
+        "system_event_bytes": 135097,
+        "matches_business_request_count": true,
+        "process_comm_counts": {
+          "pi": 28,
+          "pi-audit-gw": 2,
+          "bash": 75,
+          "ls": 28,
+          "which": 5,
+          "openssl": 140,
+          "python3": 229,
+          "mkdir": 7,
+          "head": 4,
+          "chmod": 16,
+          "cat": 11,
+          "sed": 10,
+          "libuv-worker": 2,
+          "diff": 7,
+          "grep": 7,
+          "stat": 5,
+          "find": 10,
+          "sort": 4
+        },
+        "gateway_process_records": 2
+      }
+    },
+    {
+      "mode": "sentinel",
+      "task": "openssl-selfsigned-cert",
+      "case": "sentinel--openssl-selfsigned-cert",
+      "request_label": "sentinel--openssl-selfsigned-cert~monitored",
+      "task_checksum": "59d39baeb1d2c13995195cd5c9acf2118b527c96025af86bcd219543599e9a00",
+      "task_passed": true,
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception": {
+        "exception_type": "AgentTimeoutError",
+        "exception_message": "Agent execution timed out after 900.0 seconds",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"${PROJECT_ROOT}/scripts/harbor_external_audit.py\", line 110, in run\n    await task\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/agents/installed/base.py\", line 194, in wrapper\n    return await fn(self, instruction, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/agents/installed/pi.py\", line 505, in run\n    await self.exec_as_agent(\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/agents/installed/base.py\", line 1113, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/agents/installed/base.py\", line 1064, in _exec\n    result = await environment.exec(\n             ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/environments/docker/docker.py\", line 1363, in exec\n    return await self._compose_exec(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/environments/docker/docker.py\", line 1440, in _compose_exec\n    return await self._run_docker_compose_command(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/environments/docker/docker.py\", line 758, in _run_docker_compose_command\n    result = await self._collect_buffered_output(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/environments/docker/docker.py\", line 788, in _collect_buffered_output\n    stdout_bytes, stderr_bytes = await process.communicate(input=stdin_data)\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/subprocess.py\", line 201, in communicate\n    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/subprocess.py\", line 181, in _read_stream\n    output = await stream.read()\n             ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/streams.py\", line 706, in read\n    block = await self.read(self._limit)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/streams.py\", line 713, in read\n    await self._wait_for_data('read')\n  File \"/usr/lib/python3.12/asyncio/streams.py\", line 545, in _wait_for_data\n    await self._waiter\nasyncio.exceptions.CancelledError\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/trial/trial.py\", line 769, in _run_agent_phase\n    await asyncio.wait_for(\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 519, in wait_for\n    async with timeouts.timeout(timeout):\n  File \"/usr/lib/python3.12/asyncio/timeouts.py\", line 115, in __aexit__\n    raise TimeoutError from exc_val\nTimeoutError\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/trial/single_step.py\", line 76, in _run_agent\n    await self._run_agent_phase(\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/trial/trial.py\", line 778, in _run_agent_phase\n    raise AgentTimeoutError(\nharbor.trial.errors.AgentTimeoutError: Agent execution timed out after 900.0 seconds\n",
+        "occurred_at": "2026-10-30T12:05:02.680063Z"
+      },
+      "pi_session_completed": false,
+      "native_final_stop_reason": "toolUse",
+      "native_usage": {
+        "input": 3417,
+        "output": 1893,
+        "cacheRead": 16256,
+        "cacheWrite": 0,
+        "totalTokens": 21566,
+        "reasoning": 567
+      },
+      "business_tokens": 21566,
+      "observer_tokens": 312755,
+      "reported_total_tokens": 334321,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 6,
+        "requests_with_usage": 6,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 6
+        },
+        "usage": {
+          "prompt_tokens": 19673,
+          "completion_tokens": 1893,
+          "total_tokens": 21566,
+          "reasoning_tokens": 567,
+          "cached_tokens": 16256
+        },
+        "finish_reasons": {
+          "tool_calls": 6
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 15.6318519115448
+      },
+      "observer_api": {
+        "requests": 69,
+        "requests_with_usage": 69,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 43,
+          "502": 26
+        },
+        "usage": {
+          "prompt_tokens": 135221,
+          "completion_tokens": 177534,
+          "total_tokens": 312755,
+          "reasoning_tokens": 168869,
+          "cached_tokens": 31872
+        },
+        "finish_reasons": {
+          "stop": 46,
+          "None": 22,
+          "length": 1
+        },
+        "request_error_messages": {
+          "Upstream returned no choices: ": 22,
+          "EOF occurred in violation of protocol (_ssl.c:2406)": 4
+        },
+        "reasoning_only_empty_choices_requests": 22,
+        "request_seconds": 1132.6274964809418
+      },
+      "observer_roles": {
+        "sentinel-context": {
+          "requests": 5,
+          "requests_with_usage": 5,
+          "requests_without_usage": 0,
+          "statuses": {
+            "200": 5
+          },
+          "usage": {
+            "prompt_tokens": 8341,
+            "completion_tokens": 874,
+            "total_tokens": 9215,
+            "reasoning_tokens": 355,
+            "cached_tokens": 0
+          },
+          "finish_reasons": {
+            "stop": 5
+          },
+          "request_error_messages": {},
+          "reasoning_only_empty_choices_requests": 0,
+          "request_seconds": 9.718515872955322
+        },
+        "sentinel-security": {
+          "requests": 64,
+          "requests_with_usage": 64,
+          "requests_without_usage": 0,
+          "statuses": {
+            "200": 38,
+            "502": 26
+          },
+          "usage": {
+            "prompt_tokens": 126880,
+            "completion_tokens": 176660,
+            "total_tokens": 303540,
+            "reasoning_tokens": 168514,
+            "cached_tokens": 31872
+          },
+          "finish_reasons": {
+            "stop": 41,
+            "None": 22,
+            "length": 1
+          },
+          "request_error_messages": {
+            "Upstream returned no choices: ": 22,
+            "EOF occurred in violation of protocol (_ssl.c:2406)": 4
+          },
+          "reasoning_only_empty_choices_requests": 22,
+          "request_seconds": 1122.9089806079865
+        }
+      },
+      "first_input_tokens": 1898,
+      "model_responses": 6,
+      "model_tool_calls": 6,
+      "business_tool_output_characters": 2795,
+      "model_tool_names": {
+        "bash": 5,
+        "write": 1
+      },
+      "business_span_seconds": 634.264422416687,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T11:48:51.947798Z",
+          "finished_at": "2026-10-30T11:50:29.473434Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T11:50:29.476732Z",
+          "finished_at": "2026-10-30T12:05:02.601636Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T12:05:09.746166Z",
+          "finished_at": "2026-10-30T12:06:16.315362Z"
+        }
+      },
+      "monitor_cache_hits": 230,
+      "monitor_event_records": {
+        "file_event_record": 595,
+        "sock_ops_event_record": 11,
+        "process_event_record": 177
+      },
+      "monitor_diagnostic_bytes": 832500,
+      "monitor_error_message_counts": {
+        "audit: send message failed": 7,
+        "audit: security query client sends message failed": 7,
+        "audit: unmarshal answer failed": 1,
+        "computer_monitor_server: read computer_monitor request failed": 1
+      },
+      "monitor_errors": [
+        {
+          "message": "audit: send message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: security query client sends message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: send message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: security query client sends message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: send message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: security query client sends message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: send message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: security query client sends message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: send message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: security query client sends message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: send message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: security query client sends message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: send message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: security query client sends message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: unmarshal answer failed",
+          "error": "unexpected end of JSON input"
+        },
+        {
+          "message": "computer_monitor_server: read computer_monitor request failed",
+          "error": "read unix /tmp/pi-sentinel-y1q79ylr/shared/computer-monitor.sock->@: use of closed network connection"
+        }
+      ],
+      "sentinel_connection": {
+        "client_ready": true,
+        "native_connected": true,
+        "native_passive_tracing": true,
+        "notified_tool_calls": 6,
+        "tool_call_ids_match": true,
+        "connection_failure": false
+      },
+      "native_security_operations": 46,
+      "pycache_security_operations": 3,
+      "grep_execution_security_operations": 0,
+      "instrumentation_security_operations": []
+    },
+    {
+      "mode": "fixed-raw",
+      "task": "openssl-selfsigned-cert",
+      "case": "fixed-raw--openssl-selfsigned-cert",
+      "request_label": "fixed-raw--openssl-selfsigned-cert",
+      "task_checksum": "59d39baeb1d2c13995195cd5c9acf2118b527c96025af86bcd219543599e9a00",
+      "task_passed": true,
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception": null,
+      "pi_session_completed": true,
+      "native_final_stop_reason": "stop",
+      "native_usage": {
+        "input": 5864,
+        "output": 1565,
+        "cacheRead": 11008,
+        "cacheWrite": 0,
+        "totalTokens": 18437,
+        "reasoning": 446
+      },
+      "business_tokens": 18437,
+      "observer_tokens": 0,
+      "reported_total_tokens": 18437,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 6,
+        "requests_with_usage": 6,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 6
+        },
+        "usage": {
+          "prompt_tokens": 16872,
+          "completion_tokens": 1565,
+          "total_tokens": 18437,
+          "reasoning_tokens": 446,
+          "cached_tokens": 11008
+        },
+        "finish_reasons": {
+          "tool_calls": 5,
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 16.158426523208618
+      },
+      "observer_api": {
+        "requests": 0,
+        "requests_with_usage": 0,
+        "requests_without_usage": 0,
+        "statuses": {},
+        "usage": {},
+        "finish_reasons": {},
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 0
+      },
+      "observer_roles": {},
+      "first_input_tokens": 1898,
+      "model_responses": 6,
+      "model_tool_calls": 5,
+      "business_tool_output_characters": 1600,
+      "model_tool_names": {
+        "bash": 4,
+        "write": 1
+      },
+      "business_span_seconds": 78.82055807113647,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T10:07:21.728536Z",
+          "finished_at": "2026-10-30T10:09:13.051089Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T10:09:13.054708Z",
+          "finished_at": "2026-10-30T10:11:09.764866Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T10:11:18.241391Z",
+          "finished_at": "2026-10-30T10:12:25.947223Z"
+        }
+      },
+      "monitor_cache_hits": 0,
+      "monitor_event_records": {},
+      "monitor_diagnostic_bytes": 0,
+      "monitor_error_message_counts": {},
+      "monitor_errors": [],
+      "nodrop": {
+        "executed_audit_calls": 5,
+        "raw_events": 7705,
+        "count_rows": 0,
+        "counted_events": 0,
+        "audit_bytes": 583931,
+        "metadata_bytes": 4685,
+        "policy_counts": {
+          "raw": 5
+        },
+        "retained_event_identity_policy_match": true,
+        "missing_policy_rejections": 0
+      }
+    },
+    {
+      "mode": "agent",
+      "task": "openssl-selfsigned-cert",
+      "case": "agent--openssl-selfsigned-cert",
+      "request_label": "agent--openssl-selfsigned-cert",
+      "task_checksum": "59d39baeb1d2c13995195cd5c9acf2118b527c96025af86bcd219543599e9a00",
+      "task_passed": true,
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception": null,
+      "pi_session_completed": true,
+      "native_final_stop_reason": "stop",
+      "native_usage": {
+        "input": 6399,
+        "output": 1857,
+        "cacheRead": 12544,
+        "cacheWrite": 0,
+        "totalTokens": 20800,
+        "reasoning": 429
+      },
+      "business_tokens": 20800,
+      "observer_tokens": 0,
+      "reported_total_tokens": 20800,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 6,
+        "requests_with_usage": 6,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 6
+        },
+        "usage": {
+          "prompt_tokens": 18943,
+          "completion_tokens": 1857,
+          "total_tokens": 20800,
+          "reasoning_tokens": 429,
+          "cached_tokens": 12544
+        },
+        "finish_reasons": {
+          "tool_calls": 5,
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 14.86503553390503
+      },
+      "observer_api": {
+        "requests": 0,
+        "requests_with_usage": 0,
+        "requests_without_usage": 0,
+        "statuses": {},
+        "usage": {},
+        "finish_reasons": {},
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 0
+      },
+      "observer_roles": {},
+      "first_input_tokens": 2054,
+      "model_responses": 6,
+      "model_tool_calls": 6,
+      "business_tool_output_characters": 1258,
+      "model_tool_names": {
+        "bash": 5,
+        "write": 1
+      },
+      "business_span_seconds": 64.48191285133362,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T10:13:06.783453Z",
+          "finished_at": "2026-10-30T10:14:53.351607Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T10:14:53.356501Z",
+          "finished_at": "2026-10-30T10:16:41.182552Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T10:16:47.340811Z",
+          "finished_at": "2026-10-30T10:17:55.581802Z"
+        }
+      },
+      "monitor_cache_hits": 0,
+      "monitor_event_records": {},
+      "monitor_diagnostic_bytes": 0,
+      "monitor_error_message_counts": {},
+      "monitor_errors": [],
+      "nodrop": {
+        "executed_audit_calls": 6,
+        "raw_events": 0,
+        "count_rows": 676,
+        "counted_events": 8464,
+        "audit_bytes": 113464,
+        "metadata_bytes": 5999,
+        "policy_counts": {
+          "counts": 6
+        },
+        "retained_event_identity_policy_match": true,
+        "missing_policy_rejections": 0
+      }
+    },
+    {
+      "mode": "baseline",
+      "task": "log-summary-date-ranges",
+      "case": "baseline--log-summary-date-ranges",
+      "request_label": "baseline--log-summary-date-ranges",
+      "task_checksum": "f661ef345f023ef5a2dcdd056c353a1a2bbce29a70b04765c615c25e91b6b662",
+      "task_passed": true,
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception": null,
+      "pi_session_completed": true,
+      "native_final_stop_reason": "stop",
+      "native_usage": {
+        "input": 18210,
+        "output": 1417,
+        "cacheRead": 19200,
+        "cacheWrite": 0,
+        "totalTokens": 38827,
+        "reasoning": 346
+      },
+      "business_tokens": 38827,
+      "observer_tokens": 0,
+      "reported_total_tokens": 38827,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 5,
+        "requests_with_usage": 5,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 5
+        },
+        "usage": {
+          "prompt_tokens": 37410,
+          "completion_tokens": 1417,
+          "total_tokens": 38827,
+          "reasoning_tokens": 346,
+          "cached_tokens": 19200
+        },
+        "finish_reasons": {
+          "tool_calls": 4,
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 12.118870735168457
+      },
+      "observer_api": {
+        "requests": 0,
+        "requests_with_usage": 0,
+        "requests_without_usage": 0,
+        "statuses": {},
+        "usage": {},
+        "finish_reasons": {},
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 0
+      },
+      "observer_roles": {},
+      "first_input_tokens": 1956,
+      "model_responses": 5,
+      "model_tool_calls": 4,
+      "business_tool_output_characters": 13708,
+      "model_tool_names": {
+        "bash": 4
+      },
+      "business_span_seconds": 39.91506028175354,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T09:28:24.809415Z",
+          "finished_at": "2026-10-30T09:35:19.763433Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T09:35:19.767442Z",
+          "finished_at": "2026-10-30T09:36:20.379499Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T09:36:37.387951Z",
+          "finished_at": "2026-10-30T09:38:41.672135Z"
+        }
+      },
+      "monitor_cache_hits": 0,
+      "monitor_event_records": {},
+      "monitor_diagnostic_bytes": 0,
+      "monitor_error_message_counts": {},
+      "monitor_errors": []
+    },
+    {
+      "mode": "agentsight",
+      "task": "log-summary-date-ranges",
+      "case": "agentsight--log-summary-date-ranges",
+      "request_label": "agentsight--log-summary-date-ranges",
+      "task_checksum": "f661ef345f023ef5a2dcdd056c353a1a2bbce29a70b04765c615c25e91b6b662",
+      "task_passed": true,
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception": null,
+      "pi_session_completed": true,
+      "native_final_stop_reason": "stop",
+      "native_usage": {
+        "input": 41601,
+        "output": 1259,
+        "cacheRead": 45824,
+        "cacheWrite": 0,
+        "totalTokens": 88684,
+        "reasoning": 377
+      },
+      "business_tokens": 88684,
+      "observer_tokens": 5996,
+      "reported_total_tokens": 94680,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 5,
+        "requests_with_usage": 5,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 5
+        },
+        "usage": {
+          "prompt_tokens": 87425,
+          "completion_tokens": 1259,
+          "total_tokens": 88684,
+          "reasoning_tokens": 377,
+          "cached_tokens": 45824
+        },
+        "finish_reasons": {
+          "tool_calls": 4,
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 13.37059998512268
+      },
+      "observer_api": {
+        "requests": 1,
+        "requests_with_usage": 1,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 1
+        },
+        "usage": {
+          "prompt_tokens": 2770,
+          "completion_tokens": 3226,
+          "total_tokens": 5996,
+          "reasoning_tokens": 2470,
+          "cached_tokens": 0
+        },
+        "finish_reasons": {
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 21.39724612236023
+      },
+      "observer_roles": {
+        "observer": {
+          "requests": 1,
+          "requests_with_usage": 1,
+          "requests_without_usage": 0,
+          "statuses": {
+            "200": 1
+          },
+          "usage": {
+            "prompt_tokens": 2770,
+            "completion_tokens": 3226,
+            "total_tokens": 5996,
+            "reasoning_tokens": 2470,
+            "cached_tokens": 0
+          },
+          "finish_reasons": {
+            "stop": 1
+          },
+          "request_error_messages": {},
+          "reasoning_only_empty_choices_requests": 0,
+          "request_seconds": 21.39724612236023
+        }
+      },
+      "first_input_tokens": 1956,
+      "model_responses": 5,
+      "model_tool_calls": 4,
+      "business_tool_output_characters": 51797,
+      "model_tool_names": {
+        "bash": 4
+      },
+      "business_span_seconds": 20.251710653305054,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T10:18:33.820842Z",
+          "finished_at": "2026-10-30T10:20:14.884784Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T10:20:14.889689Z",
+          "finished_at": "2026-10-30T10:21:06.074321Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T10:21:12.202247Z",
+          "finished_at": "2026-10-30T10:22:21.121134Z"
+        }
+      },
+      "monitor_cache_hits": 0,
+      "monitor_event_records": {},
+      "monitor_diagnostic_bytes": 0,
+      "monitor_error_message_counts": {},
+      "monitor_errors": [],
+      "capture": {
+        "system_events": 345,
+        "native_ssl_records": 760,
+        "truncated_ssl_records": 0,
+        "http_records": 10,
+        "http_pairs": 5,
+        "pending_requests": 0,
+        "unparsed_tail_bytes": {
+          "WRITE/SEND": 0,
+          "READ/RECV": 1
+        },
+        "parse_errors": {},
+        "raw_ssl_bytes": 533289,
+        "system_event_bytes": 78774,
+        "matches_business_request_count": true,
+        "process_comm_counts": {
+          "pi": 28,
+          "pi-audit-gw": 2,
+          "bash": 32,
+          "ls": 20,
+          "head": 24,
+          "libuv-worker": 2,
+          "python3": 184,
+          "cat": 3,
+          "tail": 4,
+          "wc": 39,
+          "grep": 7
+        },
+        "gateway_process_records": 2
+      }
+    },
+    {
+      "mode": "sentinel",
+      "task": "log-summary-date-ranges",
+      "case": "sentinel--log-summary-date-ranges",
+      "request_label": "sentinel--log-summary-date-ranges~monitored",
+      "task_checksum": "f661ef345f023ef5a2dcdd056c353a1a2bbce29a70b04765c615c25e91b6b662",
+      "task_passed": false,
+      "rewards": {
+        "reward": 0.0
+      },
+      "exception": {
+        "exception_type": "AgentTimeoutError",
+        "exception_message": "Agent execution timed out after 900.0 seconds",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"${PROJECT_ROOT}/scripts/harbor_external_audit.py\", line 110, in run\n    await task\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/agents/installed/base.py\", line 194, in wrapper\n    return await fn(self, instruction, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/agents/installed/pi.py\", line 505, in run\n    await self.exec_as_agent(\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/agents/installed/base.py\", line 1113, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/agents/installed/base.py\", line 1064, in _exec\n    result = await environment.exec(\n             ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/environments/docker/docker.py\", line 1363, in exec\n    return await self._compose_exec(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/environments/docker/docker.py\", line 1440, in _compose_exec\n    return await self._run_docker_compose_command(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/environments/docker/docker.py\", line 758, in _run_docker_compose_command\n    result = await self._collect_buffered_output(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/environments/docker/docker.py\", line 788, in _collect_buffered_output\n    stdout_bytes, stderr_bytes = await process.communicate(input=stdin_data)\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/subprocess.py\", line 201, in communicate\n    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/subprocess.py\", line 181, in _read_stream\n    output = await stream.read()\n             ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/streams.py\", line 706, in read\n    block = await self.read(self._limit)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/streams.py\", line 713, in read\n    await self._wait_for_data('read')\n  File \"/usr/lib/python3.12/asyncio/streams.py\", line 545, in _wait_for_data\n    await self._waiter\nasyncio.exceptions.CancelledError\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/trial/trial.py\", line 769, in _run_agent_phase\n    await asyncio.wait_for(\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 519, in wait_for\n    async with timeouts.timeout(timeout):\n  File \"/usr/lib/python3.12/asyncio/timeouts.py\", line 115, in __aexit__\n    raise TimeoutError from exc_val\nTimeoutError\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/trial/single_step.py\", line 76, in _run_agent\n    await self._run_agent_phase(\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/trial/trial.py\", line 778, in _run_agent_phase\n    raise AgentTimeoutError(\nharbor.trial.errors.AgentTimeoutError: Agent execution timed out after 900.0 seconds\n",
+        "occurred_at": "2026-10-30T12:24:07.247085Z"
+      },
+      "pi_session_completed": false,
+      "native_final_stop_reason": "toolUse",
+      "native_usage": {
+        "input": 14286,
+        "output": 475,
+        "cacheRead": 4096,
+        "cacheWrite": 0,
+        "totalTokens": 18857,
+        "reasoning": 150
+      },
+      "business_tokens": 18857,
+      "observer_tokens": 304293,
+      "reported_total_tokens": 323150,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 3,
+        "requests_with_usage": 3,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 3
+        },
+        "usage": {
+          "prompt_tokens": 18382,
+          "completion_tokens": 475,
+          "total_tokens": 18857,
+          "reasoning_tokens": 150,
+          "cached_tokens": 4096
+        },
+        "finish_reasons": {
+          "tool_calls": 3
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 6.392433404922485
+      },
+      "observer_api": {
+        "requests": 74,
+        "requests_with_usage": 74,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 66,
+          "502": 8
+        },
+        "usage": {
+          "prompt_tokens": 146135,
+          "completion_tokens": 158158,
+          "total_tokens": 304293,
+          "reasoning_tokens": 149636,
+          "cached_tokens": 13440
+        },
+        "finish_reasons": {
+          "stop": 64,
+          "length": 3,
+          "None": 7
+        },
+        "request_error_messages": {
+          "Upstream returned no choices: ": 7,
+          "EOF occurred in violation of protocol (_ssl.c:2406)": 1
+        },
+        "reasoning_only_empty_choices_requests": 7,
+        "request_seconds": 961.4055347442627
+      },
+      "observer_roles": {
+        "sentinel-context": {
+          "requests": 3,
+          "requests_with_usage": 3,
+          "requests_without_usage": 0,
+          "statuses": {
+            "200": 3
+          },
+          "usage": {
+            "prompt_tokens": 10091,
+            "completion_tokens": 532,
+            "total_tokens": 10623,
+            "reasoning_tokens": 229,
+            "cached_tokens": 0
+          },
+          "finish_reasons": {
+            "stop": 3
+          },
+          "request_error_messages": {},
+          "reasoning_only_empty_choices_requests": 0,
+          "request_seconds": 6.19000768661499
+        },
+        "sentinel-security": {
+          "requests": 71,
+          "requests_with_usage": 71,
+          "requests_without_usage": 0,
+          "statuses": {
+            "200": 63,
+            "502": 8
+          },
+          "usage": {
+            "prompt_tokens": 136044,
+            "completion_tokens": 157626,
+            "total_tokens": 293670,
+            "reasoning_tokens": 149407,
+            "cached_tokens": 13440
+          },
+          "finish_reasons": {
+            "stop": 61,
+            "length": 3,
+            "None": 7
+          },
+          "request_error_messages": {
+            "Upstream returned no choices: ": 7,
+            "EOF occurred in violation of protocol (_ssl.c:2406)": 1
+          },
+          "reasoning_only_empty_choices_requests": 7,
+          "request_seconds": 955.2155270576477
+        }
+      },
+      "first_input_tokens": 1956,
+      "model_responses": 3,
+      "model_tool_calls": 3,
+      "business_tool_output_characters": 13510,
+      "model_tool_names": {
+        "bash": 3
+      },
+      "business_span_seconds": 197.71558260917664,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T12:08:01.455021Z",
+          "finished_at": "2026-10-30T12:09:34.611877Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T12:09:34.614528Z",
+          "finished_at": "2026-10-30T12:24:07.186738Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T12:24:14.138465Z",
+          "finished_at": "2026-10-30T12:25:21.842410Z"
+        }
+      },
+      "monitor_cache_hits": 326,
+      "monitor_event_records": {
+        "file_event_record": 811,
+        "sock_ops_event_record": 6,
+        "process_event_record": 254
+      },
+      "monitor_diagnostic_bytes": 1041299,
+      "monitor_error_message_counts": {
+        "audit: unmarshal answer failed": 3,
+        "computer_monitor_server: read computer_monitor request failed": 1
+      },
+      "monitor_errors": [
+        {
+          "message": "audit: unmarshal answer failed",
+          "error": "unexpected end of JSON input"
+        },
+        {
+          "message": "audit: unmarshal answer failed",
+          "error": "unexpected end of JSON input"
+        },
+        {
+          "message": "audit: unmarshal answer failed",
+          "error": "unexpected end of JSON input"
+        },
+        {
+          "message": "computer_monitor_server: read computer_monitor request failed",
+          "error": "read unix /tmp/pi-sentinel-08macis5/shared/computer-monitor.sock->@: use of closed network connection"
+        }
+      ],
+      "sentinel_connection": {
+        "client_ready": true,
+        "native_connected": true,
+        "native_passive_tracing": true,
+        "notified_tool_calls": 3,
+        "tool_call_ids_match": true,
+        "connection_failure": false
+      },
+      "native_security_operations": 64,
+      "pycache_security_operations": 0,
+      "grep_execution_security_operations": 50,
+      "instrumentation_security_operations": []
+    },
+    {
+      "mode": "fixed-raw",
+      "task": "log-summary-date-ranges",
+      "case": "fixed-raw--log-summary-date-ranges",
+      "request_label": "fixed-raw--log-summary-date-ranges",
+      "task_checksum": "f661ef345f023ef5a2dcdd056c353a1a2bbce29a70b04765c615c25e91b6b662",
+      "task_passed": true,
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception": null,
+      "pi_session_completed": true,
+      "native_final_stop_reason": "stop",
+      "native_usage": {
+        "input": 40362,
+        "output": 1149,
+        "cacheRead": 25344,
+        "cacheWrite": 0,
+        "totalTokens": 66855,
+        "reasoning": 543
+      },
+      "business_tokens": 66855,
+      "observer_tokens": 0,
+      "reported_total_tokens": 66855,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 4,
+        "requests_with_usage": 4,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 4
+        },
+        "usage": {
+          "prompt_tokens": 65706,
+          "completion_tokens": 1149,
+          "total_tokens": 66855,
+          "reasoning_tokens": 543,
+          "cached_tokens": 25344
+        },
+        "finish_reasons": {
+          "tool_calls": 3,
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 11.368138313293457
+      },
+      "observer_api": {
+        "requests": 0,
+        "requests_with_usage": 0,
+        "requests_without_usage": 0,
+        "statuses": {},
+        "usage": {},
+        "finish_reasons": {},
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 0
+      },
+      "observer_roles": {},
+      "first_input_tokens": 1956,
+      "model_responses": 4,
+      "model_tool_calls": 3,
+      "business_tool_output_characters": 51721,
+      "model_tool_names": {
+        "bash": 3
+      },
+      "business_span_seconds": 61.14819121360779,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T11:04:32.104802Z",
+          "finished_at": "2026-10-30T11:06:19.717035Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T11:06:19.724608Z",
+          "finished_at": "2026-10-30T11:07:57.652249Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T11:08:03.893226Z",
+          "finished_at": "2026-10-30T11:09:12.856960Z"
+        }
+      },
+      "monitor_cache_hits": 0,
+      "monitor_event_records": {},
+      "monitor_diagnostic_bytes": 0,
+      "monitor_error_message_counts": {},
+      "monitor_errors": [],
+      "nodrop": {
+        "executed_audit_calls": 3,
+        "raw_events": 8909,
+        "count_rows": 0,
+        "counted_events": 0,
+        "audit_bytes": 749711,
+        "metadata_bytes": 2723,
+        "policy_counts": {
+          "raw": 3
+        },
+        "retained_event_identity_policy_match": true,
+        "missing_policy_rejections": 0
+      }
+    },
+    {
+      "mode": "agent",
+      "task": "log-summary-date-ranges",
+      "case": "agent--log-summary-date-ranges",
+      "request_label": "agent--log-summary-date-ranges",
+      "task_checksum": "f661ef345f023ef5a2dcdd056c353a1a2bbce29a70b04765c615c25e91b6b662",
+      "task_passed": true,
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception": null,
+      "pi_session_completed": true,
+      "native_final_stop_reason": "stop",
+      "native_usage": {
+        "input": 20316,
+        "output": 2082,
+        "cacheRead": 24320,
+        "cacheWrite": 0,
+        "totalTokens": 46718,
+        "reasoning": 532
+      },
+      "business_tokens": 46718,
+      "observer_tokens": 0,
+      "reported_total_tokens": 46718,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 5,
+        "requests_with_usage": 5,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 5
+        },
+        "usage": {
+          "prompt_tokens": 44636,
+          "completion_tokens": 2082,
+          "total_tokens": 46718,
+          "reasoning_tokens": 532,
+          "cached_tokens": 24320
+        },
+        "finish_reasons": {
+          "tool_calls": 4,
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 16.375192403793335
+      },
+      "observer_api": {
+        "requests": 0,
+        "requests_with_usage": 0,
+        "requests_without_usage": 0,
+        "statuses": {},
+        "usage": {},
+        "finish_reasons": {},
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 0
+      },
+      "observer_roles": {},
+      "first_input_tokens": 2112,
+      "model_responses": 5,
+      "model_tool_calls": 4,
+      "business_tool_output_characters": 17965,
+      "model_tool_names": {
+        "bash": 4
+      },
+      "business_span_seconds": 164.7705900669098,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T11:14:06.948084Z",
+          "finished_at": "2026-10-30T11:15:54.178039Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T11:15:54.182172Z",
+          "finished_at": "2026-10-30T11:19:20.710625Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T11:19:27.812681Z",
+          "finished_at": "2026-10-30T11:20:37.431232Z"
+        }
+      },
+      "monitor_cache_hits": 0,
+      "monitor_event_records": {},
+      "monitor_diagnostic_bytes": 0,
+      "monitor_error_message_counts": {},
+      "monitor_errors": [],
+      "nodrop": {
+        "executed_audit_calls": 4,
+        "raw_events": 0,
+        "count_rows": 25740,
+        "counted_events": 179991,
+        "audit_bytes": 4264075,
+        "metadata_bytes": 4338,
+        "policy_counts": {
+          "counts": 4
+        },
+        "retained_event_identity_policy_match": true,
+        "missing_policy_rejections": 0
+      }
+    },
+    {
+      "mode": "baseline",
+      "task": "fix-git",
+      "case": "baseline--fix-git",
+      "request_label": "baseline--fix-git",
+      "task_checksum": "e89f54f2fc73ac576f976c1cd09758e4c9ccf152e53c2dcd91da0c178b89abc7",
+      "task_passed": true,
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception": null,
+      "pi_session_completed": true,
+      "native_final_stop_reason": "stop",
+      "native_usage": {
+        "input": 13031,
+        "output": 1940,
+        "cacheRead": 34304,
+        "cacheWrite": 0,
+        "totalTokens": 49275,
+        "reasoning": 550
+      },
+      "business_tokens": 49275,
+      "observer_tokens": 0,
+      "reported_total_tokens": 49275,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 10,
+        "requests_with_usage": 10,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 10
+        },
+        "usage": {
+          "prompt_tokens": 47335,
+          "completion_tokens": 1940,
+          "total_tokens": 49275,
+          "reasoning_tokens": 550,
+          "cached_tokens": 34304
+        },
+        "finish_reasons": {
+          "tool_calls": 9,
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 22.473950386047363
+      },
+      "observer_api": {
+        "requests": 0,
+        "requests_with_usage": 0,
+        "requests_without_usage": 0,
+        "statuses": {},
+        "usage": {},
+        "finish_reasons": {},
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 0
+      },
+      "observer_roles": {},
+      "first_input_tokens": 1614,
+      "model_responses": 10,
+      "model_tool_calls": 12,
+      "business_tool_output_characters": 11556,
+      "model_tool_names": {
+        "bash": 11,
+        "write": 1
+      },
+      "business_span_seconds": 36.13597583770752,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T09:39:55.066233Z",
+          "finished_at": "2026-10-30T09:47:16.851052Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T09:47:16.853859Z",
+          "finished_at": "2026-10-30T09:48:10.480899Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T09:48:19.160077Z",
+          "finished_at": "2026-10-30T09:49:31.666409Z"
+        }
+      },
+      "monitor_cache_hits": 0,
+      "monitor_event_records": {},
+      "monitor_diagnostic_bytes": 0,
+      "monitor_error_message_counts": {},
+      "monitor_errors": []
+    },
+    {
+      "mode": "agentsight",
+      "task": "fix-git",
+      "case": "agentsight--fix-git",
+      "request_label": "agentsight--fix-git~monitored",
+      "task_checksum": "e89f54f2fc73ac576f976c1cd09758e4c9ccf152e53c2dcd91da0c178b89abc7",
+      "task_passed": true,
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception": null,
+      "pi_session_completed": true,
+      "native_final_stop_reason": "stop",
+      "native_usage": {
+        "input": 7546,
+        "output": 2167,
+        "cacheRead": 40832,
+        "cacheWrite": 0,
+        "totalTokens": 50545,
+        "reasoning": 677
+      },
+      "business_tokens": 50545,
+      "observer_tokens": 6271,
+      "reported_total_tokens": 56816,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 10,
+        "requests_with_usage": 10,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 10
+        },
+        "usage": {
+          "prompt_tokens": 48378,
+          "completion_tokens": 2167,
+          "total_tokens": 50545,
+          "reasoning_tokens": 677,
+          "cached_tokens": 40832
+        },
+        "finish_reasons": {
+          "tool_calls": 9,
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 29.89791440963745
+      },
+      "observer_api": {
+        "requests": 1,
+        "requests_with_usage": 1,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 1
+        },
+        "usage": {
+          "prompt_tokens": 2682,
+          "completion_tokens": 3589,
+          "total_tokens": 6271,
+          "reasoning_tokens": 2759,
+          "cached_tokens": 0
+        },
+        "finish_reasons": {
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 22.067518711090088
+      },
+      "observer_roles": {
+        "observer": {
+          "requests": 1,
+          "requests_with_usage": 1,
+          "requests_without_usage": 0,
+          "statuses": {
+            "200": 1
+          },
+          "usage": {
+            "prompt_tokens": 2682,
+            "completion_tokens": 3589,
+            "total_tokens": 6271,
+            "reasoning_tokens": 2759,
+            "cached_tokens": 0
+          },
+          "finish_reasons": {
+            "stop": 1
+          },
+          "request_error_messages": {},
+          "reasoning_only_empty_choices_requests": 0,
+          "request_seconds": 22.067518711090088
+        }
+      },
+      "first_input_tokens": 1614,
+      "model_responses": 10,
+      "model_tool_calls": 11,
+      "business_tool_output_characters": 11463,
+      "model_tool_names": {
+        "bash": 9,
+        "read": 1,
+        "write": 1
+      },
+      "business_span_seconds": 41.67639994621277,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T11:43:06.303322Z",
+          "finished_at": "2026-10-30T11:44:33.146213Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T11:44:33.150364Z",
+          "finished_at": "2026-10-30T11:45:45.910366Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T11:45:53.453242Z",
+          "finished_at": "2026-10-30T11:47:01.789016Z"
+        }
+      },
+      "monitor_cache_hits": 0,
+      "monitor_event_records": {},
+      "monitor_diagnostic_bytes": 0,
+      "monitor_error_message_counts": {},
+      "monitor_errors": [],
+      "capture": {
+        "system_events": 815,
+        "native_ssl_records": 2060,
+        "truncated_ssl_records": 0,
+        "http_records": 20,
+        "http_pairs": 10,
+        "pending_requests": 0,
+        "unparsed_tail_bytes": {
+          "WRITE/SEND": 0,
+          "READ/RECV": 1
+        },
+        "parse_errors": {},
+        "raw_ssl_bytes": 915247,
+        "system_event_bytes": 174796,
+        "matches_business_request_count": true,
+        "process_comm_counts": {
+          "pi": 29,
+          "pi-audit-gw": 4,
+          "bash": 71,
+          "git": 703,
+          "cat": 6,
+          "libuv-worker": 2
+        },
+        "gateway_process_records": 4
+      }
+    },
+    {
+      "mode": "sentinel",
+      "task": "fix-git",
+      "case": "sentinel--fix-git",
+      "request_label": "sentinel--fix-git~monitored",
+      "task_checksum": "e89f54f2fc73ac576f976c1cd09758e4c9ccf152e53c2dcd91da0c178b89abc7",
+      "task_passed": true,
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception": {
+        "exception_type": "AgentTimeoutError",
+        "exception_message": "Agent execution timed out after 900.0 seconds",
+        "exception_traceback": "Traceback (most recent call last):\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 520, in wait_for\n    return await fut\n           ^^^^^^^^^\n  File \"${PROJECT_ROOT}/scripts/harbor_external_audit.py\", line 110, in run\n    await task\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/agents/installed/base.py\", line 194, in wrapper\n    return await fn(self, instruction, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/agents/installed/pi.py\", line 505, in run\n    await self.exec_as_agent(\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/agents/installed/base.py\", line 1113, in exec_as_agent\n    return await self._exec(\n           ^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/agents/installed/base.py\", line 1064, in _exec\n    result = await environment.exec(\n             ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/environments/docker/docker.py\", line 1363, in exec\n    return await self._compose_exec(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/environments/docker/docker.py\", line 1440, in _compose_exec\n    return await self._run_docker_compose_command(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/environments/docker/docker.py\", line 758, in _run_docker_compose_command\n    result = await self._collect_buffered_output(\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/environments/docker/docker.py\", line 788, in _collect_buffered_output\n    stdout_bytes, stderr_bytes = await process.communicate(input=stdin_data)\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/subprocess.py\", line 201, in communicate\n    stdin, stdout, stderr = await tasks.gather(stdin, stdout, stderr)\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/subprocess.py\", line 181, in _read_stream\n    output = await stream.read()\n             ^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/streams.py\", line 706, in read\n    block = await self.read(self._limit)\n            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/asyncio/streams.py\", line 713, in read\n    await self._wait_for_data('read')\n  File \"/usr/lib/python3.12/asyncio/streams.py\", line 545, in _wait_for_data\n    await self._waiter\nasyncio.exceptions.CancelledError\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/trial/trial.py\", line 769, in _run_agent_phase\n    await asyncio.wait_for(\n  File \"/usr/lib/python3.12/asyncio/tasks.py\", line 519, in wait_for\n    async with timeouts.timeout(timeout):\n  File \"/usr/lib/python3.12/asyncio/timeouts.py\", line 115, in __aexit__\n    raise TimeoutError from exc_val\nTimeoutError\n\nThe above exception was the direct cause of the following exception:\n\nTraceback (most recent call last):\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/trial/single_step.py\", line 76, in _run_agent\n    await self._run_agent_phase(\n  File \"${PROJECT_ROOT}/build/harbor-packages/harbor/trial/trial.py\", line 778, in _run_agent_phase\n    raise AgentTimeoutError(\nharbor.trial.errors.AgentTimeoutError: Agent execution timed out after 900.0 seconds\n",
+        "occurred_at": "2026-10-30T12:42:59.137011Z"
+      },
+      "pi_session_completed": false,
+      "native_final_stop_reason": "toolUse",
+      "native_usage": {
+        "input": 11704,
+        "output": 2033,
+        "cacheRead": 18816,
+        "cacheWrite": 0,
+        "totalTokens": 32553,
+        "reasoning": 1226
+      },
+      "business_tokens": 32553,
+      "observer_tokens": 175857,
+      "reported_total_tokens": 208410,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 7,
+        "requests_with_usage": 7,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 7
+        },
+        "usage": {
+          "prompt_tokens": 30520,
+          "completion_tokens": 2033,
+          "total_tokens": 32553,
+          "reasoning_tokens": 1226,
+          "cached_tokens": 18816
+        },
+        "finish_reasons": {
+          "tool_calls": 7
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 19.75503420829773
+      },
+      "observer_api": {
+        "requests": 60,
+        "requests_with_usage": 60,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 52,
+          "502": 8
+        },
+        "usage": {
+          "prompt_tokens": 79402,
+          "completion_tokens": 96455,
+          "total_tokens": 175857,
+          "reasoning_tokens": 90319,
+          "cached_tokens": 15744
+        },
+        "finish_reasons": {
+          "stop": 52,
+          "None": 6,
+          "length": 2
+        },
+        "request_error_messages": {
+          "Upstream returned no choices: ": 6,
+          "EOF occurred in violation of protocol (_ssl.c:2406)": 2
+        },
+        "reasoning_only_empty_choices_requests": 6,
+        "request_seconds": 647.689023733139
+      },
+      "observer_roles": {
+        "sentinel-context": {
+          "requests": 7,
+          "requests_with_usage": 7,
+          "requests_without_usage": 0,
+          "statuses": {
+            "200": 7
+          },
+          "usage": {
+            "prompt_tokens": 11527,
+            "completion_tokens": 1091,
+            "total_tokens": 12618,
+            "reasoning_tokens": 584,
+            "cached_tokens": 0
+          },
+          "finish_reasons": {
+            "stop": 7
+          },
+          "request_error_messages": {},
+          "reasoning_only_empty_choices_requests": 0,
+          "request_seconds": 14.157869815826416
+        },
+        "sentinel-security": {
+          "requests": 53,
+          "requests_with_usage": 53,
+          "requests_without_usage": 0,
+          "statuses": {
+            "200": 45,
+            "502": 8
+          },
+          "usage": {
+            "prompt_tokens": 67875,
+            "completion_tokens": 95364,
+            "total_tokens": 163239,
+            "reasoning_tokens": 89735,
+            "cached_tokens": 15744
+          },
+          "finish_reasons": {
+            "stop": 45,
+            "None": 6,
+            "length": 2
+          },
+          "request_error_messages": {
+            "Upstream returned no choices: ": 6,
+            "EOF occurred in violation of protocol (_ssl.c:2406)": 2
+          },
+          "reasoning_only_empty_choices_requests": 6,
+          "request_seconds": 633.5311539173126
+        }
+      },
+      "first_input_tokens": 1614,
+      "model_responses": 7,
+      "model_tool_calls": 9,
+      "business_tool_output_characters": 10896,
+      "model_tool_names": {
+        "bash": 9
+      },
+      "business_span_seconds": 394.64588499069214,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T12:27:06.615615Z",
+          "finished_at": "2026-10-30T12:28:29.668090Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T12:28:29.673305Z",
+          "finished_at": "2026-10-30T12:42:59.080319Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T12:43:05.157428Z",
+          "finished_at": "2026-10-30T12:44:13.498542Z"
+        }
+      },
+      "monitor_cache_hits": 75187,
+      "monitor_event_records": {
+        "file_event_record": 75429,
+        "sock_ops_event_record": 14,
+        "process_event_record": 121
+      },
+      "monitor_diagnostic_bytes": 97649197,
+      "monitor_error_message_counts": {
+        "audit: unmarshal answer failed": 2,
+        "audit: send message failed": 2,
+        "audit: security query client sends message failed": 2,
+        "computer_monitor_server: read computer_monitor request failed": 1
+      },
+      "monitor_errors": [
+        {
+          "message": "audit: unmarshal answer failed",
+          "error": "unexpected end of JSON input"
+        },
+        {
+          "message": "audit: unmarshal answer failed",
+          "error": "unexpected end of JSON input"
+        },
+        {
+          "message": "audit: send message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: security query client sends message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: send message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "audit: security query client sends message failed",
+          "error": "context deadline exceeded"
+        },
+        {
+          "message": "computer_monitor_server: read computer_monitor request failed",
+          "error": "read unix /tmp/pi-sentinel-3q87trz3/shared/computer-monitor.sock->@: use of closed network connection"
+        }
+      ],
+      "sentinel_connection": {
+        "client_ready": true,
+        "native_connected": true,
+        "native_passive_tracing": true,
+        "notified_tool_calls": 9,
+        "tool_call_ids_match": true,
+        "connection_failure": false
+      },
+      "native_security_operations": 48,
+      "pycache_security_operations": 0,
+      "grep_execution_security_operations": 0,
+      "instrumentation_security_operations": []
+    },
+    {
+      "mode": "fixed-raw",
+      "task": "fix-git",
+      "case": "fixed-raw--fix-git",
+      "request_label": "fixed-raw--fix-git",
+      "task_checksum": "e89f54f2fc73ac576f976c1cd09758e4c9ccf152e53c2dcd91da0c178b89abc7",
+      "task_passed": true,
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception": null,
+      "pi_session_completed": true,
+      "native_final_stop_reason": "stop",
+      "native_usage": {
+        "input": 9169,
+        "output": 1506,
+        "cacheRead": 25344,
+        "cacheWrite": 0,
+        "totalTokens": 36019,
+        "reasoning": 321
+      },
+      "business_tokens": 36019,
+      "observer_tokens": 0,
+      "reported_total_tokens": 36019,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 8,
+        "requests_with_usage": 8,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 8
+        },
+        "usage": {
+          "prompt_tokens": 34513,
+          "completion_tokens": 1506,
+          "total_tokens": 36019,
+          "reasoning_tokens": 321,
+          "cached_tokens": 25344
+        },
+        "finish_reasons": {
+          "tool_calls": 7,
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 15.109569787979126
+      },
+      "observer_api": {
+        "requests": 0,
+        "requests_with_usage": 0,
+        "requests_without_usage": 0,
+        "statuses": {},
+        "usage": {},
+        "finish_reasons": {},
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 0
+      },
+      "observer_roles": {},
+      "first_input_tokens": 1614,
+      "model_responses": 8,
+      "model_tool_calls": 10,
+      "business_tool_output_characters": 10373,
+      "model_tool_names": {
+        "bash": 8,
+        "read": 1,
+        "write": 1
+      },
+      "business_span_seconds": 60.24502468109131,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T11:24:30.286565Z",
+          "finished_at": "2026-10-30T11:26:13.728574Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T11:26:13.733259Z",
+          "finished_at": "2026-10-30T11:27:52.888386Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T11:28:00.096772Z",
+          "finished_at": "2026-10-30T11:29:08.617226Z"
+        }
+      },
+      "monitor_cache_hits": 0,
+      "monitor_event_records": {},
+      "monitor_diagnostic_bytes": 0,
+      "monitor_error_message_counts": {},
+      "monitor_errors": [],
+      "nodrop": {
+        "executed_audit_calls": 10,
+        "raw_events": 10478,
+        "count_rows": 0,
+        "counted_events": 0,
+        "audit_bytes": 783005,
+        "metadata_bytes": 6022,
+        "policy_counts": {
+          "raw": 10
+        },
+        "retained_event_identity_policy_match": true,
+        "missing_policy_rejections": 0
+      }
+    },
+    {
+      "mode": "agent",
+      "task": "fix-git",
+      "case": "agent--fix-git",
+      "request_label": "agent--fix-git",
+      "task_checksum": "e89f54f2fc73ac576f976c1cd09758e4c9ccf152e53c2dcd91da0c178b89abc7",
+      "task_passed": true,
+      "rewards": {
+        "reward": 1.0
+      },
+      "exception": null,
+      "pi_session_completed": true,
+      "native_final_stop_reason": "stop",
+      "native_usage": {
+        "input": 21533,
+        "output": 4804,
+        "cacheRead": 52992,
+        "cacheWrite": 0,
+        "totalTokens": 79329,
+        "reasoning": 2109
+      },
+      "business_tokens": 79329,
+      "observer_tokens": 0,
+      "reported_total_tokens": 79329,
+      "harbor_pi_usage_match": true,
+      "pi_gateway_usage_match": true,
+      "business_api": {
+        "requests": 13,
+        "requests_with_usage": 13,
+        "requests_without_usage": 0,
+        "statuses": {
+          "200": 13
+        },
+        "usage": {
+          "prompt_tokens": 74525,
+          "completion_tokens": 4804,
+          "total_tokens": 79329,
+          "reasoning_tokens": 2109,
+          "cached_tokens": 52992
+        },
+        "finish_reasons": {
+          "tool_calls": 12,
+          "stop": 1
+        },
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 41.98909401893616
+      },
+      "observer_api": {
+        "requests": 0,
+        "requests_with_usage": 0,
+        "requests_without_usage": 0,
+        "statuses": {},
+        "usage": {},
+        "finish_reasons": {},
+        "request_error_messages": {},
+        "reasoning_only_empty_choices_requests": 0,
+        "request_seconds": 0
+      },
+      "observer_roles": {},
+      "first_input_tokens": 1773,
+      "model_responses": 13,
+      "model_tool_calls": 17,
+      "business_tool_output_characters": 13979,
+      "model_tool_names": {
+        "bash": 15,
+        "read": 1,
+        "write": 1
+      },
+      "business_span_seconds": 94.20195770263672,
+      "timing": {
+        "agent_setup": {
+          "started_at": "2026-10-30T11:32:58.181020Z",
+          "finished_at": "2026-10-30T11:34:34.913043Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-30T11:34:34.917477Z",
+          "finished_at": "2026-10-30T11:36:48.507946Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-30T11:36:56.272189Z",
+          "finished_at": "2026-10-30T11:38:06.065840Z"
+        }
+      },
+      "monitor_cache_hits": 0,
+      "monitor_event_records": {},
+      "monitor_diagnostic_bytes": 0,
+      "monitor_error_message_counts": {},
+      "monitor_errors": [],
+      "nodrop": {
+        "executed_audit_calls": 17,
+        "raw_events": 171,
+        "count_rows": 1480,
+        "counted_events": 18484,
+        "audit_bytes": 256337,
+        "metadata_bytes": 10752,
+        "policy_counts": {
+          "counts": 16,
+          "raw": 1
+        },
+        "retained_event_identity_policy_match": true,
+        "missing_policy_rejections": 0
+      }
+    }
+  ],
+  "totals": {
+    "baseline": {
+      "completed_trials": 3,
+      "passed_tasks": 3,
+      "business_tokens": 102946,
+      "observer_tokens": 0,
+      "reported_total_tokens": 102946,
+      "model_responses": 20,
+      "model_tool_calls": 20,
+      "business_tool_output_characters": 26974
+    },
+    "agentsight": {
+      "completed_trials": 3,
+      "passed_tasks": 3,
+      "business_tokens": 200598,
+      "observer_tokens": 17213,
+      "reported_total_tokens": 217811,
+      "model_responses": 27,
+      "model_tool_calls": 26,
+      "business_tool_output_characters": 66094
+    },
+    "sentinel": {
+      "completed_trials": 3,
+      "passed_tasks": 2,
+      "business_tokens": 72976,
+      "observer_tokens": 792905,
+      "reported_total_tokens": 865881,
+      "model_responses": 16,
+      "model_tool_calls": 18,
+      "business_tool_output_characters": 27201
+    },
+    "fixed-raw": {
+      "completed_trials": 3,
+      "passed_tasks": 3,
+      "business_tokens": 121311,
+      "observer_tokens": 0,
+      "reported_total_tokens": 121311,
+      "model_responses": 18,
+      "model_tool_calls": 18,
+      "business_tool_output_characters": 63694
+    },
+    "agent": {
+      "completed_trials": 3,
+      "passed_tasks": 3,
+      "business_tokens": 146847,
+      "observer_tokens": 0,
+      "reported_total_tokens": 146847,
+      "model_responses": 24,
+      "model_tool_calls": 27,
+      "business_tool_output_characters": 33202
+    }
+  },
+  "additional_attempt_usage": {
+    "requests": 20,
+    "requests_with_usage": 20,
+    "requests_without_usage": 0,
+    "statuses": {
+      "200": 20
+    },
+    "usage": {
+      "prompt_tokens": 64753,
+      "completion_tokens": 3963,
+      "total_tokens": 68716,
+      "reasoning_tokens": 1881,
+      "cached_tokens": 52352
+    },
+    "finish_reasons": {
+      "tool_calls": 19,
+      "stop": 1
+    },
+    "request_error_messages": {},
+    "reasoning_only_empty_choices_requests": 0,
+    "request_seconds": 45.89788889884949
+  },
+  "expected_trials": 15,
+  "completed_trials": 15,
+  "protocols": [
+    {
+      "model": "ibrain/deepseek-v4.1-flash-1017-al",
+      "pi": "1.4.0",
+      "harbor": "0.25.0",
+      "kernel": "6.8.0-137-generic",
+      "credential": "project-ak-api",
+      "business_tools": [
+        "read",
+        "bash",
+        "edit",
+        "write"
+      ],
+      "native_pi_loop": true,
+      "original_task_verifiers": true,
+      "original_task_resources": true,
+      "attempts_per_case": 1,
+      "cumulative_token_turn_tool_limits": null,
+      "automatic_trial_retries": false,
+      "task_timeout_override": false,
+      "plans": [
+        "agentsight--openssl-selfsigned-cert",
+        "sentinel--openssl-selfsigned-cert",
+        "fixed-raw--openssl-selfsigned-cert",
+        "agent--openssl-selfsigned-cert",
+        "agentsight--log-summary-date-ranges",
+        "sentinel--log-summary-date-ranges",
+        "fixed-raw--log-summary-date-ranges",
+        "agent--log-summary-date-ranges",
+        "agentsight--fix-git",
+        "sentinel--fix-git",
+        "fixed-raw--fix-git",
+        "agent--fix-git"
+      ],
+      "source_sha256": {
+        "scripts/run_fiveway_comparison.py": "b0f5759ed5a3843de5f9425da3c6a0fa0b79c904f86a499a660d1b888f9fab2d",
+        "scripts/harbor_external_audit.py": "3d0ab65593dfab82c8388926f1f2f8bc6d456707140c5db9e87a37cb57330a9b",
+        "src/sentinel-extension.mjs": "6b75e538d2ddc1f4b8d44ac40bd0103bf566048defefb52b045a549569e15147",
+        "src/extension.mjs": "562fdb8b3b61fc93cdaf244a72a57a40171208d767bf8957f51f0f56f80502f7",
+        "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+        "src/tools.mjs": "edc61acc308ce0036667a0784a83866139337c9aa507f887c7efdc63c7cd59d9",
+        "build/context.node": "de85610c4413a326cb2ac133c0e210813876f420c2069a9133b759baafbab1a8",
+        "build/nodrop/nodrop.ko": "c8bf09032e6e6c735c36906e5e6994603e6ba191cfd0cff6b5d9780ab642be65",
+        "build/nodrop/monitor/monitor": "07a97acdd53351c9a910cd2844fefdb4e843d6048387efebf51cb887e6e0b745",
+        "scripts/analyze_agentsight_trial.py": "37364f71f5eb999482c6f567118ec43e3ededbffe0dfd88abcbccd7b4b3fc483",
+        "scripts/harbor_cached_pi.py": "8f29ba813ccf60ac70de472b80c193069281e1a8220042db7fe1b26e522b68e2"
+      },
+      "external_binary_sha256": {
+        "agent-sentinel/agent-sentinel": "75995b3556f01f26e1b8ec5ef9febecbc48dcda9c443a570aaaf48cba82a6168",
+        "agentsight-paper/bpf/sslsniff": "950cdbfd1f726e565fea5b7dfb1e371a1044a95724e319884ae1810311165c2f",
+        "agentsight-bin/agentsight": "e8efee7733eb63fcb9bc4380dddd9aef9610e33e96f8e3fe4bec3d9d99ef1320"
+      },
+      "official_installation_cache": {
+        "source_condition": "baseline",
+        "source_task": "log-summary-date-ranges",
+        "pi_version": "1.4.0",
+        "node_relative": ".nvm/versions/node/v22.23.4/bin/node",
+        "pi_cli_relative": ".nvm/versions/node/v22.23.4/lib/node_modules/@earendil-works/pi-coding-agent/dist/bundle/cli.js",
+        "node_sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+        "pi_cli_sha256": "e79626f2dd6f94aa45d30f3fa63cd84319a6eefcd150b353cfaf274366926774",
+        "archive_bytes": 344207360,
+        "archive_sha256": "f619014bba85d2b5e0c3f9576ff6cd809a860f1328c3753dd69887958e402f7a"
+      }
+    },
+    {
+      "model": "ibrain/deepseek-v4.1-flash-1017-al",
+      "pi": "1.4.0",
+      "harbor": "0.25.0",
+      "kernel": "6.8.0-137-generic",
+      "credential": "project-ak-api",
+      "business_tools": [
+        "read",
+        "bash",
+        "edit",
+        "write"
+      ],
+      "native_pi_loop": true,
+      "original_task_verifiers": true,
+      "original_task_resources": true,
+      "attempts_per_case": 1,
+      "cumulative_token_turn_tool_limits": null,
+      "automatic_trial_retries": false,
+      "task_timeout_override": false,
+      "plans": [
+        "agentsight--openssl-selfsigned-cert",
+        "sentinel--openssl-selfsigned-cert",
+        "fixed-raw--openssl-selfsigned-cert",
+        "agent--openssl-selfsigned-cert",
+        "agentsight--log-summary-date-ranges",
+        "sentinel--log-summary-date-ranges",
+        "fixed-raw--log-summary-date-ranges",
+        "agent--log-summary-date-ranges",
+        "agentsight--fix-git",
+        "sentinel--fix-git",
+        "fixed-raw--fix-git",
+        "agent--fix-git"
+      ],
+      "source_sha256": {
+        "scripts/run_fiveway_comparison.py": "b0f5759ed5a3843de5f9425da3c6a0fa0b79c904f86a499a660d1b888f9fab2d",
+        "scripts/harbor_external_audit.py": "44213f4636f8d507e3c4d93a37891a05eed148dc9ba4d080aeace35c518be6e1",
+        "src/sentinel-extension.mjs": "6b75e538d2ddc1f4b8d44ac40bd0103bf566048defefb52b045a549569e15147",
+        "src/extension.mjs": "562fdb8b3b61fc93cdaf244a72a57a40171208d767bf8957f51f0f56f80502f7",
+        "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+        "src/tools.mjs": "edc61acc308ce0036667a0784a83866139337c9aa507f887c7efdc63c7cd59d9",
+        "build/context.node": "de85610c4413a326cb2ac133c0e210813876f420c2069a9133b759baafbab1a8",
+        "build/nodrop/nodrop.ko": "c8bf09032e6e6c735c36906e5e6994603e6ba191cfd0cff6b5d9780ab642be65",
+        "build/nodrop/monitor/monitor": "07a97acdd53351c9a910cd2844fefdb4e843d6048387efebf51cb887e6e0b745",
+        "scripts/analyze_agentsight_trial.py": "37364f71f5eb999482c6f567118ec43e3ededbffe0dfd88abcbccd7b4b3fc483",
+        "scripts/harbor_cached_pi.py": "8f29ba813ccf60ac70de472b80c193069281e1a8220042db7fe1b26e522b68e2"
+      },
+      "external_binary_sha256": {
+        "agent-sentinel/agent-sentinel": "75995b3556f01f26e1b8ec5ef9febecbc48dcda9c443a570aaaf48cba82a6168",
+        "agentsight-paper/bpf/sslsniff": "950cdbfd1f726e565fea5b7dfb1e371a1044a95724e319884ae1810311165c2f",
+        "agentsight-bin/agentsight": "e8efee7733eb63fcb9bc4380dddd9aef9610e33e96f8e3fe4bec3d9d99ef1320"
+      },
+      "official_installation_cache": {
+        "source_condition": "baseline",
+        "source_task": "log-summary-date-ranges",
+        "pi_version": "1.4.0",
+        "node_relative": ".nvm/versions/node/v22.23.4/bin/node",
+        "pi_cli_relative": ".nvm/versions/node/v22.23.4/lib/node_modules/@earendil-works/pi-coding-agent/dist/bundle/cli.js",
+        "node_sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+        "pi_cli_sha256": "e79626f2dd6f94aa45d30f3fa63cd84319a6eefcd150b353cfaf274366926774",
+        "archive_bytes": 344207360,
+        "archive_sha256": "f619014bba85d2b5e0c3f9576ff6cd809a860f1328c3753dd69887958e402f7a"
+      }
+    },
+    {
+      "model": "ibrain/deepseek-v4.1-flash-1017-al",
+      "pi": "1.4.0",
+      "harbor": "0.25.0",
+      "kernel": "6.8.0-137-generic",
+      "credential": "project-ak-api",
+      "business_tools": [
+        "read",
+        "bash",
+        "edit",
+        "write"
+      ],
+      "native_pi_loop": true,
+      "original_task_verifiers": true,
+      "original_task_resources": true,
+      "attempts_per_case": 1,
+      "cumulative_token_turn_tool_limits": null,
+      "automatic_trial_retries": false,
+      "task_timeout_override": false,
+      "plans": [
+        "baseline--openssl-selfsigned-cert",
+        "baseline--log-summary-date-ranges",
+        "baseline--fix-git"
+      ],
+      "source_sha256": {
+        "scripts/run_fiveway_comparison.py": "99cdf7f388296bfb54e88d3b3f938606bee07816f74890735fd375f3e521b6eb",
+        "scripts/harbor_external_audit.py": "44213f4636f8d507e3c4d93a37891a05eed148dc9ba4d080aeace35c518be6e1",
+        "src/sentinel-extension.mjs": "6b75e538d2ddc1f4b8d44ac40bd0103bf566048defefb52b045a549569e15147",
+        "src/extension.mjs": "562fdb8b3b61fc93cdaf244a72a57a40171208d767bf8957f51f0f56f80502f7",
+        "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+        "src/tools.mjs": "edc61acc308ce0036667a0784a83866139337c9aa507f887c7efdc63c7cd59d9"
+      }
+    },
+    {
+      "model": "ibrain/deepseek-v4.1-flash-1017-al",
+      "pi": "1.4.0",
+      "harbor": "0.25.0",
+      "kernel": "6.8.0-137-generic",
+      "credential": "project-ak-api",
+      "business_tools": [
+        "read",
+        "bash",
+        "edit",
+        "write"
+      ],
+      "native_pi_loop": true,
+      "original_task_verifiers": true,
+      "original_task_resources": true,
+      "attempts_per_case": 1,
+      "cumulative_token_turn_tool_limits": null,
+      "automatic_trial_retries": false,
+      "task_timeout_override": false,
+      "plans": [
+        "baseline--openssl-selfsigned-cert",
+        "baseline--log-summary-date-ranges",
+        "baseline--fix-git"
+      ],
+      "source_sha256": {
+        "scripts/run_fiveway_comparison.py": "ee0f51c76964d6c39fd7714ca9d118437a2561f90d3ec8d1e2e3429180af5c7d",
+        "scripts/harbor_external_audit.py": "44213f4636f8d507e3c4d93a37891a05eed148dc9ba4d080aeace35c518be6e1",
+        "src/sentinel-extension.mjs": "6b75e538d2ddc1f4b8d44ac40bd0103bf566048defefb52b045a549569e15147",
+        "src/extension.mjs": "562fdb8b3b61fc93cdaf244a72a57a40171208d767bf8957f51f0f56f80502f7",
+        "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+        "src/tools.mjs": "edc61acc308ce0036667a0784a83866139337c9aa507f887c7efdc63c7cd59d9"
+      }
+    },
+    {
+      "model": "ibrain/deepseek-v4.1-flash-1017-al",
+      "pi": "1.4.0",
+      "harbor": "0.25.0",
+      "kernel": "6.8.0-137-generic",
+      "credential": "project-ak-api",
+      "business_tools": [
+        "read",
+        "bash",
+        "edit",
+        "write"
+      ],
+      "native_pi_loop": true,
+      "original_task_verifiers": true,
+      "original_task_resources": true,
+      "attempts_per_case": 1,
+      "cumulative_token_turn_tool_limits": null,
+      "automatic_trial_retries": false,
+      "task_timeout_override": false,
+      "nodrop_module_lifetime": "per-trial load and unload",
+      "plans": [
+        "sentinel--openssl-selfsigned-cert"
+      ],
+      "source_sha256": {
+        "scripts/run_fiveway_comparison.py": "f15c5602cb4a897a0bb2d9b695fe61032a3937f51480aadfb7ccf99336d3d638",
+        "scripts/harbor_external_audit.py": "b2e460075dc5011c57e73edf28f8dde55800937d2fe84bbebb4cf7691fc39447",
+        "src/sentinel-extension.mjs": "ea2ed226fe2f434da5d6fd9df81acd78b5338a80add531bd648dc25f9a44eabe",
+        "src/extension.mjs": "562fdb8b3b61fc93cdaf244a72a57a40171208d767bf8957f51f0f56f80502f7",
+        "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+        "src/tools.mjs": "edc61acc308ce0036667a0784a83866139337c9aa507f887c7efdc63c7cd59d9",
+        "build/context.node": "de85610c4413a326cb2ac133c0e210813876f420c2069a9133b759baafbab1a8",
+        "build/nodrop/nodrop.ko": "c8bf09032e6e6c735c36906e5e6994603e6ba191cfd0cff6b5d9780ab642be65",
+        "build/nodrop/monitor/monitor": "07a97acdd53351c9a910cd2844fefdb4e843d6048387efebf51cb887e6e0b745",
+        "scripts/analyze_agentsight_trial.py": "37364f71f5eb999482c6f567118ec43e3ededbffe0dfd88abcbccd7b4b3fc483",
+        "scripts/harbor_cached_pi.py": "8f29ba813ccf60ac70de472b80c193069281e1a8220042db7fe1b26e522b68e2"
+      },
+      "external_binary_sha256": {
+        "agent-sentinel/agent-sentinel": "53190148eab43941a2ad9ff142d6966f235c0dc0eff60c50f01bffa0d13c7169",
+        "agentsight-paper/bpf/sslsniff": "950cdbfd1f726e565fea5b7dfb1e371a1044a95724e319884ae1810311165c2f",
+        "agentsight-bin/agentsight": "e8efee7733eb63fcb9bc4380dddd9aef9610e33e96f8e3fe4bec3d9d99ef1320"
+      },
+      "official_installation_cache": {
+        "source_condition": "baseline",
+        "source_task": "log-summary-date-ranges",
+        "pi_version": "1.4.0",
+        "node_relative": ".nvm/versions/node/v22.23.4/bin/node",
+        "pi_cli_relative": ".nvm/versions/node/v22.23.4/lib/node_modules/@earendil-works/pi-coding-agent/dist/bundle/cli.js",
+        "node_sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+        "pi_cli_sha256": "e79626f2dd6f94aa45d30f3fa63cd84319a6eefcd150b353cfaf274366926774",
+        "archive_bytes": 344207360,
+        "archive_sha256": "f619014bba85d2b5e0c3f9576ff6cd809a860f1328c3753dd69887958e402f7a"
+      }
+    },
+    {
+      "model": "ibrain/deepseek-v4.1-flash-1017-al",
+      "pi": "1.4.0",
+      "harbor": "0.25.0",
+      "kernel": "6.8.0-137-generic",
+      "credential": "project-ak-api",
+      "business_tools": [
+        "read",
+        "bash",
+        "edit",
+        "write"
+      ],
+      "native_pi_loop": true,
+      "original_task_verifiers": true,
+      "original_task_resources": true,
+      "attempts_per_case": 1,
+      "cumulative_token_turn_tool_limits": null,
+      "automatic_trial_retries": false,
+      "task_timeout_override": false,
+      "nodrop_module_lifetime": "per-trial load and unload",
+      "plans": [
+        "sentinel--fix-git"
+      ],
+      "source_sha256": {
+        "scripts/run_fiveway_comparison.py": "f15c5602cb4a897a0bb2d9b695fe61032a3937f51480aadfb7ccf99336d3d638",
+        "scripts/harbor_external_audit.py": "b2e460075dc5011c57e73edf28f8dde55800937d2fe84bbebb4cf7691fc39447",
+        "src/sentinel-extension.mjs": "ea2ed226fe2f434da5d6fd9df81acd78b5338a80add531bd648dc25f9a44eabe",
+        "src/extension.mjs": "562fdb8b3b61fc93cdaf244a72a57a40171208d767bf8957f51f0f56f80502f7",
+        "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+        "src/tools.mjs": "edc61acc308ce0036667a0784a83866139337c9aa507f887c7efdc63c7cd59d9",
+        "build/context.node": "de85610c4413a326cb2ac133c0e210813876f420c2069a9133b759baafbab1a8",
+        "build/nodrop/nodrop.ko": "c8bf09032e6e6c735c36906e5e6994603e6ba191cfd0cff6b5d9780ab642be65",
+        "build/nodrop/monitor/monitor": "07a97acdd53351c9a910cd2844fefdb4e843d6048387efebf51cb887e6e0b745",
+        "scripts/analyze_agentsight_trial.py": "37364f71f5eb999482c6f567118ec43e3ededbffe0dfd88abcbccd7b4b3fc483",
+        "scripts/harbor_cached_pi.py": "8f29ba813ccf60ac70de472b80c193069281e1a8220042db7fe1b26e522b68e2"
+      },
+      "external_binary_sha256": {
+        "agent-sentinel/agent-sentinel": "53190148eab43941a2ad9ff142d6966f235c0dc0eff60c50f01bffa0d13c7169",
+        "agentsight-paper/bpf/sslsniff": "950cdbfd1f726e565fea5b7dfb1e371a1044a95724e319884ae1810311165c2f",
+        "agentsight-bin/agentsight": "e8efee7733eb63fcb9bc4380dddd9aef9610e33e96f8e3fe4bec3d9d99ef1320"
+      },
+      "official_installation_cache": {
+        "source_condition": "baseline",
+        "source_task": "log-summary-date-ranges",
+        "pi_version": "1.4.0",
+        "node_relative": ".nvm/versions/node/v22.23.4/bin/node",
+        "pi_cli_relative": ".nvm/versions/node/v22.23.4/lib/node_modules/@earendil-works/pi-coding-agent/dist/bundle/cli.js",
+        "node_sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+        "pi_cli_sha256": "e79626f2dd6f94aa45d30f3fa63cd84319a6eefcd150b353cfaf274366926774",
+        "archive_bytes": 344207360,
+        "archive_sha256": "f619014bba85d2b5e0c3f9576ff6cd809a860f1328c3753dd69887958e402f7a"
+      }
+    },
+    {
+      "model": "ibrain/deepseek-v4.1-flash-1017-al",
+      "pi": "1.4.0",
+      "harbor": "0.25.0",
+      "kernel": "6.8.0-137-generic",
+      "credential": "project-ak-api",
+      "business_tools": [
+        "read",
+        "bash",
+        "edit",
+        "write"
+      ],
+      "native_pi_loop": true,
+      "original_task_verifiers": true,
+      "original_task_resources": true,
+      "attempts_per_case": 1,
+      "cumulative_token_turn_tool_limits": null,
+      "automatic_trial_retries": false,
+      "task_timeout_override": false,
+      "nodrop_module_lifetime": "per-trial load and unload",
+      "plans": [
+        "sentinel--log-summary-date-ranges"
+      ],
+      "source_sha256": {
+        "scripts/run_fiveway_comparison.py": "f15c5602cb4a897a0bb2d9b695fe61032a3937f51480aadfb7ccf99336d3d638",
+        "scripts/harbor_external_audit.py": "b2e460075dc5011c57e73edf28f8dde55800937d2fe84bbebb4cf7691fc39447",
+        "src/sentinel-extension.mjs": "ea2ed226fe2f434da5d6fd9df81acd78b5338a80add531bd648dc25f9a44eabe",
+        "src/extension.mjs": "562fdb8b3b61fc93cdaf244a72a57a40171208d767bf8957f51f0f56f80502f7",
+        "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+        "src/tools.mjs": "edc61acc308ce0036667a0784a83866139337c9aa507f887c7efdc63c7cd59d9",
+        "build/context.node": "de85610c4413a326cb2ac133c0e210813876f420c2069a9133b759baafbab1a8",
+        "build/nodrop/nodrop.ko": "c8bf09032e6e6c735c36906e5e6994603e6ba191cfd0cff6b5d9780ab642be65",
+        "build/nodrop/monitor/monitor": "07a97acdd53351c9a910cd2844fefdb4e843d6048387efebf51cb887e6e0b745",
+        "scripts/analyze_agentsight_trial.py": "37364f71f5eb999482c6f567118ec43e3ededbffe0dfd88abcbccd7b4b3fc483",
+        "scripts/harbor_cached_pi.py": "8f29ba813ccf60ac70de472b80c193069281e1a8220042db7fe1b26e522b68e2"
+      },
+      "external_binary_sha256": {
+        "agent-sentinel/agent-sentinel": "53190148eab43941a2ad9ff142d6966f235c0dc0eff60c50f01bffa0d13c7169",
+        "agentsight-paper/bpf/sslsniff": "950cdbfd1f726e565fea5b7dfb1e371a1044a95724e319884ae1810311165c2f",
+        "agentsight-bin/agentsight": "e8efee7733eb63fcb9bc4380dddd9aef9610e33e96f8e3fe4bec3d9d99ef1320"
+      },
+      "official_installation_cache": {
+        "source_condition": "baseline",
+        "source_task": "log-summary-date-ranges",
+        "pi_version": "1.4.0",
+        "node_relative": ".nvm/versions/node/v22.23.4/bin/node",
+        "pi_cli_relative": ".nvm/versions/node/v22.23.4/lib/node_modules/@earendil-works/pi-coding-agent/dist/bundle/cli.js",
+        "node_sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+        "pi_cli_sha256": "e79626f2dd6f94aa45d30f3fa63cd84319a6eefcd150b353cfaf274366926774",
+        "archive_bytes": 344207360,
+        "archive_sha256": "f619014bba85d2b5e0c3f9576ff6cd809a860f1328c3753dd69887958e402f7a"
+      }
+    },
+    {
+      "model": "ibrain/deepseek-v4.1-flash-1017-al",
+      "pi": "1.4.0",
+      "harbor": "0.25.0",
+      "kernel": "6.8.0-137-generic",
+      "credential": "project-ak-api",
+      "business_tools": [
+        "read",
+        "bash",
+        "edit",
+        "write"
+      ],
+      "native_pi_loop": true,
+      "original_task_verifiers": true,
+      "original_task_resources": true,
+      "attempts_per_case": 1,
+      "cumulative_token_turn_tool_limits": null,
+      "automatic_trial_retries": false,
+      "task_timeout_override": false,
+      "nodrop_module_lifetime": "retained until VM restart",
+      "plans": [
+        "agent--fix-git"
+      ],
+      "source_sha256": {
+        "scripts/run_fiveway_comparison.py": "f15c5602cb4a897a0bb2d9b695fe61032a3937f51480aadfb7ccf99336d3d638",
+        "scripts/harbor_external_audit.py": "b2e460075dc5011c57e73edf28f8dde55800937d2fe84bbebb4cf7691fc39447",
+        "src/sentinel-extension.mjs": "ea2ed226fe2f434da5d6fd9df81acd78b5338a80add531bd648dc25f9a44eabe",
+        "src/extension.mjs": "562fdb8b3b61fc93cdaf244a72a57a40171208d767bf8957f51f0f56f80502f7",
+        "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+        "src/tools.mjs": "edc61acc308ce0036667a0784a83866139337c9aa507f887c7efdc63c7cd59d9",
+        "build/context.node": "de85610c4413a326cb2ac133c0e210813876f420c2069a9133b759baafbab1a8",
+        "build/nodrop/nodrop.ko": "c8bf09032e6e6c735c36906e5e6994603e6ba191cfd0cff6b5d9780ab642be65",
+        "build/nodrop/monitor/monitor": "07a97acdd53351c9a910cd2844fefdb4e843d6048387efebf51cb887e6e0b745",
+        "scripts/analyze_agentsight_trial.py": "37364f71f5eb999482c6f567118ec43e3ededbffe0dfd88abcbccd7b4b3fc483",
+        "scripts/harbor_cached_pi.py": "8f29ba813ccf60ac70de472b80c193069281e1a8220042db7fe1b26e522b68e2"
+      },
+      "external_binary_sha256": {
+        "agent-sentinel/agent-sentinel": "53190148eab43941a2ad9ff142d6966f235c0dc0eff60c50f01bffa0d13c7169",
+        "agentsight-paper/bpf/sslsniff": "950cdbfd1f726e565fea5b7dfb1e371a1044a95724e319884ae1810311165c2f",
+        "agentsight-bin/agentsight": "e8efee7733eb63fcb9bc4380dddd9aef9610e33e96f8e3fe4bec3d9d99ef1320"
+      },
+      "official_installation_cache": {
+        "source_condition": "baseline",
+        "source_task": "log-summary-date-ranges",
+        "pi_version": "1.4.0",
+        "node_relative": ".nvm/versions/node/v22.23.4/bin/node",
+        "pi_cli_relative": ".nvm/versions/node/v22.23.4/lib/node_modules/@earendil-works/pi-coding-agent/dist/bundle/cli.js",
+        "node_sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+        "pi_cli_sha256": "e79626f2dd6f94aa45d30f3fa63cd84319a6eefcd150b353cfaf274366926774",
+        "archive_bytes": 344207360,
+        "archive_sha256": "f619014bba85d2b5e0c3f9576ff6cd809a860f1328c3753dd69887958e402f7a"
+      }
+    },
+    {
+      "model": "ibrain/deepseek-v4.1-flash-1017-al",
+      "pi": "1.4.0",
+      "harbor": "0.25.0",
+      "kernel": "6.8.0-137-generic",
+      "credential": "project-ak-api",
+      "business_tools": [
+        "read",
+        "bash",
+        "edit",
+        "write"
+      ],
+      "native_pi_loop": true,
+      "original_task_verifiers": true,
+      "original_task_resources": true,
+      "attempts_per_case": 1,
+      "cumulative_token_turn_tool_limits": null,
+      "automatic_trial_retries": false,
+      "task_timeout_override": false,
+      "nodrop_module_lifetime": "retained until VM restart",
+      "plans": [
+        "agent--log-summary-date-ranges"
+      ],
+      "source_sha256": {
+        "scripts/run_fiveway_comparison.py": "f15c5602cb4a897a0bb2d9b695fe61032a3937f51480aadfb7ccf99336d3d638",
+        "scripts/harbor_external_audit.py": "b2e460075dc5011c57e73edf28f8dde55800937d2fe84bbebb4cf7691fc39447",
+        "src/sentinel-extension.mjs": "ea2ed226fe2f434da5d6fd9df81acd78b5338a80add531bd648dc25f9a44eabe",
+        "src/extension.mjs": "562fdb8b3b61fc93cdaf244a72a57a40171208d767bf8957f51f0f56f80502f7",
+        "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+        "src/tools.mjs": "edc61acc308ce0036667a0784a83866139337c9aa507f887c7efdc63c7cd59d9",
+        "build/context.node": "de85610c4413a326cb2ac133c0e210813876f420c2069a9133b759baafbab1a8",
+        "build/nodrop/nodrop.ko": "c8bf09032e6e6c735c36906e5e6994603e6ba191cfd0cff6b5d9780ab642be65",
+        "build/nodrop/monitor/monitor": "07a97acdd53351c9a910cd2844fefdb4e843d6048387efebf51cb887e6e0b745",
+        "scripts/analyze_agentsight_trial.py": "37364f71f5eb999482c6f567118ec43e3ededbffe0dfd88abcbccd7b4b3fc483",
+        "scripts/harbor_cached_pi.py": "8f29ba813ccf60ac70de472b80c193069281e1a8220042db7fe1b26e522b68e2"
+      },
+      "external_binary_sha256": {
+        "agent-sentinel/agent-sentinel": "53190148eab43941a2ad9ff142d6966f235c0dc0eff60c50f01bffa0d13c7169",
+        "agentsight-paper/bpf/sslsniff": "950cdbfd1f726e565fea5b7dfb1e371a1044a95724e319884ae1810311165c2f",
+        "agentsight-bin/agentsight": "e8efee7733eb63fcb9bc4380dddd9aef9610e33e96f8e3fe4bec3d9d99ef1320"
+      },
+      "official_installation_cache": {
+        "source_condition": "baseline",
+        "source_task": "log-summary-date-ranges",
+        "pi_version": "1.4.0",
+        "node_relative": ".nvm/versions/node/v22.23.4/bin/node",
+        "pi_cli_relative": ".nvm/versions/node/v22.23.4/lib/node_modules/@earendil-works/pi-coding-agent/dist/bundle/cli.js",
+        "node_sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+        "pi_cli_sha256": "e79626f2dd6f94aa45d30f3fa63cd84319a6eefcd150b353cfaf274366926774",
+        "archive_bytes": 344207360,
+        "archive_sha256": "f619014bba85d2b5e0c3f9576ff6cd809a860f1328c3753dd69887958e402f7a"
+      }
+    },
+    {
+      "model": "ibrain/deepseek-v4.1-flash-1017-al",
+      "pi": "1.4.0",
+      "harbor": "0.25.0",
+      "kernel": "6.8.0-137-generic",
+      "credential": "project-ak-api",
+      "business_tools": [
+        "read",
+        "bash",
+        "edit",
+        "write"
+      ],
+      "native_pi_loop": true,
+      "original_task_verifiers": true,
+      "original_task_resources": true,
+      "attempts_per_case": 1,
+      "cumulative_token_turn_tool_limits": null,
+      "automatic_trial_retries": false,
+      "task_timeout_override": false,
+      "nodrop_module_lifetime": "retained until VM restart",
+      "plans": [
+        "fixed-raw--fix-git"
+      ],
+      "source_sha256": {
+        "scripts/run_fiveway_comparison.py": "f15c5602cb4a897a0bb2d9b695fe61032a3937f51480aadfb7ccf99336d3d638",
+        "scripts/harbor_external_audit.py": "b2e460075dc5011c57e73edf28f8dde55800937d2fe84bbebb4cf7691fc39447",
+        "src/sentinel-extension.mjs": "ea2ed226fe2f434da5d6fd9df81acd78b5338a80add531bd648dc25f9a44eabe",
+        "src/extension.mjs": "562fdb8b3b61fc93cdaf244a72a57a40171208d767bf8957f51f0f56f80502f7",
+        "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+        "src/tools.mjs": "edc61acc308ce0036667a0784a83866139337c9aa507f887c7efdc63c7cd59d9",
+        "build/context.node": "de85610c4413a326cb2ac133c0e210813876f420c2069a9133b759baafbab1a8",
+        "build/nodrop/nodrop.ko": "c8bf09032e6e6c735c36906e5e6994603e6ba191cfd0cff6b5d9780ab642be65",
+        "build/nodrop/monitor/monitor": "07a97acdd53351c9a910cd2844fefdb4e843d6048387efebf51cb887e6e0b745",
+        "scripts/analyze_agentsight_trial.py": "37364f71f5eb999482c6f567118ec43e3ededbffe0dfd88abcbccd7b4b3fc483",
+        "scripts/harbor_cached_pi.py": "8f29ba813ccf60ac70de472b80c193069281e1a8220042db7fe1b26e522b68e2"
+      },
+      "external_binary_sha256": {
+        "agent-sentinel/agent-sentinel": "53190148eab43941a2ad9ff142d6966f235c0dc0eff60c50f01bffa0d13c7169",
+        "agentsight-paper/bpf/sslsniff": "950cdbfd1f726e565fea5b7dfb1e371a1044a95724e319884ae1810311165c2f",
+        "agentsight-bin/agentsight": "e8efee7733eb63fcb9bc4380dddd9aef9610e33e96f8e3fe4bec3d9d99ef1320"
+      },
+      "official_installation_cache": {
+        "source_condition": "baseline",
+        "source_task": "log-summary-date-ranges",
+        "pi_version": "1.4.0",
+        "node_relative": ".nvm/versions/node/v22.23.4/bin/node",
+        "pi_cli_relative": ".nvm/versions/node/v22.23.4/lib/node_modules/@earendil-works/pi-coding-agent/dist/bundle/cli.js",
+        "node_sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+        "pi_cli_sha256": "e79626f2dd6f94aa45d30f3fa63cd84319a6eefcd150b353cfaf274366926774",
+        "archive_bytes": 344207360,
+        "archive_sha256": "f619014bba85d2b5e0c3f9576ff6cd809a860f1328c3753dd69887958e402f7a"
+      }
+    },
+    {
+      "model": "ibrain/deepseek-v4.1-flash-1017-al",
+      "pi": "1.4.0",
+      "harbor": "0.25.0",
+      "kernel": "6.8.0-137-generic",
+      "credential": "project-ak-api",
+      "business_tools": [
+        "read",
+        "bash",
+        "edit",
+        "write"
+      ],
+      "native_pi_loop": true,
+      "original_task_verifiers": true,
+      "original_task_resources": true,
+      "attempts_per_case": 1,
+      "cumulative_token_turn_tool_limits": null,
+      "automatic_trial_retries": false,
+      "task_timeout_override": false,
+      "nodrop_module_lifetime": "retained until VM restart",
+      "plans": [
+        "fixed-raw--log-summary-date-ranges"
+      ],
+      "source_sha256": {
+        "scripts/run_fiveway_comparison.py": "f15c5602cb4a897a0bb2d9b695fe61032a3937f51480aadfb7ccf99336d3d638",
+        "scripts/harbor_external_audit.py": "b2e460075dc5011c57e73edf28f8dde55800937d2fe84bbebb4cf7691fc39447",
+        "src/sentinel-extension.mjs": "ea2ed226fe2f434da5d6fd9df81acd78b5338a80add531bd648dc25f9a44eabe",
+        "src/extension.mjs": "562fdb8b3b61fc93cdaf244a72a57a40171208d767bf8957f51f0f56f80502f7",
+        "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+        "src/tools.mjs": "edc61acc308ce0036667a0784a83866139337c9aa507f887c7efdc63c7cd59d9",
+        "build/context.node": "de85610c4413a326cb2ac133c0e210813876f420c2069a9133b759baafbab1a8",
+        "build/nodrop/nodrop.ko": "c8bf09032e6e6c735c36906e5e6994603e6ba191cfd0cff6b5d9780ab642be65",
+        "build/nodrop/monitor/monitor": "07a97acdd53351c9a910cd2844fefdb4e843d6048387efebf51cb887e6e0b745",
+        "scripts/analyze_agentsight_trial.py": "37364f71f5eb999482c6f567118ec43e3ededbffe0dfd88abcbccd7b4b3fc483",
+        "scripts/harbor_cached_pi.py": "8f29ba813ccf60ac70de472b80c193069281e1a8220042db7fe1b26e522b68e2"
+      },
+      "external_binary_sha256": {
+        "agent-sentinel/agent-sentinel": "53190148eab43941a2ad9ff142d6966f235c0dc0eff60c50f01bffa0d13c7169",
+        "agentsight-paper/bpf/sslsniff": "950cdbfd1f726e565fea5b7dfb1e371a1044a95724e319884ae1810311165c2f",
+        "agentsight-bin/agentsight": "e8efee7733eb63fcb9bc4380dddd9aef9610e33e96f8e3fe4bec3d9d99ef1320"
+      },
+      "official_installation_cache": {
+        "source_condition": "baseline",
+        "source_task": "log-summary-date-ranges",
+        "pi_version": "1.4.0",
+        "node_relative": ".nvm/versions/node/v22.23.4/bin/node",
+        "pi_cli_relative": ".nvm/versions/node/v22.23.4/lib/node_modules/@earendil-works/pi-coding-agent/dist/bundle/cli.js",
+        "node_sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+        "pi_cli_sha256": "e79626f2dd6f94aa45d30f3fa63cd84319a6eefcd150b353cfaf274366926774",
+        "archive_bytes": 344207360,
+        "archive_sha256": "f619014bba85d2b5e0c3f9576ff6cd809a860f1328c3753dd69887958e402f7a"
+      }
+    },
+    {
+      "model": "ibrain/deepseek-v4.1-flash-1017-al",
+      "pi": "1.4.0",
+      "harbor": "0.25.0",
+      "kernel": "6.8.0-137-generic",
+      "credential": "project-ak-api",
+      "business_tools": [
+        "read",
+        "bash",
+        "edit",
+        "write"
+      ],
+      "native_pi_loop": true,
+      "original_task_verifiers": true,
+      "original_task_resources": true,
+      "attempts_per_case": 1,
+      "cumulative_token_turn_tool_limits": null,
+      "automatic_trial_retries": false,
+      "task_timeout_override": false,
+      "nodrop_module_lifetime": "per-trial load and unload",
+      "plans": [
+        "agentsight--fix-git"
+      ],
+      "source_sha256": {
+        "scripts/run_fiveway_comparison.py": "f15c5602cb4a897a0bb2d9b695fe61032a3937f51480aadfb7ccf99336d3d638",
+        "scripts/harbor_external_audit.py": "b2e460075dc5011c57e73edf28f8dde55800937d2fe84bbebb4cf7691fc39447",
+        "src/sentinel-extension.mjs": "ea2ed226fe2f434da5d6fd9df81acd78b5338a80add531bd648dc25f9a44eabe",
+        "src/extension.mjs": "562fdb8b3b61fc93cdaf244a72a57a40171208d767bf8957f51f0f56f80502f7",
+        "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+        "src/tools.mjs": "edc61acc308ce0036667a0784a83866139337c9aa507f887c7efdc63c7cd59d9",
+        "build/context.node": "de85610c4413a326cb2ac133c0e210813876f420c2069a9133b759baafbab1a8",
+        "build/nodrop/nodrop.ko": "c8bf09032e6e6c735c36906e5e6994603e6ba191cfd0cff6b5d9780ab642be65",
+        "build/nodrop/monitor/monitor": "07a97acdd53351c9a910cd2844fefdb4e843d6048387efebf51cb887e6e0b745",
+        "scripts/analyze_agentsight_trial.py": "37364f71f5eb999482c6f567118ec43e3ededbffe0dfd88abcbccd7b4b3fc483",
+        "scripts/harbor_cached_pi.py": "8f29ba813ccf60ac70de472b80c193069281e1a8220042db7fe1b26e522b68e2"
+      },
+      "external_binary_sha256": {
+        "agent-sentinel/agent-sentinel": "53190148eab43941a2ad9ff142d6966f235c0dc0eff60c50f01bffa0d13c7169",
+        "agentsight-paper/bpf/sslsniff": "950cdbfd1f726e565fea5b7dfb1e371a1044a95724e319884ae1810311165c2f",
+        "agentsight-bin/agentsight": "e8efee7733eb63fcb9bc4380dddd9aef9610e33e96f8e3fe4bec3d9d99ef1320"
+      },
+      "official_installation_cache": {
+        "source_condition": "baseline",
+        "source_task": "log-summary-date-ranges",
+        "pi_version": "1.4.0",
+        "node_relative": ".nvm/versions/node/v22.23.4/bin/node",
+        "pi_cli_relative": ".nvm/versions/node/v22.23.4/lib/node_modules/@earendil-works/pi-coding-agent/dist/bundle/cli.js",
+        "node_sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+        "pi_cli_sha256": "e79626f2dd6f94aa45d30f3fa63cd84319a6eefcd150b353cfaf274366926774",
+        "archive_bytes": 344207360,
+        "archive_sha256": "f619014bba85d2b5e0c3f9576ff6cd809a860f1328c3753dd69887958e402f7a"
+      }
+    }
+  ]
+}

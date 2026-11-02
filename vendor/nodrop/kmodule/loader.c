@@ -8,12 +8,9 @@
 #include <linux/fs_struct.h>
 #include <linux/delay.h>
 #include <linux/mman.h>
-#include <linux/mm.h>
 #include <linux/vmalloc.h>
-#include <linux/seccomp.h>
 #include <linux/sched/signal.h>
 #include <linux/version.h>
-#include <linux/module.h>
 #include <linux/preempt.h>
 #include <linux/hardirq.h>
 #include <linux/irqflags.h>
@@ -32,9 +29,6 @@ static struct file *filp_monitor, *filp_interpreter;
 
 static unsigned long monitor_info_off;
 
-static bool sec_skip = false;
-module_param(sec_skip, bool, 0644);
-MODULE_PARM_DESC(sec_skip, "do not load the consumer for seccomp-filtered tasks");
 static DEFINE_MUTEX(nod_load_mutex);
 
 static uint64_t
@@ -157,8 +151,9 @@ create_stack_with_red_zone(unsigned long addr, unsigned long size)
     (void)addr;
     stack_begin = vm_mmap(NULL, 0, size + PAGE_SIZE + PAGE_SIZE, 0,
                           MAP_PRIVATE | MAP_ANONYMOUS, 0);
-    if (BAD_ADDR(stack_begin))
+    if (BAD_ADDR(stack_begin)) {
         return stack_begin;
+    }
 
     addr = stack_begin + PAGE_SIZE;
     vm_munmap(addr, size);
@@ -191,7 +186,7 @@ create_elf_tbls(struct elfhdr *exec,
 #define STACK_ADD(sp, items)    ((elf_addr_t __user *)(sp) - (items))
 #define STACK_ALLOC(sp, len)    ({(sp) -= (len); sp;})
 
-    int i, envc, elf_info_idx, items, step = 0;
+    int i, envc, elf_info_idx, items;
     uint64_t p, arg_start, env_start;
     unsigned char k_rand_bytes[16];
 
@@ -201,10 +196,8 @@ create_elf_tbls(struct elfhdr *exec,
 
     // allocate a dedicate stack for the consumer
     p = create_stack_with_red_zone(0, CONFIG_MONITOR_STACK_SIZE);
-    if (BAD_ADDR(p)) {
-        step = 1;
+    if (BAD_ADDR(p))
         goto err;
-    }
     stack_info->stack_start = p;
     stack_info->stack_end = p + CONFIG_MONITOR_STACK_SIZE;
     p = stack_info->stack_end - sizeof(void *);
@@ -212,20 +205,17 @@ create_elf_tbls(struct elfhdr *exec,
     // generate random bytes
     get_random_bytes(k_rand_bytes, sizeof(k_rand_bytes));
     u_rand_bytes = (elf_addr_t __user *)STACK_ALLOC(p, sizeof(k_rand_bytes));
-    step = 2;
     if (copy_to_user(u_rand_bytes, k_rand_bytes, sizeof(k_rand_bytes)))
         goto err;
 
     // put nod_stack_info into Runtime stack
     *stack_info_addr = p = STACK_ALLOC(p, sizeof(*stack_info));
-    step = 3;
     if (copy_to_user((char __user *)p, stack_info, sizeof(*stack_info)))
         goto err;
 
     for(i = argc - 1; i >= 0; --i) {
         int len = strlen(argv[i]) + 1;
         p = STACK_ALLOC(p, len);
-        step = 4;
         if (copy_to_user((char __user *)p, argv[i], len))
             goto err;
     }
@@ -282,7 +272,6 @@ create_elf_tbls(struct elfhdr *exec,
 
     // count that how many envs
     envc = 0;
-    step = 5;
     env_start = current->mm->env_start;
     while (env_start < current->mm->env_end) {
         env_start += TRAVERSE_ENV_ENT(env_start);
@@ -330,7 +319,6 @@ create_elf_tbls(struct elfhdr *exec,
     if(put_user((elf_addr_t)*stack_info_addr, sp++))
         goto err;
 
-
     // put NULL to mark the end of argv
     if (put_user(0, sp++))
         goto err;
@@ -354,9 +342,8 @@ create_elf_tbls(struct elfhdr *exec,
     return NOD_SUCCESS;
 
 err:
-    pr_err_ratelimited("nodrop: create_elf_tbls step %d p=%lx\n", step, (unsigned long)p);
     vfree(elf_info);
-    return (step == 1 && p) ? (int)p : -EFAULT;
+    return -EFAULT;
 }
 
 static int
@@ -484,7 +471,6 @@ nod_load_monitor(struct nod_proc_info *p)
         return -EINTR;
 
     mutex_lock(&nod_load_mutex);
-    per_cpu(g_stat, smp_processor_id()).n_monitor_entries++;
     struct pt_regs *regs;
     int relaxed = 0;
     unsigned int prem = 0;
@@ -511,15 +497,6 @@ nod_load_monitor(struct nod_proc_info *p)
         preempt_enable();
         relaxed = 1;
     }
-
-    if (sec_skip && current->seccomp.mode != SECCOMP_MODE_DISABLED) {
-        pr_warn_ratelimited("nodrop: %s[%d] runs under seccomp, consumer not loaded\n",
-                            current->comm, current->pid);
-        retval = -EPERM;
-        goto out;
-    }
-
-
 
     switch(p->status) {
     case NOD_CLONE:
@@ -559,27 +536,23 @@ nod_load_monitor(struct nod_proc_info *p)
     }
 
     if (need_build) {
-        if (p->stack_addr)
-            pr_warn_ratelimited("nodrop: consumer stack of pid %d was replaced, rebuilding\n",
-                                current->pid);
-
         retval = create_elf_tbls(&monitor_elf_ex, p->load_addr,
                                  p->interp_load_addr, &p->stack_info,
                                  &p->stack_info_addr, &p->stack_addr,
                                  argc, argv);
         if (retval != NOD_SUCCESS)
             goto out;
+
+        vpr_dbg("monitor: entry 0x%llx stack [0x%llx-0x%llx] stack_info_addr 0x%llx\n",
+                p->entry_addr, p->stack_info.stack_start,
+                p->stack_info.stack_end, p->stack_info_addr);
     }
 
 #endif
 
     if (unlikely(p->buffer.info && p->buffer.info->buffer_size &&
-                 p->buffer.info->tail > p->buffer.info->buffer_size)) {
-        pr_warn_ratelimited("nodrop: pid %d tail %u clamped to buffer %lu\n",
-                            current->pid, p->buffer.info->tail,
-                            p->buffer.info->buffer_size);
+                 p->buffer.info->tail > p->buffer.info->buffer_size))
         p->buffer.info->tail = p->buffer.info->buffer_size;
-    }
 
     p->stack_info.syscall_nr = syscall_get_nr(current, regs);
     syscall_get_arguments_deprecated(current, regs, 0, 1, &p->stack_info.exit_code);
@@ -606,8 +579,7 @@ nod_load_monitor(struct nod_proc_info *p)
 
 out:
     if (retval != -EINTR)
-        pr_err_ratelimited("nodrop: cannot transfer logging buffer (%d) preempt=%x\n",
-                           retval, prem);
+        pr_err_ratelimited("nodrop: cannot transfer logging buffer (%d)\n", retval);
     if (relaxed)
         preempt_disable();
     mutex_unlock(&nod_load_mutex);

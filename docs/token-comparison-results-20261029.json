@@ -1,0 +1,487 @@
+{
+  "tasks": 3,
+  "trials": 6,
+  "pairs": [
+    {
+      "task": "fix-git",
+      "off": {
+        "trial": "fix-git-off",
+        "task": "fix-git",
+        "audit": "off",
+        "policies": null,
+        "usage": {
+          "input": 5575,
+          "output": 2051,
+          "cacheRead": 29184,
+          "cacheWrite": 0,
+          "totalTokens": 36810
+        },
+        "turns": 8,
+        "first_prompt_tokens": 1452,
+        "tool_result_text_chars": 12074,
+        "largest_tool_result_text_chars": 5494,
+        "tool_requests": 10,
+        "requests": 8,
+        "executed_tool_counts": {},
+        "task_passed": true,
+        "stop": null,
+        "error": null,
+        "agent_elapsed_sec": 30.227,
+        "limits": {
+          "turns": 40,
+          "tools": 100,
+          "tokens": 200000,
+          "timeoutSec": 900
+        },
+        "max_output_tokens": 16384,
+        "model": "deepseek-v4.1-flash-al",
+        "api": "openai-completions",
+        "instruction_sha256": "6c216d38d66c187905b6156e80d02d678fc76c6f98a6f6e0c92792f65939b9e6",
+        "environment": {
+          "kernel": "6.8.0-137-generic",
+          "isolation": "chroot",
+          "uid": 1000,
+          "workdir": "/app/personal-site"
+        },
+        "raw_events": 0,
+        "histogram_events": 0,
+        "raw_bytes": 0,
+        "counts_bytes": 0,
+        "metadata_bytes": 0,
+        "statistics": {
+          "n_evts": 0,
+          "drop_evts": 0,
+          "drop_overflow": 0,
+          "drop_unsolved": 0
+        },
+        "cleanup": {
+          "module_unloaded": true,
+          "kernel_errors": false
+        },
+        "first_request_sha256": "195dd11fb95c8bcea839bfb8340e5462198840fa544ccd85dbfa338a62963274",
+        "first_request_tools_sha256": "e926115ec4e469e4ab5e3b1846dd1a24c5aa9d208d0d44937630f1a0d07a7f2b",
+        "all_request_tools_sha256": [
+          "e926115ec4e469e4ab5e3b1846dd1a24c5aa9d208d0d44937630f1a0d07a7f2b"
+        ],
+        "all_system_messages_sha256": [
+          "ddb57121a816929b51787c3a1f2bcc771caf12a69bbc32fc1c24151403803b90"
+        ],
+        "request_bytes": 161118,
+        "retained_events": 0
+      },
+      "on": {
+        "trial": "fix-git-on",
+        "task": "fix-git",
+        "audit": "on",
+        "policies": {
+          "bash": "raw",
+          "read": "counts",
+          "write": "raw",
+          "edit": "raw",
+          "grep": "counts",
+          "find": "counts",
+          "ls": "counts"
+        },
+        "usage": {
+          "input": 7992,
+          "output": 4302,
+          "cacheRead": 61696,
+          "cacheWrite": 0,
+          "totalTokens": 73990
+        },
+        "turns": 14,
+        "first_prompt_tokens": 1452,
+        "tool_result_text_chars": 12199,
+        "largest_tool_result_text_chars": 4943,
+        "tool_requests": 19,
+        "requests": 14,
+        "executed_tool_counts": {
+          "bash": 18,
+          "read": 1
+        },
+        "task_passed": true,
+        "stop": null,
+        "error": null,
+        "agent_elapsed_sec": 77.671,
+        "limits": {
+          "turns": 40,
+          "tools": 100,
+          "tokens": 200000,
+          "timeoutSec": 900
+        },
+        "max_output_tokens": 16384,
+        "model": "deepseek-v4.1-flash-al",
+        "api": "openai-completions",
+        "instruction_sha256": "6c216d38d66c187905b6156e80d02d678fc76c6f98a6f6e0c92792f65939b9e6",
+        "environment": {
+          "kernel": "6.8.0-137-generic",
+          "isolation": "chroot",
+          "uid": 1000,
+          "workdir": "/app/personal-site"
+        },
+        "raw_events": 25576,
+        "histogram_events": 175,
+        "raw_bytes": 1948214,
+        "counts_bytes": 2314,
+        "metadata_bytes": 11192,
+        "statistics": {
+          "n_evts": 25751,
+          "drop_evts": 0,
+          "drop_unsolved": 0,
+          "drop_overflow": 0,
+          "monitor_entries": 108
+        },
+        "cleanup": {
+          "module_unloaded": true,
+          "kernel_errors": false
+        },
+        "first_request_sha256": "195dd11fb95c8bcea839bfb8340e5462198840fa544ccd85dbfa338a62963274",
+        "first_request_tools_sha256": "e926115ec4e469e4ab5e3b1846dd1a24c5aa9d208d0d44937630f1a0d07a7f2b",
+        "all_request_tools_sha256": [
+          "e926115ec4e469e4ab5e3b1846dd1a24c5aa9d208d0d44937630f1a0d07a7f2b"
+        ],
+        "all_system_messages_sha256": [
+          "ddb57121a816929b51787c3a1f2bcc771caf12a69bbc32fc1c24151403803b90"
+        ],
+        "request_bytes": 353846,
+        "retained_events": 25751
+      },
+      "total_token_delta": 37180,
+      "total_token_delta_percent": 101.00516164085846,
+      "first_request_identical": true,
+      "first_prompt_token_delta": 0,
+      "tool_definitions_identical": true,
+      "system_messages_identical": true
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "off": {
+        "trial": "log-summary-date-ranges-off",
+        "task": "log-summary-date-ranges",
+        "audit": "off",
+        "policies": null,
+        "usage": {
+          "input": 5180,
+          "output": 2590,
+          "cacheRead": 34560,
+          "cacheWrite": 0,
+          "totalTokens": 42330
+        },
+        "turns": 9,
+        "first_prompt_tokens": 1852,
+        "tool_result_text_chars": 5180,
+        "largest_tool_result_text_chars": 3115,
+        "tool_requests": 9,
+        "requests": 9,
+        "executed_tool_counts": {},
+        "task_passed": true,
+        "stop": null,
+        "error": null,
+        "agent_elapsed_sec": 161.062,
+        "limits": {
+          "turns": 40,
+          "tools": 100,
+          "tokens": 200000,
+          "timeoutSec": 900
+        },
+        "max_output_tokens": 16384,
+        "model": "deepseek-v4.1-flash-al",
+        "api": "openai-completions",
+        "instruction_sha256": "d43bec1c9c66bc96037c93e1192909bfdf53a2927e54d9f3c88e5ce2499c0e98",
+        "environment": {
+          "kernel": "6.8.0-137-generic",
+          "isolation": "chroot",
+          "uid": 1000,
+          "workdir": "/app"
+        },
+        "raw_events": 0,
+        "histogram_events": 0,
+        "raw_bytes": 0,
+        "counts_bytes": 0,
+        "metadata_bytes": 0,
+        "statistics": {
+          "n_evts": 0,
+          "drop_evts": 0,
+          "drop_overflow": 0,
+          "drop_unsolved": 0
+        },
+        "cleanup": {
+          "module_unloaded": true,
+          "kernel_errors": false
+        },
+        "first_request_sha256": "d25d287fb9ab60a82d15cb28888c328f47ea1f4f0651c1da2daf545186d59d28",
+        "first_request_tools_sha256": "e926115ec4e469e4ab5e3b1846dd1a24c5aa9d208d0d44937630f1a0d07a7f2b",
+        "all_request_tools_sha256": [
+          "e926115ec4e469e4ab5e3b1846dd1a24c5aa9d208d0d44937630f1a0d07a7f2b"
+        ],
+        "all_system_messages_sha256": [
+          "904142cf8e2ab4c8e65889655345579855c7af834adc83f0dd7b5d5a1ed8f134"
+        ],
+        "request_bytes": 156635,
+        "retained_events": 0
+      },
+      "on": {
+        "trial": "log-summary-date-ranges-on",
+        "task": "log-summary-date-ranges",
+        "audit": "on",
+        "policies": {
+          "bash": "raw",
+          "read": "counts",
+          "write": "raw",
+          "edit": "raw",
+          "grep": "counts",
+          "find": "counts",
+          "ls": "counts"
+        },
+        "usage": {
+          "input": 12308,
+          "output": 1773,
+          "cacheRead": 59392,
+          "cacheWrite": 0,
+          "totalTokens": 73473
+        },
+        "turns": 7,
+        "first_prompt_tokens": 1852,
+        "tool_result_text_chars": 20796,
+        "largest_tool_result_text_chars": 15993,
+        "tool_requests": 6,
+        "requests": 7,
+        "executed_tool_counts": {
+          "bash": 6
+        },
+        "task_passed": true,
+        "stop": null,
+        "error": null,
+        "agent_elapsed_sec": 75.554,
+        "limits": {
+          "turns": 40,
+          "tools": 100,
+          "tokens": 200000,
+          "timeoutSec": 900
+        },
+        "max_output_tokens": 16384,
+        "model": "deepseek-v4.1-flash-al",
+        "api": "openai-completions",
+        "instruction_sha256": "d43bec1c9c66bc96037c93e1192909bfdf53a2927e54d9f3c88e5ce2499c0e98",
+        "environment": {
+          "kernel": "6.8.0-137-generic",
+          "isolation": "chroot",
+          "uid": 1000,
+          "workdir": "/app"
+        },
+        "raw_events": 60341,
+        "histogram_events": 0,
+        "raw_bytes": 5544275,
+        "counts_bytes": 0,
+        "metadata_bytes": 5047,
+        "statistics": {
+          "n_evts": 60554,
+          "drop_evts": 0,
+          "drop_unsolved": 213,
+          "drop_overflow": 0,
+          "monitor_entries": 220
+        },
+        "cleanup": {
+          "module_unloaded": true,
+          "kernel_errors": false
+        },
+        "first_request_sha256": "d25d287fb9ab60a82d15cb28888c328f47ea1f4f0651c1da2daf545186d59d28",
+        "first_request_tools_sha256": "e926115ec4e469e4ab5e3b1846dd1a24c5aa9d208d0d44937630f1a0d07a7f2b",
+        "all_request_tools_sha256": [
+          "e926115ec4e469e4ab5e3b1846dd1a24c5aa9d208d0d44937630f1a0d07a7f2b"
+        ],
+        "all_system_messages_sha256": [
+          "904142cf8e2ab4c8e65889655345579855c7af834adc83f0dd7b5d5a1ed8f134"
+        ],
+        "request_bytes": 204493,
+        "retained_events": 60341
+      },
+      "total_token_delta": 31143,
+      "total_token_delta_percent": 73.57193479801559,
+      "first_request_identical": true,
+      "first_prompt_token_delta": 0,
+      "tool_definitions_identical": true,
+      "system_messages_identical": true
+    },
+    {
+      "task": "openssl-selfsigned-cert",
+      "off": {
+        "trial": "openssl-selfsigned-cert-off",
+        "task": "openssl-selfsigned-cert",
+        "audit": "off",
+        "policies": null,
+        "usage": {
+          "input": 7607,
+          "output": 4139,
+          "cacheRead": 46080,
+          "cacheWrite": 0,
+          "totalTokens": 57826
+        },
+        "turns": 14,
+        "first_prompt_tokens": 1787,
+        "tool_result_text_chars": 3392,
+        "largest_tool_result_text_chars": 710,
+        "tool_requests": 13,
+        "requests": 14,
+        "executed_tool_counts": {},
+        "task_passed": true,
+        "stop": null,
+        "error": null,
+        "agent_elapsed_sec": 67.317,
+        "limits": {
+          "turns": 40,
+          "tools": 100,
+          "tokens": 200000,
+          "timeoutSec": 900
+        },
+        "max_output_tokens": 16384,
+        "model": "deepseek-v4.1-flash-al",
+        "api": "openai-completions",
+        "instruction_sha256": "df64deb1b3a5953a0c5ef8442e3e73856b7733f6fe03614d9cb3a7e4b02b4edf",
+        "environment": {
+          "kernel": "6.8.0-137-generic",
+          "isolation": "chroot",
+          "uid": 1000,
+          "workdir": "/app"
+        },
+        "raw_events": 0,
+        "histogram_events": 0,
+        "raw_bytes": 0,
+        "counts_bytes": 0,
+        "metadata_bytes": 0,
+        "statistics": {
+          "n_evts": 0,
+          "drop_evts": 0,
+          "drop_overflow": 0,
+          "drop_unsolved": 0
+        },
+        "cleanup": {
+          "module_unloaded": true,
+          "kernel_errors": false
+        },
+        "first_request_sha256": "895f9fe7950f208513320b94af1dfe89999045b102eb909d6b3cf3c435ebf8ff",
+        "first_request_tools_sha256": "e926115ec4e469e4ab5e3b1846dd1a24c5aa9d208d0d44937630f1a0d07a7f2b",
+        "all_request_tools_sha256": [
+          "e926115ec4e469e4ab5e3b1846dd1a24c5aa9d208d0d44937630f1a0d07a7f2b"
+        ],
+        "all_system_messages_sha256": [
+          "904142cf8e2ab4c8e65889655345579855c7af834adc83f0dd7b5d5a1ed8f134"
+        ],
+        "request_bytes": 253300,
+        "retained_events": 0
+      },
+      "on": {
+        "trial": "openssl-selfsigned-cert-on",
+        "task": "openssl-selfsigned-cert",
+        "audit": "on",
+        "policies": {
+          "bash": "raw",
+          "read": "counts",
+          "write": "raw",
+          "edit": "raw",
+          "grep": "counts",
+          "find": "counts",
+          "ls": "counts"
+        },
+        "usage": {
+          "input": 6598,
+          "output": 4428,
+          "cacheRead": 45824,
+          "cacheWrite": 0,
+          "totalTokens": 56850
+        },
+        "turns": 13,
+        "first_prompt_tokens": 1787,
+        "tool_result_text_chars": 4297,
+        "largest_tool_result_text_chars": 920,
+        "tool_requests": 14,
+        "requests": 13,
+        "executed_tool_counts": {
+          "bash": 13,
+          "write": 1
+        },
+        "task_passed": true,
+        "stop": null,
+        "error": null,
+        "agent_elapsed_sec": 115.34,
+        "limits": {
+          "turns": 40,
+          "tools": 100,
+          "tokens": 200000,
+          "timeoutSec": 900
+        },
+        "max_output_tokens": 16384,
+        "model": "deepseek-v4.1-flash-al",
+        "api": "openai-completions",
+        "instruction_sha256": "df64deb1b3a5953a0c5ef8442e3e73856b7733f6fe03614d9cb3a7e4b02b4edf",
+        "environment": {
+          "kernel": "6.8.0-137-generic",
+          "isolation": "chroot",
+          "uid": 1000,
+          "workdir": "/app"
+        },
+        "raw_events": 38648,
+        "histogram_events": 0,
+        "raw_bytes": 2823391,
+        "counts_bytes": 0,
+        "metadata_bytes": 14837,
+        "statistics": {
+          "n_evts": 38989,
+          "drop_evts": 0,
+          "drop_unsolved": 341,
+          "drop_overflow": 0,
+          "monitor_entries": 136
+        },
+        "cleanup": {
+          "module_unloaded": true,
+          "kernel_errors": false
+        },
+        "first_request_sha256": "895f9fe7950f208513320b94af1dfe89999045b102eb909d6b3cf3c435ebf8ff",
+        "first_request_tools_sha256": "e926115ec4e469e4ab5e3b1846dd1a24c5aa9d208d0d44937630f1a0d07a7f2b",
+        "all_request_tools_sha256": [
+          "e926115ec4e469e4ab5e3b1846dd1a24c5aa9d208d0d44937630f1a0d07a7f2b"
+        ],
+        "all_system_messages_sha256": [
+          "904142cf8e2ab4c8e65889655345579855c7af834adc83f0dd7b5d5a1ed8f134"
+        ],
+        "request_bytes": 243415,
+        "retained_events": 38648
+      },
+      "total_token_delta": -976,
+      "total_token_delta_percent": -1.6878220869505067,
+      "first_request_identical": true,
+      "first_prompt_token_delta": 0,
+      "tool_definitions_identical": true,
+      "system_messages_identical": true
+    }
+  ],
+  "totals": {
+    "off_tokens": 136966,
+    "on_tokens": 204313,
+    "delta_tokens": 67347,
+    "delta_percent": 49.170597082487625
+  },
+  "design": {
+    "replicates_per_condition": 1,
+    "audit_off": "Original Pi tools; no audit extension or NoDrop module",
+    "audit_on": "Pi audit extension; execution identity and retention policy submitted through ioctl",
+    "comparison": "Independent live model sessions on fresh task filesystems",
+    "inference": "Observed session token deltas include different model execution paths"
+  },
+  "runtime_sha256": {
+    "build/nodrop/nodrop.ko": "8193e5c90382e1c2c02821fac2934105f4e1e74935b52dd8a8c38e5e5c5579d5",
+    "build/nodrop/monitor/monitor": "c9da7e700dd55bf727b468b82d4d10998058805bc36a6eebb534ab295af18b75",
+    "build/context.node": "70bd8c69a7166720fa6bddb3fdd9c5cb9119c2ea240e6ab8ffbc6da851e28dc7",
+    "scripts/run_terminal_bench.py": "5f303fed8055493bef7f28d6e1bdbcc4a1144380db0260d0853b1b17c717756a",
+    "scripts/terminal_bench.mjs": "554416ae68a377860e14390ca53d827d9319746c2b5c315b069726ff0c4dcba6",
+    "experiments/token-audit-policies.json": "35769aea884b38ba2ee976d7ab9cc2e6877d6176bc0d351ad474fb269ae2da0c"
+  },
+  "environment_cleanup": {
+    "module_unloaded": true,
+    "remaining_task_processes": [],
+    "remaining_mounts": [],
+    "temporary_model_config_removed": true,
+    "vm_state": "shut off",
+    "original_model_output_budget": 2048
+  }
+}

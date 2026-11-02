@@ -1,0 +1,469 @@
+{
+  "provider": "deepseek-official-beta",
+  "model": "deepseek-flash",
+  "executed_business_tools": 0,
+  "scope": "Direct official DeepSeek Beta API; medium reasoning; max_tokens=2048; no SDK repair, argument insertion, retries, or executed business tools",
+  "runs": [
+    {
+      "case": "non-strict-omit",
+      "strict_requested": false,
+      "streaming": false,
+      "invalid_schema": false,
+      "request": {
+        "model": "deepseek-flash",
+        "stream": false,
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Call audit_probe exactly once. For legacy compatibility use exactly {\"value\":\"probe\"}; omit audit_policy. Do not answer in plain text."
+          }
+        ],
+        "parallel_tool_calls": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "audit_probe",
+              "description": "Tool schema capability probe.",
+              "strict": false,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "audit_policy": {
+                    "type": "string",
+                    "enum": [
+                      "raw",
+                      "counts"
+                    ]
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "audit_policy",
+                  "value"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        ],
+        "reasoning_effort": "medium"
+      },
+      "status": 200,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 353,
+        "completion_tokens": 255,
+        "total_tokens": 608,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 214
+        },
+        "prompt_cache_hit_tokens": 0,
+        "prompt_cache_miss_tokens": 353
+      },
+      "refusal": false,
+      "tool_calls": [
+        {
+          "name": "audit_probe",
+          "arguments_text": "{\"value\": \"probe\"}",
+          "arguments": {
+            "value": "probe"
+          },
+          "violations": [
+            "missing:audit_policy"
+          ]
+        }
+      ],
+      "schema_violated": true,
+      "elapsed_sec": 2.2680132999666966
+    },
+    {
+      "case": "strict-normal",
+      "strict_requested": true,
+      "streaming": false,
+      "invalid_schema": false,
+      "request": {
+        "model": "deepseek-flash",
+        "stream": false,
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Call audit_probe exactly once with value \"probe\" and an allowed audit_policy."
+          }
+        ],
+        "parallel_tool_calls": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "audit_probe",
+              "description": "Tool schema capability probe.",
+              "strict": true,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "audit_policy": {
+                    "type": "string",
+                    "enum": [
+                      "raw",
+                      "counts"
+                    ]
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "audit_policy",
+                  "value"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        ],
+        "reasoning_effort": "medium"
+      },
+      "status": 200,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 342,
+        "completion_tokens": 102,
+        "total_tokens": 444,
+        "prompt_tokens_details": {
+          "cached_tokens": 128
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 42
+        },
+        "prompt_cache_hit_tokens": 128,
+        "prompt_cache_miss_tokens": 214
+      },
+      "refusal": false,
+      "tool_calls": [
+        {
+          "name": "audit_probe",
+          "arguments_text": "{\"audit_policy\": \"raw\", \"value\": \"probe\"}",
+          "arguments": {
+            "audit_policy": "raw",
+            "value": "probe"
+          },
+          "violations": []
+        }
+      ],
+      "schema_violated": false,
+      "elapsed_sec": 1.0198610000079498
+    },
+    {
+      "case": "strict-omit",
+      "strict_requested": true,
+      "streaming": false,
+      "invalid_schema": false,
+      "request": {
+        "model": "deepseek-flash",
+        "stream": false,
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Call audit_probe exactly once. For legacy compatibility use exactly {\"value\":\"probe\"}; omit audit_policy. Do not answer in plain text."
+          }
+        ],
+        "parallel_tool_calls": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "audit_probe",
+              "description": "Tool schema capability probe.",
+              "strict": true,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "audit_policy": {
+                    "type": "string",
+                    "enum": [
+                      "raw",
+                      "counts"
+                    ]
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "audit_policy",
+                  "value"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        ],
+        "reasoning_effort": "medium"
+      },
+      "status": 200,
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 354,
+        "completion_tokens": 111,
+        "total_tokens": 465,
+        "prompt_tokens_details": {
+          "cached_tokens": 128
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 70
+        },
+        "prompt_cache_hit_tokens": 128,
+        "prompt_cache_miss_tokens": 226
+      },
+      "refusal": false,
+      "tool_calls": [
+        {
+          "name": "audit_probe",
+          "arguments_text": "{\"value\": \"probe\"}",
+          "arguments": {
+            "value": "probe"
+          },
+          "violations": [
+            "missing:audit_policy"
+          ]
+        }
+      ],
+      "schema_violated": true,
+      "elapsed_sec": 0.962393100024201
+    },
+    {
+      "case": "strict-omit-stream",
+      "strict_requested": true,
+      "streaming": true,
+      "invalid_schema": false,
+      "request": {
+        "model": "deepseek-flash",
+        "stream": true,
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Call audit_probe exactly once. For legacy compatibility use exactly {\"value\":\"probe\"}; omit audit_policy. Do not answer in plain text."
+          }
+        ],
+        "parallel_tool_calls": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "audit_probe",
+              "description": "Tool schema capability probe.",
+              "strict": true,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "audit_policy": {
+                    "type": "string",
+                    "enum": [
+                      "raw",
+                      "counts"
+                    ]
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "audit_policy",
+                  "value"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        ],
+        "stream_options": {
+          "include_usage": true
+        },
+        "reasoning_effort": "medium"
+      },
+      "status": 200,
+      "tool_calls": [
+        {
+          "name": "audit_probe",
+          "arguments_text": "{\"audit_policy\": \"raw\", \"value\": \"probe\"}",
+          "arguments": {
+            "audit_policy": "raw",
+            "value": "probe"
+          },
+          "violations": []
+        }
+      ],
+      "finish_reason": "tool_calls",
+      "usage": {
+        "prompt_tokens": 354,
+        "completion_tokens": 439,
+        "total_tokens": 793,
+        "prompt_tokens_details": {
+          "cached_tokens": 128
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 379
+        },
+        "prompt_cache_hit_tokens": 128,
+        "prompt_cache_miss_tokens": 226
+      },
+      "refusal": false,
+      "schema_violated": false,
+      "elapsed_sec": 3.1525813000043854
+    },
+    {
+      "case": "strict-enum-extra-stream",
+      "strict_requested": true,
+      "streaming": true,
+      "invalid_schema": false,
+      "request": {
+        "model": "deepseek-flash",
+        "stream": true,
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Call audit_probe exactly once with {\"value\":\"probe\",\"audit_policy\":\"drop\",\"legacy\":\"yes\"}. Preserve these exact arguments. Do not answer in plain text."
+          }
+        ],
+        "parallel_tool_calls": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "audit_probe",
+              "description": "Tool schema capability probe.",
+              "strict": true,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "audit_policy": {
+                    "type": "string",
+                    "enum": [
+                      "raw",
+                      "counts"
+                    ]
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "audit_policy",
+                  "value"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        ],
+        "stream_options": {
+          "include_usage": true
+        },
+        "reasoning_effort": "medium"
+      },
+      "status": 200,
+      "tool_calls": [],
+      "finish_reason": "stop",
+      "usage": {
+        "prompt_tokens": 362,
+        "completion_tokens": 317,
+        "total_tokens": 679,
+        "prompt_tokens_details": {
+          "cached_tokens": 128
+        },
+        "completion_tokens_details": {
+          "reasoning_tokens": 165
+        },
+        "prompt_cache_hit_tokens": 128,
+        "prompt_cache_miss_tokens": 234
+      },
+      "refusal": false,
+      "schema_violated": false,
+      "elapsed_sec": 2.446504899999127
+    },
+    {
+      "case": "strict-invalid-schema-stream",
+      "strict_requested": true,
+      "streaming": true,
+      "invalid_schema": true,
+      "request": {
+        "model": "deepseek-flash",
+        "stream": true,
+        "max_tokens": 2048,
+        "messages": [
+          {
+            "role": "user",
+            "content": "Call audit_probe exactly once with value \"probe\" and an allowed audit_policy."
+          }
+        ],
+        "parallel_tool_calls": false,
+        "tools": [
+          {
+            "type": "function",
+            "function": {
+              "name": "audit_probe",
+              "description": "Tool schema capability probe.",
+              "strict": true,
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "audit_policy": {
+                    "type": "string",
+                    "enum": [
+                      "raw",
+                      "counts"
+                    ]
+                  },
+                  "value": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "audit_policy",
+                  "value",
+                  "undefined_required_field"
+                ],
+                "additionalProperties": false
+              }
+            }
+          }
+        ],
+        "stream_options": {
+          "include_usage": true
+        },
+        "reasoning_effort": "medium"
+      },
+      "status": 400,
+      "http_error": true,
+      "error_type": "invalid_request_error",
+      "error_code": "invalid_request_error",
+      "error_message": "Required property 'undefined_required_field' not found in object (request_id: 1c58b27d-f1b5-4028-8c37-05f861211900)",
+      "elapsed_sec": 0.18255199998384342
+    }
+  ],
+  "strict_counterexamples": [
+    "strict-omit"
+  ],
+  "strict_enforcement_observed": false,
+  "total_reported_tokens": 2989,
+  "endpoint": "https://api.deepseek.com/beta/chat/completions",
+  "interpretation": {
+    "strict_generation_counterexample": "strict-omit",
+    "schema_validation_observed": true,
+    "no_tool_call_cases": [
+      "strict-enum-extra-stream"
+    ],
+    "no_tool_call_is_compliance_evidence": false
+  }
+}

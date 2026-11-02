@@ -1,0 +1,422 @@
+{
+  "source_run": "harbor-field-20261030",
+  "external_model_requests_for_diagnosis": 0,
+  "omitted_calls": [
+    {
+      "task": "openssl-selfsigned-cert",
+      "response_number": 1,
+      "tool_call_id": "call_0487e1337abf42d7beef216f",
+      "tool": "bash",
+      "argument_keys": [
+        "command"
+      ],
+      "stop_reason": "toolUse",
+      "response_output_tokens": 121,
+      "stdout_session_arguments_match": true,
+      "error_text": "Set audit_policy to \"raw\" or \"counts\" and resubmit this tool call."
+    },
+    {
+      "task": "openssl-selfsigned-cert",
+      "response_number": 1,
+      "tool_call_id": "call_c98401499dd241af8490b070",
+      "tool": "bash",
+      "argument_keys": [
+        "command"
+      ],
+      "stop_reason": "toolUse",
+      "response_output_tokens": 121,
+      "stdout_session_arguments_match": true,
+      "error_text": "Set audit_policy to \"raw\" or \"counts\" and resubmit this tool call."
+    },
+    {
+      "task": "openssl-selfsigned-cert",
+      "response_number": 7,
+      "tool_call_id": "call_bdfa76560f6d4941baaa30b0",
+      "tool": "write",
+      "argument_keys": [
+        "path",
+        "content"
+      ],
+      "stop_reason": "toolUse",
+      "response_output_tokens": 1169,
+      "stdout_session_arguments_match": true,
+      "error_text": "Set audit_policy to \"raw\" or \"counts\" and resubmit this tool call."
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "response_number": 1,
+      "tool_call_id": "call_cab71cdd483746e583032fa2",
+      "tool": "bash",
+      "argument_keys": [
+        "command"
+      ],
+      "stop_reason": "toolUse",
+      "response_output_tokens": 111,
+      "stdout_session_arguments_match": true,
+      "error_text": "Set audit_policy to \"raw\" or \"counts\" and resubmit this tool call."
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "response_number": 1,
+      "tool_call_id": "call_f265e753836245878cf29073",
+      "tool": "bash",
+      "argument_keys": [
+        "command"
+      ],
+      "stop_reason": "toolUse",
+      "response_output_tokens": 111,
+      "stdout_session_arguments_match": true,
+      "error_text": "Set audit_policy to \"raw\" or \"counts\" and resubmit this tool call."
+    },
+    {
+      "task": "fix-git",
+      "response_number": 1,
+      "tool_call_id": "call_782565633abb48008de1ad47",
+      "tool": "bash",
+      "argument_keys": [
+        "command"
+      ],
+      "stop_reason": "toolUse",
+      "response_output_tokens": 139,
+      "stdout_session_arguments_match": true,
+      "error_text": "Set audit_policy to \"raw\" or \"counts\" and resubmit this tool call."
+    },
+    {
+      "task": "fix-git",
+      "response_number": 1,
+      "tool_call_id": "call_97586f71ebbf4d6aaf23f6fe",
+      "tool": "bash",
+      "argument_keys": [
+        "command"
+      ],
+      "stop_reason": "toolUse",
+      "response_output_tokens": 139,
+      "stdout_session_arguments_match": true,
+      "error_text": "Set audit_policy to \"raw\" or \"counts\" and resubmit this tool call."
+    }
+  ],
+  "affected_response_groups": 4,
+  "retained_system_declarations": [
+    {
+      "task": "openssl-selfsigned-cert",
+      "guideline_present": true,
+      "tools": [
+        {
+          "name": "read",
+          "required": [
+            "audit_policy",
+            "path"
+          ],
+          "constrainedSampling": {
+            "type": "json_schema",
+            "strict": "prefer"
+          }
+        },
+        {
+          "name": "bash",
+          "required": [
+            "audit_policy",
+            "command"
+          ],
+          "constrainedSampling": {
+            "type": "json_schema",
+            "strict": "prefer"
+          }
+        },
+        {
+          "name": "edit",
+          "required": [
+            "audit_policy",
+            "path",
+            "edits"
+          ],
+          "constrainedSampling": {
+            "type": "json_schema",
+            "strict": "prefer"
+          }
+        },
+        {
+          "name": "write",
+          "required": [
+            "audit_policy",
+            "path",
+            "content"
+          ],
+          "constrainedSampling": {
+            "type": "json_schema",
+            "strict": "prefer"
+          }
+        }
+      ]
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "guideline_present": true,
+      "tools": [
+        {
+          "name": "read",
+          "required": [
+            "audit_policy",
+            "path"
+          ],
+          "constrainedSampling": {
+            "type": "json_schema",
+            "strict": "prefer"
+          }
+        },
+        {
+          "name": "bash",
+          "required": [
+            "audit_policy",
+            "command"
+          ],
+          "constrainedSampling": {
+            "type": "json_schema",
+            "strict": "prefer"
+          }
+        },
+        {
+          "name": "edit",
+          "required": [
+            "audit_policy",
+            "path",
+            "edits"
+          ],
+          "constrainedSampling": {
+            "type": "json_schema",
+            "strict": "prefer"
+          }
+        },
+        {
+          "name": "write",
+          "required": [
+            "audit_policy",
+            "path",
+            "content"
+          ],
+          "constrainedSampling": {
+            "type": "json_schema",
+            "strict": "prefer"
+          }
+        }
+      ]
+    },
+    {
+      "task": "fix-git",
+      "guideline_present": true,
+      "tools": [
+        {
+          "name": "read",
+          "required": [
+            "audit_policy",
+            "path"
+          ],
+          "constrainedSampling": {
+            "type": "json_schema",
+            "strict": "prefer"
+          }
+        },
+        {
+          "name": "bash",
+          "required": [
+            "audit_policy",
+            "command"
+          ],
+          "constrainedSampling": {
+            "type": "json_schema",
+            "strict": "prefer"
+          }
+        },
+        {
+          "name": "edit",
+          "required": [
+            "audit_policy",
+            "path",
+            "edits"
+          ],
+          "constrainedSampling": {
+            "type": "json_schema",
+            "strict": "prefer"
+          }
+        },
+        {
+          "name": "write",
+          "required": [
+            "audit_policy",
+            "path",
+            "content"
+          ],
+          "constrainedSampling": {
+            "type": "json_schema",
+            "strict": "prefer"
+          }
+        }
+      ]
+    }
+  ],
+  "offline_sdk_probe": {
+    "external_model_requests": 0,
+    "reconstructed_requests": [
+      {
+        "task": "openssl-selfsigned-cert",
+        "tools": [
+          {
+            "name": "read",
+            "required": [
+              "audit_policy",
+              "path"
+            ],
+            "strict_present": false,
+            "strict_value": null
+          },
+          {
+            "name": "bash",
+            "required": [
+              "audit_policy",
+              "command"
+            ],
+            "strict_present": false,
+            "strict_value": null
+          },
+          {
+            "name": "edit",
+            "required": [
+              "audit_policy",
+              "path",
+              "edits"
+            ],
+            "strict_present": false,
+            "strict_value": null
+          },
+          {
+            "name": "write",
+            "required": [
+              "audit_policy",
+              "path",
+              "content"
+            ],
+            "strict_present": false,
+            "strict_value": null
+          }
+        ],
+        "roles": [
+          "developer",
+          "user"
+        ],
+        "guideline_present": true
+      },
+      {
+        "task": "log-summary-date-ranges",
+        "tools": [
+          {
+            "name": "read",
+            "required": [
+              "audit_policy",
+              "path"
+            ],
+            "strict_present": false,
+            "strict_value": null
+          },
+          {
+            "name": "bash",
+            "required": [
+              "audit_policy",
+              "command"
+            ],
+            "strict_present": false,
+            "strict_value": null
+          },
+          {
+            "name": "edit",
+            "required": [
+              "audit_policy",
+              "path",
+              "edits"
+            ],
+            "strict_present": false,
+            "strict_value": null
+          },
+          {
+            "name": "write",
+            "required": [
+              "audit_policy",
+              "path",
+              "content"
+            ],
+            "strict_present": false,
+            "strict_value": null
+          }
+        ],
+        "roles": [
+          "developer",
+          "user"
+        ],
+        "guideline_present": true
+      },
+      {
+        "task": "fix-git",
+        "tools": [
+          {
+            "name": "read",
+            "required": [
+              "audit_policy",
+              "path"
+            ],
+            "strict_present": false,
+            "strict_value": null
+          },
+          {
+            "name": "bash",
+            "required": [
+              "audit_policy",
+              "command"
+            ],
+            "strict_present": false,
+            "strict_value": null
+          },
+          {
+            "name": "edit",
+            "required": [
+              "audit_policy",
+              "path",
+              "edits"
+            ],
+            "strict_present": false,
+            "strict_value": null
+          },
+          {
+            "name": "write",
+            "required": [
+              "audit_policy",
+              "path",
+              "content"
+            ],
+            "strict_present": false,
+            "strict_value": null
+          }
+        ],
+        "roles": [
+          "developer",
+          "user"
+        ],
+        "guideline_present": true
+      }
+    ],
+    "mocked_parser_checks": [
+      {
+        "input_has_policy": false,
+        "output_has_policy": false,
+        "arguments_preserved": true,
+        "finish_reason": "toolUse"
+      },
+      {
+        "input_has_policy": true,
+        "output_has_policy": true,
+        "arguments_preserved": true,
+        "finish_reason": "toolUse"
+      }
+    ],
+    "mocked_stream_requests": 2
+  },
+  "evidence_boundary": "Retained Pi message_end/session records plus offline SDK reconstruction; original HTTP response chunks were not recorded."
+}

@@ -1,0 +1,579 @@
+{
+  "reports": [
+    {
+      "family": "doubao",
+      "model": "Doubao-Seed-2.1-pro-260628",
+      "scope": "Vendor-documented body through iBrain Chat Completions",
+      "upstream_native_mode_activation_confirmed": false,
+      "executed_business_tools": 0,
+      "runs": [
+        {
+          "case": "invalid-native-option",
+          "request": {
+            "model": "Doubao-Seed-2.1-pro-260628",
+            "messages": [
+              {
+                "role": "user",
+                "content": "Call audit_probe exactly once with value \"probe\" and an allowed audit_policy."
+              }
+            ],
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "audit_probe",
+                  "description": "Tool schema capability probe.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "audit_policy": {
+                        "type": "string",
+                        "enum": [
+                          "raw",
+                          "counts"
+                        ]
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "audit_policy",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "strict": true
+                }
+              }
+            ],
+            "tool_choice": "auto",
+            "stream": false,
+            "max_tokens": 2048,
+            "thinking": {
+              "type": "PI_NODROP_INVALID_MODE"
+            }
+          },
+          "streaming": false,
+          "invalid_control": true,
+          "status": 200,
+          "content_type": "application/json;charset=UTF-8",
+          "raw_response": "{\"id\":\"7ca3e7f6-e97a-4824-89f6-aea5b81df9ac\",\"ibrain_request_id\":\"0a899715f4dc48e792543291c44d6191\",\"object\":\"chat.completion\",\"created\":1793344233,\"model\":\"Doubao-Seed-2.1-pro-260628\",\"choices\":[{\"index\":0,\"finish_reason\":\"tool_calls\",\"message\":{\"role\":\"assistant\",\"content\":\"\",\"reasoning_content\":\"The user wants me to call the audit_probe function exactly once with the value \\\"probe\\\" and an allowed audit_policy.  I'll use \\\"raw\\\" as the audit_policy and construct the correct function call.\\n\",\"tool_calls\":[{\"id\":\"call_ls8jpkd3w2lfw5h7hdv79efy\",\"type\":\"function\",\"function\":{\"name\":\"audit_probe\",\"arguments\":\"{\\\"audit_policy\\\": \\\"raw\\\", \\\"value\\\": \\\"probe\\\"}\"}}]}}],\"usage\":{\"prompt_tokens\":517,\"completion_tokens\":113,\"total_tokens\":630,\"completion_tokens_details\":{\"reasoning_tokens\":66}}}",
+          "finish_reason": "tool_calls",
+          "usage": {
+            "prompt_tokens": 517,
+            "completion_tokens": 113,
+            "total_tokens": 630,
+            "completion_tokens_details": {
+              "reasoning_tokens": 66
+            }
+          },
+          "response_model": "Doubao-Seed-2.1-pro-260628",
+          "text": "",
+          "has_reasoning_content": true,
+          "tool_calls": [
+            {
+              "name": "audit_probe",
+              "arguments_text": "{\"audit_policy\": \"raw\", \"value\": \"probe\"}",
+              "arguments": {
+                "audit_policy": "raw",
+                "value": "probe"
+              },
+              "violations": []
+            }
+          ],
+          "elapsed_sec": 2.8007990999612957
+        }
+      ],
+      "total_reported_tokens": 630
+    },
+    {
+      "family": "qwen",
+      "model": "qwen3.8-max",
+      "scope": "Vendor-documented body through iBrain Chat Completions",
+      "upstream_native_mode_activation_confirmed": false,
+      "executed_business_tools": 0,
+      "runs": [
+        {
+          "case": "normal",
+          "request": {
+            "model": "qwen3.8-max",
+            "messages": [
+              {
+                "role": "user",
+                "content": "Call audit_probe exactly once with value \"probe\" and an allowed audit_policy."
+              }
+            ],
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "audit_probe",
+                  "description": "Tool schema capability probe.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "audit_policy": {
+                        "type": "string",
+                        "enum": [
+                          "raw",
+                          "counts"
+                        ]
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "audit_policy",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ],
+            "tool_choice": "auto",
+            "stream": false,
+            "max_tokens": 2048,
+            "enable_thinking": false
+          },
+          "streaming": false,
+          "invalid_control": false,
+          "status": 200,
+          "content_type": "application/json;charset=UTF-8",
+          "raw_response": "{\"id\":\"1709df50-4827-4b9b-965d-ae9081efa42d\",\"ibrain_request_id\":\"c96a96e389164b64b41684cb56d399c9\",\"object\":\"chat.completion\",\"created\":1793344237,\"model\":\"qwen3.8-max\",\"choices\":[{\"index\":0,\"finish_reason\":\"tool_calls\",\"message\":{\"role\":\"assistant\",\"tool_calls\":[{\"id\":\"call_36e6b2a993ab40ceb63b39e5\",\"type\":\"function\",\"function\":{\"name\":\"audit_probe\",\"arguments\":\"{\\\"audit_policy\\\": \\\"raw\\\", \\\"value\\\": \\\"probe\\\"}\"}}]}}],\"usage\":{\"prompt_tokens\":297,\"completion_tokens\":38,\"total_tokens\":335}}",
+          "finish_reason": "tool_calls",
+          "usage": {
+            "prompt_tokens": 297,
+            "completion_tokens": 38,
+            "total_tokens": 335
+          },
+          "response_model": "qwen3.8-max",
+          "text": null,
+          "has_reasoning_content": false,
+          "tool_calls": [
+            {
+              "name": "audit_probe",
+              "arguments_text": "{\"audit_policy\": \"raw\", \"value\": \"probe\"}",
+              "arguments": {
+                "audit_policy": "raw",
+                "value": "probe"
+              },
+              "violations": []
+            }
+          ],
+          "elapsed_sec": 1.2677057000109926
+        },
+        {
+          "case": "named-omit-stream",
+          "request": {
+            "model": "qwen3.8-max",
+            "messages": [
+              {
+                "role": "user",
+                "content": "Call audit_probe exactly once. For legacy compatibility use exactly {\"value\":\"probe\"}; omit audit_policy. Do not answer in plain text."
+              }
+            ],
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "audit_probe",
+                  "description": "Tool schema capability probe.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "audit_policy": {
+                        "type": "string",
+                        "enum": [
+                          "raw",
+                          "counts"
+                        ]
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "audit_policy",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ],
+            "tool_choice": {
+              "type": "function",
+              "function": {
+                "name": "audit_probe"
+              }
+            },
+            "stream": true,
+            "max_tokens": 2048,
+            "stream_options": {
+              "include_usage": true
+            },
+            "enable_thinking": false
+          },
+          "streaming": true,
+          "invalid_control": false,
+          "status": 200,
+          "content_type": "text/event-stream;charset=UTF-8",
+          "raw_response": "data:{\"ibrain_request_id\":\"730096f961704197a970bd7c930beed1\",\"created\":1793344241,\"model\":\"qwen3.8-max\",\"id\":\"730096f961704197a970bd7c930beed1\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"tool_calls\":[{\"function\":{\"name\":\"audit_probe\"},\"index\":0,\"id\":\"call_a4b84e728ea34f31aa4e3e61\",\"type\":\"function\"}]},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"730096f961704197a970bd7c930beed1\",\"created\":1793344241,\"model\":\"qwen3.8-max\",\"id\":\"730096f961704197a970bd7c930beed1\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"tool_calls\":[{\"function\":{\"arguments\":\"{\\\"value\\\": \\\"probe\"},\"index\":0,\"type\":\"function\"}]},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"730096f961704197a970bd7c930beed1\",\"created\":1793344241,\"model\":\"qwen3.8-max\",\"id\":\"730096f961704197a970bd7c930beed1\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"tool_calls\":[{\"function\":{\"arguments\":\"\\\"\"},\"index\":0,\"type\":\"function\"}]},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"730096f961704197a970bd7c930beed1\",\"created\":1793344241,\"model\":\"qwen3.8-max\",\"id\":\"730096f961704197a970bd7c930beed1\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"tool_calls\":[{\"function\":{\"arguments\":\"}\"},\"index\":0,\"type\":\"function\"}]},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"730096f961704197a970bd7c930beed1\",\"created\":1793344241,\"usage\":{\"completion_tokens\":18,\"prompt_tokens\":316,\"total_tokens\":334},\"model\":\"qwen3.8-max\",\"id\":\"730096f961704197a970bd7c930beed1\",\"choices\":[{\"delta\":{},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"730096f961704197a970bd7c930beed1\",\"created\":1793344241,\"model\":\"qwen3.8-max\",\"id\":\"730096f961704197a970bd7c930beed1\",\"choices\":[{\"finish_reason\":\"stop\",\"delta\":{},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:[DONE]\n\n",
+          "tool_calls": [
+            {
+              "name": "audit_probe",
+              "arguments_text": "{\"value\": \"probe\"}",
+              "arguments": {
+                "value": "probe"
+              },
+              "violations": [
+                "missing:audit_policy"
+              ]
+            }
+          ],
+          "finish_reason": "stop",
+          "usage": {
+            "completion_tokens": 18,
+            "prompt_tokens": 316,
+            "total_tokens": 334
+          },
+          "refusal": false,
+          "elapsed_sec": 1.1916681999573484
+        },
+        {
+          "case": "invalid-native-option",
+          "request": {
+            "model": "qwen3.8-max",
+            "messages": [
+              {
+                "role": "user",
+                "content": "Call audit_probe exactly once with value \"probe\" and an allowed audit_policy."
+              }
+            ],
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "audit_probe",
+                  "description": "Tool schema capability probe.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "audit_policy": {
+                        "type": "string",
+                        "enum": [
+                          "raw",
+                          "counts"
+                        ]
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "audit_policy",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ],
+            "tool_choice": "auto",
+            "stream": false,
+            "max_tokens": 2048,
+            "enable_thinking": "pi_nodrop_invalid_boolean"
+          },
+          "streaming": false,
+          "invalid_control": true,
+          "status": 200,
+          "content_type": "application/json;charset=UTF-8",
+          "raw_response": "{\"id\":\"c2ff8c70-c3b2-4b3e-a7a2-3b5c74f970ba\",\"ibrain_request_id\":\"0a5474516d724e0d9ba32a8f16f8e131\",\"object\":\"chat.completion\",\"created\":1793344245,\"model\":\"qwen3.8-max\",\"choices\":[{\"index\":0,\"finish_reason\":\"tool_calls\",\"message\":{\"role\":\"assistant\",\"tool_calls\":[{\"id\":\"call_adf0ab374f3044548e50a1cb\",\"type\":\"function\",\"function\":{\"name\":\"audit_probe\",\"arguments\":\"{\\\"audit_policy\\\": \\\"raw\\\", \\\"value\\\": \\\"probe\\\"}\"}}]}}],\"usage\":{\"prompt_tokens\":297,\"completion_tokens\":38,\"total_tokens\":335}}",
+          "finish_reason": "tool_calls",
+          "usage": {
+            "prompt_tokens": 297,
+            "completion_tokens": 38,
+            "total_tokens": 335
+          },
+          "response_model": "qwen3.8-max",
+          "text": null,
+          "has_reasoning_content": false,
+          "tool_calls": [
+            {
+              "name": "audit_probe",
+              "arguments_text": "{\"audit_policy\": \"raw\", \"value\": \"probe\"}",
+              "arguments": {
+                "audit_policy": "raw",
+                "value": "probe"
+              },
+              "violations": []
+            }
+          ],
+          "elapsed_sec": 1.576086699962616
+        }
+      ],
+      "total_reported_tokens": 1004
+    },
+    {
+      "family": "glm",
+      "model": "glm-5.3",
+      "scope": "Vendor-documented body through iBrain Chat Completions",
+      "upstream_native_mode_activation_confirmed": false,
+      "executed_business_tools": 0,
+      "runs": [
+        {
+          "case": "normal",
+          "request": {
+            "model": "glm-5.3",
+            "messages": [
+              {
+                "role": "user",
+                "content": "Call audit_probe exactly once with value \"probe\" and an allowed audit_policy."
+              }
+            ],
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "audit_probe",
+                  "description": "Tool schema capability probe.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "audit_policy": {
+                        "type": "string",
+                        "enum": [
+                          "raw",
+                          "counts"
+                        ]
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "audit_policy",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ],
+            "tool_choice": "auto",
+            "stream": false,
+            "max_tokens": 2048,
+            "thinking": {
+              "type": "enabled"
+            }
+          },
+          "streaming": false,
+          "invalid_control": false,
+          "status": 200,
+          "content_type": "application/json;charset=UTF-8",
+          "raw_response": "{\"id\":\"73b776e3-bff8-4dba-8642-d8cdb6531746\",\"ibrain_request_id\":\"9a28fb1ccf1049cdbca7b64ca657447a\",\"object\":\"chat.completion\",\"created\":1793344267,\"model\":\"glm-5.3\",\"choices\":[{\"index\":0,\"finish_reason\":\"tool_calls\",\"message\":{\"role\":\"assistant\",\"reasoning_content\":\"The user wants me to call audit_probe exactly once with value \\\"probe\\\" and an allowed audit_policy. The allowed audit_policy values are \\\"raw\\\" or \\\"counts\\\". I'll pick one, say \\\"counts\\\" or \\\"raw\\\". Let me use \\\"raw\\\" — either is allowed. I'll call it exactly once.\",\"tool_calls\":[{\"id\":\"call_-7121739913518639380\",\"type\":\"function\",\"function\":{\"name\":\"audit_probe\",\"arguments\":\"{\\\"audit_policy\\\":\\\"raw\\\",\\\"value\\\":\\\"probe\\\"}\"}}]}}],\"usage\":{\"prompt_tokens\":193,\"completion_tokens\":84,\"total_tokens\":277}}",
+          "finish_reason": "tool_calls",
+          "usage": {
+            "prompt_tokens": 193,
+            "completion_tokens": 84,
+            "total_tokens": 277
+          },
+          "response_model": "glm-5.3",
+          "text": null,
+          "has_reasoning_content": true,
+          "tool_calls": [
+            {
+              "name": "audit_probe",
+              "arguments_text": "{\"audit_policy\":\"raw\",\"value\":\"probe\"}",
+              "arguments": {
+                "audit_policy": "raw",
+                "value": "probe"
+              },
+              "violations": []
+            }
+          ],
+          "elapsed_sec": 19.41550260002259
+        },
+        {
+          "case": "omit-stream",
+          "request": {
+            "model": "glm-5.3",
+            "messages": [
+              {
+                "role": "user",
+                "content": "Call audit_probe exactly once. For legacy compatibility use exactly {\"value\":\"probe\"}; omit audit_policy. Do not answer in plain text."
+              }
+            ],
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "audit_probe",
+                  "description": "Tool schema capability probe.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "audit_policy": {
+                        "type": "string",
+                        "enum": [
+                          "raw",
+                          "counts"
+                        ]
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "audit_policy",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ],
+            "tool_choice": "auto",
+            "stream": true,
+            "max_tokens": 2048,
+            "stream_options": {
+              "include_usage": true
+            },
+            "thinking": {
+              "type": "enabled"
+            }
+          },
+          "streaming": true,
+          "invalid_control": false,
+          "status": 200,
+          "content_type": "text/event-stream;charset=UTF-8",
+          "raw_response": "data:{\"ibrain_request_id\":\"3bef8819-48e2-4b32-a139-827dd7f64377\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"3bef8819-48e2-4b32-a139-827dd7f64377\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"The\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"b7b46d1f-172d-4098-97fd-786a9469e026\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"b7b46d1f-172d-4098-97fd-786a9469e026\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" user\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"67a6dc34-7062-4532-8761-a1f63083ad61\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"67a6dc34-7062-4532-8761-a1f63083ad61\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" wants\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"afd7b83c-7b69-4a6e-b742-c1b24378b38d\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"afd7b83c-7b69-4a6e-b742-c1b24378b38d\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" me\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"c70d628e-3bbc-4765-a9a7-46ca1bb756ba\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"c70d628e-3bbc-4765-a9a7-46ca1bb756ba\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" to\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"2958134b-29de-4626-b996-c2208d5e1c93\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"2958134b-29de-4626-b996-c2208d5e1c93\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" call\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"44f16533-0005-4b8c-9fc7-4215db51f769\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"44f16533-0005-4b8c-9fc7-4215db51f769\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" audit\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"33ad90c7-7cc6-4d24-897f-2d187bb6a9d5\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"33ad90c7-7cc6-4d24-897f-2d187bb6a9d5\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"_probe\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"6d5c6405-c84a-4c29-a7d0-654d75c84f4f\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"6d5c6405-c84a-4c29-a7d0-654d75c84f4f\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" exactly\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"92a008e0-309b-4392-bae5-86a7079017b8\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"92a008e0-309b-4392-bae5-86a7079017b8\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" once\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"94a5c223-2736-4103-ace1-ecf5f73473ac\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"94a5c223-2736-4103-ace1-ecf5f73473ac\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\",\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"823c8c2e-20da-468f-819e-a32feea39d50\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"823c8c2e-20da-468f-819e-a32feea39d50\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" with\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"9f97db46-2376-45fa-9a4e-543f5a9e0ec1\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"9f97db46-2376-45fa-9a4e-543f5a9e0ec1\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" value\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"88ee4303-dfd6-416a-998b-d1f224b58ba1\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"88ee4303-dfd6-416a-998b-d1f224b58ba1\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" \\\"\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"f5a04f21-3c1e-46c8-899c-f5badd7a43a6\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"f5a04f21-3c1e-46c8-899c-f5badd7a43a6\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"probe\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"dfb8b6a9-6be1-4474-9353-727c367843fe\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"dfb8b6a9-6be1-4474-9353-727c367843fe\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\\\"\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"7ce31930-b615-436d-90c5-9b7699f31e64\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"7ce31930-b615-436d-90c5-9b7699f31e64\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" and\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"6791c436-23a1-438d-92cc-898bbca07503\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"6791c436-23a1-438d-92cc-898bbca07503\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" omit\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"624771f1-295c-4d24-97b7-2b1b1e2d0833\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"624771f1-295c-4d24-97b7-2b1b1e2d0833\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"ting\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"2c1ebb62-55ab-4791-8696-2b834ce76dc3\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"2c1ebb62-55ab-4791-8696-2b834ce76dc3\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" audit\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"e8126b79-9bf8-45e7-9598-340fb8cd8229\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"e8126b79-9bf8-45e7-9598-340fb8cd8229\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"_policy\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"9953a3c5-f99c-41bb-a81a-3d3c4307e14d\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"9953a3c5-f99c-41bb-a81a-3d3c4307e14d\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"e3c67111-de24-4e4e-bd9a-a93e31d4106f\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"e3c67111-de24-4e4e-bd9a-a93e31d4106f\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" Let\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"f48e4d0b-2d3f-4915-a07c-1ab3c90983fa\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"f48e4d0b-2d3f-4915-a07c-1ab3c90983fa\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" me\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"0d5136f0-c79f-4ee2-bbf9-1070e7ed4e4b\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"0d5136f0-c79f-4ee2-bbf9-1070e7ed4e4b\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" do\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"21d2b0ab-d705-4123-9468-d33827e3aee4\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"21d2b0ab-d705-4123-9468-d33827e3aee4\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" that\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"edd7dd3d-165c-4ab9-935f-63b6c111f049\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"edd7dd3d-165c-4ab9-935f-63b6c111f049\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"48daecc2-d434-4606-a420-1c275e6a93d0\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"48daecc2-d434-4606-a420-1c275e6a93d0\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" The\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"efbc98c1-3e86-4cb0-b6d1-443fc87e3ca6\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"efbc98c1-3e86-4cb0-b6d1-443fc87e3ca6\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" instruction\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"5b5b3b0b-a95d-481f-b3b0-163b70295f42\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"5b5b3b0b-a95d-481f-b3b0-163b70295f42\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" says\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"80cc691c-9b33-47d9-a909-757e3d97b1dd\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"80cc691c-9b33-47d9-a909-757e3d97b1dd\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" \\\"\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"816fab33-4956-459f-bde1-931d104d0aac\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"816fab33-4956-459f-bde1-931d104d0aac\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"Do\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"7b944909-24d7-4098-acf8-8effab642a6d\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"7b944909-24d7-4098-acf8-8effab642a6d\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" not\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"a3f0a467-2d92-4adf-88b4-b6a14616e062\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"a3f0a467-2d92-4adf-88b4-b6a14616e062\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" answer\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"9b1c198c-bc78-49c2-9470-47db2c881562\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"9b1c198c-bc78-49c2-9470-47db2c881562\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" in\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"3b7b47ff-1cad-405a-b66a-a5f8d4eac630\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"3b7b47ff-1cad-405a-b66a-a5f8d4eac630\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" plain\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"9fc79e3b-a32c-4122-958d-d8bfb9f4aa74\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"9fc79e3b-a32c-4122-958d-d8bfb9f4aa74\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" text\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"439a330d-c08b-4798-8659-df34fd4fc7f6\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"439a330d-c08b-4798-8659-df34fd4fc7f6\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\\\"\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"4948fcf2-afc5-460b-9528-f0ea7fff155d\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"4948fcf2-afc5-460b-9528-f0ea7fff155d\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" —\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"be2e7f00-0b40-4253-a99f-b6a78d23e566\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"be2e7f00-0b40-4253-a99f-b6a78d23e566\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" so\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"f4dcffd4-4e84-4497-8a42-94fa34b400ae\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"f4dcffd4-4e84-4497-8a42-94fa34b400ae\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" I\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"08bad69d-0dd7-43fe-ad91-e12cba196adf\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"08bad69d-0dd7-43fe-ad91-e12cba196adf\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" should\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"c2696b7d-dada-4816-a30f-271c51bf4cf6\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"c2696b7d-dada-4816-a30f-271c51bf4cf6\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" just\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"81b8f714-ce07-4e05-b13d-5aee6f294138\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"81b8f714-ce07-4e05-b13d-5aee6f294138\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" make\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"fd4a613a-3d70-45cd-abba-828830942f10\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"fd4a613a-3d70-45cd-abba-828830942f10\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" the\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"117d2d21-9d37-43b6-ab37-1139f6f01d49\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"117d2d21-9d37-43b6-ab37-1139f6f01d49\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" tool\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"489aac4f-d52c-4a61-b470-5179a12f6d99\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"489aac4f-d52c-4a61-b470-5179a12f6d99\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" call\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"b9e7ab23-2be0-4dd0-9368-32074ea67b62\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"b9e7ab23-2be0-4dd0-9368-32074ea67b62\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\\n\\n\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"850d5f3b-cfdb-4b7c-b8df-ae3abd243d99\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"850d5f3b-cfdb-4b7c-b8df-ae3abd243d99\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"Wait\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"b1952f6a-d9eb-47e7-a38e-f6784cadb167\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"b1952f6a-d9eb-47e7-a38e-f6784cadb167\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\",\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"a12216c7-46f3-4232-96d0-2ee953cab983\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"a12216c7-46f3-4232-96d0-2ee953cab983\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" audit\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"53a742ac-3986-4509-adb3-593551969048\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"53a742ac-3986-4509-adb3-593551969048\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"_policy\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"b201fbcd-6feb-43d5-bac1-260111fde41a\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"b201fbcd-6feb-43d5-bac1-260111fde41a\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" is\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"8bd97d71-c789-4dbf-85a5-17242156c636\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"8bd97d71-c789-4dbf-85a5-17242156c636\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" required\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"deec537b-6478-4b7d-b0be-2a7d137f4d1e\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"deec537b-6478-4b7d-b0be-2a7d137f4d1e\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" according\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"b76ac9e7-fd2c-4143-aa47-668a6d83ac41\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"b76ac9e7-fd2c-4143-aa47-668a6d83ac41\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" to\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"b747150c-f6ab-4862-b4f4-8ce45a38e927\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"b747150c-f6ab-4862-b4f4-8ce45a38e927\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" the\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"236a8655-5b3e-41de-8de1-12334d9c6a68\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"236a8655-5b3e-41de-8de1-12334d9c6a68\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" schema\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"2af7b493-a2d5-4b88-a312-2fc1a49f4e68\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"2af7b493-a2d5-4b88-a312-2fc1a49f4e68\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\":\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"bb3418e5-32d5-476a-96ea-a99c67747bda\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"bb3418e5-32d5-476a-96ea-a99c67747bda\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" \\\"\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"f71d373f-78d7-4985-b2df-0b90fd7fafbc\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"f71d373f-78d7-4985-b2df-0b90fd7fafbc\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"required\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"12864fda-f5af-43ba-a78b-d6d843cfa7d7\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"12864fda-f5af-43ba-a78b-d6d843cfa7d7\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\\\":\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"35ccb58e-37e5-4eaa-94b4-a4fbe7d96063\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"35ccb58e-37e5-4eaa-94b4-a4fbe7d96063\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" [\\\"\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"3ff75098-517e-4c5f-9ae4-43bf54ee3cdb\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"3ff75098-517e-4c5f-9ae4-43bf54ee3cdb\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"audit\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"4a179573-d1a3-4104-8ae2-90485b919d8d\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"4a179573-d1a3-4104-8ae2-90485b919d8d\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"_policy\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"da716c64-43d0-4a04-8a4c-974a0400159a\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"da716c64-43d0-4a04-8a4c-974a0400159a\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\\\",\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"cb3f376d-9948-4e77-b975-dc5c4d380084\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"cb3f376d-9948-4e77-b975-dc5c4d380084\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" \\\"\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"ea3e95e7-0f03-45aa-91e7-760c517ab625\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"ea3e95e7-0f03-45aa-91e7-760c517ab625\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"value\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"05d439e7-8afc-4224-bfe9-b80530bbede2\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"05d439e7-8afc-4224-bfe9-b80530bbede2\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\\\"].\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"58bc74b8-72ff-4c79-9bc4-f4edc82daf26\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"58bc74b8-72ff-4c79-9bc4-f4edc82daf26\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" But\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"5f9bf0ae-4b70-467c-b3bd-fdb073308cf8\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"5f9bf0ae-4b70-467c-b3bd-fdb073308cf8\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" the\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"19fb9659-7599-4887-86df-a1bff162735e\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"19fb9659-7599-4887-86df-a1bff162735e\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" user\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"96a584a3-d78b-4f87-a339-047e00841f3b\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"96a584a3-d78b-4f87-a339-047e00841f3b\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" says\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"5aedd7ac-dcbb-405d-aeeb-df909ba4add7\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"5aedd7ac-dcbb-405d-aeeb-df909ba4add7\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" to\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"de8a4416-b5c8-4f9d-b089-1054b8b61174\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"de8a4416-b5c8-4f9d-b089-1054b8b61174\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" omit\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"28503031-0d7d-4ff4-9297-e8858de5b563\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"28503031-0d7d-4ff4-9297-e8858de5b563\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" audit\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"ae58bdd9-b771-4f72-9018-cbf676f1ed46\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"ae58bdd9-b771-4f72-9018-cbf676f1ed46\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"_policy\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"fe8736c5-51c3-4782-be24-edf1a10b97bb\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"fe8736c5-51c3-4782-be24-edf1a10b97bb\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"a06142c9-02e2-4065-a9c1-cdbb8f421c25\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"a06142c9-02e2-4065-a9c1-cdbb8f421c25\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" Hmm\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"9271e940-560e-4ab4-8ab1-a2f2cb9c46b1\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"9271e940-560e-4ab4-8ab1-a2f2cb9c46b1\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"7f5e3d36-ad6a-42be-b822-88b2d3edc8b9\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"7f5e3d36-ad6a-42be-b822-88b2d3edc8b9\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" There\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"b675f1ea-ce7e-43d3-ae23-fb36cf224cfb\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"b675f1ea-ce7e-43d3-ae23-fb36cf224cfb\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"'s\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"65b041a8-7290-4081-a637-7b5554e71b8b\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"65b041a8-7290-4081-a637-7b5554e71b8b\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" a\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"3bc0382d-363e-4ce3-9dfa-2df1ef89b8af\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"3bc0382d-363e-4ce3-9dfa-2df1ef89b8af\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" conflict\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"95e1cbf0-f05b-47ad-9a1f-24b5550a465f\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"95e1cbf0-f05b-47ad-9a1f-24b5550a465f\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"a1a91f4e-97e1-4857-8817-0a8c2d669d89\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"a1a91f4e-97e1-4857-8817-0a8c2d669d89\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" The\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"496d1ab1-ae77-42d0-87c7-87fcdc50a10a\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"496d1ab1-ae77-42d0-87c7-87fcdc50a10a\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" user\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"f8816bd8-f2d4-4fe2-b087-5f7d8ec1fdaa\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"f8816bd8-f2d4-4fe2-b087-5f7d8ec1fdaa\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" explicitly\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"5a5ba9e1-b4e6-4e89-9745-8c1b4e66213b\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"5a5ba9e1-b4e6-4e89-9745-8c1b4e66213b\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" instruct\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"21ec12dc-8916-4dd1-92b9-8507add7d4b2\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"21ec12dc-8916-4dd1-92b9-8507add7d4b2\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"s\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"bdb42964-0bd3-44f9-9cd4-e1597799cab9\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"bdb42964-0bd3-44f9-9cd4-e1597799cab9\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" to\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"b2b4792f-76a1-4131-bda9-ba0cf23e2384\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"b2b4792f-76a1-4131-bda9-ba0cf23e2384\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" omit\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"aed625cf-b83f-4c31-ba68-2151609e61bc\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"aed625cf-b83f-4c31-ba68-2151609e61bc\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" audit\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"1eb7d4c5-f539-42bc-940f-d2b2766158ae\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"1eb7d4c5-f539-42bc-940f-d2b2766158ae\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"_policy\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"a5bc9c32-695e-4625-9431-997cc05b02ae\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"a5bc9c32-695e-4625-9431-997cc05b02ae\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"fb599f26-1c4a-4e00-afc5-520b789c2d9e\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"fb599f26-1c4a-4e00-afc5-520b789c2d9e\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" The\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"d1344954-5490-460c-89d4-0adbc4279154\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"d1344954-5490-460c-89d4-0adbc4279154\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" function\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"8deae892-d395-44bd-959b-a45ca7d05a6a\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"8deae892-d395-44bd-959b-a45ca7d05a6a\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" schema\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"59c2831f-f47d-4a49-88b9-81de311d9367\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"59c2831f-f47d-4a49-88b9-81de311d9367\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" says\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"a81a8a61-61b8-419d-9867-1b443f9116b1\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"a81a8a61-61b8-419d-9867-1b443f9116b1\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" it\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"d7b8aedb-4dfa-45a9-b4e1-deafb9733888\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"d7b8aedb-4dfa-45a9-b4e1-deafb9733888\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"'s\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"d5870e50-ac8d-411c-a9e8-7406827db5f6\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"d5870e50-ac8d-411c-a9e8-7406827db5f6\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" required\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"7190d711-ff90-42b5-88b5-2414029ea72e\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"7190d711-ff90-42b5-88b5-2414029ea72e\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\\n\\n\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"9e60387a-90f0-42d8-850b-096d2f00aed9\",\"created\":1793344279,\"model\":\"glm-5.3\",\"id\":\"9e60387a-90f0-42d8-850b-096d2f00aed9\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"The\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"6e77d6d5-0d5e-4ec8-8d30-57316d11e394\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"6e77d6d5-0d5e-4ec8-8d30-57316d11e394\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" user\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"75b11049-c654-4284-b195-3f3380d4f08a\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"75b11049-c654-4284-b195-3f3380d4f08a\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"'s\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"c6358fdd-063b-4374-8b10-dc3fc301e72e\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"c6358fdd-063b-4374-8b10-dc3fc301e72e\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" instruction\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"b905244f-5df3-44b8-8505-1abedef2ecde\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"b905244f-5df3-44b8-8505-1abedef2ecde\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" says\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"b0482cff-121a-459a-adee-a55827232f7d\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"b0482cff-121a-459a-adee-a55827232f7d\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" \\\"\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"dd3f89f2-eabd-4257-bc85-dd451eb28460\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"dd3f89f2-eabd-4257-bc85-dd451eb28460\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"For\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"1ad05373-0f93-4baf-bc87-876ef3b7f01a\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"1ad05373-0f93-4baf-bc87-876ef3b7f01a\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" legacy\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"641473f8-3eb1-445e-a6c6-6ddea49c165c\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"641473f8-3eb1-445e-a6c6-6ddea49c165c\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" compatibility\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"bdb61638-b403-43f7-9ee9-be60dfb12ca4\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"bdb61638-b403-43f7-9ee9-be60dfb12ca4\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" use\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"811cb9be-3d8f-4f5e-a809-d03385a6c715\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"811cb9be-3d8f-4f5e-a809-d03385a6c715\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" exactly\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"13a98636-8827-4d3e-81db-feee21f9109f\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"13a98636-8827-4d3e-81db-feee21f9109f\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" {\\\"\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"1d371dd3-45ae-4fe5-bebd-26ed4a9a0347\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"1d371dd3-45ae-4fe5-bebd-26ed4a9a0347\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"value\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"196269ee-4704-4788-b796-a8be64c26e4a\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"196269ee-4704-4788-b796-a8be64c26e4a\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\\\":\\\"\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"6116c817-f8fc-40d6-9119-e460e8c18594\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"6116c817-f8fc-40d6-9119-e460e8c18594\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"probe\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"1d0e161a-9a98-461a-bea9-2600a478f30d\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"1d0e161a-9a98-461a-bea9-2600a478f30d\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"\\\"}\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"4322cbcd-a9a9-4da5-a06a-2509ad6259e2\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"4322cbcd-a9a9-4da5-a06a-2509ad6259e2\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\";\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"c304cb44-8f3d-4816-a5cc-a6cdac1ba6ff\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"c304cb44-8f3d-4816-a5cc-a6cdac1ba6ff\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" omit\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"4ba9aab6-3c4c-49ee-8d14-67d50b5df32d\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"4ba9aab6-3c4c-49ee-8d14-67d50b5df32d\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" audit\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"a534808f-29c5-466d-89cd-a7b499013c0e\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"a534808f-29c5-466d-89cd-a7b499013c0e\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"_policy\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"36d8fdd0-ac0e-4a9c-a558-f3755f851b7f\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"36d8fdd0-ac0e-4a9c-a558-f3755f851b7f\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\\\"\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"f5e06278-e13a-4429-9cde-22b3620af3fd\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"f5e06278-e13a-4429-9cde-22b3620af3fd\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" I\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"5f2d7b17-64a9-42e3-b279-d9e1c5f7e118\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"5f2d7b17-64a9-42e3-b279-d9e1c5f7e118\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" should\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"cf03a4c1-7d94-48f7-80ee-322c42e68a10\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"cf03a4c1-7d94-48f7-80ee-322c42e68a10\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" follow\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"0d87453d-7c4c-4f07-b39a-2dbeb351dfef\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"0d87453d-7c4c-4f07-b39a-2dbeb351dfef\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" the\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"b4c9eb3d-c6f3-4245-964c-0f6f66623322\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"b4c9eb3d-c6f3-4245-964c-0f6f66623322\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" user\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"ece292b6-9601-4afd-8ceb-e53fb3c6f433\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"ece292b6-9601-4afd-8ceb-e53fb3c6f433\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\"'s\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"33da8191-ba14-40e3-9cde-852ae21ed3d5\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"33da8191-ba14-40e3-9cde-852ae21ed3d5\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" instruction\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"ba212c38-252a-4b8f-ab9b-6fea3ba6c569\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"ba212c38-252a-4b8f-ab9b-6fea3ba6c569\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" and\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"26408f29-d6d2-4d18-8722-b3a363b70d82\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"26408f29-d6d2-4d18-8722-b3a363b70d82\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" call\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"368353bd-dab9-4b44-af11-6bf4d54d26d9\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"368353bd-dab9-4b44-af11-6bf4d54d26d9\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" with\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"e232229c-aa51-43aa-97d1-f4ce7f392f94\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"e232229c-aa51-43aa-97d1-f4ce7f392f94\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" only\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"a1ca6369-31ae-4b34-be84-b2c5317b8c6d\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"a1ca6369-31ae-4b34-be84-b2c5317b8c6d\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" value\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"11ef266f-d3f1-4523-91a8-ac55197b827c\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"11ef266f-d3f1-4523-91a8-ac55197b827c\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"2e979a9f-9ec9-4aed-b52b-1dfc76cf5de1\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"2e979a9f-9ec9-4aed-b52b-1dfc76cf5de1\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" The\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"53d7dafc-edc2-4aff-848e-ebd68d2c6535\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"53d7dafc-edc2-4aff-848e-ebd68d2c6535\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" tool\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"ca6fc080-e35a-4028-8539-a7d836c9a0f5\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"ca6fc080-e35a-4028-8539-a7d836c9a0f5\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" may\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"06567d73-8d5b-436d-86c6-994a73e37904\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"06567d73-8d5b-436d-86c6-994a73e37904\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" reject\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"274fc4a4-d6ed-4d38-9d55-fc144f6663bb\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"274fc4a4-d6ed-4d38-9d55-fc144f6663bb\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" it\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"95be413b-4247-4fc4-bfa2-ca0aa19a2c97\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"95be413b-4247-4fc4-bfa2-ca0aa19a2c97\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\",\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"6150e737-d71b-4aab-bf2f-0d9a5cda2a1f\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"6150e737-d71b-4aab-bf2f-0d9a5cda2a1f\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" but\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"91a09c31-469f-49cf-8642-f4bc305fcdcb\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"91a09c31-469f-49cf-8642-f4bc305fcdcb\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" the\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"f31b1ea1-b1b1-47ba-90a7-bb747ff25bd2\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"f31b1ea1-b1b1-47ba-90a7-bb747ff25bd2\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" user\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"d9cc61db-661f-4742-9c63-3df18e789e82\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"d9cc61db-661f-4742-9c63-3df18e789e82\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" explicitly\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"b95c16b3-acec-4fb4-bd0a-57f6bfcc0d8e\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"b95c16b3-acec-4fb4-bd0a-57f6bfcc0d8e\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" asked\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"e5f434d4-8b9d-4166-8f17-a7a07e22a049\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"e5f434d4-8b9d-4166-8f17-a7a07e22a049\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"cfe9233f-7d67-4837-b630-f24f7df14410\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"cfe9233f-7d67-4837-b630-f24f7df14410\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" Let\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"6c62f5bf-1223-4af8-b4fe-c065b2aca9c5\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"6c62f5bf-1223-4af8-b4fe-c065b2aca9c5\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" me\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"10f0f4f0-876b-4e1c-8edd-c395dca2bef6\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"10f0f4f0-876b-4e1c-8edd-c395dca2bef6\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" try\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"8d73e990-dc2b-4224-a343-3843d9062aa0\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"8d73e990-dc2b-4224-a343-3843d9062aa0\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" calling\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"6ad6a124-6dd0-45f1-b54d-37fbb5b120f0\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"6ad6a124-6dd0-45f1-b54d-37fbb5b120f0\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" with\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"1501f951-a83e-45c7-8013-5b7a50e6a078\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"1501f951-a83e-45c7-8013-5b7a50e6a078\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" just\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"1b372b02-cca0-4de8-ad32-7ba28f901671\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"1b372b02-cca0-4de8-ad32-7ba28f901671\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\" value\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"6f15bb1d-a3c1-4fc7-8a15-1d41bf4e1ca2\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"6f15bb1d-a3c1-4fc7-8a15-1d41bf4e1ca2\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"reasoning_content\":\".\"},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"7de57d92-bc63-4544-bd5a-dbf42af0f29e\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"7de57d92-bc63-4544-bd5a-dbf42af0f29e\",\"choices\":[{\"delta\":{\"role\":\"assistant\",\"tool_calls\":[{\"function\":{\"name\":\"audit_probe\",\"arguments\":\"{\\\"value\\\":\\\"probe\\\"}\"},\"index\":0,\"id\":\"call_2733b1cf99244734801b7c5c\",\"type\":\"function\"}]},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"4d0ef5c1b9e041ddbcd62fe1a2958fea\",\"created\":1793344280,\"model\":\"glm-5.3\",\"id\":\"4d0ef5c1b9e041ddbcd62fe1a2958fea\",\"choices\":[{\"finish_reason\":\"tool_calls\",\"delta\":{},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:{\"ibrain_request_id\":\"4d0ef5c1b9e041ddbcd62fe1a2958fea\",\"created\":1793344280,\"usage\":{\"completion_tokens\":169,\"prompt_tokens\":205,\"total_tokens\":374},\"model\":\"glm-5.3\",\"id\":\"4d0ef5c1b9e041ddbcd62fe1a2958fea\",\"choices\":[{\"delta\":{},\"index\":0}],\"object\":\"chat.completion.chunk\"}\n\ndata:[DONE]\n\n",
+          "tool_calls": [
+            {
+              "name": "audit_probe",
+              "arguments_text": "{\"value\":\"probe\"}",
+              "arguments": {
+                "value": "probe"
+              },
+              "violations": [
+                "missing:audit_policy"
+              ]
+            }
+          ],
+          "finish_reason": "tool_calls",
+          "usage": {
+            "completion_tokens": 169,
+            "prompt_tokens": 205,
+            "total_tokens": 374
+          },
+          "refusal": false,
+          "elapsed_sec": 10.837506900017615
+        },
+        {
+          "case": "invalid-native-option",
+          "request": {
+            "model": "glm-5.3",
+            "messages": [
+              {
+                "role": "user",
+                "content": "Call audit_probe exactly once with value \"probe\" and an allowed audit_policy."
+              }
+            ],
+            "tools": [
+              {
+                "type": "function",
+                "function": {
+                  "name": "audit_probe",
+                  "description": "Tool schema capability probe.",
+                  "parameters": {
+                    "type": "object",
+                    "properties": {
+                      "audit_policy": {
+                        "type": "string",
+                        "enum": [
+                          "raw",
+                          "counts"
+                        ]
+                      },
+                      "value": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "audit_policy",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              }
+            ],
+            "tool_choice": "auto",
+            "stream": false,
+            "max_tokens": 2048,
+            "thinking": {
+              "type": "PI_NODROP_INVALID_MODE"
+            }
+          },
+          "streaming": false,
+          "invalid_control": true,
+          "status": 200,
+          "content_type": "application/json;charset=UTF-8",
+          "raw_response": "{\"id\":\"f67f9f0f-ae21-4a3d-a25b-abe235d99dda\",\"ibrain_request_id\":\"c8099e797e37477884a8e16fe299bea3\",\"object\":\"chat.completion\",\"created\":1793344288,\"model\":\"glm-5.3\",\"choices\":[{\"index\":0,\"finish_reason\":\"tool_calls\",\"message\":{\"role\":\"assistant\",\"reasoning_content\":\"The user wants me to call audit_probe exactly once with value \\\"probe\\\" and an allowed audit_policy. The allowed audit_policy values are \\\"raw\\\" or \\\"counts\\\". I'll pick one, say \\\"raw\\\".\",\"tool_calls\":[{\"id\":\"call_-7121741837663990758\",\"type\":\"function\",\"function\":{\"name\":\"audit_probe\",\"arguments\":\"{\\\"audit_policy\\\":\\\"raw\\\",\\\"value\\\":\\\"probe\\\"}\"}}]}}],\"usage\":{\"prompt_tokens\":193,\"completion_tokens\":62,\"total_tokens\":255}}",
+          "finish_reason": "tool_calls",
+          "usage": {
+            "prompt_tokens": 193,
+            "completion_tokens": 62,
+            "total_tokens": 255
+          },
+          "response_model": "glm-5.3",
+          "text": null,
+          "has_reasoning_content": true,
+          "tool_calls": [
+            {
+              "name": "audit_probe",
+              "arguments_text": "{\"audit_policy\":\"raw\",\"value\":\"probe\"}",
+              "arguments": {
+                "audit_policy": "raw",
+                "value": "probe"
+              },
+              "violations": []
+            }
+          ],
+          "elapsed_sec": 5.341254299972206
+        }
+      ],
+      "total_reported_tokens": 906
+    }
+  ],
+  "claude_requests": 0,
+  "credential_name": "project-ak-api",
+  "total_requests": 7,
+  "total_reported_tokens": 2540,
+  "date": "2026-10-30",
+  "interrupted_attempt": {
+    "credential_name": "project-ak-api",
+    "family": "doubao",
+    "model": "Doubao-Seed-2.1-pro-260628",
+    "case": "invalid-schema",
+    "attempts": 1,
+    "result": "interrupted_without_complete_response",
+    "usage": null,
+    "retried": false
+  },
+  "total_generation_attempts": 8,
+  "additional_model_directory_get_requests": 1,
+  "source_scope": "Only iBrain; native upstream activation unverified; no official-provider requests in this batch",
+  "credential_checks": {
+    "default": "project-ak-api",
+    "personal_variable": "personal-ak-api",
+    "python_selection_passed": true,
+    "node_selection_passed": true,
+    "missing_project_does_not_fall_back": true,
+    "pi_runtime_override_offline_passed": true,
+    "standard_pi_auth_unchanged": true
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "dataset_manifest": "terminal-bench.json",
+  "execution": "live-model",
+  "audit": "on",
+  "control_mode": "fixed-raw",
+  "tasks": [
+    "openssl-selfsigned-cert",
+    "log-summary-date-ranges",
+    "fix-git"
+  ],
+  "replicates_per_task": 1,
+  "provider": "ibrain",
+  "model": "deepseek-v4.1-flash-al",
+  "api": "openai-completions",
+  "model_output_configuration": "Inherited from the selected Pi model",
+  "max_output_tokens": 2048,
+  "local_limits": {
+    "tokens": null,
+    "turns": null,
+    "tools": null,
+    "timeout_sec": 900
+  },
+  "automatic_retries": false,
+  "automatic_task_reruns": false,
+  "termination": "Model/API result or task timeout"
+}

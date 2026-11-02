@@ -1,0 +1,23 @@
+[
+  {
+    "image": "alexgshaw/openssl-selfsigned-cert:20251031",
+    "manifest_digest": "sha256:4c948a4e630af2435ae0a19108fc0814a946ac2fa29a512469e0fc77b38c8c12",
+    "image_config_digest": "sha256:620bde89163da73f62e67f174930bb627aae0506009704ac1add2086116abeda",
+    "rootfs_layers_match_upstream": true,
+    "working_dir": "/app"
+  },
+  {
+    "image": "alexgshaw/log-summary-date-ranges:20251031",
+    "manifest_digest": "sha256:cbeb6ba905c2fec294f16cd5e16e3ea7f2e04d38ac2484d51a11de262aa7dc51",
+    "image_config_digest": "sha256:014d37ce98a5392069066a70df3d660d38b612f5fc0a6e50293132196aef4d5e",
+    "rootfs_layers_match_upstream": true,
+    "working_dir": "/app"
+  },
+  {
+    "image": "alexgshaw/fix-git:20260403",
+    "manifest_digest": "sha256:389b9c8247610c2c5be080b1ac00429007c2c69bf57f7f26c79f0f75ba2d5c74",
+    "image_config_digest": "sha256:9302c8bd86673a863f01f091d409737da1b565cfef949964f493cb71dff0709b",
+    "rootfs_layers_match_upstream": true,
+    "working_dir": "/app/personal-site"
+  }
+]

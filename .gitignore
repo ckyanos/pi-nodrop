@@ -6,6 +6,10 @@ results/*
 !results/README.md
 .pi/nodrop/
 
+# Local development instructions and notes
+AGENTS.md
+/dev-docs/
+
 # Generated files
 __pycache__/
 *.py[cod]

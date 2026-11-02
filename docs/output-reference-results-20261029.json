@@ -1,0 +1,73 @@
+{
+  "kernel": "6.8.0-137-generic",
+  "pi": "1.4.0",
+  "model": "scripted protocol stream",
+  "output_index": {
+    "version": 1,
+    "kind": "pi-tool-output",
+    "call_ref": "e1232c262132fd0f",
+    "tool_call_id": "output-read",
+    "tool_name": "read",
+    "is_error": false,
+    "exit_code": null,
+    "bytes": 24000,
+    "page_bytes": 2048,
+    "pages": 12,
+    "source": "tool-result-text",
+    "upstream_truncated": false,
+    "payload_file": "output.txt",
+    "result_file": "result.json"
+  },
+  "api_requests": 0,
+  "calls": 2,
+  "raw_events": 193,
+  "histogram_events": 158,
+  "histogram_rows": 13,
+  "calls_by_policy": {
+    "output-read": {
+      "requested": "raw",
+      "applied": 1,
+      "source": "agent",
+      "raw_events": 193,
+      "histogram_events": 0
+    },
+    "output-page": {
+      "requested": "counts",
+      "applied": 2,
+      "source": "agent",
+      "raw_events": 0,
+      "histogram_events": 158
+    }
+  },
+  "cleanup": {
+    "module_unloaded": true,
+    "output_unmounted": true,
+    "kernel_errors": false,
+    "remaining_worker_pids": [],
+    "vm_state": "shut off"
+  },
+  "runtime_sha256": {
+    "src/output-store.mjs": "d8bb84de6cc8055c23c640770d46201982a6d4539743f7c478bdb38b5bf2939a",
+    "src/tools.mjs": "755f88255a20bb73a2c53b916f4c62e0463fc4c81d7852174bf725d7a89d5a0f",
+    "src/client.mjs": "8ab81bb3772dbd0633fb854ed6c9bd25a4a60687492b95ea2611255f43e4a892",
+    "src/worker.mjs": "1db758df57975951deb26246b3a8c4c50df0faa44654a4ec8e7b86e5efb078dc",
+    "src/extension.mjs": "fe144ff15768142fff414f8a44f77d6db0c8bb2beb2793c8aaccbb5d26ed9ebb",
+    "tests/output-store.test.mjs": "588904dcb90c4d0e49b9022b5103fe37f37ebce9e9d5705ecc5010340e211972",
+    "tests/extension-loader.mjs": "5190f63762fe6e4eed815f12e6fb2ff6f8a84c2eb2d677bfd1c8a2ce46f3174a",
+    "scripts/check_output_guest.py": "39a85ace0d24a1021fd37fee89ff021295a1400248e9beca6afe1aacb7c6c9dc",
+    "build/nodrop/nodrop.ko": "8193e5c90382e1c2c02821fac2934105f4e1e74935b52dd8a8c38e5e5c5579d5",
+    "build/nodrop/monitor/monitor": "c9da7e700dd55bf727b468b82d4d10998058805bc36a6eebb534ab295af18b75",
+    "build/context.node": "70bd8c69a7166720fa6bddb3fdd9c5cb9119c2ea240e6ab8ffbc6da851e28dc7"
+  },
+  "windows_protocol_tests": {
+    "tests": 9,
+    "passed": 9,
+    "backend": "none"
+  },
+  "linux_native_tests": {
+    "tests": 3,
+    "passed": 3,
+    "extension_loader": "passed"
+  },
+  "real_model_api_evaluated": false
+}

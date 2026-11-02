@@ -73,12 +73,8 @@ do_record_one_event(struct nod_proc_info *p,
             stat->n_drop_evts++;
             buffer->overflow.filled = 0;
         } else {
-            if (unlikely(info->nevents != 0)) {
-                stat->n_drop_evts_overflow += info->nevents;
-                pr_err_ratelimited("nodrop: overflow merge discarded %llu pending events\n",
-                                   (unsigned long long)info->nevents);
+            if (unlikely(info->nevents != 0))
                 info->nevents = 0;
-            }
 
             info->tail = ev_len;
             info->nevents = 1;

@@ -189,18 +189,11 @@ nod_prepare_separated_stack(int argc, char **argv, char **env, size_t aux[AUX_CN
 }
 #endif
 
-static void nod_run(struct nod_stack_info *p, int argc, char **argv, char **env);
-
 static void
 nod_start_main(int argc, char **argv, char **env) {
-    nod_run((struct nod_stack_info *) argv[argc - 1], argc, argv, env);
-}
+    struct nod_stack_info *p = (struct nod_stack_info *) argv[argc - 1];
 
-static void
-nod_run(struct nod_stack_info *p, int argc, char **argv, char **env) {
-    int first_run = unlikely(p->fsbase == 0);
-
-    if (first_run) {
+    if (unlikely(p->fsbase == 0)) {
         nod_initialize(p);
         nod_monitor_init(argc, argv, env);
     } else {
@@ -211,13 +204,17 @@ nod_run(struct nod_stack_info *p, int argc, char **argv, char **env) {
 #endif
     }
 
-    ASSERT_OUT(likely((p->ioctl_fd = open(NOD_IOCTL_PATH, O_RDWR)) >= 0),
-               "Open " NOD_IOCTL_PATH " failed",);
+    {
+        const char *ioctl_path = getenv("PI_NODROP_IOCTL_PATH");
+        if (!ioctl_path || !*ioctl_path) ioctl_path = NOD_IOCTL_PATH;
+        ASSERT_OUT(likely((p->ioctl_fd = open(ioctl_path, O_RDWR)) >= 0),
+                   "Open NoDrop interface failed",);
+    }
 
     if (unlikely(p->buffer_info == NULL)) {
         p->buffer_info = (struct nod_buffer_info *) mmap(NULL, sizeof(struct nod_buffer_info),
                                                        PROT_READ | PROT_WRITE, MAP_SHARED, p->ioctl_fd, 0);
-        ASSERT_OUT(likely(p->buffer_info != MAP_FAILED),
+        ASSERT_OUT(likely(p->buffer_info != MAP_FAILED), 
                 "Cannot allocate buffer info", p->buffer_info = NULL);
 #ifdef NOD_PKEY_SUPPORT
         if (p->pkey != -1) {
@@ -234,8 +231,8 @@ nod_run(struct nod_stack_info *p, int argc, char **argv, char **env) {
     if (unlikely(p->buffer == NULL)) {
         p->buffer = (char *) mmap(NULL, p->buffer_info->buffer_size,
                                 PROT_READ, MAP_SHARED, p->ioctl_fd, 0);
-        ASSERT_OUT(likely(p->buffer != MAP_FAILED),
-                "Cannot allocate buffer",
+        ASSERT_OUT(likely(p->buffer != MAP_FAILED), 
+                "Cannot allocate buffer", 
                 {
                    p->buffer = NULL;
                    if (p->buffer_info) munmap(p->buffer_info, sizeof(struct nod_buffer_info));
@@ -244,7 +241,7 @@ nod_run(struct nod_stack_info *p, int argc, char **argv, char **env) {
 #ifdef NOD_PKEY_SUPPORT
         if (p->pkey != -1) {
             ASSERT_OUT(likely(pkey_mprotect(p->buffer, p->buffer_info->buffer_size, PROT_READ, p->pkey) != -1),
-                    "pkey_mprotect for buffer failed",
+                    "pkey_mprotect for buffer failed", 
                     {
                         if (p->buffer)  munmap(p->buffer, p->buffer_info->buffer_size);
                         p->buffer = NULL;
@@ -255,28 +252,35 @@ nod_run(struct nod_stack_info *p, int argc, char **argv, char **env) {
 #endif
     }
 
+    // int len = sprintf(strbuf, "ts:%lu tail:%u\n", ts, p->buffer_info->tail);
+    // write(fileno(stdout), strbuf, len);
     struct nod_lua_state kstate;
     if (ioctl(p->ioctl_fd, NOD_IOCTL_GET_LUA_STATE, &kstate)) {
+
+        // get lua state error
         kstate.lua_path[0] = '\0';
         kstate.lua_mtime = 0;
     }
     kstate.lua_path[sizeof(kstate.lua_path) - 1] = '\0';
     if (kstate.lua_mtime) {
         struct stat lua_st;
-        if (!stat(kstate.lua_path, &lua_st)) {
-            if (lua_st.st_mtime != kstate.lua_mtime) {
+        if (!stat(kstate.lua_path, &lua_st))
+        {
+            if (lua_st.st_mtime != kstate.lua_mtime)
+            {
                 kstate.lua_mtime = lua_st.st_mtime;
                 if (ioctl(p->ioctl_fd, NOD_IOCTL_SET_LUA_STATE, &kstate) != 0)
+                {
                     return;
+                }
             }
         }
     }
     int record_flag = 0;
-    if (ioctl(p->ioctl_fd, NOD_IOCTL_GET_RECORD_FLAG, &record_flag))
+    if (ioctl(p->ioctl_fd, NOD_IOCTL_GET_RECORD_FLAG, &record_flag)) {
         record_flag = 0;
-
-    nod_monitor_main(p->buffer, p->buffer_info, &kstate, record_flag,
-                     unlikely(SYSCALL_EXIT_FAMILY(p->syscall_nr)));
+    }
+    nod_monitor_main(p->buffer, p->buffer_info, &kstate, record_flag, unlikely(SYSCALL_EXIT_FAMILY(p->syscall_nr)));
 
 out:
     p->hash = nod_calc_hash(p);
@@ -293,7 +297,22 @@ hidden void _start_c(size_t *sp, size_t *dynv) {
     int argc = *sp;
     char **argv = (void *) (sp + 1);
 
+    // start = read_time();
+
     if (likely(__info.fsbase != 0)) {
+        /*
+         * elf_reg_init() drops MSR_FS_BASE on every entry. The first
+         * entry installs the monitor TLS; later entries must put it
+         * back before any libc call. A raw syscall is required because
+         * the libc wrapper itself reads %fs.
+         */
+        __asm__ volatile (
+            "syscall"
+            :
+            : "a"((unsigned long)__NR_arch_prctl),
+              "D"((unsigned long)ARCH_SET_FS),
+              "S"(__info.fsbase)
+            : "rcx", "r11", "memory");
         nod_start_main(argc, argv, argv + argc + 1);
         return;
     }
@@ -327,6 +346,10 @@ hidden void _start_c(size_t *sp, size_t *dynv) {
             }
         }
     }
+
+    /* MIPS uses an ugly packed form for GOT relocations. Since we
+     * can't make function calls yet and the code is tiny anyway,
+     * it's simply inlined here. */
 
     rel = (void *) (base + dyn[DT_REL]);
     rel_size = dyn[DT_RELSZ];

@@ -5,7 +5,12 @@
 #include <linux/pid.h>
 #include <linux/sched/signal.h>
 #include <linux/rwlock.h>
+#include <linux/moduleparam.h>
 #include "nodrop.h"
+
+unsigned int nod_audit_uid = 1000;
+module_param(nod_audit_uid, uint, 0444);
+MODULE_PARM_DESC(nod_audit_uid, "Host UID eligible for explicit tool-call audit contexts");
 
 struct audit_entry {
     struct hlist_node node;

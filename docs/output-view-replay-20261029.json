@@ -1,0 +1,56 @@
+{
+  "scope": "Saved model-facing tool texts; same calls and requests; byte projection only",
+  "model_requests": 0,
+  "retrieval_rounds_simulated": false,
+  "schema_changes_included": false,
+  "inline_bytes": 4096,
+  "runs": [
+    {
+      "task": "fix-git",
+      "original_result_text_bytes": 14235,
+      "projected_result_text_bytes": 10333,
+      "requests": 12,
+      "original_request_payload_bytes": 269163,
+      "projected_request_payload_bytes": 241037,
+      "external_outputs": [
+        {
+          "tool": "bash",
+          "original_text_bytes": 5186,
+          "view_text_bytes": 1284,
+          "pages": 3
+        }
+      ]
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "original_result_text_bytes": 52628,
+      "projected_result_text_bytes": 2681,
+      "requests": 8,
+      "original_request_payload_bytes": 422453,
+      "projected_request_payload_bytes": 117617,
+      "external_outputs": [
+        {
+          "tool": "bash",
+          "original_text_bytes": 51249,
+          "view_text_bytes": 1302,
+          "pages": 26
+        }
+      ]
+    },
+    {
+      "task": "openssl-selfsigned-cert",
+      "original_result_text_bytes": 8826,
+      "projected_result_text_bytes": 8826,
+      "requests": 17,
+      "original_request_payload_bytes": 443362,
+      "projected_request_payload_bytes": 443362,
+      "external_outputs": []
+    }
+  ],
+  "totals": {
+    "original_result_text_bytes": 75689,
+    "projected_result_text_bytes": 21840,
+    "original_request_payload_bytes": 1134978,
+    "projected_request_payload_bytes": 802016
+  }
+}

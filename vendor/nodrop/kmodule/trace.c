@@ -1,20 +1,22 @@
 #include <linux/kernel.h>
 #include <linux/version.h>
 #include <linux/kallsyms.h>
-#include <linux/tracepoint.h>
 #include <linux/ptrace.h>
 #include <linux/unistd.h>
 #include <linux/mm.h>
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 0, 0)
 #include <linux/sched.h>
 #endif
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 5, 0)
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 8, 0)
 #include <linux/ftrace.h>
 #include <linux/module.h>
 #endif
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(5, 8, 0) && \
+    LINUX_VERSION_CODE < KERNEL_VERSION(6, 5, 0)
+#include <asm/ftrace.h>
+#endif
 #include <asm/unistd.h>
 #include <asm/syscall.h>
-#include <asm/ftrace.h>
 
 #include "nodrop.h"
 #include "syscall.h"
@@ -231,7 +233,6 @@ TRACEPOINT_PROBE(syscall_exit_probe, struct pt_regs *regs, long ret)
         // pr_info("post %llu\n", end - start);
         nod_proc_set_out(p);
 
-
         break;
 
     case NOD_RESTORE_SECURITY:
@@ -373,13 +374,10 @@ exit_filter(struct nod_proc_info *p, struct pt_regs *regs)
     case NOD_OUT:
     case NOD_CLONE:
     case NOD_SHARE:
-    {
-        int probe_ret = syscall_probe(p, regs, syscall_get_nr(current, regs), 1);
-
-        if (likely(probe_ret == NOD_SUCCESS_LOAD))
+        if (likely(syscall_probe(p, regs, syscall_get_nr(current, regs), 1) == NOD_SUCCESS_LOAD))
             return -EAGAIN;
+        
         break;
-    }
     
     case NOD_IN:
         nod_restore_security(p);
@@ -692,18 +690,15 @@ nod_x64_sys_call_hook(const struct pt_regs *regs, unsigned int nr)
 {
     long ret;
     struct nod_proc_info *p;
-    bool filtered;
 
     if (unlikely(!nod_old_x64_sys_call))
         return -ENOSYS;
 
-    filtered = nr < SYSCALL_TABLE_SIZE &&
-               syscall_filters[nr].hooked &&
-               syscall_filters[nr].filter;
-
-    if (!filtered) {
+    if (unlikely(nr >= SYSCALL_TABLE_SIZE))
         ret = nod_old_x64_sys_call(regs, nr);
-    } else {
+    else if (unlikely(!syscall_filters[nr].hooked || !syscall_filters[nr].filter))
+        ret = nod_old_x64_sys_call(regs, nr);
+    else {
         nod_event_from(&p);
         if (p && p->status == NOD_OUT &&
             (!p->stack_addr || !p->stack_info.stack_start))
@@ -748,8 +743,9 @@ nod_x64_sys_call_thunk(unsigned long ip, unsigned long parent_ip,
         return;
 
     nr = (unsigned int)regs->si;
-    if (nr >= SYSCALL_TABLE_SIZE || !syscall_filters[nr].hooked ||
-        !syscall_filters[nr].filter)
+    if (nr >= SYSCALL_TABLE_SIZE || !syscall_filters[nr].hooked)
+        return;
+    if (!syscall_filters[nr].filter)
         return;
 
     nod_ftrace_set_ip(fregs, (unsigned long)nod_x64_sys_call_hook);

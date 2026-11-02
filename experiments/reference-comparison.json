@@ -1,0 +1,26 @@
+{
+  "dataset_manifest": "terminal-bench.json",
+  "execution": "live-model",
+  "tasks": ["openssl-selfsigned-cert", "log-summary-date-ranges", "fix-git"],
+  "modes": {
+    "baseline": {"audit": "off", "tool_execution": "direct Pi tools"},
+    "fixed-raw": {"audit": "on", "control_mode": "fixed-raw"},
+    "agent": {"audit": "on", "control_mode": "agent"}
+  },
+  "output_mode": "reference",
+  "output_inline_bytes": 4096,
+  "output_page_bytes": 2048,
+  "replicates_per_task_per_mode": 1,
+  "execution_order": "baseline, fixed-raw, agent; tasks in listed order within each mode",
+  "provider": "ibrain",
+  "model": "deepseek-v4.1-flash-al",
+  "api": "openai-completions",
+  "thinking_level": "medium",
+  "max_output_tokens": 2048,
+  "local_limits": {"tokens": null, "turns": null, "tools": null, "timeout_sec": 900},
+  "automatic_retries": false,
+  "automatic_task_reruns": false,
+  "cache_warming": "off",
+  "fresh_task_filesystem_per_trial": true,
+  "verification": "original task verifier after agent exit"
+}

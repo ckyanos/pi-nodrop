@@ -1,0 +1,89 @@
+{
+  "dataset_revision": "7131e4375048a0e408a8fb404b5f499d726b695b",
+  "tasks": [
+    "openssl-selfsigned-cert",
+    "log-summary-date-ranges",
+    "fix-git"
+  ],
+  "attempts_per_task_per_condition": 1,
+  "harbor_version": "0.25.0",
+  "pi_version": "1.4.0",
+  "model": "deepseek-v4.1-flash-1017-al",
+  "model_response_alias": "deepseek-v4.1-flash-1017-volc",
+  "credential": "project-ak-api",
+  "business_api": "openai-completions",
+  "business_thinking": "medium",
+  "business_max_output_tokens": 2048,
+  "cumulative_token_turn_tool_limits": null,
+  "business_tools": [
+    "read",
+    "bash",
+    "edit",
+    "write"
+  ],
+  "business_agent_loop": "upstream Harbor Pi.run",
+  "task_verifier": "original tests/test.sh through Harbor",
+  "task_resources": "original CPU, memory and storage settings; independent task copies omit the agent deadline",
+  "agent_timeout_sec": null,
+  "agent_max_timeout_sec": null,
+  "termination": "agent completion, explicit cancellation or API failure",
+  "historical_results": "2026-10-30 results retain the original 900-second deadline",
+  "automatic_trial_retries": false,
+  "business_request_retries": false,
+  "conditions": {
+    "baseline": {
+      "monitor": null
+    },
+    "agentsight": {
+      "upstream_revision": "892ee9c2c33e492506444aefe67adf95960c7316",
+      "system_capture": "native eBPF process collector",
+      "semantic_capture": "native SSL uprobes attached to the Pi Node executable",
+      "analysis": "upstream correlation script and independent semantic analyzer",
+      "observer_max_output_tokens": 4000,
+      "observer_trace_sample_limit": 20
+    },
+    "sentinel": {
+      "upstream_revision": "c3e25e6678c4c77cfba74c91bcda306567b1defd",
+      "integration": "Pi lifecycle and tool events using original A2M protocol",
+      "system_capture": "native eBPF and BPF-LSM tracer and enforcer",
+      "analysis": "original context summarizer, auditor, rules and caches",
+      "auditor_max_output_tokens": 4096,
+      "process_trace_level": 0,
+      "binary_level_cache": false,
+      "tool_use_timeout_sec": 60,
+      "event_count_limit": 20
+    },
+    "fixed-raw": {
+      "monitor": "NoDrop",
+      "policy": "fixed raw",
+      "independent_llm_analysis": false
+    },
+    "agent": {
+      "monitor": "NoDrop",
+      "policy": "audit_policy in original tool arguments",
+      "independent_llm_analysis": false
+    }
+  },
+  "installation": {
+    "baseline": "official Pi installer",
+    "audited_conditions": "independent copies of the byte-identified official installation",
+    "validation": "archive SHA-256, Node SHA-256, Pi CLI SHA-256 and version"
+  },
+  "transport": "common TLS gateway with role-specific usage accounting",
+  "metrics": [
+    "original verifier reward",
+    "native Pi tokens",
+    "independent analysis tokens",
+    "reported total tokens",
+    "request failures",
+    "captured system facts",
+    "capture completeness"
+  ],
+  "raw_results": "results/harbor-fiveway-20261030",
+  "observer_request_retries": "native SDK defaults",
+  "gateway_empty_choices_response": "HTTP 502; provider usage retained",
+  "nodrop_kernel_isolation": {
+    "certificate": "initial per-trial module load and unload",
+    "logs_and_git": "one case per kernel boot; module retained until restart"
+  }
+}

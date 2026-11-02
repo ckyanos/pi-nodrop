@@ -1,0 +1,257 @@
+{
+  "dataset": "Terminal-Bench 2.1",
+  "runs": [
+    {
+      "trial": "fix-git",
+      "task": "fix-git",
+      "execution": "live-model",
+      "control_mode": "fixed-raw",
+      "provider": "ibrain",
+      "model": "deepseek-v4.1-flash-al",
+      "api": "openai-completions",
+      "max_output_tokens": 4096,
+      "model_stop_reason": "error",
+      "run_stop": "token_limit",
+      "agent_error": "This operation was aborted",
+      "limits": {
+        "turns": 40,
+        "tools": 100,
+        "tokens": 30000,
+        "timeoutSec": 900
+      },
+      "model_output_limit": false,
+      "task_passed": true,
+      "tests": {
+        "tests": 2,
+        "passed": 2,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1793256290.6949441,
+        "stop": 1793256291.3350492
+      },
+      "model_tool_requests": 14,
+      "executed_calls": 13,
+      "tool_counts": {
+        "bash": 13
+      },
+      "completed_calls": 13,
+      "total_reported_tokens": 35280,
+      "usage": {
+        "input": 6112,
+        "output": 1776,
+        "cacheRead": 27392,
+        "cacheWrite": 0
+      },
+      "raw_events": 13346,
+      "histogram_events": 0,
+      "associated_events": 13346,
+      "statistics": {
+        "n_evts": 13346,
+        "drop_evts": 0,
+        "drop_unsolved": 0,
+        "drop_overflow": 0,
+        "monitor_entries": 61
+      },
+      "event_accounting_matches": true,
+      "accounting_with_unsolved_matches": true,
+      "audit_checks_passed": true,
+      "audit_status": "complete",
+      "raw_bytes": 993142,
+      "call_metadata_bytes": 6055,
+      "agent_elapsed_sec": 36.267,
+      "trial_elapsed_sec": 69.67399311065674,
+      "instruction_sha256": "6c216d38d66c187905b6156e80d02d678fc76c6f98a6f6e0c92792f65939b9e6",
+      "environment": {
+        "kernel": "6.8.0-137-generic",
+        "isolation": "chroot",
+        "uid": 1000,
+        "workdir": "/app/personal-site"
+      },
+      "cleanup": {
+        "module_unloaded": true,
+        "kernel_errors": false
+      }
+    },
+    {
+      "trial": "log-summary-date-ranges",
+      "task": "log-summary-date-ranges",
+      "execution": "live-model",
+      "control_mode": "fixed-raw",
+      "provider": "ibrain",
+      "model": "deepseek-v4.1-flash-al",
+      "api": "openai-completions",
+      "max_output_tokens": 4096,
+      "model_stop_reason": "error",
+      "run_stop": "token_limit",
+      "agent_error": "This operation was aborted",
+      "limits": {
+        "turns": 40,
+        "tools": 100,
+        "tokens": 30000,
+        "timeoutSec": 900
+      },
+      "model_output_limit": false,
+      "task_passed": true,
+      "tests": {
+        "tests": 2,
+        "passed": 2,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1793256168.9427857,
+        "stop": 1793256169.979216
+      },
+      "model_tool_requests": 6,
+      "executed_calls": 5,
+      "tool_counts": {
+        "bash": 5
+      },
+      "completed_calls": 5,
+      "total_reported_tokens": 31746,
+      "usage": {
+        "input": 9051,
+        "output": 1703,
+        "cacheRead": 20992,
+        "cacheWrite": 0
+      },
+      "raw_events": 64830,
+      "histogram_events": 0,
+      "associated_events": 64830,
+      "statistics": {
+        "n_evts": 65427,
+        "drop_evts": 0,
+        "drop_unsolved": 597,
+        "drop_overflow": 0,
+        "monitor_entries": 530
+      },
+      "event_accounting_matches": false,
+      "accounting_with_unsolved_matches": true,
+      "audit_checks_passed": false,
+      "audit_status": "incomplete",
+      "raw_bytes": 5327468,
+      "call_metadata_bytes": 3902,
+      "agent_elapsed_sec": 56.96,
+      "trial_elapsed_sec": 99.55680656433105,
+      "instruction_sha256": "d43bec1c9c66bc96037c93e1192909bfdf53a2927e54d9f3c88e5ce2499c0e98",
+      "environment": {
+        "kernel": "6.8.0-137-generic",
+        "isolation": "chroot",
+        "uid": 1000,
+        "workdir": "/app"
+      },
+      "cleanup": {
+        "module_unloaded": true,
+        "kernel_errors": false
+      }
+    },
+    {
+      "trial": "openssl-selfsigned-cert",
+      "task": "openssl-selfsigned-cert",
+      "execution": "live-model",
+      "control_mode": "fixed-raw",
+      "provider": "ibrain",
+      "model": "deepseek-v4.1-flash-al",
+      "api": "openai-completions",
+      "max_output_tokens": 4096,
+      "model_stop_reason": "stop",
+      "run_stop": "token_limit",
+      "agent_error": null,
+      "limits": {
+        "turns": 40,
+        "tools": 100,
+        "tokens": 30000,
+        "timeoutSec": 900
+      },
+      "model_output_limit": false,
+      "task_passed": true,
+      "tests": {
+        "tests": 6,
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1793256043.5047328,
+        "stop": 1793256052.8815963
+      },
+      "model_tool_requests": 9,
+      "executed_calls": 9,
+      "tool_counts": {
+        "bash": 7,
+        "write": 1,
+        "edit": 1
+      },
+      "completed_calls": 9,
+      "total_reported_tokens": 34418,
+      "usage": {
+        "input": 6318,
+        "output": 3524,
+        "cacheRead": 24576,
+        "cacheWrite": 0
+      },
+      "raw_events": 18121,
+      "histogram_events": 0,
+      "associated_events": 18121,
+      "statistics": {
+        "n_evts": 18121,
+        "drop_evts": 0,
+        "drop_unsolved": 0,
+        "drop_overflow": 0,
+        "monitor_entries": 80
+      },
+      "event_accounting_matches": true,
+      "accounting_with_unsolved_matches": true,
+      "audit_checks_passed": true,
+      "audit_status": "complete",
+      "raw_bytes": 1379668,
+      "call_metadata_bytes": 10428,
+      "agent_elapsed_sec": 72.81,
+      "trial_elapsed_sec": 127.12677359580994,
+      "instruction_sha256": "df64deb1b3a5953a0c5ef8442e3e73856b7733f6fe03614d9cb3a7e4b02b4edf",
+      "environment": {
+        "kernel": "6.8.0-137-generic",
+        "isolation": "chroot",
+        "uid": 1000,
+        "workdir": "/app"
+      },
+      "cleanup": {
+        "module_unloaded": true,
+        "kernel_errors": false
+      }
+    }
+  ],
+  "totals": {
+    "tasks": 3,
+    "trials": 3,
+    "passed_trials": 3,
+    "passed_tasks": 3,
+    "executed_calls": 27,
+    "raw_events": 96297,
+    "associated_events": 96297,
+    "drop_unsolved": 597,
+    "raw_bytes": 7700278,
+    "call_metadata_bytes": 20385,
+    "total_reported_tokens": 101444
+  },
+  "runtime_sha256": {
+    "build/nodrop/nodrop.ko": "8193e5c90382e1c2c02821fac2934105f4e1e74935b52dd8a8c38e5e5c5579d5",
+    "build/nodrop/monitor/monitor": "c9da7e700dd55bf727b468b82d4d10998058805bc36a6eebb534ab295af18b75",
+    "build/context.node": "70bd8c69a7166720fa6bddb3fdd9c5cb9119c2ea240e6ab8ffbc6da851e28dc7",
+    "src/client.mjs": "91d2932929e8aa6cdb6186aa7677edddb7854f4283ff1539fe03196a3c7e3c26",
+    "src/worker.mjs": "259a0e46d95643f0c5505c8ace53e58e5e9834283f324b896a9f9aa7ac77c1a0",
+    "src/extension.mjs": "c94621a9abe7d6f5a1ea5d814049369f79bc70a6ad5038ddd366c8d4ea179f99",
+    "scripts/run_terminal_bench.py": "51e8335e985c2c3d7a60b84b9b2a4d3ce3a34746b887a9dd47c9242183badb74",
+    "scripts/terminal_bench.mjs": "93a8462eea42ae0032fe593c9e6144c7e17a260212a0b65a6aa9bf34af6adceb"
+  },
+  "environment_cleanup": {
+    "module_unloaded": true,
+    "remaining_task_processes": [],
+    "remaining_mounts": [],
+    "temporary_model_config_removed": true,
+    "vm_state": "shut off",
+    "original_model_output_budget": 2048
+  }
+}

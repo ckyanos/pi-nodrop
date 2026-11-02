@@ -1,0 +1,1349 @@
+{
+  "design": {
+    "replicates_per_task_per_mode": 1,
+    "fresh_trials": 9,
+    "execution": "independent live-model runs",
+    "control_mode": "agent-names",
+    "local_token_turn_tool_limits": null,
+    "automatic_retries": false,
+    "automatic_reruns": false
+  },
+  "pairs": [
+    {
+      "task": "fix-git",
+      "runs": {
+        "baseline": {
+          "mode": "baseline",
+          "task": "fix-git",
+          "task_passed": true,
+          "tests": {
+            "tests": 2,
+            "passed": 2,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793279001.5229216,
+            "stop": 1793279002.6656613
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "6c216d38d66c187905b6156e80d02d678fc76c6f98a6f6e0c92792f65939b9e6",
+          "total_tokens": 130028,
+          "usage": {
+            "input": 11362,
+            "output": 9610,
+            "cacheRead": 109056,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 1484,
+          "requests": 20,
+          "model_tool_requests": 21,
+          "assistant_thinking_chars": 23342,
+          "request_message_json_bytes_by_role": {
+            "developer": 58240,
+            "user": 4280,
+            "assistant": 222864,
+            "tool": 237060
+          },
+          "tool_result_text_chars": 17987,
+          "original_tool_result_text_chars": 22204,
+          "largest_tool_result_text_chars": 3835,
+          "tool_counts": {
+            "bash": 21
+          },
+          "model_policy_choices": null,
+          "shared_guideline": null,
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 1,
+          "stored_output_bytes": 5489,
+          "output_page_requests": 0,
+          "audit_calls": 0,
+          "raw_events": 0,
+          "histogram_events": 0,
+          "raw_bytes": 0,
+          "counts_bytes": 0,
+          "audit_bytes": 0,
+          "metadata_bytes": 0,
+          "agent_elapsed_sec": 109.409,
+          "drop_unsolved": 0,
+          "session_completed": true,
+          "final_result_recorded": true,
+          "agent_exit_code": 0,
+          "token_measurement": "final session usage",
+          "trial_elapsed_sec": 148.8187050819397,
+          "environment": {
+            "kernel": "6.8.0-137-generic",
+            "isolation": "chroot",
+            "uid": 1000,
+            "workdir": "/app/personal-site"
+          },
+          "statistics": {
+            "n_evts": 0,
+            "drop_evts": 0,
+            "drop_overflow": 0,
+            "drop_unsolved": 0
+          },
+          "policy_counts": {}
+        },
+        "fixed-raw": {
+          "mode": "fixed-raw",
+          "task": "fix-git",
+          "task_passed": true,
+          "tests": {
+            "tests": 2,
+            "passed": 2,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793279636.4078512,
+            "stop": 1793279637.8230586
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "6c216d38d66c187905b6156e80d02d678fc76c6f98a6f6e0c92792f65939b9e6",
+          "total_tokens": 67953,
+          "usage": {
+            "input": 8056,
+            "output": 3577,
+            "cacheRead": 56320,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 1484,
+          "requests": 13,
+          "model_tool_requests": 17,
+          "assistant_thinking_chars": 5013,
+          "request_message_json_bytes_by_role": {
+            "developer": 37856,
+            "user": 2782,
+            "assistant": 76249,
+            "tool": 116831
+          },
+          "tool_result_text_chars": 14163,
+          "original_tool_result_text_chars": 18113,
+          "largest_tool_result_text_chars": 2105,
+          "tool_counts": {
+            "bash": 13,
+            "ls": 1,
+            "read": 3
+          },
+          "model_policy_choices": null,
+          "shared_guideline": null,
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 1,
+          "stored_output_bytes": 5222,
+          "output_page_requests": 3,
+          "audit_calls": 17,
+          "raw_events": 18145,
+          "histogram_events": 0,
+          "raw_bytes": 1421718,
+          "counts_bytes": 0,
+          "audit_bytes": 1421718,
+          "metadata_bytes": 10333,
+          "agent_elapsed_sec": 67.02,
+          "drop_unsolved": 0,
+          "session_completed": true,
+          "final_result_recorded": true,
+          "agent_exit_code": 0,
+          "token_measurement": "final session usage",
+          "trial_elapsed_sec": 119.11189150810242,
+          "environment": {
+            "kernel": "6.8.0-137-generic",
+            "isolation": "chroot",
+            "uid": 1000,
+            "workdir": "/app/personal-site"
+          },
+          "statistics": {
+            "n_evts": 18145,
+            "drop_evts": 0,
+            "drop_unsolved": 0,
+            "drop_overflow": 0,
+            "monitor_entries": 94
+          },
+          "policy_counts": {
+            "raw": 17
+          }
+        },
+        "agent-names": {
+          "mode": "agent-names",
+          "task": "fix-git",
+          "task_passed": true,
+          "tests": {
+            "tests": 2,
+            "passed": 2,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793280141.022179,
+            "stop": 1793280142.602081
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "6c216d38d66c187905b6156e80d02d678fc76c6f98a6f6e0c92792f65939b9e6",
+          "total_tokens": 61797,
+          "usage": {
+            "input": 5594,
+            "output": 3211,
+            "cacheRead": 52992,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 2866,
+          "requests": 10,
+          "model_tool_requests": 14,
+          "assistant_thinking_chars": 4337,
+          "request_message_json_bytes_by_role": {
+            "developer": 36810,
+            "user": 2140,
+            "assistant": 57466,
+            "tool": 75969
+          },
+          "tool_result_text_chars": 10801,
+          "original_tool_result_text_chars": 14696,
+          "largest_tool_result_text_chars": 3267,
+          "tool_counts": {
+            "bash_counts": 14
+          },
+          "model_policy_choices": null,
+          "shared_guideline": "Choose the _raw or _counts variant of a tool on every call: raw keeps syscall arguments and order; counts keeps event-type totals and time bounds. The tool-name suffix selects the audit policy.",
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 1,
+          "stored_output_bytes": 5186,
+          "output_page_requests": 0,
+          "audit_calls": 14,
+          "raw_events": 0,
+          "histogram_events": 22842,
+          "raw_bytes": 0,
+          "counts_bytes": 241963,
+          "audit_bytes": 241963,
+          "metadata_bytes": 9658,
+          "agent_elapsed_sec": 61.592,
+          "drop_unsolved": 306,
+          "session_completed": true,
+          "final_result_recorded": true,
+          "agent_exit_code": 0,
+          "token_measurement": "final session usage",
+          "trial_elapsed_sec": 103.0894103050232,
+          "environment": {
+            "kernel": "6.8.0-137-generic",
+            "isolation": "chroot",
+            "uid": 1000,
+            "workdir": "/app/personal-site"
+          },
+          "statistics": {
+            "n_evts": 23148,
+            "drop_evts": 0,
+            "drop_unsolved": 306,
+            "drop_overflow": 0,
+            "monitor_entries": 91
+          },
+          "policy_counts": {
+            "counts": 14
+          }
+        }
+      },
+      "first_request_checks": {
+        "baseline_equals_fixed_raw": true,
+        "business_parameters_reused": true,
+        "model_options_equal": true,
+        "user_messages_equal": true,
+        "policy_input_tokens": 1382,
+        "policy_payload_bytes": 6607
+      }
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "runs": {
+        "baseline": {
+          "mode": "baseline",
+          "task": "log-summary-date-ranges",
+          "task_passed": true,
+          "tests": {
+            "tests": 2,
+            "passed": 2,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793278807.651484,
+            "stop": 1793278808.871114
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "d43bec1c9c66bc96037c93e1192909bfdf53a2927e54d9f3c88e5ce2499c0e98",
+          "total_tokens": 26540,
+          "usage": {
+            "input": 4501,
+            "output": 1559,
+            "cacheRead": 20480,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 1884,
+          "requests": 6,
+          "model_tool_requests": 8,
+          "assistant_thinking_chars": 787,
+          "request_message_json_bytes_by_role": {
+            "developer": 17388,
+            "user": 9186,
+            "assistant": 11544,
+            "tool": 27682
+          },
+          "tool_result_text_chars": 5455,
+          "original_tool_result_text_chars": 14286,
+          "largest_tool_result_text_chars": 3027,
+          "tool_counts": {
+            "bash": 8
+          },
+          "model_policy_choices": null,
+          "shared_guideline": null,
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 1,
+          "stored_output_bytes": 10104,
+          "output_page_requests": 0,
+          "audit_calls": 0,
+          "raw_events": 0,
+          "histogram_events": 0,
+          "raw_bytes": 0,
+          "counts_bytes": 0,
+          "audit_bytes": 0,
+          "metadata_bytes": 0,
+          "agent_elapsed_sec": 51.342,
+          "drop_unsolved": 0,
+          "session_completed": true,
+          "final_result_recorded": true,
+          "agent_exit_code": 0,
+          "token_measurement": "final session usage",
+          "trial_elapsed_sec": 96.0832748413086,
+          "environment": {
+            "kernel": "6.8.0-137-generic",
+            "isolation": "chroot",
+            "uid": 1000,
+            "workdir": "/app"
+          },
+          "statistics": {
+            "n_evts": 0,
+            "drop_evts": 0,
+            "drop_overflow": 0,
+            "drop_unsolved": 0
+          },
+          "policy_counts": {}
+        },
+        "fixed-raw": {
+          "mode": "fixed-raw",
+          "task": "log-summary-date-ranges",
+          "task_passed": true,
+          "tests": {
+            "tests": 2,
+            "passed": 2,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793279449.396516,
+            "stop": 1793279451.484613
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "d43bec1c9c66bc96037c93e1192909bfdf53a2927e54d9f3c88e5ce2499c0e98",
+          "total_tokens": 45407,
+          "usage": {
+            "input": 4918,
+            "output": 2857,
+            "cacheRead": 37632,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 1884,
+          "requests": 10,
+          "model_tool_requests": 11,
+          "assistant_thinking_chars": 1698,
+          "request_message_json_bytes_by_role": {
+            "developer": 28980,
+            "user": 15310,
+            "assistant": 45352,
+            "tool": 36463
+          },
+          "tool_result_text_chars": 4321,
+          "original_tool_result_text_chars": 63165,
+          "largest_tool_result_text_chars": 1274,
+          "tool_counts": {
+            "bash": 10,
+            "read": 1
+          },
+          "model_policy_choices": null,
+          "shared_guideline": null,
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 2,
+          "stored_output_bytes": 67591,
+          "output_page_requests": 0,
+          "audit_calls": 11,
+          "raw_events": 124210,
+          "histogram_events": 0,
+          "raw_bytes": 10230001,
+          "counts_bytes": 0,
+          "audit_bytes": 10230001,
+          "metadata_bytes": 8766,
+          "agent_elapsed_sec": 110.657,
+          "drop_unsolved": 141,
+          "session_completed": true,
+          "final_result_recorded": true,
+          "agent_exit_code": 0,
+          "token_measurement": "final session usage",
+          "trial_elapsed_sec": 194.1277117729187,
+          "environment": {
+            "kernel": "6.8.0-137-generic",
+            "isolation": "chroot",
+            "uid": 1000,
+            "workdir": "/app"
+          },
+          "statistics": {
+            "n_evts": 124351,
+            "drop_evts": 0,
+            "drop_unsolved": 141,
+            "drop_overflow": 0,
+            "monitor_entries": 483
+          },
+          "policy_counts": {
+            "raw": 11
+          }
+        },
+        "agent-names": {
+          "mode": "agent-names",
+          "task": "log-summary-date-ranges",
+          "task_passed": true,
+          "tests": {
+            "tests": 2,
+            "passed": 2,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793279990.5805945,
+            "stop": 1793279991.8040154
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "d43bec1c9c66bc96037c93e1192909bfdf53a2927e54d9f3c88e5ce2499c0e98",
+          "total_tokens": 51637,
+          "usage": {
+            "input": 7412,
+            "output": 2497,
+            "cacheRead": 41728,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 3266,
+          "requests": 7,
+          "model_tool_requests": 8,
+          "assistant_thinking_chars": 1330,
+          "request_message_json_bytes_by_role": {
+            "developer": 25669,
+            "user": 10717,
+            "assistant": 22976,
+            "tool": 53072
+          },
+          "tool_result_text_chars": 9233,
+          "original_tool_result_text_chars": 9233,
+          "largest_tool_result_text_chars": 3115,
+          "tool_counts": {
+            "ls_raw": 1,
+            "bash_raw": 6,
+            "read_raw": 1
+          },
+          "model_policy_choices": null,
+          "shared_guideline": "Choose the _raw or _counts variant of a tool on every call: raw keeps syscall arguments and order; counts keeps event-type totals and time bounds. The tool-name suffix selects the audit policy.",
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 0,
+          "stored_output_bytes": 0,
+          "output_page_requests": 0,
+          "audit_calls": 8,
+          "raw_events": 62945,
+          "histogram_events": 0,
+          "raw_bytes": 5633440,
+          "counts_bytes": 0,
+          "audit_bytes": 5633440,
+          "metadata_bytes": 6505,
+          "agent_elapsed_sec": 74.184,
+          "drop_unsolved": 1139,
+          "session_completed": true,
+          "final_result_recorded": true,
+          "agent_exit_code": 0,
+          "token_measurement": "final session usage",
+          "trial_elapsed_sec": 121.75960206985474,
+          "environment": {
+            "kernel": "6.8.0-137-generic",
+            "isolation": "chroot",
+            "uid": 1000,
+            "workdir": "/app"
+          },
+          "statistics": {
+            "n_evts": 64084,
+            "drop_evts": 0,
+            "drop_unsolved": 1139,
+            "drop_overflow": 0,
+            "monitor_entries": 400
+          },
+          "policy_counts": {
+            "raw": 8
+          }
+        }
+      },
+      "first_request_checks": {
+        "baseline_equals_fixed_raw": true,
+        "business_parameters_reused": true,
+        "model_options_equal": true,
+        "user_messages_equal": true,
+        "policy_input_tokens": 1382,
+        "policy_payload_bytes": 6607
+      }
+    },
+    {
+      "task": "openssl-selfsigned-cert",
+      "runs": {
+        "baseline": {
+          "mode": "baseline",
+          "task": "openssl-selfsigned-cert",
+          "task_passed": true,
+          "tests": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793278668.4186182,
+            "stop": 1793278679.0248733
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "df64deb1b3a5953a0c5ef8442e3e73856b7733f6fe03614d9cb3a7e4b02b4edf",
+          "total_tokens": 47102,
+          "usage": {
+            "input": 7694,
+            "output": 3568,
+            "cacheRead": 35840,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 1819,
+          "requests": 10,
+          "model_tool_requests": 9,
+          "assistant_thinking_chars": 637,
+          "request_message_json_bytes_by_role": {
+            "developer": 28980,
+            "user": 15270,
+            "assistant": 62930,
+            "tool": 35419
+          },
+          "tool_result_text_chars": 4958,
+          "original_tool_result_text_chars": 4958,
+          "largest_tool_result_text_chars": 2507,
+          "tool_counts": {
+            "bash": 7,
+            "write": 2
+          },
+          "model_policy_choices": null,
+          "shared_guideline": null,
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 0,
+          "stored_output_bytes": 0,
+          "output_page_requests": 0,
+          "audit_calls": 0,
+          "raw_events": 0,
+          "histogram_events": 0,
+          "raw_bytes": 0,
+          "counts_bytes": 0,
+          "audit_bytes": 0,
+          "metadata_bytes": 0,
+          "agent_elapsed_sec": 70.596,
+          "drop_unsolved": 0,
+          "session_completed": true,
+          "final_result_recorded": true,
+          "agent_exit_code": 0,
+          "token_measurement": "final session usage",
+          "trial_elapsed_sec": 114.427649974823,
+          "environment": {
+            "kernel": "6.8.0-137-generic",
+            "isolation": "chroot",
+            "uid": 1000,
+            "workdir": "/app"
+          },
+          "statistics": {
+            "n_evts": 0,
+            "drop_evts": 0,
+            "drop_overflow": 0,
+            "drop_unsolved": 0
+          },
+          "policy_counts": {}
+        },
+        "fixed-raw": {
+          "mode": "fixed-raw",
+          "task": "openssl-selfsigned-cert",
+          "task_passed": true,
+          "tests": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793279211.8847792,
+            "stop": 1793279223.5436652
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "df64deb1b3a5953a0c5ef8442e3e73856b7733f6fe03614d9cb3a7e4b02b4edf",
+          "total_tokens": 82722,
+          "usage": {
+            "input": 10250,
+            "output": 7448,
+            "cacheRead": 65024,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 1819,
+          "requests": 14,
+          "model_tool_requests": 17,
+          "assistant_thinking_chars": 6706,
+          "request_message_json_bytes_by_role": {
+            "developer": 40572,
+            "user": 21378,
+            "assistant": 179139,
+            "tool": 56682
+          },
+          "tool_result_text_chars": 9080,
+          "original_tool_result_text_chars": 9080,
+          "largest_tool_result_text_chars": 1717,
+          "tool_counts": {
+            "bash": 16,
+            "write": 1
+          },
+          "model_policy_choices": null,
+          "shared_guideline": null,
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 0,
+          "stored_output_bytes": 0,
+          "output_page_requests": 0,
+          "audit_calls": 17,
+          "raw_events": 57790,
+          "histogram_events": 0,
+          "raw_bytes": 4030654,
+          "counts_bytes": 0,
+          "audit_bytes": 4030654,
+          "metadata_bytes": 22378,
+          "agent_elapsed_sec": 139.239,
+          "drop_unsolved": 0,
+          "session_completed": true,
+          "final_result_recorded": true,
+          "agent_exit_code": 0,
+          "token_measurement": "final session usage",
+          "trial_elapsed_sec": 214.71402382850647,
+          "environment": {
+            "kernel": "6.8.0-137-generic",
+            "isolation": "chroot",
+            "uid": 1000,
+            "workdir": "/app"
+          },
+          "statistics": {
+            "n_evts": 57790,
+            "drop_evts": 0,
+            "drop_unsolved": 0,
+            "drop_overflow": 0,
+            "monitor_entries": 139
+          },
+          "policy_counts": {
+            "raw": 17
+          }
+        },
+        "agent-names": {
+          "mode": "agent-names",
+          "task": "openssl-selfsigned-cert",
+          "task_passed": true,
+          "tests": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793279839.5167646,
+            "stop": 1793279850.0951252
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "df64deb1b3a5953a0c5ef8442e3e73856b7733f6fe03614d9cb3a7e4b02b4edf",
+          "total_tokens": 52154,
+          "usage": {
+            "input": 8733,
+            "output": 3741,
+            "cacheRead": 39680,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 3201,
+          "requests": 9,
+          "model_tool_requests": 10,
+          "assistant_thinking_chars": 1868,
+          "request_message_json_bytes_by_role": {
+            "developer": 33003,
+            "user": 13743,
+            "assistant": 55241,
+            "tool": 20995
+          },
+          "tool_result_text_chars": 3915,
+          "original_tool_result_text_chars": 3915,
+          "largest_tool_result_text_chars": 1194,
+          "tool_counts": {
+            "bash_raw": 7,
+            "bash_counts": 1,
+            "write_raw": 1,
+            "edit_raw": 1
+          },
+          "model_policy_choices": null,
+          "shared_guideline": "Choose the _raw or _counts variant of a tool on every call: raw keeps syscall arguments and order; counts keeps event-type totals and time bounds. The tool-name suffix selects the audit policy.",
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 0,
+          "stored_output_bytes": 0,
+          "output_page_requests": 0,
+          "audit_calls": 10,
+          "raw_events": 38301,
+          "histogram_events": 2738,
+          "raw_bytes": 2626649,
+          "counts_bytes": 17265,
+          "audit_bytes": 2643914,
+          "metadata_bytes": 11704,
+          "agent_elapsed_sec": 123.362,
+          "drop_unsolved": 0,
+          "session_completed": true,
+          "final_result_recorded": true,
+          "agent_exit_code": 0,
+          "token_measurement": "final session usage",
+          "trial_elapsed_sec": 185.54869270324707,
+          "environment": {
+            "kernel": "6.8.0-137-generic",
+            "isolation": "chroot",
+            "uid": 1000,
+            "workdir": "/app"
+          },
+          "statistics": {
+            "n_evts": 41039,
+            "drop_evts": 0,
+            "drop_unsolved": 0,
+            "drop_overflow": 0,
+            "monitor_entries": 112
+          },
+          "policy_counts": {
+            "raw": 9,
+            "counts": 1
+          }
+        }
+      },
+      "first_request_checks": {
+        "baseline_equals_fixed_raw": true,
+        "business_parameters_reused": true,
+        "model_options_equal": true,
+        "user_messages_equal": true,
+        "policy_input_tokens": 1382,
+        "policy_payload_bytes": 6607
+      }
+    }
+  ],
+  "totals": {
+    "baseline": {
+      "total_tokens": 203670,
+      "requests": 36,
+      "model_tool_requests": 38,
+      "audit_calls": 0,
+      "raw_events": 0,
+      "histogram_events": 0,
+      "audit_bytes": 0,
+      "metadata_bytes": 0,
+      "stored_outputs": 2,
+      "stored_output_bytes": 15593,
+      "output_page_requests": 0,
+      "tool_result_text_chars": 28400,
+      "trial_elapsed_sec": 359.3296298980713,
+      "passed_tasks": 3,
+      "completed_sessions": 3,
+      "all_usage_final": true,
+      "policy_counts": {}
+    },
+    "fixed-raw": {
+      "total_tokens": 196082,
+      "requests": 37,
+      "model_tool_requests": 45,
+      "audit_calls": 45,
+      "raw_events": 200145,
+      "histogram_events": 0,
+      "audit_bytes": 15682373,
+      "metadata_bytes": 41477,
+      "stored_outputs": 3,
+      "stored_output_bytes": 72813,
+      "output_page_requests": 3,
+      "tool_result_text_chars": 27564,
+      "trial_elapsed_sec": 527.9536271095276,
+      "passed_tasks": 3,
+      "completed_sessions": 3,
+      "all_usage_final": true,
+      "policy_counts": {
+        "raw": 45
+      }
+    },
+    "agent-names": {
+      "total_tokens": 165588,
+      "requests": 26,
+      "model_tool_requests": 32,
+      "audit_calls": 32,
+      "raw_events": 101246,
+      "histogram_events": 25580,
+      "audit_bytes": 8519317,
+      "metadata_bytes": 27867,
+      "stored_outputs": 1,
+      "stored_output_bytes": 5186,
+      "output_page_requests": 0,
+      "tool_result_text_chars": 23949,
+      "trial_elapsed_sec": 410.397705078125,
+      "passed_tasks": 3,
+      "completed_sessions": 3,
+      "all_usage_final": true,
+      "policy_counts": {
+        "counts": 15,
+        "raw": 17
+      }
+    }
+  },
+  "comparisons": {
+    "fixed-raw_vs_baseline": {
+      "complete_sessions_comparable": true,
+      "token_delta": -7588,
+      "token_delta_percent": -3.7256346049982847
+    },
+    "agent-names_vs_baseline": {
+      "complete_sessions_comparable": true,
+      "token_delta": -38082,
+      "token_delta_percent": -18.697893651495068
+    },
+    "agent-names_vs_fixed-raw": {
+      "complete_sessions_comparable": true,
+      "token_delta": -30494,
+      "token_delta_percent": -15.55165695984333
+    }
+  },
+  "policy_verification": {
+    "runs": [
+      {
+        "task": "fix-git",
+        "model_tool_requests": 14,
+        "executed_calls": 14,
+        "final_result_recorded": true,
+        "agent_exit_code": 0,
+        "message_source": "transcript.json",
+        "recorded_requests": 10,
+        "recorded_total_tokens": 61797,
+        "policies": {
+          "counts": 14
+        },
+        "rejected_calls": [],
+        "request_execution_output_match": true,
+        "automatic_retry_events": 0,
+        "calls": [
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 2082
+          },
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 1060
+          },
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 1491
+          },
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 840
+          },
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 615
+          },
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 1302
+          },
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 1122
+          },
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 1833
+          },
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 2545
+          },
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 1007
+          },
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 2675
+          },
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 2223
+          },
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 2055
+          },
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 1992
+          }
+        ],
+        "first_request_comparison": {
+          "business_parameters_reused": true,
+          "model_options_equal": true,
+          "user_messages_equal": true,
+          "tool_count": 14,
+          "baseline_tool_count": 7,
+          "tools_json_bytes": 10942,
+          "baseline_tools_json_bytes": 5104,
+          "added_payload_bytes": 6607,
+          "fixed_raw_input_tokens": 1484,
+          "policy_names_input_tokens": 2866
+        }
+      },
+      {
+        "task": "log-summary-date-ranges",
+        "model_tool_requests": 8,
+        "executed_calls": 8,
+        "final_result_recorded": true,
+        "agent_exit_code": 0,
+        "message_source": "transcript.json",
+        "recorded_requests": 7,
+        "recorded_total_tokens": 51637,
+        "policies": {
+          "raw": 8
+        },
+        "rejected_calls": [],
+        "request_execution_output_match": true,
+        "automatic_retry_events": 0,
+        "calls": [
+          {
+            "model_tool": "ls_raw",
+            "business_tool": "ls",
+            "policy": "raw",
+            "raw_events": 1733,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "bash_raw",
+            "business_tool": "bash",
+            "policy": "raw",
+            "raw_events": 924,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "bash_raw",
+            "business_tool": "bash",
+            "policy": "raw",
+            "raw_events": 7592,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "bash_raw",
+            "business_tool": "bash",
+            "policy": "raw",
+            "raw_events": 37726,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "bash_raw",
+            "business_tool": "bash",
+            "policy": "raw",
+            "raw_events": 2965,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "bash_raw",
+            "business_tool": "bash",
+            "policy": "raw",
+            "raw_events": 2729,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "bash_raw",
+            "business_tool": "bash",
+            "policy": "raw",
+            "raw_events": 9121,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "read_raw",
+            "business_tool": "read",
+            "policy": "raw",
+            "raw_events": 155,
+            "counted_events": 0
+          }
+        ],
+        "first_request_comparison": {
+          "business_parameters_reused": true,
+          "model_options_equal": true,
+          "user_messages_equal": true,
+          "tool_count": 14,
+          "baseline_tool_count": 7,
+          "tools_json_bytes": 10942,
+          "baseline_tools_json_bytes": 5104,
+          "added_payload_bytes": 6607,
+          "fixed_raw_input_tokens": 1884,
+          "policy_names_input_tokens": 3266
+        }
+      },
+      {
+        "task": "openssl-selfsigned-cert",
+        "model_tool_requests": 10,
+        "executed_calls": 10,
+        "final_result_recorded": true,
+        "agent_exit_code": 0,
+        "message_source": "transcript.json",
+        "recorded_requests": 9,
+        "recorded_total_tokens": 52154,
+        "policies": {
+          "raw": 9,
+          "counts": 1
+        },
+        "rejected_calls": [],
+        "request_execution_output_match": true,
+        "automatic_retry_events": 0,
+        "calls": [
+          {
+            "model_tool": "bash_raw",
+            "business_tool": "bash",
+            "policy": "raw",
+            "raw_events": 1286,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "bash_counts",
+            "business_tool": "bash",
+            "policy": "counts",
+            "raw_events": 0,
+            "counted_events": 2738
+          },
+          {
+            "model_tool": "bash_raw",
+            "business_tool": "bash",
+            "policy": "raw",
+            "raw_events": 3159,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "bash_raw",
+            "business_tool": "bash",
+            "policy": "raw",
+            "raw_events": 3195,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "bash_raw",
+            "business_tool": "bash",
+            "policy": "raw",
+            "raw_events": 12286,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "write_raw",
+            "business_tool": "write",
+            "policy": "raw",
+            "raw_events": 135,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "bash_raw",
+            "business_tool": "bash",
+            "policy": "raw",
+            "raw_events": 10210,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "edit_raw",
+            "business_tool": "edit",
+            "policy": "raw",
+            "raw_events": 242,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "bash_raw",
+            "business_tool": "bash",
+            "policy": "raw",
+            "raw_events": 7139,
+            "counted_events": 0
+          },
+          {
+            "model_tool": "bash_raw",
+            "business_tool": "bash",
+            "policy": "raw",
+            "raw_events": 649,
+            "counted_events": 0
+          }
+        ],
+        "first_request_comparison": {
+          "business_parameters_reused": true,
+          "model_options_equal": true,
+          "user_messages_equal": true,
+          "tool_count": 14,
+          "baseline_tool_count": 7,
+          "tools_json_bytes": 10942,
+          "baseline_tools_json_bytes": 5104,
+          "added_payload_bytes": 6607,
+          "fixed_raw_input_tokens": 1819,
+          "policy_names_input_tokens": 3201
+        }
+      }
+    ]
+  },
+  "runtime_sha256": {
+    "baseline": {
+      "build/nodrop/nodrop.ko": "8193e5c90382e1c2c02821fac2934105f4e1e74935b52dd8a8c38e5e5c5579d5",
+      "build/nodrop/monitor/monitor": "c9da7e700dd55bf727b468b82d4d10998058805bc36a6eebb534ab295af18b75",
+      "build/context.node": "70bd8c69a7166720fa6bddb3fdd9c5cb9119c2ea240e6ab8ffbc6da851e28dc7",
+      "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+      "src/worker.mjs": "1db758df57975951deb26246b3a8c4c50df0faa44654a4ec8e7b86e5efb078dc",
+      "src/extension.mjs": "59c4a80f14540df0d79054cb00714e855f3dc2cd50fbf15ce903e3c14734aeb1",
+      "src/tools.mjs": "50755f3ec5f20e42fdfc3712540daf9e35eb6c39a8e6de2dfcbb56b381eb789d",
+      "src/output-store.mjs": "8b4f017fe18cea459c8beadf2d9565e916cc4cc2b91db83db23d3c8c3d378c78",
+      "src/output-extension.mjs": "e925e04a94d756bbf46d1b146a19a22ce450c18f55f52d4e37bbd5ef8ed192cb",
+      "src/policy-tools.mjs": "f4d116008113b242946b974d964088f2f24026f81f5f988b1dba2ad9c3ab3242",
+      "scripts/run_terminal_bench.py": "dd94e2fa2aab18e944a16bf4df1913bdb190e4d1813a2072e928913ace1712b1",
+      "scripts/terminal_bench.mjs": "671a791ee76af2ad11332b4cf8a5eeb816914ec5698ab4e9d9f858217d255bff"
+    },
+    "fixed-raw": {
+      "build/nodrop/nodrop.ko": "8193e5c90382e1c2c02821fac2934105f4e1e74935b52dd8a8c38e5e5c5579d5",
+      "build/nodrop/monitor/monitor": "c9da7e700dd55bf727b468b82d4d10998058805bc36a6eebb534ab295af18b75",
+      "build/context.node": "70bd8c69a7166720fa6bddb3fdd9c5cb9119c2ea240e6ab8ffbc6da851e28dc7",
+      "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+      "src/worker.mjs": "1db758df57975951deb26246b3a8c4c50df0faa44654a4ec8e7b86e5efb078dc",
+      "src/extension.mjs": "59c4a80f14540df0d79054cb00714e855f3dc2cd50fbf15ce903e3c14734aeb1",
+      "src/tools.mjs": "50755f3ec5f20e42fdfc3712540daf9e35eb6c39a8e6de2dfcbb56b381eb789d",
+      "src/output-store.mjs": "8b4f017fe18cea459c8beadf2d9565e916cc4cc2b91db83db23d3c8c3d378c78",
+      "src/output-extension.mjs": "e925e04a94d756bbf46d1b146a19a22ce450c18f55f52d4e37bbd5ef8ed192cb",
+      "src/policy-tools.mjs": "f4d116008113b242946b974d964088f2f24026f81f5f988b1dba2ad9c3ab3242",
+      "scripts/run_terminal_bench.py": "dd94e2fa2aab18e944a16bf4df1913bdb190e4d1813a2072e928913ace1712b1",
+      "scripts/terminal_bench.mjs": "671a791ee76af2ad11332b4cf8a5eeb816914ec5698ab4e9d9f858217d255bff"
+    },
+    "agent-names": {
+      "build/nodrop/nodrop.ko": "8193e5c90382e1c2c02821fac2934105f4e1e74935b52dd8a8c38e5e5c5579d5",
+      "build/nodrop/monitor/monitor": "c9da7e700dd55bf727b468b82d4d10998058805bc36a6eebb534ab295af18b75",
+      "build/context.node": "70bd8c69a7166720fa6bddb3fdd9c5cb9119c2ea240e6ab8ffbc6da851e28dc7",
+      "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+      "src/worker.mjs": "1db758df57975951deb26246b3a8c4c50df0faa44654a4ec8e7b86e5efb078dc",
+      "src/extension.mjs": "59c4a80f14540df0d79054cb00714e855f3dc2cd50fbf15ce903e3c14734aeb1",
+      "src/tools.mjs": "50755f3ec5f20e42fdfc3712540daf9e35eb6c39a8e6de2dfcbb56b381eb789d",
+      "src/output-store.mjs": "8b4f017fe18cea459c8beadf2d9565e916cc4cc2b91db83db23d3c8c3d378c78",
+      "src/output-extension.mjs": "e925e04a94d756bbf46d1b146a19a22ce450c18f55f52d4e37bbd5ef8ed192cb",
+      "src/policy-tools.mjs": "f4d116008113b242946b974d964088f2f24026f81f5f988b1dba2ad9c3ab3242",
+      "scripts/run_terminal_bench.py": "dd94e2fa2aab18e944a16bf4df1913bdb190e4d1813a2072e928913ace1712b1",
+      "scripts/terminal_bench.mjs": "671a791ee76af2ad11332b4cf8a5eeb816914ec5698ab4e9d9f858217d255bff"
+    }
+  },
+  "environment_cleanup": {
+    "baseline": {
+      "module_unloaded": true,
+      "remaining_task_processes": [],
+      "remaining_mounts": [],
+      "temporary_model_config_removed": true,
+      "vm_state": "shut off"
+    },
+    "fixed-raw": {
+      "module_unloaded": true,
+      "remaining_task_processes": [],
+      "remaining_mounts": [],
+      "temporary_model_config_removed": true,
+      "vm_state": "shut off"
+    },
+    "agent-names": {
+      "module_unloaded": true,
+      "remaining_task_processes": [],
+      "remaining_mounts": [],
+      "temporary_model_config_removed": true,
+      "vm_state": "shut off"
+    }
+  }
+}

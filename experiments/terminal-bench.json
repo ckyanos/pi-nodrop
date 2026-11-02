@@ -1,0 +1,118 @@
+{
+  "dataset": "Terminal-Bench 2.1",
+  "repository": "https://github.com/harbor-framework/terminal-bench-2-1",
+  "revision": "7131e4375048a0e408a8fb404b5f499d726b695b",
+  "tasks": [
+    {
+      "name": "openssl-selfsigned-cert",
+      "image": "alexgshaw/openssl-selfsigned-cert:20251031",
+      "timeout_sec": 900.0,
+      "files": {
+        ".gitignore": "0880df2e6b22bd6a1683fe8ea10632429cd8422419a0c37c10a361248042041c",
+        "environment/Dockerfile": "aaf700e266ffd50733e625810f0a880a74ed0f600287a4fb96f3e66355bc4b12",
+        "instruction.md": "df64deb1b3a5953a0c5ef8442e3e73856b7733f6fe03614d9cb3a7e4b02b4edf",
+        "README.md": "3514f5c4f25b38675897306ec411ac4662b6bb2f89be724e3cdd812d388dc45e",
+        "solution/solve.sh": "98ed4b49833351658482900b7482f01724a4b62006152a1b08cd681a1ce656de",
+        "task.toml": "6f7f2658b80c25a829e967c2275de76d494fa2c1d868dbd1e004ab1018eb9594",
+        "tests/test.sh": "f0f51e70096c0d8aaefd000b89882eed4c839d7985396f9c2b6518a0448f07d6",
+        "tests/test_outputs.py": "44fb3f667d602f191bd56b4bcd0f7c0f01cf4c2b69fe51d75dc3c5bbfa87a81a"
+      },
+      "workdir": "/app",
+      "image_digest": "sha256:4c948a4e630af2435ae0a19108fc0814a946ac2fa29a512469e0fc77b38c8c12"
+    },
+    {
+      "name": "log-summary-date-ranges",
+      "image": "alexgshaw/log-summary-date-ranges:20251031",
+      "timeout_sec": 900.0,
+      "files": {
+        ".gitignore": "0880df2e6b22bd6a1683fe8ea10632429cd8422419a0c37c10a361248042041c",
+        "environment/Dockerfile": "6c051e59dcf3ab95979bff0caeba9dde5101d270c48a97acaeb61324aca0e015",
+        "environment/log_generator_deterministic.py": "01873ab6058ecb6af019f20ceacbbdca278d1979f1e2be1362d8c4fd2930e206",
+        "instruction.md": "d43bec1c9c66bc96037c93e1192909bfdf53a2927e54d9f3c88e5ce2499c0e98",
+        "README.md": "bcfdb884b9caf9fd11a7ff28ec75eac74d36495bf4c0824136edaac0afa7642a",
+        "solution/solve.sh": "cd76f97b310971c0b992f9684843b802d13cd43e0c62b3d95fcd413741fc43af",
+        "task.toml": "c1317f87ed3b2cf89f6e3511689adff4488edccd6c122d8479969583ac0771c7",
+        "tests/test.sh": "f0f51e70096c0d8aaefd000b89882eed4c839d7985396f9c2b6518a0448f07d6",
+        "tests/test_outputs.py": "6be8d9fde4035dd573b54a1a83d66b7af77dc26978d0dc628c443b16daf589f7"
+      },
+      "workdir": "/app",
+      "image_digest": "sha256:cbeb6ba905c2fec294f16cd5e16e3ea7f2e04d38ac2484d51a11de262aa7dc51"
+    },
+    {
+      "name": "polyglot-c-py",
+      "image": "alexgshaw/polyglot-c-py:20251031",
+      "timeout_sec": 900.0,
+      "files": {
+        ".gitignore": "0880df2e6b22bd6a1683fe8ea10632429cd8422419a0c37c10a361248042041c",
+        "environment/Dockerfile": "d69c6e33f919e36726a72b98af99405ae40c47b6985dffaa154e1f655f20b25b",
+        "instruction.md": "f772aff41a76372d48ab616e7aa50e08f941759b94ad96a4433cc63a8f176728",
+        "README.md": "5f6d2df6247c0b61ec7fcc3d1ee40cc99c6025b211ab72e93858adbd57faaeac",
+        "solution/solve.sh": "5ff8e0b005eeeb549c4229b461c23331f66dd826212beb444b18053d7507e035",
+        "task.toml": "216ed3580ce9cfff9caf5b279cda28b9904042e0d3fe910d531df8b22d082c69",
+        "tests/test.sh": "f0f51e70096c0d8aaefd000b89882eed4c839d7985396f9c2b6518a0448f07d6",
+        "tests/test_outputs.py": "22be3b442b7d4ef420f7ba4c34317038aed9681b0a46a3e9dbad75ba5be74941"
+      },
+      "workdir": "/app",
+      "image_digest": "sha256:0f1c3b7816d70cf5551573fd6aeef76893f2ae3000be2419997b6871b5d987ed"
+    },
+    {
+      "name": "fix-git",
+      "image": "alexgshaw/fix-git:20260403",
+      "timeout_sec": 900.0,
+      "files": {
+        ".gitignore": "0880df2e6b22bd6a1683fe8ea10632429cd8422419a0c37c10a361248042041c",
+        "environment/Dockerfile": "f2351d10ffb9633e1dd5058318f18129f3902574c9d04d767a2885ad65f5376f",
+        "environment/resources/patch_files/about.md": "b741b57f7c0a0e85f143e653d022d18bc3926d6c470902e67fa32745906a66fa",
+        "environment/resources/patch_files/default.html": "3da1084a0df13f0e092f20512f650cdf8e07a55bdcb6421109ba3be085263a4c",
+        "environment/setup.sh": "2e6c0eeaf524bb87e65059da6a66d61655bbecf2869279d01785bb6d066eba37",
+        "instruction.md": "6c216d38d66c187905b6156e80d02d678fc76c6f98a6f6e0c92792f65939b9e6",
+        "README.md": "1e836d5e63463c8aa0ee6b1e514e8c7a96ec2207787b5cc4eacdc8a9f5d512db",
+        "solution/solve.sh": "ae1ec0743ec228e93f956521f62594e1d7d52aa6a81fad6ae9f74a56b55545b0",
+        "task.toml": "c6dd5705b0de4c17ab56114e065c6c1cd90349f149fddf8ef90e828cede65562",
+        "tests/test.sh": "f0f51e70096c0d8aaefd000b89882eed4c839d7985396f9c2b6518a0448f07d6",
+        "tests/test_outputs.py": "361489ba45dbb3a35ceb5f67abe4145f76e0d2f928f44bbb61e314b3e49a4482"
+      },
+      "workdir": "/app/personal-site",
+      "image_digest": "sha256:389b9c8247610c2c5be080b1ac00429007c2c69bf57f7f26c79f0f75ba2d5c74"
+    },
+    {
+      "name": "sqlite-db-truncate",
+      "image": "alexgshaw/sqlite-db-truncate:20251031",
+      "timeout_sec": 900.0,
+      "files": {
+        ".gitignore": "0880df2e6b22bd6a1683fe8ea10632429cd8422419a0c37c10a361248042041c",
+        "environment/Dockerfile": "92184ecae3e6300af9f640835291dec5269789a9b030b46fcc204892f8e1fe83",
+        "environment/trunc.db": "a7f00ee232fe621629dc014eb2619ac793131843ede1fd892f3b8b7e17332a5b",
+        "instruction.md": "92c0b135f404f68dcdee0956b1c084a4084bb301315530372b53754e24d59aa8",
+        "README.md": "8687c82c94d52ca7f05f15d91e343676b969676d7790e813cddcb4fed1fd51b3",
+        "solution/solve.sh": "060329f71f9a3896182d0862aa86ca15db970123ecca442d0fbc43f83c8989f2",
+        "task.toml": "939992de044a69470f7b4cb2bc1ac2e79070ac896ac5cd7e2e8e1a2a9cd3f635",
+        "tests/test.sh": "f0f51e70096c0d8aaefd000b89882eed4c839d7985396f9c2b6518a0448f07d6",
+        "tests/test_outputs.py": "0b3b0a2cd07608ba1dc7f6cca149178c322225458e0e9adcf8121f64b7fc884b"
+      },
+      "workdir": "/app",
+      "image_digest": "sha256:aabac93c93bd1f310e6a6fb893911d7735026ed18491c72133c9196a09092ca4"
+    },
+    {
+      "name": "cancel-async-tasks",
+      "image": "alexgshaw/cancel-async-tasks:20251031",
+      "timeout_sec": 900.0,
+      "files": {
+        ".gitignore": "0880df2e6b22bd6a1683fe8ea10632429cd8422419a0c37c10a361248042041c",
+        "environment/Dockerfile": "76021e1794d99240f0decaea82a574bc7a5c987845dfd6fa6bf54e5b2cdc752c",
+        "instruction.md": "02b773dc44893200b809058a4d04c4c9262720fcf82beaf3be643f90511bb6ee",
+        "README.md": "fa332f18dc7cfa888388fd544af65f9d9257de7df44287a4709bd59c0f57f50c",
+        "solution/solve.sh": "5b80afe887912bd4088efbfcb5779ef4ce9359c13ea4cb2e481e83b085204cd3",
+        "task.toml": "9d1acee56ce9e810d18b9d8386360a4b123506b38a683409709b55eb82873c9f",
+        "tests/test.py": "5ac6da7af9e303133b7ea5c3964ddacc678ec177df262dea3bf460dd6fa57ac4",
+        "tests/test.sh": "f2da272867d19123efa9b7acb05460f3aa8251df0fe98372aac156ea1985115e",
+        "tests/test_outputs.py": "04a528b0b1b110bbc4f71bc593d2816dfecf1315db4e66ec3d0eff2ae38c441b"
+      },
+      "workdir": "/app",
+      "image_digest": "sha256:84c7fae6b256dcc56a350790e2a9715eefc7dad662a9d8e8a472363aa71ef18d"
+    }
+  ],
+  "checkout": {
+    "core.autocrlf": true
+  }
+}

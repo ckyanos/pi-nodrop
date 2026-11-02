@@ -420,9 +420,9 @@ elf_load_binary(struct elfhdr *elf_ex,
 #else
             if (load_addr_set)
                 elf_type |= MAP_FIXED;
-            else if (elf_ex->e_type == ET_DYN || elf_ex->e_type == ET_EXEC)
+            else if (elf_ex->e_type == ET_DYN || elf_ex->e_type == ET_EXEC) 
                 load_addr = -vaddr;
-
+            
             _addr = elf_map(binary, load_addr + vaddr,
                     eppnt, elf_prot, elf_type, total_size);
             total_size = 0;

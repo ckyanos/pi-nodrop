@@ -1,0 +1,58 @@
+{
+  "dataset_manifest": "terminal-bench.json",
+  "dataset_revision": "7131e4375048a0e408a8fb404b5f499d726b695b",
+  "task_checkout": "canonical Git archive with LF line endings",
+  "tasks": [
+    "openssl-selfsigned-cert",
+    "log-summary-date-ranges",
+    "fix-git"
+  ],
+  "harbor_repository": "https://github.com/harbor-framework/harbor",
+  "harbor_revision": "509b119db0d97b141dcd9c80f4f7ab861c47c2d6",
+  "harbor_version": "0.25.0",
+  "image_provenance": "harbor-image-provenance.json",
+  "attempts_per_task_per_condition": 1,
+  "conditions": {
+    "baseline": {
+      "agent": "harbor.agents.installed.pi:Pi",
+      "audit": false
+    },
+    "fixed-raw": {
+      "agent": "scripts.harbor_agent:NoDropPi",
+      "audit_mode": "fixed-raw"
+    },
+    "agent": {
+      "agent": "scripts.harbor_agent:NoDropPi",
+      "audit_mode": "agent"
+    }
+  },
+  "pi_version": "1.4.0",
+  "base_tools": [
+    "read",
+    "bash",
+    "edit",
+    "write"
+  ],
+  "output_presentation": "native Pi",
+  "verifier": "original task tests/test.sh executed by Harbor",
+  "resources": "original task.toml",
+  "model": "deepseek-v4.1-flash-al",
+  "thinking": "medium",
+  "max_output_tokens": 2048,
+  "local_token_turn_tool_limits": null,
+  "automatic_retries": false,
+  "automatic_reruns": false,
+  "cache_warming": "off",
+  "task_user_override": false,
+  "privileged_containers": false,
+  "container_security_override": false,
+  "audit_subject_uid": 0,
+  "audit_interface": "bind-mounted NoDrop ioctl interface at /dev/pi-nodrop",
+  "audit_output": "separate directory per trial, bind-mounted at the configured path on host and in task container",
+  "kernel": "6.8.0-137-generic",
+  "agent_setup_timeout_sec": 900,
+  "apt_repository_mirror": "https://mirrors.ustc.edu.cn",
+  "apt_signature_verification": "original Debian archive keyring",
+  "node_download_mirror": null,
+  "policy_interface": "audit_policy field in the original business tool arguments"
+}

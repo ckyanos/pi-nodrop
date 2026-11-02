@@ -75,7 +75,7 @@ int main(int argc, char *argv[]) {
         }
     } else if (!strcmp(argv[1], "stat")) {
       if (!ioctl(fd, NOD_IOCTL_READ_STATISTICS, &nod_stat)) {
-          printf("n_evts\tdrop_evts\tdrop_unsolved\tdrop_overflow\tmonitor_entries\n%ld\t%ld\t%ld\t%ld\t%ld\n", nod_stat.n_evts, nod_stat.n_drop_evts, nod_stat.n_drop_evts_unsolved, nod_stat.n_drop_evts_overflow, nod_stat.n_monitor_entries);
+          printf("n_evts\tdrop_evts\tdrop_unsolved\n%ld\t%ld\t%ld\n", nod_stat.n_evts, nod_stat.n_drop_evts, nod_stat.n_drop_evts_unsolved);
       }
     } else if (!strcmp(argv[1], "clear-stat")) {
       if (!ioctl(fd, NOD_IOCTL_CLEAR_STATISTICS, 0)) {

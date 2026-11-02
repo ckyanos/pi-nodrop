@@ -125,15 +125,11 @@ nod_init_procinfo(struct task_struct *task, struct nod_proc_info *p)
 {
     p->event_recorded = 0;
     p->pid = task->pid;
-    memcpy(p->comm, task->comm, sizeof(p->comm));
-    p->comm[sizeof(p->comm) - 1] = 0;
     p->mm = task->mm;
 
     p->ioctl_fd = -1;
-#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 0, 0)
     p->load_addr = 0;
     p->interp_load_addr = 0;
-#endif
     p->entry_addr = 0;
 
     if (p->stack_info.pkey > 0) mm_pkey_free(p->mm, p->stack_info.pkey);
@@ -400,9 +396,15 @@ out:
 void
 procinfo_destroy(void)
 {
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 0, 0)
     int bkt;
     struct nod_proc_info *this;
     struct hlist_node *tmp;
+#else
+    int bkt;
+    struct nod_proc_info *this;
+    struct hlist_node *tmp;
+#endif
 
     if (!proc_info_cachep) return;
 
@@ -412,7 +414,6 @@ procinfo_destroy(void)
         synchronize_rcu();
         nod_free_procinfo(this);
     }
-    rcu_barrier();
 #else
     rcu_read_lock();
     hash_for_each_safe(proc_info_hl_head, bkt, tmp, this, rcu) {
@@ -422,7 +423,10 @@ procinfo_destroy(void)
     rcu_read_unlock();
 #endif
 
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(6, 0, 0)
+    rcu_barrier();
+#endif
+
     kmem_cache_destroy(proc_info_cachep);
     proc_info_cachep = NULL;
 }
-

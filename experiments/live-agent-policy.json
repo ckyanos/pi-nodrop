@@ -1,0 +1,31 @@
+{
+  "dataset_manifest": "terminal-bench.json",
+  "execution": "live-model",
+  "audit": "on",
+  "control_mode": "agent",
+  "policy_input": "audit_policy in original tool arguments",
+  "tasks": [
+    "openssl-selfsigned-cert",
+    "log-summary-date-ranges",
+    "fix-git"
+  ],
+  "replicates_per_task": 1,
+  "provider": "ibrain",
+  "model": "deepseek-v4.1-flash-al",
+  "api": "openai-completions",
+  "max_output_tokens": 2048,
+  "local_limits": {
+    "tokens": null,
+    "turns": null,
+    "tools": null,
+    "timeout_sec": 900
+  },
+  "automatic_retries": false,
+  "automatic_task_reruns": false,
+  "additional_policy_prompt": null,
+  "policy_choices": [
+    "raw",
+    "counts"
+  ],
+  "comparison_report": "api-managed-fixed-raw-results-20261029.json"
+}

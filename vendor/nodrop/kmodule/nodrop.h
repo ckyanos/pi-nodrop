@@ -14,6 +14,7 @@ bool nod_audit_get(struct task_struct *task, struct nod_audit_context *context);
 void nod_audit_fork(struct task_struct *parent, struct task_struct *child);
 void nod_audit_exit(struct task_struct *task);
 void nod_audit_destroy(void);
+extern unsigned int nod_audit_uid;
 
 #define vpr_log(xxx, fmt, ...) pr_##xxx("(%d)%s[%d][%s:%d]: " fmt, smp_processor_id(), current->comm, current->pid, __func__, __LINE__, ##__VA_ARGS__)
 #define vpr_err(fmt, ...) vpr_log(err, fmt, ##__VA_ARGS__)
@@ -22,7 +23,7 @@ void nod_audit_destroy(void);
 #define vpr_dbg(fmt, ...)
 // #define vpr_dbg(fmt, ...) vpr_log(info, fmt, ##__VA_ARGS__)
 
-#define NOD_TEST(task) if (!(task->cred->uid.val == 1000))
+#define NOD_TEST(task) if (!(task->cred->uid.val == nod_audit_uid))
 // #define NOD_TEST(task) if (!(STR_EQU(current->comm, "redis-server")))
 // #define NOD_TEST(task) if (!(STR_EQU(current->comm, "getpid")))
 // #define NOD_TEST(task) if (!(STR_EQU(current->comm, "helloworld")))
@@ -216,7 +217,6 @@ static inline struct inode *file_inode(struct file *f)
 	    memcpy(_args, &_sga_args[_start], _len * sizeof(unsigned long)); \
 	} while(0)
 #endif
-
 
 #endif // NODROP_H_
 

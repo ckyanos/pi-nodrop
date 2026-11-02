@@ -169,8 +169,6 @@ nod_dev_ioctl(struct file *filp, unsigned int cmd, unsigned long arg)
           tot_stat.n_evts += stat->n_evts;
           tot_stat.n_drop_evts += stat->n_drop_evts;
           tot_stat.n_drop_evts_unsolved += stat->n_drop_evts_unsolved;
-          tot_stat.n_drop_evts_overflow += stat->n_drop_evts_overflow;
-          tot_stat.n_monitor_entries += stat->n_monitor_entries;
         }
 
         if (copy_to_user((void *)arg, (void *)&tot_stat, sizeof(tot_stat))) {

@@ -1,0 +1,118 @@
+{
+  "interface": "four native business tools with required audit_policy in the same call JSON",
+  "tools": [
+    "read",
+    "bash",
+    "edit",
+    "write"
+  ],
+  "control_mode": "agent",
+  "harbor_native_run_inherited": true,
+  "tool_definitions": {
+    "measurement": "UTF-8 JSON bytes of tool name, description and parameter schema; not model token counts",
+    "model_requests": 0,
+    "tools": [
+      "read",
+      "bash",
+      "edit",
+      "write"
+    ],
+    "baseline": {
+      "tool_count": 4,
+      "declaration_bytes": 2717
+    },
+    "field": {
+      "tool_count": 4,
+      "declaration_bytes": 3005,
+      "guideline_bytes": 175
+    },
+    "historical_names": {
+      "tool_count": 8,
+      "declaration_bytes": 5853,
+      "guideline_bytes": 193
+    }
+  },
+  "local_tests": {
+    "command": "npm test",
+    "passed": 14,
+    "failed": 0
+  },
+  "native_tests": {
+    "passed": 5,
+    "failed": 0,
+    "extension_loader": {
+      "loader": "Pi discoverAndLoadExtensions",
+      "registeredTools": [
+        "bash",
+        "edit",
+        "read",
+        "write"
+      ],
+      "shutdown": "passed"
+    },
+    "audit": {
+      "kernel": "6.8.0-137-generic",
+      "pi": "1.4.0",
+      "model": "scripted protocol stream",
+      "api_requests": 0,
+      "calls": 5,
+      "raw_events": 500,
+      "histogram_events": 376,
+      "histogram_rows": 38,
+      "calls_by_policy": {
+        "agent-write": {
+          "requested": "raw",
+          "applied": 1,
+          "source": "agent",
+          "raw_events": 154,
+          "histogram_events": 0
+        },
+        "agent-read-raw": {
+          "requested": "raw",
+          "applied": 1,
+          "source": "agent",
+          "raw_events": 152,
+          "histogram_events": 0
+        },
+        "agent-read-counts": {
+          "requested": "counts",
+          "applied": 2,
+          "source": "agent",
+          "raw_events": 0,
+          "histogram_events": 188
+        },
+        "retry-id": {
+          "requested": "counts",
+          "applied": 2,
+          "source": "agent",
+          "raw_events": 0,
+          "histogram_events": 188
+        },
+        "fixed-id": {
+          "requested": "counts",
+          "applied": 1,
+          "source": "fixed-raw",
+          "raw_events": 194,
+          "histogram_events": 0
+        }
+      }
+    }
+  },
+  "cleanup": {
+    "module_unloaded": true,
+    "output_unmounted": true,
+    "kernel_errors": false,
+    "worker_processes": [],
+    "vm_state": "shut off"
+  },
+  "real_model_token_measurement": null,
+  "source_sha256": {
+    "src/tools.mjs": "edc61acc308ce0036667a0784a83866139337c9aa507f887c7efdc63c7cd59d9",
+    "src/extension.mjs": "562fdb8b3b61fc93cdaf244a72a57a40171208d767bf8957f51f0f56f80502f7",
+    "src/policy-tools.mjs": "a837a60746fa6a2d4afb778a0e13318fcc4164f594025707f30bf3ecfc859b1d",
+    "scripts/harbor_agent.py": "4de34371478c26390f0fb768bd302733e03def27482162e0297bb2d050aa6bee",
+    "scripts/run_harbor_comparison.py": "955ba74a2ab7f2a0c427500662c124fd80d9024ae53405bc32dc9f4cb3291ae1",
+    "scripts/summarize_harbor_comparison.py": "a1cdd0e892b53dbfaee1c511815a1eae1372032fde8298c7e4a6b48fbe0ada37",
+    "scripts/measure_policy_interface.mjs": "d6562e97ef5281f4d42626821171acebb02dd13eb6ddfad1eecd3e1dbde0ef50"
+  }
+}

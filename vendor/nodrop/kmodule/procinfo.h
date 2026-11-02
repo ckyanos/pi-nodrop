@@ -45,7 +45,6 @@ struct nod_proc_info {
 	struct rcu_head rcu_head;
 #endif
 	pid_t pid;
-	char comm[16];
 	struct mm_struct *mm;
 	struct nod_buffer buffer;
 	int ioctl_fd;

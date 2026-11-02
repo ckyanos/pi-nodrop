@@ -1,0 +1,9 @@
+{
+  "bash": "raw",
+  "read": "counts",
+  "write": "raw",
+  "edit": "raw",
+  "grep": "counts",
+  "find": "counts",
+  "ls": "counts"
+}

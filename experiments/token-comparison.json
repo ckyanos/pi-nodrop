@@ -1,0 +1,16 @@
+{
+  "dataset_manifest": "terminal-bench.json",
+  "policies": "token-audit-policies.json",
+  "conditions": ["off", "on"],
+  "replicates_per_condition": 1,
+  "max_output_tokens": 16384,
+  "limits": {"turns": 40, "tools": 100, "tokens": 200000, "timeout_sec": 900},
+  "order": [
+    {"task": "openssl-selfsigned-cert", "audit": "off"},
+    {"task": "openssl-selfsigned-cert", "audit": "on"},
+    {"task": "log-summary-date-ranges", "audit": "on"},
+    {"task": "log-summary-date-ranges", "audit": "off"},
+    {"task": "fix-git", "audit": "off"},
+    {"task": "fix-git", "audit": "on"}
+  ]
+}

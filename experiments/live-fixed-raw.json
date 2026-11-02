@@ -1,0 +1,30 @@
+{
+  "dataset_manifest": "terminal-bench.json",
+  "execution": "live-model",
+  "audit": "on",
+  "control_mode": "fixed-raw",
+  "tasks": [
+    "openssl-selfsigned-cert",
+    "log-summary-date-ranges",
+    "fix-git"
+  ],
+  "replicates_per_task": 1,
+  "provider": "ibrain",
+  "model": "deepseek-v4.1-flash-al",
+  "api": "openai-completions",
+  "max_output_tokens": 4096,
+  "limits": {
+    "tokens": 30000,
+    "turns": 40,
+    "tools": 100,
+    "timeout_sec": 900
+  },
+  "budget_check": "After each assistant response",
+  "automatic_retries": false,
+  "automatic_task_reruns": false,
+  "historical_configured_limits": {
+    "tokens": 200000,
+    "max_output_tokens": 16384
+  },
+  "historical_comparison": "Runs use different budgets and are reported separately"
+}

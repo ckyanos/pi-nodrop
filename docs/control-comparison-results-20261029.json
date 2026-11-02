@@ -1,0 +1,385 @@
+{
+  "execution": "tool-replay",
+  "tasks": 3,
+  "trials": 6,
+  "replicates_per_condition": 1,
+  "api_requests": 0,
+  "total_tokens": 0,
+  "fixed_raw_scope": "Call identity, worker executor and NoDrop capture remain enabled; tool-policy selection is bypassed",
+  "configured_scope": "Select raw/counts per tool through the existing call-level control interface",
+  "pairs": [
+    {
+      "task": "fix-git",
+      "configured": {
+        "trial": "fix-git-configured",
+        "task": "fix-git",
+        "control_mode": "configured",
+        "source_sha256": "82286fc451b2f96b568c1af149b06637593da9cf807ce7513ac5f40714086534",
+        "plan_sha256": "8d88ceb2e01786901d009010dc0aecb2be668797bb68e20e48dfd793e899b6e4",
+        "groups": 13,
+        "calls": 19,
+        "tool_counts": {
+          "bash": 18,
+          "read": 1
+        },
+        "tool_errors": 0,
+        "expected_error_mismatches": 0,
+        "api_requests": 0,
+        "total_tokens": 0,
+        "replay_elapsed_sec": 37.763402076,
+        "trial_elapsed_sec": 68.90101790428162,
+        "task_passed": true,
+        "tests": {
+          "tests": 2,
+          "passed": 2,
+          "failed": 0,
+          "skipped": 0,
+          "pending": 0,
+          "other": 0,
+          "start": 1793255268.7772777,
+          "stop": 1793255271.0079484
+        },
+        "raw_events": 25315,
+        "histogram_events": 159,
+        "raw_bytes": 1930546,
+        "counts_bytes": 2313,
+        "audit_bytes": 1932859,
+        "audit_bytes_by_tool": {
+          "bash": 1930546,
+          "read": 2313
+        },
+        "call_metadata_bytes": 10204,
+        "statistics": {
+          "n_evts": 25474,
+          "drop_evts": 0,
+          "drop_unsolved": 0,
+          "drop_overflow": 0,
+          "monitor_entries": 112
+        },
+        "environment": {
+          "kernel": "6.8.0-137-generic",
+          "isolation": "chroot",
+          "uid": 1000,
+          "workdir": "/app/personal-site"
+        },
+        "cleanup": {
+          "module_unloaded": true,
+          "kernel_errors": false
+        }
+      },
+      "fixed-raw": {
+        "trial": "fix-git-fixed-raw",
+        "task": "fix-git",
+        "control_mode": "fixed-raw",
+        "source_sha256": "82286fc451b2f96b568c1af149b06637593da9cf807ce7513ac5f40714086534",
+        "plan_sha256": "8d88ceb2e01786901d009010dc0aecb2be668797bb68e20e48dfd793e899b6e4",
+        "groups": 13,
+        "calls": 19,
+        "tool_counts": {
+          "bash": 18,
+          "read": 1
+        },
+        "tool_errors": 0,
+        "expected_error_mismatches": 0,
+        "api_requests": 0,
+        "total_tokens": 0,
+        "replay_elapsed_sec": 28.415113079999998,
+        "trial_elapsed_sec": 49.24754810333252,
+        "task_passed": true,
+        "tests": {
+          "tests": 2,
+          "passed": 2,
+          "failed": 0,
+          "skipped": 0,
+          "pending": 0,
+          "other": 0,
+          "start": 1793255171.8285072,
+          "stop": 1793255172.9347801
+        },
+        "raw_events": 25645,
+        "histogram_events": 0,
+        "raw_bytes": 1948118,
+        "counts_bytes": 0,
+        "audit_bytes": 1948118,
+        "audit_bytes_by_tool": {
+          "bash": 1938192,
+          "read": 9926
+        },
+        "call_metadata_bytes": 10204,
+        "statistics": {
+          "n_evts": 25645,
+          "drop_evts": 0,
+          "drop_unsolved": 0,
+          "drop_overflow": 0,
+          "monitor_entries": 112
+        },
+        "environment": {
+          "kernel": "6.8.0-137-generic",
+          "isolation": "chroot",
+          "uid": 1000,
+          "workdir": "/app/personal-site"
+        },
+        "cleanup": {
+          "module_unloaded": true,
+          "kernel_errors": false
+        }
+      },
+      "same_source_and_call_plan": true,
+      "audit_byte_delta": -15259,
+      "replay_time_delta_sec": 9.348288996
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "configured": {
+        "trial": "log-summary-date-ranges-configured",
+        "task": "log-summary-date-ranges",
+        "control_mode": "configured",
+        "source_sha256": "a06bb96c782272fd56c02f97cdfe43b99154f9425b2d7cdac45514efed61fba0",
+        "plan_sha256": "02d8acf03eed93598f64ca8c6d4bcc6a1c9afa13ff5314da6d202e9cd6d79199",
+        "groups": 6,
+        "calls": 6,
+        "tool_counts": {
+          "bash": 6
+        },
+        "tool_errors": 0,
+        "expected_error_mismatches": 0,
+        "api_requests": 0,
+        "total_tokens": 0,
+        "replay_elapsed_sec": 51.182244182000005,
+        "trial_elapsed_sec": 87.75985836982727,
+        "task_passed": true,
+        "tests": {
+          "tests": 2,
+          "passed": 2,
+          "failed": 0,
+          "skipped": 0,
+          "pending": 0,
+          "other": 0,
+          "start": 1793254968.0111074,
+          "stop": 1793254969.844527
+        },
+        "raw_events": 60075,
+        "histogram_events": 0,
+        "raw_bytes": 5531390,
+        "counts_bytes": 0,
+        "audit_bytes": 5531390,
+        "audit_bytes_by_tool": {
+          "bash": 5531390
+        },
+        "call_metadata_bytes": 4735,
+        "statistics": {
+          "n_evts": 60288,
+          "drop_evts": 0,
+          "drop_unsolved": 213,
+          "drop_overflow": 0,
+          "monitor_entries": 219
+        },
+        "environment": {
+          "kernel": "6.8.0-137-generic",
+          "isolation": "chroot",
+          "uid": 1000,
+          "workdir": "/app"
+        },
+        "cleanup": {
+          "module_unloaded": true,
+          "kernel_errors": false
+        }
+      },
+      "fixed-raw": {
+        "trial": "log-summary-date-ranges-fixed-raw",
+        "task": "log-summary-date-ranges",
+        "control_mode": "fixed-raw",
+        "source_sha256": "a06bb96c782272fd56c02f97cdfe43b99154f9425b2d7cdac45514efed61fba0",
+        "plan_sha256": "02d8acf03eed93598f64ca8c6d4bcc6a1c9afa13ff5314da6d202e9cd6d79199",
+        "groups": 6,
+        "calls": 6,
+        "tool_counts": {
+          "bash": 6
+        },
+        "tool_errors": 0,
+        "expected_error_mismatches": 0,
+        "api_requests": 0,
+        "total_tokens": 0,
+        "replay_elapsed_sec": 46.635597253,
+        "trial_elapsed_sec": 78.78817677497864,
+        "task_passed": true,
+        "tests": {
+          "tests": 2,
+          "passed": 2,
+          "failed": 0,
+          "skipped": 0,
+          "pending": 0,
+          "other": 0,
+          "start": 1793255080.1854422,
+          "stop": 1793255081.2712958
+        },
+        "raw_events": 61668,
+        "histogram_events": 0,
+        "raw_bytes": 5626763,
+        "counts_bytes": 0,
+        "audit_bytes": 5626763,
+        "audit_bytes_by_tool": {
+          "bash": 5626763
+        },
+        "call_metadata_bytes": 4735,
+        "statistics": {
+          "n_evts": 61881,
+          "drop_evts": 0,
+          "drop_unsolved": 213,
+          "drop_overflow": 0,
+          "monitor_entries": 221
+        },
+        "environment": {
+          "kernel": "6.8.0-137-generic",
+          "isolation": "chroot",
+          "uid": 1000,
+          "workdir": "/app"
+        },
+        "cleanup": {
+          "module_unloaded": true,
+          "kernel_errors": false
+        }
+      },
+      "same_source_and_call_plan": true,
+      "audit_byte_delta": -95373,
+      "replay_time_delta_sec": 4.546646929000005
+    },
+    {
+      "task": "openssl-selfsigned-cert",
+      "configured": {
+        "trial": "openssl-selfsigned-cert-configured",
+        "task": "openssl-selfsigned-cert",
+        "control_mode": "configured",
+        "source_sha256": "8f4996144208220758ff087d3a545c8c186188774c8b0833dc48ee8e553ab4a9",
+        "plan_sha256": "90bd0791872badfce7df212f027b54540d75d1884ae8c6a812c03640d7a91f8f",
+        "groups": 12,
+        "calls": 14,
+        "tool_counts": {
+          "bash": 13,
+          "write": 1
+        },
+        "tool_errors": 2,
+        "expected_error_mismatches": 0,
+        "api_requests": 0,
+        "total_tokens": 0,
+        "replay_elapsed_sec": 70.45912653399999,
+        "trial_elapsed_sec": 109.37445187568665,
+        "task_passed": true,
+        "tests": {
+          "tests": 6,
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0,
+          "pending": 0,
+          "other": 0,
+          "start": 1793254843.7997751,
+          "stop": 1793254857.4167688
+        },
+        "raw_events": 26932,
+        "histogram_events": 0,
+        "raw_bytes": 2204493,
+        "counts_bytes": 0,
+        "audit_bytes": 2204493,
+        "audit_bytes_by_tool": {
+          "bash": 2196969,
+          "write": 7524
+        },
+        "call_metadata_bytes": 14109,
+        "statistics": {
+          "n_evts": 27274,
+          "drop_evts": 0,
+          "drop_unsolved": 342,
+          "drop_overflow": 0,
+          "monitor_entries": 131
+        },
+        "environment": {
+          "kernel": "6.8.0-137-generic",
+          "isolation": "chroot",
+          "uid": 1000,
+          "workdir": "/app"
+        },
+        "cleanup": {
+          "module_unloaded": true,
+          "kernel_errors": false
+        }
+      },
+      "fixed-raw": {
+        "trial": "openssl-selfsigned-cert-fixed-raw",
+        "task": "openssl-selfsigned-cert",
+        "control_mode": "fixed-raw",
+        "source_sha256": "8f4996144208220758ff087d3a545c8c186188774c8b0833dc48ee8e553ab4a9",
+        "plan_sha256": "90bd0791872badfce7df212f027b54540d75d1884ae8c6a812c03640d7a91f8f",
+        "groups": 12,
+        "calls": 14,
+        "tool_counts": {
+          "bash": 13,
+          "write": 1
+        },
+        "tool_errors": 2,
+        "expected_error_mismatches": 0,
+        "api_requests": 0,
+        "total_tokens": 0,
+        "replay_elapsed_sec": 72.088378764,
+        "trial_elapsed_sec": 104.25568509101868,
+        "task_passed": true,
+        "tests": {
+          "tests": 6,
+          "passed": 6,
+          "failed": 0,
+          "skipped": 0,
+          "pending": 0,
+          "other": 0,
+          "start": 1793254719.0335572,
+          "stop": 1793254729.750676
+        },
+        "raw_events": 27579,
+        "histogram_events": 0,
+        "raw_bytes": 2236999,
+        "counts_bytes": 0,
+        "audit_bytes": 2236999,
+        "audit_bytes_by_tool": {
+          "bash": 2229475,
+          "write": 7524
+        },
+        "call_metadata_bytes": 14109,
+        "statistics": {
+          "n_evts": 27919,
+          "drop_evts": 0,
+          "drop_unsolved": 340,
+          "drop_overflow": 0,
+          "monitor_entries": 134
+        },
+        "environment": {
+          "kernel": "6.8.0-137-generic",
+          "isolation": "chroot",
+          "uid": 1000,
+          "workdir": "/app"
+        },
+        "cleanup": {
+          "module_unloaded": true,
+          "kernel_errors": false
+        }
+      },
+      "same_source_and_call_plan": true,
+      "audit_byte_delta": -32506,
+      "replay_time_delta_sec": -1.6292522300000059
+    }
+  ],
+  "runtime_sha256": {
+    "build/nodrop/nodrop.ko": "8193e5c90382e1c2c02821fac2934105f4e1e74935b52dd8a8c38e5e5c5579d5",
+    "build/nodrop/monitor/monitor": "c9da7e700dd55bf727b468b82d4d10998058805bc36a6eebb534ab295af18b75",
+    "build/context.node": "70bd8c69a7166720fa6bddb3fdd9c5cb9119c2ea240e6ab8ffbc6da851e28dc7",
+    "src/client.mjs": "91d2932929e8aa6cdb6186aa7677edddb7854f4283ff1539fe03196a3c7e3c26",
+    "src/worker.mjs": "259a0e46d95643f0c5505c8ace53e58e5e9834283f324b896a9f9aa7ac77c1a0",
+    "scripts/run_terminal_bench.py": "6f8cb512e18c663607f0dd6c0a5f4016b10de6cf6627549719536f8b30cbc002",
+    "scripts/replay_tools.mjs": "883b175243ca7fa4858ae48c629084114c01f8bf8768cbc1884babe5852fe1cb",
+    "experiments/token-audit-policies.json": "35769aea884b38ba2ee976d7ab9cc2e6877d6176bc0d351ad474fb269ae2da0c"
+  },
+  "environment_cleanup": {
+    "module_unloaded": true,
+    "remaining_task_processes": [],
+    "remaining_mounts": [],
+    "model_credentials_supplied": false,
+    "vm_state": "shut off"
+  }
+}

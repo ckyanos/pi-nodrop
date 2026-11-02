@@ -1,0 +1,19 @@
+{
+  "kernel": "6.8.0-137-generic",
+  "build_passed": true,
+  "protocol_tests_passed": 8,
+  "native_smoke_passed": false,
+  "failure": "Pi edit result unchanged; kernel scheduling while atomic in monitor entry",
+  "model_api_requests": 0,
+  "module_unloaded": true,
+  "artifacts": {
+    "build/nodrop/nodrop.ko": "e2a63415c0fef28eff30d2aed124ad0e09191bb8e41195bdb3448495157d1118",
+    "build/nodrop/monitor/monitor": "4a025d289c1ec9e02deda5f0501914e4d77d4709f278c520eaa6c560896640a5",
+    "build/nodrop/scripts/ctrl/ctrl": "403fd80da77dfd92f3eba4badcc61a3f5c51f0618d0e266af14c68ee2ae302c6",
+    "build/context.node": "de85610c4413a326cb2ac133c0e210813876f420c2069a9133b759baafbab1a8"
+  },
+  "upstream_commit": "f80c9a82c162aa58cb3344b8078f6211d52cdf58",
+  "baseline_files": 77,
+  "prototype_files": 80,
+  "patch_reconstruction_matches": true
+}

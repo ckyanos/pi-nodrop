@@ -1,0 +1,316 @@
+{
+  "design": {
+    "execution": "live-model",
+    "mode": "agent-names",
+    "replicates_per_task": 1,
+    "baseline_and_field_modes": "previous saved runs, not rerun in this batch",
+    "local_token_turn_tool_limits": null,
+    "automatic_task_reruns": false,
+    "provider": "ibrain",
+    "model": "deepseek-v4.1-flash-al",
+    "max_output_tokens": 2048,
+    "output_mode": "reference",
+    "inline_bytes": 4096
+  },
+  "runs": [
+    {
+      "task": "fix-git",
+      "business_tests_passed": true,
+      "tests": {
+        "tests": 2,
+        "passed": 2,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1793274016.1881423,
+        "stop": 1793274017.4555104
+      },
+      "agent_exit_code": 0,
+      "session_completed": true,
+      "final_result_recorded": true,
+      "token_measurement": "complete session",
+      "recorded_total_tokens": 107623,
+      "requests": 14,
+      "model_tool_requests": 19,
+      "executed_calls": 19,
+      "policy_counts": {
+        "counts": 15,
+        "raw": 4
+      },
+      "rejected_calls": [],
+      "raw_events": 624,
+      "counted_events": 21282,
+      "histogram_rows": 1445,
+      "audit_bytes": 280259,
+      "metadata_bytes": 12405,
+      "statistics": {
+        "n_evts": 21906,
+        "drop_evts": 0,
+        "drop_unsolved": 0,
+        "drop_overflow": 0,
+        "monitor_entries": 100
+      },
+      "stored_outputs": 1,
+      "stored_output_bytes": 5086,
+      "agent_elapsed_sec": 78.452,
+      "trial_elapsed_sec": 115.45665001869202,
+      "first_request_comparison": {
+        "business_parameters_reused": true,
+        "model_options_equal": true,
+        "user_messages_equal": true,
+        "tool_count": 14,
+        "baseline_tool_count": 7,
+        "tools_json_bytes": 10942,
+        "baseline_tools_json_bytes": 5104,
+        "added_payload_bytes": 6607,
+        "fixed_raw_input_tokens": 1484,
+        "policy_names_input_tokens": 2866
+      },
+      "environment": {
+        "kernel": "6.8.0-137-generic",
+        "isolation": "chroot",
+        "uid": 1000,
+        "workdir": "/app/personal-site"
+      },
+      "instruction_sha256": "6c216d38d66c187905b6156e80d02d678fc76c6f98a6f6e0c92792f65939b9e6",
+      "cleanup": {
+        "module_unloaded": true,
+        "kernel_errors": false
+      }
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "business_tests_passed": true,
+      "tests": {
+        "tests": 2,
+        "passed": 2,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1793273869.8263106,
+        "stop": 1793273870.9895544
+      },
+      "agent_exit_code": 0,
+      "session_completed": true,
+      "final_result_recorded": true,
+      "token_measurement": "complete session",
+      "recorded_total_tokens": 34822,
+      "requests": 6,
+      "model_tool_requests": 7,
+      "executed_calls": 7,
+      "policy_counts": {
+        "counts": 7
+      },
+      "rejected_calls": [],
+      "raw_events": 0,
+      "counted_events": 31988,
+      "histogram_rows": 3114,
+      "audit_bytes": 516498,
+      "metadata_bytes": 5170,
+      "statistics": {
+        "n_evts": 32226,
+        "drop_evts": 0,
+        "drop_unsolved": 238,
+        "drop_overflow": 0,
+        "monitor_entries": 220
+      },
+      "stored_outputs": 1,
+      "stored_output_bytes": 12616,
+      "agent_elapsed_sec": 63.8,
+      "trial_elapsed_sec": 97.38282036781311,
+      "first_request_comparison": {
+        "business_parameters_reused": true,
+        "model_options_equal": true,
+        "user_messages_equal": true,
+        "tool_count": 14,
+        "baseline_tool_count": 7,
+        "tools_json_bytes": 10942,
+        "baseline_tools_json_bytes": 5104,
+        "added_payload_bytes": 6607,
+        "fixed_raw_input_tokens": 1884,
+        "policy_names_input_tokens": 3266
+      },
+      "environment": {
+        "kernel": "6.8.0-137-generic",
+        "isolation": "chroot",
+        "uid": 1000,
+        "workdir": "/app"
+      },
+      "instruction_sha256": "d43bec1c9c66bc96037c93e1192909bfdf53a2927e54d9f3c88e5ce2499c0e98",
+      "cleanup": {
+        "module_unloaded": true,
+        "kernel_errors": false
+      }
+    },
+    {
+      "task": "openssl-selfsigned-cert",
+      "business_tests_passed": true,
+      "tests": {
+        "tests": 6,
+        "passed": 6,
+        "failed": 0,
+        "skipped": 0,
+        "pending": 0,
+        "other": 0,
+        "start": 1793273505.6525624,
+        "stop": 1793273517.2962658
+      },
+      "agent_exit_code": -11,
+      "session_completed": false,
+      "final_result_recorded": false,
+      "token_measurement": "completed turn_end records before SIGSEGV",
+      "recorded_total_tokens": 82773,
+      "requests": 13,
+      "model_tool_requests": 16,
+      "executed_calls": 16,
+      "policy_counts": {
+        "counts": 14,
+        "raw": 2
+      },
+      "rejected_calls": [],
+      "raw_events": 348,
+      "counted_events": 35192,
+      "histogram_rows": 1835,
+      "audit_bytes": 324609,
+      "metadata_bytes": 19629,
+      "statistics": {
+        "n_evts": 36008,
+        "drop_evts": 0,
+        "drop_unsolved": 468,
+        "drop_overflow": 0,
+        "monitor_entries": 116
+      },
+      "stored_outputs": 0,
+      "stored_output_bytes": 0,
+      "agent_elapsed_sec": null,
+      "trial_elapsed_sec": 191.51629734039307,
+      "first_request_comparison": {
+        "business_parameters_reused": true,
+        "model_options_equal": true,
+        "user_messages_equal": true,
+        "tool_count": 14,
+        "baseline_tool_count": 7,
+        "tools_json_bytes": 10942,
+        "baseline_tools_json_bytes": 5104,
+        "added_payload_bytes": 6607,
+        "fixed_raw_input_tokens": 1819,
+        "policy_names_input_tokens": 3201
+      },
+      "environment": {
+        "kernel": "6.8.0-137-generic",
+        "isolation": "chroot",
+        "uid": 1000,
+        "workdir": "/app"
+      },
+      "instruction_sha256": "df64deb1b3a5953a0c5ef8442e3e73856b7733f6fe03614d9cb3a7e4b02b4edf",
+      "cleanup": {
+        "module_unloaded": true,
+        "kernel_errors": false
+      }
+    }
+  ],
+  "totals": {
+    "business_tests_passed": 3,
+    "completed_sessions": 2,
+    "recorded_tokens_including_partial_session": 225218,
+    "complete_session_tokens": 142445,
+    "requests": 33,
+    "model_tool_requests": 42,
+    "executed_calls": 42,
+    "policy_counts": {
+      "counts": 36,
+      "raw": 6
+    },
+    "pre_execution_rejections": 0,
+    "raw_events": 972,
+    "counted_events": 88462,
+    "audit_bytes": 1121366
+  },
+  "native_protocol_check": {
+    "kernel": "6.8.0-137-generic",
+    "pi": "1.4.0",
+    "model": "scripted protocol stream",
+    "output_index": {
+      "version": 1,
+      "kind": "pi-tool-output",
+      "output_ref": "265fd0ac21df36fe",
+      "call_ref": "265fd0ac21df36fe",
+      "tool_call_id": "named-read",
+      "tool_name": "read",
+      "is_error": false,
+      "exit_code": null,
+      "bytes": 30000,
+      "page_bytes": 2048,
+      "pages": 15,
+      "source": "tool-result-text",
+      "upstream_truncated": false,
+      "payload_file": "output.txt",
+      "result_file": "result.json"
+    },
+    "api_requests": 0,
+    "calls": 3,
+    "raw_events": 308,
+    "histogram_events": 162,
+    "histogram_rows": 13,
+    "calls_by_policy": {
+      "named-write": {
+        "requested": "write_raw",
+        "applied": 1,
+        "source": "agent-names",
+        "raw_events": 156,
+        "histogram_events": 0
+      },
+      "named-read": {
+        "requested": "read_raw",
+        "applied": 1,
+        "source": "agent-names",
+        "raw_events": 152,
+        "histogram_events": 0
+      },
+      "named-page": {
+        "requested": "read_counts",
+        "applied": 2,
+        "source": "agent-names",
+        "raw_events": 0,
+        "histogram_events": 162
+      }
+    }
+  },
+  "native_cleanup": {
+    "module_unloaded": true,
+    "output_unmounted": true,
+    "kernel_errors": false
+  },
+  "windows_unit_tests_passed": 14,
+  "runtime_sha256": {
+    "build/nodrop/nodrop.ko": "8193e5c90382e1c2c02821fac2934105f4e1e74935b52dd8a8c38e5e5c5579d5",
+    "build/nodrop/monitor/monitor": "c9da7e700dd55bf727b468b82d4d10998058805bc36a6eebb534ab295af18b75",
+    "build/context.node": "70bd8c69a7166720fa6bddb3fdd9c5cb9119c2ea240e6ab8ffbc6da851e28dc7",
+    "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+    "src/worker.mjs": "1db758df57975951deb26246b3a8c4c50df0faa44654a4ec8e7b86e5efb078dc",
+    "src/extension.mjs": "59c4a80f14540df0d79054cb00714e855f3dc2cd50fbf15ce903e3c14734aeb1",
+    "src/tools.mjs": "50755f3ec5f20e42fdfc3712540daf9e35eb6c39a8e6de2dfcbb56b381eb789d",
+    "src/output-store.mjs": "8b4f017fe18cea459c8beadf2d9565e916cc4cc2b91db83db23d3c8c3d378c78",
+    "src/output-extension.mjs": "e925e04a94d756bbf46d1b146a19a22ce450c18f55f52d4e37bbd5ef8ed192cb",
+    "src/policy-tools.mjs": "f4d116008113b242946b974d964088f2f24026f81f5f988b1dba2ad9c3ab3242",
+    "scripts/run_terminal_bench.py": "dd94e2fa2aab18e944a16bf4df1913bdb190e4d1813a2072e928913ace1712b1",
+    "scripts/terminal_bench.mjs": "671a791ee76af2ad11332b4cf8a5eeb816914ec5698ab4e9d9f858217d255bff"
+  },
+  "environment_cleanup": {
+    "module_unloaded": true,
+    "remaining_task_processes": [],
+    "remaining_mounts": [],
+    "temporary_model_config_removed": true,
+    "vm_state": "shut off"
+  },
+  "crash_observation": {
+    "task": "openssl-selfsigned-cert",
+    "signal": "SIGSEGV",
+    "final_result_missing": true,
+    "diagnostic": "No kernel error reported; Apport skipped dump because executable modification time was after process start.",
+    "cause": "undetermined",
+    "automatic_rerun": false
+  }
+}

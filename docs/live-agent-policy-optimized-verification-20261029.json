@@ -1,0 +1,312 @@
+{
+  "runs": [
+    {
+      "task": "fix-git",
+      "requests": 12,
+      "model_tool_requests": 16,
+      "executed_calls": 14,
+      "policies": {
+        "raw": 14
+      },
+      "rejected_calls": [
+        {
+          "tool": "bash",
+          "requested_policy": null,
+          "missing_policy": true,
+          "error_bytes": 66,
+          "validation_error": "Set audit_policy to \"raw\" or \"counts\" and resubmit this tool call."
+        },
+        {
+          "tool": "bash",
+          "requested_policy": null,
+          "missing_policy": true,
+          "error_bytes": 66,
+          "validation_error": "Set audit_policy to \"raw\" or \"counts\" and resubmit this tool call."
+        }
+      ],
+      "request_execution_output_match": true,
+      "automatic_retry_events": 0,
+      "calls": [
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 2363,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 2670,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 785,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 591,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 600,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 821,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 618,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 894,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1019,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1127,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 2154,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1112,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1704,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1166,
+          "counted_events": 0
+        }
+      ],
+      "first_request_comparison": {
+        "payload_equal_after_removing_policy_additions": true,
+        "messages_equal": false,
+        "shared_guideline": "Include audit_policy in every tool call: raw keeps syscall arguments and order; counts keeps event-type totals and time bounds. Choose per call.",
+        "added_payload_bytes": 665,
+        "fixed_raw_input_tokens": 1452,
+        "agent_policy_input_tokens": 1610
+      }
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "requests": 8,
+      "model_tool_requests": 7,
+      "executed_calls": 6,
+      "policies": {
+        "raw": 6
+      },
+      "rejected_calls": [
+        {
+          "tool": "bash",
+          "requested_policy": null,
+          "missing_policy": true,
+          "error_bytes": 66,
+          "validation_error": "Set audit_policy to \"raw\" or \"counts\" and resubmit this tool call."
+        }
+      ],
+      "request_execution_output_match": true,
+      "automatic_retry_events": 0,
+      "calls": [
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 28768,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 4983,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 33640,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 4299,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 2436,
+          "counted_events": 0
+        },
+        {
+          "tool": "read",
+          "policy": "raw",
+          "raw_events": 140,
+          "counted_events": 0
+        }
+      ],
+      "first_request_comparison": {
+        "payload_equal_after_removing_policy_additions": true,
+        "messages_equal": false,
+        "shared_guideline": "Include audit_policy in every tool call: raw keeps syscall arguments and order; counts keeps event-type totals and time bounds. Choose per call.",
+        "added_payload_bytes": 665,
+        "fixed_raw_input_tokens": 1852,
+        "agent_policy_input_tokens": 2010
+      }
+    },
+    {
+      "task": "openssl-selfsigned-cert",
+      "requests": 17,
+      "model_tool_requests": 16,
+      "executed_calls": 14,
+      "policies": {
+        "raw": 14
+      },
+      "rejected_calls": [
+        {
+          "tool": "bash",
+          "requested_policy": null,
+          "missing_policy": true,
+          "error_bytes": 66,
+          "validation_error": "Set audit_policy to \"raw\" or \"counts\" and resubmit this tool call."
+        },
+        {
+          "tool": "write",
+          "requested_policy": null,
+          "missing_policy": true,
+          "error_bytes": 66,
+          "validation_error": "Set audit_policy to \"raw\" or \"counts\" and resubmit this tool call."
+        }
+      ],
+      "request_execution_output_match": true,
+      "automatic_retry_events": 0,
+      "calls": [
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 2398,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 3746,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1199,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 2296,
+          "counted_events": 0
+        },
+        {
+          "tool": "write",
+          "policy": "raw",
+          "raw_events": 128,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 3013,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 2632,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 964,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 4441,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 7183,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 7568,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 16933,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 2818,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 4615,
+          "counted_events": 0
+        }
+      ],
+      "first_request_comparison": {
+        "payload_equal_after_removing_policy_additions": true,
+        "messages_equal": false,
+        "shared_guideline": "Include audit_policy in every tool call: raw keeps syscall arguments and order; counts keeps event-type totals and time bounds. Choose per call.",
+        "added_payload_bytes": 665,
+        "fixed_raw_input_tokens": 1787,
+        "agent_policy_input_tokens": 1945
+      }
+    }
+  ]
+}

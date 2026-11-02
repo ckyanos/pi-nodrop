@@ -1,0 +1,869 @@
+{
+  "protocol": {
+    "harbor_version": "0.25.0",
+    "kernel": "6.8.0-137-generic",
+    "docker_version": "Docker version 29.1.3, build 29.1.3-0ubuntu3~24.04.2",
+    "compose_version": "Docker Compose version 2.40.3+ds1-0ubuntu1~24.04.1",
+    "pi_version": "1.4.0",
+    "model": "ibrain/deepseek-v4.1-flash-al",
+    "attempts_per_task_per_condition": 1,
+    "custom_output_presentation": false,
+    "custom_agent_loop": false,
+    "custom_verifier": false,
+    "task_user_override": false,
+    "baseline_agent_class": "harbor.agents.installed.pi:Pi",
+    "audited_agent_class": "scripts.harbor_agent:NoDropPi",
+    "apt_source_overrides": true,
+    "native_config_isolated_writable": true,
+    "audit_output_mounted_in_host_and_container": true,
+    "conditions": [
+      "baseline",
+      "fixed-raw",
+      "agent-names"
+    ],
+    "agent_setup_timeout_sec": 900.0,
+    "node_download_mirror": null,
+    "source_sha256": {
+      "src/extension.mjs": "9d660310cb408e205a0d62756a043e385834bcc22469327c8c6e03f749628c80",
+      "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+      "src/tools.mjs": "50755f3ec5f20e42fdfc3712540daf9e35eb6c39a8e6de2dfcbb56b381eb789d",
+      "src/worker.mjs": "1db758df57975951deb26246b3a8c4c50df0faa44654a4ec8e7b86e5efb078dc",
+      "src/policy-tools.mjs": "f4d116008113b242946b974d964088f2f24026f81f5f988b1dba2ad9c3ab3242",
+      "scripts/harbor_agent.py": "ae2031fd0dfca0a0e710f1f3d68d4524f07b1fa78782e6e6dace19da9f12ad7d",
+      "scripts/run_harbor_comparison.py": "7cb299ae9c7dd7c09ba5467bb96f8e4b90de15d57fc9879f2f65ff6dfcd122ac",
+      "build/nodrop/nodrop.ko": "c8bf09032e6e6c735c36906e5e6994603e6ba191cfd0cff6b5d9780ab642be65",
+      "build/context.node": "de85610c4413a326cb2ac133c0e210813876f420c2069a9133b759baafbab1a8",
+      "build/nodrop/monitor/monitor": "07a97acdd53351c9a910cd2844fefdb4e843d6048387efebf51cb887e6e0b745"
+    }
+  },
+  "runs": [
+    {
+      "mode": "baseline",
+      "task": "openssl-selfsigned-cert",
+      "task_checksum": "59d39baeb1d2c13995195cd5c9acf2118b527c96025af86bcd219543599e9a00",
+      "agent_info": {
+        "name": "pi",
+        "version": "1.4.0",
+        "model_info": {
+          "name": "ibrain/deepseek-v4.1-flash-al",
+          "provider": "harbor-skip-parsing"
+        }
+      },
+      "exception_type": null,
+      "rewards": {
+        "reward": 1.0
+      },
+      "task_passed": true,
+      "session_completed": true,
+      "usage": {
+        "input": 7117,
+        "output": 4338,
+        "cacheRead": 28160,
+        "cacheWrite": 0,
+        "totalTokens": 39615
+      },
+      "total_tokens": 39615,
+      "model_responses": 10,
+      "model_tool_calls": 12,
+      "executed_audit_calls": 0,
+      "first_input_tokens": 1212,
+      "business_tool_result_chars": 4372,
+      "policy_counts": {},
+      "rejected_calls": [],
+      "raw_events": 0,
+      "count_rows": 0,
+      "counted_events": 0,
+      "audit_bytes": 0,
+      "metadata_bytes": 0,
+      "statistics": {},
+      "audit_exercised": false,
+      "harbor_native_usage_match": true,
+      "retained_event_identity_policy_match": true,
+      "timing": {
+        "environment_setup": {
+          "started_at": "2026-10-29T15:08:24.113635Z",
+          "finished_at": "2026-10-29T15:08:43.844477Z"
+        },
+        "agent_setup": {
+          "started_at": "2026-10-29T15:08:43.852632Z",
+          "finished_at": "2026-10-29T15:18:15.811053Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-29T15:18:15.814055Z",
+          "finished_at": "2026-10-29T15:19:38.728474Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-29T15:19:47.813215Z",
+          "finished_at": "2026-10-29T15:21:35.613213Z"
+        }
+      }
+    },
+    {
+      "mode": "baseline",
+      "task": "log-summary-date-ranges",
+      "task_checksum": "f661ef345f023ef5a2dcdd056c353a1a2bbce29a70b04765c615c25e91b6b662",
+      "agent_info": {
+        "name": "pi",
+        "version": "1.4.0",
+        "model_info": {
+          "name": "ibrain/deepseek-v4.1-flash-al",
+          "provider": "harbor-skip-parsing"
+        }
+      },
+      "exception_type": null,
+      "rewards": {
+        "reward": 1.0
+      },
+      "task_passed": true,
+      "session_completed": true,
+      "usage": {
+        "input": 10021,
+        "output": 2224,
+        "cacheRead": 51456,
+        "cacheWrite": 0,
+        "totalTokens": 63701
+      },
+      "total_tokens": 63701,
+      "model_responses": 8,
+      "model_tool_calls": 7,
+      "executed_audit_calls": 0,
+      "first_input_tokens": 1270,
+      "business_tool_result_chars": 15399,
+      "policy_counts": {},
+      "rejected_calls": [],
+      "raw_events": 0,
+      "count_rows": 0,
+      "counted_events": 0,
+      "audit_bytes": 0,
+      "metadata_bytes": 0,
+      "statistics": {},
+      "audit_exercised": false,
+      "harbor_native_usage_match": true,
+      "retained_event_identity_policy_match": true,
+      "timing": {
+        "environment_setup": {
+          "started_at": "2026-10-29T15:22:16.561129Z",
+          "finished_at": "2026-10-29T15:22:38.658154Z"
+        },
+        "agent_setup": {
+          "started_at": "2026-10-29T15:22:38.658530Z",
+          "finished_at": "2026-10-29T15:30:39.230416Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-29T15:30:39.234853Z",
+          "finished_at": "2026-10-29T15:32:15.948800Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-29T15:32:24.188112Z",
+          "finished_at": "2026-10-29T15:33:48.941629Z"
+        }
+      }
+    },
+    {
+      "mode": "baseline",
+      "task": "fix-git",
+      "task_checksum": "e89f54f2fc73ac576f976c1cd09758e4c9ccf152e53c2dcd91da0c178b89abc7",
+      "agent_info": {
+        "name": "pi",
+        "version": "1.4.0",
+        "model_info": {
+          "name": "ibrain/deepseek-v4.1-flash-al",
+          "provider": "harbor-skip-parsing"
+        }
+      },
+      "exception_type": null,
+      "rewards": {
+        "reward": 1.0
+      },
+      "task_passed": true,
+      "session_completed": true,
+      "usage": {
+        "input": 5616,
+        "output": 2129,
+        "cacheRead": 28928,
+        "cacheWrite": 0,
+        "totalTokens": 36673
+      },
+      "total_tokens": 36673,
+      "model_responses": 10,
+      "model_tool_calls": 12,
+      "executed_audit_calls": 0,
+      "first_input_tokens": 925,
+      "business_tool_result_chars": 11017,
+      "policy_counts": {},
+      "rejected_calls": [],
+      "raw_events": 0,
+      "count_rows": 0,
+      "counted_events": 0,
+      "audit_bytes": 0,
+      "metadata_bytes": 0,
+      "statistics": {},
+      "audit_exercised": false,
+      "harbor_native_usage_match": true,
+      "retained_event_identity_policy_match": true,
+      "timing": {
+        "environment_setup": {
+          "started_at": "2026-10-29T15:34:22.996932Z",
+          "finished_at": "2026-10-29T15:34:40.821321Z"
+        },
+        "agent_setup": {
+          "started_at": "2026-10-29T15:34:40.821763Z",
+          "finished_at": "2026-10-29T15:40:23.479775Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-29T15:40:23.482353Z",
+          "finished_at": "2026-10-29T15:41:11.864712Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-29T15:41:19.392894Z",
+          "finished_at": "2026-10-29T15:42:39.762369Z"
+        }
+      }
+    },
+    {
+      "mode": "fixed-raw",
+      "task": "openssl-selfsigned-cert",
+      "task_checksum": "59d39baeb1d2c13995195cd5c9acf2118b527c96025af86bcd219543599e9a00",
+      "agent_info": {
+        "name": "pi-nodrop",
+        "version": "1.4.0",
+        "model_info": {
+          "name": "ibrain/deepseek-v4.1-flash-al",
+          "provider": "harbor-skip-parsing"
+        }
+      },
+      "exception_type": null,
+      "rewards": {
+        "reward": 1.0
+      },
+      "task_passed": true,
+      "session_completed": true,
+      "usage": {
+        "input": 6256,
+        "output": 5915,
+        "cacheRead": 27904,
+        "cacheWrite": 0,
+        "totalTokens": 40075
+      },
+      "total_tokens": 40075,
+      "model_responses": 10,
+      "model_tool_calls": 10,
+      "executed_audit_calls": 9,
+      "first_input_tokens": 1212,
+      "business_tool_result_chars": 4160,
+      "policy_counts": {
+        "raw": 9
+      },
+      "rejected_calls": [
+        {
+          "tool": "write",
+          "is_error": true,
+          "returned_text_chars": 159
+        }
+      ],
+      "raw_events": 16550,
+      "count_rows": 0,
+      "counted_events": 0,
+      "audit_bytes": 1336973,
+      "metadata_bytes": 12498,
+      "statistics": {
+        "n_evts": 16847,
+        "drop_evts": 0,
+        "drop_unsolved": 297,
+        "drop_overflow": 0,
+        "monitor_entries": 91
+      },
+      "audit_exercised": true,
+      "harbor_native_usage_match": true,
+      "retained_event_identity_policy_match": true,
+      "timing": {
+        "environment_setup": {
+          "started_at": "2026-10-29T15:43:11.987325Z",
+          "finished_at": "2026-10-29T15:43:27.796083Z"
+        },
+        "agent_setup": {
+          "started_at": "2026-10-29T15:43:27.796300Z",
+          "finished_at": "2026-10-29T15:49:34.177997Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-29T15:49:34.184539Z",
+          "finished_at": "2026-10-29T15:52:11.314906Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-29T15:52:19.453414Z",
+          "finished_at": "2026-10-29T15:53:47.914678Z"
+        }
+      }
+    },
+    {
+      "mode": "fixed-raw",
+      "task": "log-summary-date-ranges",
+      "task_checksum": "f661ef345f023ef5a2dcdd056c353a1a2bbce29a70b04765c615c25e91b6b662",
+      "agent_info": {
+        "name": "pi-nodrop",
+        "version": "1.4.0",
+        "model_info": {
+          "name": "ibrain/deepseek-v4.1-flash-al",
+          "provider": "harbor-skip-parsing"
+        }
+      },
+      "exception_type": null,
+      "rewards": {
+        "reward": 1.0
+      },
+      "task_passed": true,
+      "session_completed": true,
+      "usage": {
+        "input": 6078,
+        "output": 1976,
+        "cacheRead": 22016,
+        "cacheWrite": 0,
+        "totalTokens": 30070
+      },
+      "total_tokens": 30070,
+      "model_responses": 6,
+      "model_tool_calls": 7,
+      "executed_audit_calls": 7,
+      "first_input_tokens": 1270,
+      "business_tool_result_chars": 8807,
+      "policy_counts": {
+        "raw": 7
+      },
+      "rejected_calls": [],
+      "raw_events": 38600,
+      "count_rows": 0,
+      "counted_events": 0,
+      "audit_bytes": 3271930,
+      "metadata_bytes": 5140,
+      "statistics": {
+        "n_evts": 38883,
+        "drop_evts": 0,
+        "drop_unsolved": 283,
+        "drop_overflow": 0,
+        "monitor_entries": 236
+      },
+      "audit_exercised": true,
+      "harbor_native_usage_match": true,
+      "retained_event_identity_policy_match": true,
+      "timing": {
+        "environment_setup": {
+          "started_at": "2026-10-29T16:16:45.621772Z",
+          "finished_at": "2026-10-29T16:17:02.032929Z"
+        },
+        "agent_setup": {
+          "started_at": "2026-10-29T16:17:02.033775Z",
+          "finished_at": "2026-10-29T16:23:15.262517Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-29T16:23:15.265077Z",
+          "finished_at": "2026-10-29T16:25:25.632955Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-29T16:25:34.240237Z",
+          "finished_at": "2026-10-29T16:26:55.301315Z"
+        }
+      }
+    },
+    {
+      "mode": "fixed-raw",
+      "task": "fix-git",
+      "task_checksum": "e89f54f2fc73ac576f976c1cd09758e4c9ccf152e53c2dcd91da0c178b89abc7",
+      "agent_info": {
+        "name": "pi-nodrop",
+        "version": "1.4.0",
+        "model_info": {
+          "name": "ibrain/deepseek-v4.1-flash-al",
+          "provider": "harbor-skip-parsing"
+        }
+      },
+      "exception_type": null,
+      "rewards": {
+        "reward": 1.0
+      },
+      "task_passed": true,
+      "session_completed": true,
+      "usage": {
+        "input": 7539,
+        "output": 3326,
+        "cacheRead": 48384,
+        "cacheWrite": 0,
+        "totalTokens": 59249
+      },
+      "total_tokens": 59249,
+      "model_responses": 12,
+      "model_tool_calls": 15,
+      "executed_audit_calls": 15,
+      "first_input_tokens": 925,
+      "business_tool_result_chars": 14040,
+      "policy_counts": {
+        "raw": 15
+      },
+      "rejected_calls": [],
+      "raw_events": 15998,
+      "count_rows": 0,
+      "counted_events": 0,
+      "audit_bytes": 1194082,
+      "metadata_bytes": 9354,
+      "statistics": {
+        "n_evts": 15998,
+        "drop_evts": 0,
+        "drop_unsolved": 0,
+        "drop_overflow": 0,
+        "monitor_entries": 85
+      },
+      "audit_exercised": true,
+      "harbor_native_usage_match": true,
+      "retained_event_identity_policy_match": true,
+      "timing": {
+        "environment_setup": {
+          "started_at": "2026-10-29T16:27:25.851861Z",
+          "finished_at": "2026-10-29T16:27:47.595217Z"
+        },
+        "agent_setup": {
+          "started_at": "2026-10-29T16:27:47.595992Z",
+          "finished_at": "2026-10-29T16:33:55.708550Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-29T16:33:55.712610Z",
+          "finished_at": "2026-10-29T16:36:10.608440Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-29T16:36:17.797568Z",
+          "finished_at": "2026-10-29T16:37:34.873450Z"
+        }
+      }
+    },
+    {
+      "mode": "agent-names",
+      "task": "openssl-selfsigned-cert",
+      "task_checksum": "59d39baeb1d2c13995195cd5c9acf2118b527c96025af86bcd219543599e9a00",
+      "agent_info": {
+        "name": "pi-nodrop",
+        "version": "1.4.0",
+        "model_info": {
+          "name": "ibrain/deepseek-v4.1-flash-al",
+          "provider": "harbor-skip-parsing"
+        }
+      },
+      "exception_type": null,
+      "rewards": {
+        "reward": 1.0
+      },
+      "task_passed": true,
+      "session_completed": true,
+      "usage": {
+        "input": 9446,
+        "output": 4637,
+        "cacheRead": 45312,
+        "cacheWrite": 0,
+        "totalTokens": 59395
+      },
+      "total_tokens": 59395,
+      "model_responses": 12,
+      "model_tool_calls": 22,
+      "executed_audit_calls": 22,
+      "first_input_tokens": 1962,
+      "business_tool_result_chars": 5622,
+      "policy_counts": {
+        "raw": 10,
+        "counts": 12
+      },
+      "rejected_calls": [],
+      "raw_events": 16028,
+      "count_rows": 873,
+      "counted_events": 27858,
+      "audit_bytes": 1443901,
+      "metadata_bytes": 19121,
+      "statistics": {
+        "n_evts": 43886,
+        "drop_evts": 0,
+        "drop_unsolved": 0,
+        "drop_overflow": 0,
+        "monitor_entries": 155
+      },
+      "audit_exercised": true,
+      "harbor_native_usage_match": true,
+      "retained_event_identity_policy_match": true,
+      "timing": {
+        "environment_setup": {
+          "started_at": "2026-10-29T16:38:04.774510Z",
+          "finished_at": "2026-10-29T16:38:21.858186Z"
+        },
+        "agent_setup": {
+          "started_at": "2026-10-29T16:38:21.858415Z",
+          "finished_at": "2026-10-29T16:44:37.543697Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-29T16:44:37.546655Z",
+          "finished_at": "2026-10-29T16:47:25.530719Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-29T16:47:34.366739Z",
+          "finished_at": "2026-10-29T16:49:01.709761Z"
+        }
+      }
+    },
+    {
+      "mode": "agent-names",
+      "task": "log-summary-date-ranges",
+      "task_checksum": "f661ef345f023ef5a2dcdd056c353a1a2bbce29a70b04765c615c25e91b6b662",
+      "agent_info": {
+        "name": "pi-nodrop",
+        "version": "1.4.0",
+        "model_info": {
+          "name": "ibrain/deepseek-v4.1-flash-al",
+          "provider": "harbor-skip-parsing"
+        }
+      },
+      "exception_type": null,
+      "rewards": {
+        "reward": 1.0
+      },
+      "task_passed": true,
+      "session_completed": true,
+      "usage": {
+        "input": 7338,
+        "output": 2223,
+        "cacheRead": 34816,
+        "cacheWrite": 0,
+        "totalTokens": 44377
+      },
+      "total_tokens": 44377,
+      "model_responses": 7,
+      "model_tool_calls": 10,
+      "executed_audit_calls": 10,
+      "first_input_tokens": 2020,
+      "business_tool_result_chars": 9825,
+      "policy_counts": {
+        "raw": 10
+      },
+      "rejected_calls": [],
+      "raw_events": 76622,
+      "count_rows": 0,
+      "counted_events": 0,
+      "audit_bytes": 6721240,
+      "metadata_bytes": 7541,
+      "statistics": {
+        "n_evts": 76622,
+        "drop_evts": 0,
+        "drop_unsolved": 0,
+        "drop_overflow": 0,
+        "monitor_entries": 571
+      },
+      "audit_exercised": true,
+      "harbor_native_usage_match": true,
+      "retained_event_identity_policy_match": true,
+      "timing": {
+        "environment_setup": {
+          "started_at": "2026-10-29T16:49:31.221185Z",
+          "finished_at": "2026-10-29T16:49:47.899322Z"
+        },
+        "agent_setup": {
+          "started_at": "2026-10-29T16:49:47.899641Z",
+          "finished_at": "2026-10-29T16:55:56.720359Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-29T16:55:56.723655Z",
+          "finished_at": "2026-10-29T16:58:31.567626Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-29T16:58:39.622376Z",
+          "finished_at": "2026-10-29T16:59:50.523262Z"
+        }
+      }
+    },
+    {
+      "mode": "agent-names",
+      "task": "fix-git",
+      "task_checksum": "e89f54f2fc73ac576f976c1cd09758e4c9ccf152e53c2dcd91da0c178b89abc7",
+      "agent_info": {
+        "name": "pi-nodrop",
+        "version": "1.4.0",
+        "model_info": {
+          "name": "ibrain/deepseek-v4.1-flash-al",
+          "provider": "harbor-skip-parsing"
+        }
+      },
+      "exception_type": null,
+      "rewards": {
+        "reward": 1.0
+      },
+      "task_passed": true,
+      "session_completed": true,
+      "usage": {
+        "input": 7576,
+        "output": 3441,
+        "cacheRead": 68608,
+        "cacheWrite": 0,
+        "totalTokens": 79625
+      },
+      "total_tokens": 79625,
+      "model_responses": 14,
+      "model_tool_calls": 19,
+      "executed_audit_calls": 19,
+      "first_input_tokens": 1675,
+      "business_tool_result_chars": 14953,
+      "policy_counts": {
+        "counts": 18,
+        "raw": 1
+      },
+      "rejected_calls": [],
+      "raw_events": 129,
+      "count_rows": 1383,
+      "counted_events": 16284,
+      "audit_bytes": 240021,
+      "metadata_bytes": 11170,
+      "statistics": {
+        "n_evts": 16413,
+        "drop_evts": 0,
+        "drop_unsolved": 0,
+        "drop_overflow": 0,
+        "monitor_entries": 90
+      },
+      "audit_exercised": true,
+      "harbor_native_usage_match": true,
+      "retained_event_identity_policy_match": true,
+      "timing": {
+        "environment_setup": {
+          "started_at": "2026-10-29T17:00:19.425293Z",
+          "finished_at": "2026-10-29T17:00:36.698584Z"
+        },
+        "agent_setup": {
+          "started_at": "2026-10-29T17:00:36.700333Z",
+          "finished_at": "2026-10-29T17:06:46.288696Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-29T17:06:46.292685Z",
+          "finished_at": "2026-10-29T17:09:00.665643Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-29T17:09:08.390227Z",
+          "finished_at": "2026-10-29T17:10:25.308545Z"
+        }
+      }
+    }
+  ],
+  "totals": {
+    "baseline": {
+      "total_tokens": 139989,
+      "model_responses": 28,
+      "model_tool_calls": 31,
+      "executed_audit_calls": 0,
+      "raw_events": 0,
+      "count_rows": 0,
+      "counted_events": 0,
+      "audit_bytes": 0,
+      "metadata_bytes": 0,
+      "business_tool_result_chars": 30788,
+      "passed_tasks": 3,
+      "completed_sessions": 3,
+      "rejected_calls": 0
+    },
+    "fixed-raw": {
+      "total_tokens": 129394,
+      "model_responses": 28,
+      "model_tool_calls": 32,
+      "executed_audit_calls": 31,
+      "raw_events": 71148,
+      "count_rows": 0,
+      "counted_events": 0,
+      "audit_bytes": 5802985,
+      "metadata_bytes": 26992,
+      "business_tool_result_chars": 27007,
+      "passed_tasks": 3,
+      "completed_sessions": 3,
+      "rejected_calls": 1
+    },
+    "agent-names": {
+      "total_tokens": 183397,
+      "model_responses": 33,
+      "model_tool_calls": 51,
+      "executed_audit_calls": 51,
+      "raw_events": 92779,
+      "count_rows": 2256,
+      "counted_events": 44142,
+      "audit_bytes": 8405162,
+      "metadata_bytes": 37832,
+      "business_tool_result_chars": 30400,
+      "passed_tasks": 3,
+      "completed_sessions": 3,
+      "rejected_calls": 0
+    }
+  },
+  "reused_trials": {
+    "source_batch": "harbor-official-v2-20261029",
+    "cases": [
+      "baseline--openssl-selfsigned-cert",
+      "baseline--log-summary-date-ranges",
+      "baseline--fix-git",
+      "fixed-raw--openssl-selfsigned-cert"
+    ],
+    "additional_model_requests": 0,
+    "selection_rule": "First completed valid trial per case; supplemental repeat retained separately."
+  },
+  "reused_trials_protocol": {
+    "harbor_version": "0.25.0",
+    "kernel": "6.8.0-137-generic",
+    "docker_version": "Docker version 29.1.3, build 29.1.3-0ubuntu3~24.04.2",
+    "compose_version": "Docker Compose version 2.40.3+ds1-0ubuntu1~24.04.1",
+    "pi_version": "1.4.0",
+    "model": "ibrain/deepseek-v4.1-flash-al",
+    "attempts_per_task_per_condition": 1,
+    "custom_output_presentation": false,
+    "custom_agent_loop": false,
+    "custom_verifier": false,
+    "task_user_override": false,
+    "baseline_agent_class": "harbor.agents.installed.pi:Pi",
+    "audited_agent_class": "scripts.harbor_agent:NoDropPi",
+    "apt_source_overrides": true,
+    "native_config_isolated_writable": true,
+    "agent_setup_timeout_sec": 900.0,
+    "node_download_mirror": null,
+    "source_sha256": {
+      "src/extension.mjs": "9d660310cb408e205a0d62756a043e385834bcc22469327c8c6e03f749628c80",
+      "src/client.mjs": "2d0124a5d46b543983f5848e249a12e497728c1db39e6dcf237b343f0e620bc2",
+      "src/tools.mjs": "50755f3ec5f20e42fdfc3712540daf9e35eb6c39a8e6de2dfcbb56b381eb789d",
+      "src/worker.mjs": "1db758df57975951deb26246b3a8c4c50df0faa44654a4ec8e7b86e5efb078dc",
+      "src/policy-tools.mjs": "f4d116008113b242946b974d964088f2f24026f81f5f988b1dba2ad9c3ab3242",
+      "scripts/harbor_agent.py": "ae2031fd0dfca0a0e710f1f3d68d4524f07b1fa78782e6e6dace19da9f12ad7d",
+      "build/nodrop/nodrop.ko": "c8bf09032e6e6c735c36906e5e6994603e6ba191cfd0cff6b5d9780ab642be65",
+      "build/context.node": "de85610c4413a326cb2ac133c0e210813876f420c2069a9133b759baafbab1a8",
+      "build/nodrop/monitor/monitor": "07a97acdd53351c9a910cd2844fefdb4e843d6048387efebf51cb887e6e0b745"
+    }
+  },
+  "supplemental_runs": [
+    {
+      "mode": "fixed-raw",
+      "task": "openssl-selfsigned-cert",
+      "task_checksum": "59d39baeb1d2c13995195cd5c9acf2118b527c96025af86bcd219543599e9a00",
+      "agent_info": {
+        "name": "pi-nodrop",
+        "version": "1.4.0",
+        "model_info": {
+          "name": "ibrain/deepseek-v4.1-flash-al",
+          "provider": "harbor-skip-parsing"
+        }
+      },
+      "exception_type": null,
+      "rewards": {
+        "reward": 1.0
+      },
+      "task_passed": true,
+      "session_completed": true,
+      "usage": {
+        "input": 11129,
+        "output": 7420,
+        "cacheRead": 88576,
+        "cacheWrite": 0,
+        "totalTokens": 107125
+      },
+      "total_tokens": 107125,
+      "model_responses": 18,
+      "model_tool_calls": 17,
+      "executed_audit_calls": 17,
+      "first_input_tokens": 1212,
+      "business_tool_result_chars": 10413,
+      "policy_counts": {
+        "raw": 17
+      },
+      "rejected_calls": [],
+      "raw_events": 101446,
+      "count_rows": 0,
+      "counted_events": 0,
+      "audit_bytes": 7188562,
+      "metadata_bytes": 25382,
+      "statistics": {
+        "n_evts": 101446,
+        "drop_evts": 0,
+        "drop_unsolved": 0,
+        "drop_overflow": 0,
+        "monitor_entries": 181
+      },
+      "audit_exercised": true,
+      "harbor_native_usage_match": true,
+      "retained_event_identity_policy_match": true,
+      "timing": {
+        "environment_setup": {
+          "started_at": "2026-10-29T15:57:46.066028Z",
+          "finished_at": "2026-10-29T15:58:01.906700Z"
+        },
+        "agent_setup": {
+          "started_at": "2026-10-29T15:58:01.909492Z",
+          "finished_at": "2026-10-29T16:04:12.508337Z"
+        },
+        "agent_execution": {
+          "started_at": "2026-10-29T16:04:12.511161Z",
+          "finished_at": "2026-10-29T16:08:29.588343Z"
+        },
+        "verifier": {
+          "started_at": "2026-10-29T16:08:38.568423Z",
+          "finished_at": "2026-10-29T16:09:50.189867Z"
+        }
+      }
+    }
+  ],
+  "upstream_source_verification": {
+    "revision": "509b119db0d97b141dcd9c80f4f7ab861c47c2d6",
+    "files": {
+      "harbor/agents/installed/pi.py": {
+        "installed_sha256": "e2e8c5020a23004971fe648871a18a8d01a91c551270b9871a69481a84a606bb",
+        "upstream_sha256": "a952b42f3e93a4ac44701ec8e69eab01deb500185cd0abc76f92dc34462e471d",
+        "upstream_crlf_sha256": "e2e8c5020a23004971fe648871a18a8d01a91c551270b9871a69481a84a606bb",
+        "byte_match": false,
+        "content_match_except_line_endings": true,
+        "python_ast_equal_for_lf_crlf": true
+      },
+      "harbor/job.py": {
+        "installed_sha256": "98aae285ca6e978049de218cc65c8351356c79ae47954899dddf17275c7fb680",
+        "upstream_sha256": "5693249e8d74482b391b8209e4976c5b829d8012e9af5fe963c3681b9cde1138",
+        "upstream_crlf_sha256": "98aae285ca6e978049de218cc65c8351356c79ae47954899dddf17275c7fb680",
+        "byte_match": false,
+        "content_match_except_line_endings": true,
+        "python_ast_equal_for_lf_crlf": true
+      },
+      "harbor/trial/trial.py": {
+        "installed_sha256": "ac5ad58d3486c16901545807064a3389c5b614f53ff3d30ca9cb468fc7c40322",
+        "upstream_sha256": "d6ab11b45f5d90d5cb898c5eaf1fb5aec113860c041f35034109ad464939ca96",
+        "upstream_crlf_sha256": "ac5ad58d3486c16901545807064a3389c5b614f53ff3d30ca9cb468fc7c40322",
+        "byte_match": false,
+        "content_match_except_line_endings": true,
+        "python_ast_equal_for_lf_crlf": true
+      },
+      "harbor/environments/docker/docker.py": {
+        "installed_sha256": "14e65fe972d861fcbf977652d765b49392b8492005d5e0bf31789fffec0409ea",
+        "upstream_sha256": "4f74e08941b3534864643405dd6ff43543597248539d7f5de7208ec5c2f5b511",
+        "upstream_crlf_sha256": "14e65fe972d861fcbf977652d765b49392b8492005d5e0bf31789fffec0409ea",
+        "byte_match": false,
+        "content_match_except_line_endings": true,
+        "python_ast_equal_for_lf_crlf": true
+      }
+    }
+  },
+  "environment_cleanup": {
+    "module_unloaded": true,
+    "worker_processes": [],
+    "remaining_task_containers": [],
+    "audit_mount_removed": true,
+    "device_alias_removed": true,
+    "temporary_native_config_copies_removed": true,
+    "temporary_model_config_removed": true,
+    "vm_state": "shut off"
+  },
+  "native_container_check": {
+    "uid": 0,
+    "privileged_container": false,
+    "raw_events": 369,
+    "counted_events": 16,
+    "count_rows": 9,
+    "module_unloaded": true,
+    "model_requests": 0
+  },
+  "native_config_check": {
+    "nativeSettingsRead": true,
+    "nativeCredentialRead": true,
+    "provider": "ibrain",
+    "model": "deepseek-v4.1-flash-al",
+    "maxOutputTokens": 2048,
+    "modelRequests": 0
+  }
+}

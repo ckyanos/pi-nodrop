@@ -1,0 +1,184 @@
+{
+  "model": "DeepSeek V4.1 Flash (1017)",
+  "kernel": "6.8.0-137-generic",
+  "runs": {
+    "baseline": {
+      "passed": true,
+      "business_usage": {
+        "prompt_tokens": 1852,
+        "completion_tokens": 370,
+        "total_tokens": 2222,
+        "reasoning_tokens": 16,
+        "cached_tokens": 768
+      },
+      "business_requests": 3,
+      "business_seconds": 8.839388608932495
+    },
+    "agentsight-first-capture": {
+      "passed": true,
+      "business_usage": {
+        "prompt_tokens": 1974,
+        "completion_tokens": 531,
+        "total_tokens": 2505,
+        "reasoning_tokens": 33,
+        "cached_tokens": 1024
+      },
+      "business_requests": 3,
+      "business_seconds": 15.533533811569214,
+      "observer_usage": {
+        "prompt_tokens": 2897,
+        "completion_tokens": 4000,
+        "total_tokens": 6897,
+        "completion_tokens_details": {
+          "reasoning_tokens": 3561
+        }
+      },
+      "observer_requests": 1,
+      "event_sources": {
+        "process": 516,
+        "http_parser": 4
+      },
+      "http_body_counts": {
+        "request": 2,
+        "response": 2
+      },
+      "event_bytes": 126481
+    },
+    "agentsight": {
+      "passed": true,
+      "business_usage": {
+        "prompt_tokens": 2730,
+        "completion_tokens": 507,
+        "total_tokens": 3237,
+        "reasoning_tokens": 21,
+        "cached_tokens": 1664
+      },
+      "business_requests": 4,
+      "business_seconds": 11.202943086624146,
+      "observer_usage": {
+        "prompt_tokens": 2866,
+        "completion_tokens": 2277,
+        "total_tokens": 5143,
+        "completion_tokens_details": {
+          "reasoning_tokens": 1405
+        }
+      },
+      "observer_requests": 1,
+      "event_sources": {
+        "process": 512,
+        "http_parser": 8
+      },
+      "http_body_counts": {
+        "request": 4,
+        "response": 4
+      },
+      "event_bytes": 133261
+    },
+    "sentinel": {
+      "passed": true,
+      "business_usage": {
+        "prompt_tokens": 2506,
+        "completion_tokens": 378,
+        "total_tokens": 2884,
+        "reasoning_tokens": 22,
+        "cached_tokens": 1664
+      },
+      "business_requests": 4,
+      "business_seconds": 446.5716254711151,
+      "monitor_levels": {
+        "debug": 645,
+        "info": 39,
+        "error": 5
+      },
+      "cache_hit_messages": 118,
+      "context_summary_messages": 3
+    }
+  },
+  "ledger_totals_including_retries": {
+    "agentsight-observer": {
+      "requests": 2,
+      "statuses": {
+        "200": 2
+      },
+      "usage": {
+        "prompt_tokens": 5763,
+        "completion_tokens": 6277,
+        "total_tokens": 12040,
+        "reasoning_tokens": 4966,
+        "cached_tokens": 0
+      },
+      "seconds": 45.58747696876526
+    },
+    "business-agentsight": {
+      "requests": 7,
+      "statuses": {
+        "200": 7
+      },
+      "usage": {
+        "prompt_tokens": 4704,
+        "completion_tokens": 1038,
+        "total_tokens": 5742,
+        "reasoning_tokens": 54,
+        "cached_tokens": 2688
+      },
+      "seconds": 14.149739027023315
+    },
+    "business-baseline": {
+      "requests": 3,
+      "statuses": {
+        "200": 3
+      },
+      "usage": {
+        "prompt_tokens": 1852,
+        "completion_tokens": 370,
+        "total_tokens": 2222,
+        "reasoning_tokens": 16,
+        "cached_tokens": 768
+      },
+      "seconds": 5.41540265083313
+    },
+    "business-sentinel": {
+      "requests": 4,
+      "statuses": {
+        "200": 4
+      },
+      "usage": {
+        "prompt_tokens": 2506,
+        "completion_tokens": 378,
+        "total_tokens": 2884,
+        "reasoning_tokens": 22,
+        "cached_tokens": 1664
+      },
+      "seconds": 6.633296251296997
+    },
+    "sentinel-context": {
+      "requests": 3,
+      "statuses": {
+        "200": 3
+      },
+      "usage": {
+        "prompt_tokens": 3564,
+        "completion_tokens": 460,
+        "total_tokens": 4024,
+        "reasoning_tokens": 240,
+        "cached_tokens": 0
+      },
+      "seconds": 6.005333662033081
+    },
+    "sentinel-security": {
+      "requests": 24,
+      "statuses": {
+        "502": 9,
+        "200": 15
+      },
+      "usage": {
+        "reasoning_tokens": 28961,
+        "cached_tokens": 4736,
+        "prompt_tokens": 20167,
+        "completion_tokens": 31726,
+        "total_tokens": 51893
+      },
+      "seconds": 462.55627155303955
+    }
+  }
+}

@@ -11,9 +11,9 @@ HEADER = struct.Struct('<QIHHIIIQII')
 MAGIC = 0x50494E44
 
 def schema():
-    header = (ROOT / 'vendor/nodrop/include/events.h').read_text()
+    header = (ROOT / 'vendor/nodrop/include/events.h').read_text(encoding='utf-8')
     ids = {name: int(value) for name, value in re.findall(r'\b(NODE_\w+)\s*=\s*(\d+)', header)}
-    table = (ROOT / 'vendor/nodrop/kmodule/tables/events_table.c').read_text()
+    table = (ROOT / 'vendor/nodrop/kmodule/tables/events_table.c').read_text(encoding='utf-8')
     result = {}
     for line in table.splitlines():
         match = re.search(r'\[(NODE_\w+)\]\s*=\s*\{"([^"]+)"', line)
@@ -54,7 +54,7 @@ def decode_file(path, schemas):
 
 def decode(root):
     schemas = schema()
-    calls = [json.loads(line) for line in (root / 'pi/calls.jsonl').read_text().splitlines()]
+    calls = [json.loads(line) for line in (root / 'pi/calls.jsonl').read_text(encoding='utf-8').splitlines()]
     identities = {c['call_ref']: c for c in calls if c['kind'] == 'begin'}
     events = []
     for path in sorted((root / 'audit').glob('*.buf')):
@@ -64,14 +64,14 @@ def decode(root):
             events.append(event)
     counts = []
     for path in sorted((root / 'audit').glob('*.counts.jsonl')):
-        for line in path.read_text().splitlines():
+        for line in path.read_text(encoding='utf-8').splitlines():
             item = json.loads(line)
             context = identities.get(item['call_ref'])
             item['tool_call_id'] = context['tool_call_id'] if context else None
             counts.append(item)
-    with (root / 'events.jsonl').open('w') as out:
+    with (root / 'events.jsonl').open('w', encoding='utf-8') as out:
         for event in events: out.write(json.dumps(event) + '\n')
-    (root / 'counts.json').write_text(json.dumps(counts, indent=2) + '\n')
+    (root / 'counts.json').write_text(json.dumps(counts, indent=2) + '\n', encoding='utf-8')
     return calls, events, counts
 
 if __name__ == '__main__':

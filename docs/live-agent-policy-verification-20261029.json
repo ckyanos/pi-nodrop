@@ -1,0 +1,335 @@
+{
+  "runs": [
+    {
+      "task": "fix-git",
+      "requests": 15,
+      "model_tool_requests": 21,
+      "executed_calls": 18,
+      "policies": {
+        "raw": 18
+      },
+      "rejected_calls": [
+        {
+          "tool": "bash",
+          "requested_policy": null,
+          "missing_policy": true,
+          "validation_error": "Validation failed for tool \"bash\":\n  - audit_policy: must have required properties audit_policy"
+        },
+        {
+          "tool": "bash",
+          "requested_policy": null,
+          "missing_policy": true,
+          "validation_error": "Validation failed for tool \"bash\":\n  - audit_policy: must have required properties audit_policy"
+        },
+        {
+          "tool": "read",
+          "requested_policy": null,
+          "missing_policy": true,
+          "validation_error": "Validation failed for tool \"read\":\n  - audit_policy: must have required properties audit_policy"
+        }
+      ],
+      "request_execution_output_match": true,
+      "automatic_retry_events": 0,
+      "calls": [
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1660,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 3651,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 964,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1765,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1217,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1534,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 790,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 905,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 840,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 919,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1286,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 425,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 912,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1865,
+          "counted_events": 0
+        },
+        {
+          "tool": "read",
+          "policy": "raw",
+          "raw_events": 165,
+          "counted_events": 0
+        },
+        {
+          "tool": "write",
+          "policy": "raw",
+          "raw_events": 111,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 2760,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 834,
+          "counted_events": 0
+        }
+      ],
+      "first_request_comparison": {
+        "payload_equal_after_removing_policy_schema": true,
+        "messages_equal": true,
+        "added_payload_bytes": 2204,
+        "fixed_raw_input_tokens": 1452,
+        "agent_policy_input_tokens": 1918
+      }
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "requests": 9,
+      "model_tool_requests": 12,
+      "executed_calls": 10,
+      "policies": {
+        "counts": 10
+      },
+      "rejected_calls": [
+        {
+          "tool": "bash",
+          "requested_policy": null,
+          "missing_policy": true,
+          "validation_error": "Validation failed for tool \"bash\":\n  - audit_policy: must have required properties audit_policy"
+        },
+        {
+          "tool": "bash",
+          "requested_policy": null,
+          "missing_policy": true,
+          "validation_error": "Validation failed for tool \"bash\":\n  - audit_policy: must have required properties audit_policy"
+        }
+      ],
+      "request_execution_output_match": true,
+      "automatic_retry_events": 0,
+      "calls": [
+        {
+          "tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 3114
+        },
+        {
+          "tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1747
+        },
+        {
+          "tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1892
+        },
+        {
+          "tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 2554
+        },
+        {
+          "tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 2708
+        },
+        {
+          "tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 32946
+        },
+        {
+          "tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 853
+        },
+        {
+          "tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 4576
+        },
+        {
+          "tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 9222
+        },
+        {
+          "tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 2809
+        }
+      ],
+      "first_request_comparison": {
+        "payload_equal_after_removing_policy_schema": true,
+        "messages_equal": true,
+        "added_payload_bytes": 2204,
+        "fixed_raw_input_tokens": 1852,
+        "agent_policy_input_tokens": 2318
+      }
+    },
+    {
+      "task": "openssl-selfsigned-cert",
+      "requests": 11,
+      "model_tool_requests": 11,
+      "executed_calls": 10,
+      "policies": {
+        "counts": 2,
+        "raw": 8
+      },
+      "rejected_calls": [
+        {
+          "tool": "write",
+          "requested_policy": null,
+          "missing_policy": true,
+          "validation_error": "Validation failed for tool \"write\":\n  - audit_policy: must have required properties audit_policy"
+        }
+      ],
+      "request_execution_output_match": true,
+      "automatic_retry_events": 0,
+      "calls": [
+        {
+          "tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 2332
+        },
+        {
+          "tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 3994
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1478,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 977,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1148,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1100,
+          "counted_events": 0
+        },
+        {
+          "tool": "write",
+          "policy": "raw",
+          "raw_events": 131,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 5640,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 1867,
+          "counted_events": 0
+        },
+        {
+          "tool": "bash",
+          "policy": "raw",
+          "raw_events": 2288,
+          "counted_events": 0
+        }
+      ],
+      "first_request_comparison": {
+        "payload_equal_after_removing_policy_schema": true,
+        "messages_equal": true,
+        "added_payload_bytes": 2204,
+        "fixed_raw_input_tokens": 1787,
+        "agent_policy_input_tokens": 2253
+      }
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "dataset_manifest": "terminal-bench.json",
+  "policies": "token-audit-policies.json",
+  "execution": "tool-replay",
+  "api_requests_per_trial": 0,
+  "replicates_per_condition": 1,
+  "conditions": {
+    "fixed-raw": "Keep NoDrop and call identity; bypass tool-policy selection and retain raw events",
+    "configured": "Keep NoDrop and call identity; select raw/counts by tool"
+  },
+  "tasks": [
+    {
+      "name": "openssl-selfsigned-cert",
+      "source_trial": "openssl-selfsigned-cert-on",
+      "transcript_sha256": "8f4996144208220758ff087d3a545c8c186188774c8b0833dc48ee8e553ab4a9",
+      "published_replay_file": "replay/openssl-selfsigned-cert.json",
+      "published_replay_sha256": "601a84ad114c232e1000b68d0457aa7f157f35fa2516efbd4e490ed08cb23fa1"
+    },
+    {
+      "name": "log-summary-date-ranges",
+      "source_trial": "log-summary-date-ranges-on",
+      "transcript_sha256": "a06bb96c782272fd56c02f97cdfe43b99154f9425b2d7cdac45514efed61fba0",
+      "published_replay_file": "replay/log-summary-date-ranges.json",
+      "published_replay_sha256": "8725781751979b77bfc8db3e60eda6709acdf70a0f38be3575e49b9e1bd9f9ba"
+    },
+    {
+      "name": "fix-git",
+      "source_trial": "fix-git-on",
+      "transcript_sha256": "82286fc451b2f96b568c1af149b06637593da9cf807ce7513ac5f40714086534",
+      "published_replay_file": "replay/fix-git.json",
+      "published_replay_sha256": "6e85a090fb23463c9a85ff6119392189539bf06df4b3967640d6d9736285a1d5"
+    }
+  ],
+  "order": [
+    {
+      "task": "openssl-selfsigned-cert",
+      "control_mode": "fixed-raw"
+    },
+    {
+      "task": "openssl-selfsigned-cert",
+      "control_mode": "configured"
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "control_mode": "configured"
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "control_mode": "fixed-raw"
+    },
+    {
+      "task": "fix-git",
+      "control_mode": "fixed-raw"
+    },
+    {
+      "task": "fix-git",
+      "control_mode": "configured"
+    }
+  ]
+}

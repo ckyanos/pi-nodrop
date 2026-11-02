@@ -1,0 +1,390 @@
+{
+  "runs": [
+    {
+      "task": "fix-git",
+      "model_tool_requests": 19,
+      "executed_calls": 19,
+      "final_result_recorded": true,
+      "agent_exit_code": 0,
+      "message_source": "transcript.json",
+      "recorded_requests": 14,
+      "recorded_total_tokens": 107623,
+      "policies": {
+        "counts": 15,
+        "raw": 4
+      },
+      "rejected_calls": [],
+      "request_execution_output_match": true,
+      "automatic_retry_events": 0,
+      "calls": [
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 2209
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1252
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1446
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1118
+        },
+        {
+          "model_tool": "read_raw",
+          "business_tool": "read",
+          "policy": "raw",
+          "raw_events": 180,
+          "counted_events": 0
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 848
+        },
+        {
+          "model_tool": "read_raw",
+          "business_tool": "read",
+          "policy": "raw",
+          "raw_events": 140,
+          "counted_events": 0
+        },
+        {
+          "model_tool": "read_raw",
+          "business_tool": "read",
+          "policy": "raw",
+          "raw_events": 172,
+          "counted_events": 0
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1004
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1011
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 3204
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 893
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1183
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1898
+        },
+        {
+          "model_tool": "read_raw",
+          "business_tool": "read",
+          "policy": "raw",
+          "raw_events": 132,
+          "counted_events": 0
+        },
+        {
+          "model_tool": "write_counts",
+          "business_tool": "write",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 109
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1310
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 2254
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1543
+        }
+      ],
+      "first_request_comparison": {
+        "business_parameters_reused": true,
+        "model_options_equal": true,
+        "user_messages_equal": true,
+        "tool_count": 14,
+        "baseline_tool_count": 7,
+        "tools_json_bytes": 10942,
+        "baseline_tools_json_bytes": 5104,
+        "added_payload_bytes": 6607,
+        "fixed_raw_input_tokens": 1484,
+        "policy_names_input_tokens": 2866
+      }
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "model_tool_requests": 7,
+      "executed_calls": 7,
+      "final_result_recorded": true,
+      "agent_exit_code": 0,
+      "message_source": "transcript.json",
+      "recorded_requests": 6,
+      "recorded_total_tokens": 34822,
+      "policies": {
+        "counts": 7
+      },
+      "rejected_calls": [],
+      "request_execution_output_match": true,
+      "automatic_retry_events": 0,
+      "calls": [
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1481
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1055
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 2359
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 16485
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 3638
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 2742
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 4228
+        }
+      ],
+      "first_request_comparison": {
+        "business_parameters_reused": true,
+        "model_options_equal": true,
+        "user_messages_equal": true,
+        "tool_count": 14,
+        "baseline_tool_count": 7,
+        "tools_json_bytes": 10942,
+        "baseline_tools_json_bytes": 5104,
+        "added_payload_bytes": 6607,
+        "fixed_raw_input_tokens": 1884,
+        "policy_names_input_tokens": 3266
+      }
+    },
+    {
+      "task": "openssl-selfsigned-cert",
+      "model_tool_requests": 16,
+      "executed_calls": 16,
+      "final_result_recorded": false,
+      "agent_exit_code": -11,
+      "message_source": "completed turn_end records in agent-events.jsonl",
+      "recorded_requests": 13,
+      "recorded_total_tokens": 82773,
+      "policies": {
+        "counts": 14,
+        "raw": 2
+      },
+      "rejected_calls": [],
+      "request_execution_output_match": true,
+      "automatic_retry_events": 0,
+      "calls": [
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1217
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 2723
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1858
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1945
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 995
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1421
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 881
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 2666
+        },
+        {
+          "model_tool": "write_raw",
+          "business_tool": "write",
+          "policy": "raw",
+          "raw_events": 136,
+          "counted_events": 0
+        },
+        {
+          "model_tool": "edit_raw",
+          "business_tool": "edit",
+          "policy": "raw",
+          "raw_events": 212,
+          "counted_events": 0
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 3413
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 8289
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 3247
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 645
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 4717
+        },
+        {
+          "model_tool": "bash_counts",
+          "business_tool": "bash",
+          "policy": "counts",
+          "raw_events": 0,
+          "counted_events": 1175
+        }
+      ],
+      "first_request_comparison": {
+        "business_parameters_reused": true,
+        "model_options_equal": true,
+        "user_messages_equal": true,
+        "tool_count": 14,
+        "baseline_tool_count": 7,
+        "tools_json_bytes": 10942,
+        "baseline_tools_json_bytes": 5104,
+        "added_payload_bytes": 6607,
+        "fixed_raw_input_tokens": 1819,
+        "policy_names_input_tokens": 3201
+      }
+    }
+  ]
+}

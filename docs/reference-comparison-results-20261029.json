@@ -1,0 +1,855 @@
+{
+  "design": {
+    "replicates_per_task_per_mode": 1,
+    "execution": "independent live-model runs",
+    "local_token_turn_tool_limits": null
+  },
+  "pairs": [
+    {
+      "task": "fix-git",
+      "runs": {
+        "baseline": {
+          "mode": "baseline",
+          "task": "fix-git",
+          "task_passed": true,
+          "tests": {
+            "tests": 2,
+            "passed": 2,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793267380.9904265,
+            "stop": 1793267382.3780396
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "6c216d38d66c187905b6156e80d02d678fc76c6f98a6f6e0c92792f65939b9e6",
+          "total_tokens": 56134,
+          "usage": {
+            "input": 6360,
+            "output": 2670,
+            "cacheRead": 47104,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 1484,
+          "requests": 12,
+          "model_tool_requests": 13,
+          "assistant_thinking_chars": 3332,
+          "request_message_json_bytes_by_role": {
+            "developer": 34944,
+            "user": 2568,
+            "assistant": 49269,
+            "tool": 102656
+          },
+          "tool_result_text_chars": 12411,
+          "original_tool_result_text_chars": 16633,
+          "largest_tool_result_text_chars": 2105,
+          "tool_counts": {
+            "bash": 9,
+            "read": 4
+          },
+          "model_policy_choices": null,
+          "shared_guideline": null,
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 1,
+          "stored_output_bytes": 5494,
+          "output_page_requests": 3,
+          "audit_calls": 0,
+          "raw_events": 0,
+          "histogram_events": 0,
+          "raw_bytes": 0,
+          "counts_bytes": 0,
+          "audit_bytes": 0,
+          "metadata_bytes": 0,
+          "agent_elapsed_sec": 41.262,
+          "drop_unsolved": 0
+        },
+        "fixed-raw": {
+          "mode": "fixed-raw",
+          "task": "fix-git",
+          "task_passed": true,
+          "tests": {
+            "tests": 2,
+            "passed": 2,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793267862.8838658,
+            "stop": 1793267863.971051
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "6c216d38d66c187905b6156e80d02d678fc76c6f98a6f6e0c92792f65939b9e6",
+          "total_tokens": 46370,
+          "usage": {
+            "input": 6160,
+            "output": 2578,
+            "cacheRead": 37632,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 1484,
+          "requests": 10,
+          "model_tool_requests": 13,
+          "assistant_thinking_chars": 2634,
+          "request_message_json_bytes_by_role": {
+            "developer": 29120,
+            "user": 2140,
+            "assistant": 42255,
+            "tool": 79809
+          },
+          "tool_result_text_chars": 11411,
+          "original_tool_result_text_chars": 15633,
+          "largest_tool_result_text_chars": 3485,
+          "tool_counts": {
+            "bash": 13
+          },
+          "model_policy_choices": null,
+          "shared_guideline": null,
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 1,
+          "stored_output_bytes": 5494,
+          "output_page_requests": 0,
+          "audit_calls": 13,
+          "raw_events": 16349,
+          "histogram_events": 0,
+          "raw_bytes": 1286399,
+          "counts_bytes": 0,
+          "audit_bytes": 1286399,
+          "metadata_bytes": 7673,
+          "agent_elapsed_sec": 50.128,
+          "drop_unsolved": 0
+        },
+        "agent": {
+          "mode": "agent",
+          "task": "fix-git",
+          "task_passed": true,
+          "tests": {
+            "tests": 2,
+            "passed": 2,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793268461.5847487,
+            "stop": 1793268463.0449839
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "6c216d38d66c187905b6156e80d02d678fc76c6f98a6f6e0c92792f65939b9e6",
+          "total_tokens": 131827,
+          "usage": {
+            "input": 12434,
+            "output": 7777,
+            "cacheRead": 111616,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 1642,
+          "requests": 16,
+          "model_tool_requests": 22,
+          "assistant_thinking_chars": 16178,
+          "request_message_json_bytes_by_role": {
+            "developer": 48960,
+            "user": 3424,
+            "assistant": 223524,
+            "tool": 234316
+          },
+          "tool_result_text_chars": 23366,
+          "original_tool_result_text_chars": 27517,
+          "largest_tool_result_text_chars": 3835,
+          "tool_counts": {
+            "bash": 19,
+            "read": 2,
+            "write": 1
+          },
+          "model_policy_choices": {
+            "missing": 3,
+            "raw": 19
+          },
+          "shared_guideline": "Include audit_policy in every tool call: raw keeps syscall arguments and order; counts keeps event-type totals and time bounds. Choose per call.",
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 1,
+          "stored_output_bytes": 5423,
+          "output_page_requests": 2,
+          "audit_calls": 19,
+          "raw_events": 23397,
+          "histogram_events": 0,
+          "raw_bytes": 1846926,
+          "counts_bytes": 0,
+          "audit_bytes": 1846926,
+          "metadata_bytes": 13007,
+          "agent_elapsed_sec": 82.559,
+          "drop_unsolved": 0
+        }
+      },
+      "first_request_checks": {
+        "baseline_equals_fixed_raw": true,
+        "agent_equals_baseline_after_removing_policy_additions": true,
+        "policy_payload_bytes": 665,
+        "policy_input_tokens": 158
+      }
+    },
+    {
+      "task": "log-summary-date-ranges",
+      "runs": {
+        "baseline": {
+          "mode": "baseline",
+          "task": "log-summary-date-ranges",
+          "task_passed": true,
+          "tests": {
+            "tests": 2,
+            "passed": 2,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793267249.2825456,
+            "stop": 1793267250.3783758
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "d43bec1c9c66bc96037c93e1192909bfdf53a2927e54d9f3c88e5ce2499c0e98",
+          "total_tokens": 50247,
+          "usage": {
+            "input": 7472,
+            "output": 2839,
+            "cacheRead": 39936,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 1884,
+          "requests": 8,
+          "model_tool_requests": 10,
+          "assistant_thinking_chars": 1362,
+          "request_message_json_bytes_by_role": {
+            "developer": 23184,
+            "user": 12248,
+            "assistant": 29121,
+            "tool": 58897
+          },
+          "tool_result_text_chars": 8979,
+          "original_tool_result_text_chars": 8979,
+          "largest_tool_result_text_chars": 2976,
+          "tool_counts": {
+            "bash": 10
+          },
+          "model_policy_choices": null,
+          "shared_guideline": null,
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 0,
+          "stored_output_bytes": 0,
+          "output_page_requests": 0,
+          "audit_calls": 0,
+          "raw_events": 0,
+          "histogram_events": 0,
+          "raw_bytes": 0,
+          "counts_bytes": 0,
+          "audit_bytes": 0,
+          "metadata_bytes": 0,
+          "agent_elapsed_sec": 67.34,
+          "drop_unsolved": 0
+        },
+        "fixed-raw": {
+          "mode": "fixed-raw",
+          "task": "log-summary-date-ranges",
+          "task_passed": true,
+          "tests": {
+            "tests": 2,
+            "passed": 2,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793267739.5617483,
+            "stop": 1793267740.8385725
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "d43bec1c9c66bc96037c93e1192909bfdf53a2927e54d9f3c88e5ce2499c0e98",
+          "total_tokens": 15471,
+          "usage": {
+            "input": 2521,
+            "output": 1174,
+            "cacheRead": 11776,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 1884,
+          "requests": 5,
+          "model_tool_requests": 4,
+          "assistant_thinking_chars": 923,
+          "request_message_json_bytes_by_role": {
+            "developer": 14490,
+            "user": 7655,
+            "assistant": 5861,
+            "tool": 8783
+          },
+          "tool_result_text_chars": 2585,
+          "original_tool_result_text_chars": 13924,
+          "largest_tool_result_text_chars": 1273,
+          "tool_counts": {
+            "bash": 4
+          },
+          "model_policy_choices": null,
+          "shared_guideline": null,
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 1,
+          "stored_output_bytes": 12612,
+          "output_page_requests": 0,
+          "audit_calls": 4,
+          "raw_events": 13118,
+          "histogram_events": 0,
+          "raw_bytes": 1110953,
+          "counts_bytes": 0,
+          "audit_bytes": 1110953,
+          "metadata_bytes": 3415,
+          "agent_elapsed_sec": 47.792,
+          "drop_unsolved": 238
+        },
+        "agent": {
+          "mode": "agent",
+          "task": "log-summary-date-ranges",
+          "task_passed": true,
+          "tests": {
+            "tests": 2,
+            "passed": 2,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793268305.27671,
+            "stop": 1793268307.0244884
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "d43bec1c9c66bc96037c93e1192909bfdf53a2927e54d9f3c88e5ce2499c0e98",
+          "total_tokens": 30308,
+          "usage": {
+            "input": 4589,
+            "output": 2167,
+            "cacheRead": 23552,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 2042,
+          "requests": 8,
+          "model_tool_requests": 7,
+          "assistant_thinking_chars": 1918,
+          "request_message_json_bytes_by_role": {
+            "developer": 24368,
+            "user": 12248,
+            "assistant": 18709,
+            "tool": 21057
+          },
+          "tool_result_text_chars": 3889,
+          "original_tool_result_text_chars": 17475,
+          "largest_tool_result_text_chars": 1661,
+          "tool_counts": {
+            "bash": 7
+          },
+          "model_policy_choices": {
+            "missing": 1,
+            "raw": 6
+          },
+          "shared_guideline": "Include audit_policy in every tool call: raw keeps syscall arguments and order; counts keeps event-type totals and time bounds. Choose per call.",
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 1,
+          "stored_output_bytes": 14859,
+          "output_page_requests": 0,
+          "audit_calls": 6,
+          "raw_events": 51354,
+          "histogram_events": 0,
+          "raw_bytes": 4681375,
+          "counts_bytes": 0,
+          "audit_bytes": 4681375,
+          "metadata_bytes": 5052,
+          "agent_elapsed_sec": 87.997,
+          "drop_unsolved": 584
+        }
+      },
+      "first_request_checks": {
+        "baseline_equals_fixed_raw": true,
+        "agent_equals_baseline_after_removing_policy_additions": true,
+        "policy_payload_bytes": 665,
+        "policy_input_tokens": 158
+      }
+    },
+    {
+      "task": "openssl-selfsigned-cert",
+      "runs": {
+        "baseline": {
+          "mode": "baseline",
+          "task": "openssl-selfsigned-cert",
+          "task_passed": true,
+          "tests": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793267119.327171,
+            "stop": 1793267126.7302353
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "df64deb1b3a5953a0c5ef8442e3e73856b7733f6fe03614d9cb3a7e4b02b4edf",
+          "total_tokens": 105254,
+          "usage": {
+            "input": 10351,
+            "output": 5815,
+            "cacheRead": 89088,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 1819,
+          "requests": 19,
+          "model_tool_requests": 18,
+          "assistant_thinking_chars": 3326,
+          "request_message_json_bytes_by_role": {
+            "developer": 55062,
+            "user": 29013,
+            "assistant": 179155,
+            "tool": 78076
+          },
+          "tool_result_text_chars": 6612,
+          "original_tool_result_text_chars": 6612,
+          "largest_tool_result_text_chars": 1406,
+          "tool_counts": {
+            "bash": 16,
+            "write": 1,
+            "edit": 1
+          },
+          "model_policy_choices": null,
+          "shared_guideline": null,
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 0,
+          "stored_output_bytes": 0,
+          "output_page_requests": 0,
+          "audit_calls": 0,
+          "raw_events": 0,
+          "histogram_events": 0,
+          "raw_bytes": 0,
+          "counts_bytes": 0,
+          "audit_bytes": 0,
+          "metadata_bytes": 0,
+          "agent_elapsed_sec": 112.12,
+          "drop_unsolved": 0
+        },
+        "fixed-raw": {
+          "mode": "fixed-raw",
+          "task": "openssl-selfsigned-cert",
+          "task_passed": true,
+          "tests": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793267585.760907,
+            "stop": 1793267593.71782
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "df64deb1b3a5953a0c5ef8442e3e73856b7733f6fe03614d9cb3a7e4b02b4edf",
+          "total_tokens": 52253,
+          "usage": {
+            "input": 6850,
+            "output": 4955,
+            "cacheRead": 40448,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 1819,
+          "requests": 11,
+          "model_tool_requests": 17,
+          "assistant_thinking_chars": 2643,
+          "request_message_json_bytes_by_role": {
+            "developer": 31878,
+            "user": 16797,
+            "assistant": 84558,
+            "tool": 28972
+          },
+          "tool_result_text_chars": 5222,
+          "original_tool_result_text_chars": 5222,
+          "largest_tool_result_text_chars": 1174,
+          "tool_counts": {
+            "bash": 16,
+            "write": 1
+          },
+          "model_policy_choices": null,
+          "shared_guideline": null,
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 0,
+          "stored_output_bytes": 0,
+          "output_page_requests": 0,
+          "audit_calls": 17,
+          "raw_events": 56936,
+          "histogram_events": 0,
+          "raw_bytes": 4371413,
+          "counts_bytes": 0,
+          "audit_bytes": 4371413,
+          "metadata_bytes": 17791,
+          "agent_elapsed_sec": 136.678,
+          "drop_unsolved": 338
+        },
+        "agent": {
+          "mode": "agent",
+          "task": "openssl-selfsigned-cert",
+          "task_passed": true,
+          "tests": {
+            "tests": 6,
+            "passed": 6,
+            "failed": 0,
+            "skipped": 0,
+            "pending": 0,
+            "other": 0,
+            "start": 1793268075.599148,
+            "stop": 1793268089.471847
+          },
+          "cleanup": {
+            "module_unloaded": true,
+            "kernel_errors": false
+          },
+          "provider": "ibrain",
+          "model": "deepseek-v4.1-flash-al",
+          "api": "openai-completions",
+          "max_output_tokens": 2048,
+          "limits": {
+            "turns": null,
+            "tools": null,
+            "tokens": null,
+            "timeoutSec": 900
+          },
+          "stop": null,
+          "error": null,
+          "instruction_sha256": "df64deb1b3a5953a0c5ef8442e3e73856b7733f6fe03614d9cb3a7e4b02b4edf",
+          "total_tokens": 81190,
+          "usage": {
+            "input": 11491,
+            "output": 7491,
+            "cacheRead": 62208,
+            "cacheWrite": 0
+          },
+          "first_input_tokens": 1977,
+          "requests": 13,
+          "model_tool_requests": 17,
+          "assistant_thinking_chars": 3797,
+          "request_message_json_bytes_by_role": {
+            "developer": 39598,
+            "user": 19851,
+            "assistant": 165654,
+            "tool": 38774
+          },
+          "tool_result_text_chars": 5473,
+          "original_tool_result_text_chars": 5473,
+          "largest_tool_result_text_chars": 996,
+          "tool_counts": {
+            "bash": 15,
+            "write": 2
+          },
+          "model_policy_choices": {
+            "missing": 3,
+            "raw": 14
+          },
+          "shared_guideline": "Include audit_policy in every tool call: raw keeps syscall arguments and order; counts keeps event-type totals and time bounds. Choose per call.",
+          "output_mode": "reference",
+          "output_inline_bytes": 4096,
+          "stored_outputs": 0,
+          "stored_output_bytes": 0,
+          "output_page_requests": 0,
+          "audit_calls": 14,
+          "raw_events": 41712,
+          "histogram_events": 0,
+          "raw_bytes": 2980907,
+          "counts_bytes": 0,
+          "audit_bytes": 2980907,
+          "metadata_bytes": 17373,
+          "agent_elapsed_sec": 148.957,
+          "drop_unsolved": 0
+        }
+      },
+      "first_request_checks": {
+        "baseline_equals_fixed_raw": true,
+        "agent_equals_baseline_after_removing_policy_additions": true,
+        "policy_payload_bytes": 665,
+        "policy_input_tokens": 158
+      }
+    }
+  ],
+  "totals": {
+    "baseline": {
+      "total_tokens": 211635,
+      "requests": 39,
+      "model_tool_requests": 41,
+      "audit_calls": 0,
+      "raw_events": 0,
+      "histogram_events": 0,
+      "raw_bytes": 0,
+      "counts_bytes": 0,
+      "audit_bytes": 0,
+      "metadata_bytes": 0,
+      "agent_elapsed_sec": 220.722,
+      "drop_unsolved": 0,
+      "tool_result_text_chars": 28002,
+      "stored_outputs": 1,
+      "stored_output_bytes": 5494,
+      "output_page_requests": 3,
+      "original_tool_result_text_chars": 32224,
+      "passed_tasks": 3,
+      "usage": {
+        "input": 24183,
+        "output": 11324,
+        "cacheRead": 176128,
+        "cacheWrite": 0
+      }
+    },
+    "fixed-raw": {
+      "total_tokens": 114094,
+      "requests": 26,
+      "model_tool_requests": 34,
+      "audit_calls": 34,
+      "raw_events": 86403,
+      "histogram_events": 0,
+      "raw_bytes": 6768765,
+      "counts_bytes": 0,
+      "audit_bytes": 6768765,
+      "metadata_bytes": 28879,
+      "agent_elapsed_sec": 234.598,
+      "drop_unsolved": 576,
+      "tool_result_text_chars": 19218,
+      "stored_outputs": 2,
+      "stored_output_bytes": 18106,
+      "output_page_requests": 0,
+      "original_tool_result_text_chars": 34779,
+      "passed_tasks": 3,
+      "usage": {
+        "input": 15531,
+        "output": 8707,
+        "cacheRead": 89856,
+        "cacheWrite": 0
+      }
+    },
+    "agent": {
+      "total_tokens": 243325,
+      "requests": 37,
+      "model_tool_requests": 46,
+      "audit_calls": 39,
+      "raw_events": 116463,
+      "histogram_events": 0,
+      "raw_bytes": 9509208,
+      "counts_bytes": 0,
+      "audit_bytes": 9509208,
+      "metadata_bytes": 35432,
+      "agent_elapsed_sec": 319.513,
+      "drop_unsolved": 584,
+      "tool_result_text_chars": 32728,
+      "stored_outputs": 2,
+      "stored_output_bytes": 20282,
+      "output_page_requests": 2,
+      "original_tool_result_text_chars": 50465,
+      "passed_tasks": 3,
+      "usage": {
+        "input": 28514,
+        "output": 17435,
+        "cacheRead": 197376,
+        "cacheWrite": 0
+      }
+    }
+  },
+  "comparisons": {
+    "fixed-raw_vs_baseline": {
+      "token_delta": -97541,
+      "token_delta_percent": -46.08925744796466
+    },
+    "agent_vs_baseline": {
+      "token_delta": 31690,
+      "token_delta_percent": 14.97389373213316
+    },
+    "agent_vs_fixed-raw": {
+      "token_delta": 129231,
+      "token_delta_percent": 113.26713061160096
+    }
+  },
+  "runtime_sha256": {
+    "baseline": {
+      "build/nodrop/nodrop.ko": "8193e5c90382e1c2c02821fac2934105f4e1e74935b52dd8a8c38e5e5c5579d5",
+      "build/nodrop/monitor/monitor": "c9da7e700dd55bf727b468b82d4d10998058805bc36a6eebb534ab295af18b75",
+      "build/context.node": "70bd8c69a7166720fa6bddb3fdd9c5cb9119c2ea240e6ab8ffbc6da851e28dc7",
+      "src/client.mjs": "8ab81bb3772dbd0633fb854ed6c9bd25a4a60687492b95ea2611255f43e4a892",
+      "src/worker.mjs": "1db758df57975951deb26246b3a8c4c50df0faa44654a4ec8e7b86e5efb078dc",
+      "src/extension.mjs": "fe144ff15768142fff414f8a44f77d6db0c8bb2beb2793c8aaccbb5d26ed9ebb",
+      "src/tools.mjs": "3075d7afbf5aaf2daf350848fc991b2c349693e10d7bf55e0dc54fe3fe496c69",
+      "src/output-store.mjs": "ad8b0c72168cf783c2cf0ab119ab658a4411b244b6fa7d9b2aba0fa434d19c26",
+      "src/output-extension.mjs": "e925e04a94d756bbf46d1b146a19a22ce450c18f55f52d4e37bbd5ef8ed192cb",
+      "scripts/run_terminal_bench.py": "62966498f44c10687ebf065ce8f6727e126b05bd5245bfca08a69b827abfaa89",
+      "scripts/terminal_bench.mjs": "88c6b8032f56005514461d74a2e8dffce267f3a6d0fce4493e697f4f2945123b"
+    },
+    "fixed-raw": {
+      "build/nodrop/nodrop.ko": "8193e5c90382e1c2c02821fac2934105f4e1e74935b52dd8a8c38e5e5c5579d5",
+      "build/nodrop/monitor/monitor": "c9da7e700dd55bf727b468b82d4d10998058805bc36a6eebb534ab295af18b75",
+      "build/context.node": "70bd8c69a7166720fa6bddb3fdd9c5cb9119c2ea240e6ab8ffbc6da851e28dc7",
+      "src/client.mjs": "8ab81bb3772dbd0633fb854ed6c9bd25a4a60687492b95ea2611255f43e4a892",
+      "src/worker.mjs": "1db758df57975951deb26246b3a8c4c50df0faa44654a4ec8e7b86e5efb078dc",
+      "src/extension.mjs": "fe144ff15768142fff414f8a44f77d6db0c8bb2beb2793c8aaccbb5d26ed9ebb",
+      "src/tools.mjs": "3075d7afbf5aaf2daf350848fc991b2c349693e10d7bf55e0dc54fe3fe496c69",
+      "src/output-store.mjs": "ad8b0c72168cf783c2cf0ab119ab658a4411b244b6fa7d9b2aba0fa434d19c26",
+      "src/output-extension.mjs": "e925e04a94d756bbf46d1b146a19a22ce450c18f55f52d4e37bbd5ef8ed192cb",
+      "scripts/run_terminal_bench.py": "62966498f44c10687ebf065ce8f6727e126b05bd5245bfca08a69b827abfaa89",
+      "scripts/terminal_bench.mjs": "88c6b8032f56005514461d74a2e8dffce267f3a6d0fce4493e697f4f2945123b"
+    },
+    "agent": {
+      "build/nodrop/nodrop.ko": "8193e5c90382e1c2c02821fac2934105f4e1e74935b52dd8a8c38e5e5c5579d5",
+      "build/nodrop/monitor/monitor": "c9da7e700dd55bf727b468b82d4d10998058805bc36a6eebb534ab295af18b75",
+      "build/context.node": "70bd8c69a7166720fa6bddb3fdd9c5cb9119c2ea240e6ab8ffbc6da851e28dc7",
+      "src/client.mjs": "8ab81bb3772dbd0633fb854ed6c9bd25a4a60687492b95ea2611255f43e4a892",
+      "src/worker.mjs": "1db758df57975951deb26246b3a8c4c50df0faa44654a4ec8e7b86e5efb078dc",
+      "src/extension.mjs": "fe144ff15768142fff414f8a44f77d6db0c8bb2beb2793c8aaccbb5d26ed9ebb",
+      "src/tools.mjs": "3075d7afbf5aaf2daf350848fc991b2c349693e10d7bf55e0dc54fe3fe496c69",
+      "src/output-store.mjs": "ad8b0c72168cf783c2cf0ab119ab658a4411b244b6fa7d9b2aba0fa434d19c26",
+      "src/output-extension.mjs": "e925e04a94d756bbf46d1b146a19a22ce450c18f55f52d4e37bbd5ef8ed192cb",
+      "scripts/run_terminal_bench.py": "62966498f44c10687ebf065ce8f6727e126b05bd5245bfca08a69b827abfaa89",
+      "scripts/terminal_bench.mjs": "88c6b8032f56005514461d74a2e8dffce267f3a6d0fce4493e697f4f2945123b"
+    }
+  },
+  "environment_cleanup": {
+    "baseline": {
+      "module_unloaded": true,
+      "remaining_task_processes": [],
+      "remaining_mounts": [],
+      "temporary_model_config_removed": true,
+      "vm_state": "shut off"
+    },
+    "fixed-raw": {
+      "module_unloaded": true,
+      "remaining_task_processes": [],
+      "remaining_mounts": [],
+      "temporary_model_config_removed": true,
+      "vm_state": "shut off"
+    },
+    "agent": {
+      "module_unloaded": true,
+      "remaining_task_processes": [],
+      "remaining_mounts": [],
+      "temporary_model_config_removed": true,
+      "vm_state": "shut off"
+    }
+  }
+}

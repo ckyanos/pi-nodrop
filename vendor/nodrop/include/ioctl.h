@@ -59,8 +59,6 @@ struct nod_event_statistic {
   uint64_t n_evts;
   uint64_t n_drop_evts;
   uint64_t n_drop_evts_unsolved;
-  uint64_t n_drop_evts_overflow;
-  uint64_t n_monitor_entries;
 };
 
 struct nod_lua_state
